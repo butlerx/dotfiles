@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/butlerx/butlerbot'
+let g:netrw_dirhist_2='/Users/butlerx/butlerbot/plugin_code'
+let g:netrw_dirhist_3='/Users/butlerx/butlerbot/plugin_code/uno'
+let g:netrw_dirhist_4='/Users/butlerx/butlerbot/plugin_code/uno/app'
+let g:netrw_dirhist_5='/Users/butlerx/butlerbot/plugin_code/uno/app/controllers'
+let g:netrw_dirhist_6='/Users/butlerx/Library'
