@@ -18,6 +18,9 @@ fi
 if [[ -r /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
-if [[ -r /usr/bin/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/bin/powerline/bindings/zsh/powerline.zsh
+if [[ -r /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+if [[ -r /usr/local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
