@@ -12,5 +12,12 @@ source ${HOME}/.dotfiles/zsh/zsh_hooks.zsh
 source ${HOME}/.dotfiles/zsh/iterm2_shell_integration.zsh
 eval "$(thefuck --alias)"
 
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-
+if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+if [[ -r /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+if [[ -r /usr/bin/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/bin/powerline/bindings/zsh/powerline.zsh
+fi
