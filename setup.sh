@@ -2,13 +2,12 @@
 ln -s $HOME/.dotfiles/vimrc $HOME/.vimrc
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 vim +PluginInstall +qall
+~/.vim/bundle/YouCompleteMe/install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer
 #zsh
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 #tmux
-ln -s $HOME/.dotfiles/.tmux/.tmux.conf $HOME/.tmux.conf
-cd $HOME/.dotfiles/.tmux/vendor/tmux-mem-cpu-load
-cmake .
-make
-sudo make install
-cd $HOME
+ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+sudo pip install psutil
+sudo cp ~/.dotfiles/tmux/vendor/basic-cpu-and-memory.tmux /usr/local/bin/tmux-mem-cpu-load
+sudo chmod +x /usr/local/bin/tmux-mem-cpu-load
 tmux source-file $HOME/.tmux.conf
