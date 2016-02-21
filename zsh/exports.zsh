@@ -33,8 +33,13 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
-export HOMEBREW_GITHUB_API_TOKEN=3cfb427352c41f33bf5002ebffa6097f1422b65a
+export HOMEBREW_GITHUB_API_TOKEN=
 
 #nvm
 export NVM_DIR="/Users/butlerx/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export NODE_PATH=/usr/local/lib/node_modules
+
+#Go
+export GOROOT=/usr/local/go                           │
+export GOPATH=$HOME/go
