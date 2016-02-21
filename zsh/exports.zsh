@@ -41,5 +41,5 @@ export NVM_DIR="/Users/butlerx/.nvm"
 export NODE_PATH=/usr/local/lib/node_modules
 
 #Go
-export GOROOT=/usr/local/go                           │
+#export GOROOT=/usr/lib/go                           │
 export GOPATH=$HOME/go
