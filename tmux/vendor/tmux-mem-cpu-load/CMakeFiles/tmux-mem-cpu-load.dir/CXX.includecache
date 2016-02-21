@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/butlerx/.tmux/vendor/tmux-mem-cpu-load/tmux-mem-cpu-load.cpp
+fstream
+-
+iostream
+-
+sstream
+-
+string
+-
+unistd.h
+-
+

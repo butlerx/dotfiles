@@ -1,0 +1,1 @@
+/home/butlerx/.tmux/vendor/tmux-mem-cpu-load/CMakeFiles/tmux-mem-cpu-load.dir
