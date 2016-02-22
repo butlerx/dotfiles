@@ -36,6 +36,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 call vundle#end()
 
 syntax enable
