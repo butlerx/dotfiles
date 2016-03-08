@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundles
+Plugin 'jaxbot/github-issues.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'trusktr/seti.vim'
 Plugin 'benmills/vimux.git'
