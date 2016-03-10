@@ -64,11 +64,8 @@ fi
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias rb='ssh butlerx@pyg.redbrick.dcu.ie'
+alias rb='ssh -N -f -L 6697:irc.redbrick.dcu.ie:6667 pygmalion.redbrick.dcu.ie'
 #alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
-alias home='ssh 109.255.32.18 -p 1337'
-alias dcu='ssh -X butlec25@student.computing.dcu.ie'
-alias oracle='ssh butlerx@45.55.6.41'
 
 # -------------------------------------------------------------------
 # database
@@ -135,6 +132,7 @@ alias sloc='/usr/local/sloccount/bin/sloccount'
 alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 alias rm='rm -i' # make rm command (potentially) less destructive
+alias cl='clear'
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'
@@ -180,16 +178,4 @@ alias nomz='ps aux | less'
 alias nomnom='killall'
 alias cya='reboot'
 alias kthxbai='halt'
-
-# -------------------------------------------------------------------
-# Linux only
-# -------------------------------------------------------------------
-if [[ $IS_LINUX -eq 1 ]]; then
-  alias brew='sudo apt-get'
-  alias freshbrew='sudo apt-get update'
-  alias newbrew='sudo apt-get install'
-fi
-
-
-alias cl='clear'
 
