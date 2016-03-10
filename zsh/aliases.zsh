@@ -133,6 +133,8 @@ alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 alias rm='rm -i' # make rm command (potentially) less destructive
 alias cl='clear'
+alias vim='nvim'
+alias vi='vim'
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color-bce tmux'
@@ -178,4 +180,3 @@ alias nomz='ps aux | less'
 alias nomnom='killall'
 alias cya='reboot'
 alias kthxbai='halt'
-
