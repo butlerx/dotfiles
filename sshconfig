@@ -1,0 +1,20 @@
+Host oracle
+  HostName 45.55.6.41
+  user butlerx
+
+Host pyg
+  HostName pyg.redbrick.dcu.ie
+  user butlerx
+
+Host rb
+  HostName redbrick.dcu.ie
+  user butlerx
+
+Host dcu
+  HostName student.computing.dcu.ie
+  user butlec25
+
+Host home
+  HostName 109.255.32.18
+  port 1337
+  user butlerx
