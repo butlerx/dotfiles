@@ -1,0 +1,2220 @@
+/bin/sh: devmon: command not found
+E: [pulseaudio] main.c: Daemon startup failed.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00a00003
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+/bin/sh: devmon: command not found
+E: [pulseaudio] main.c: Daemon startup failed.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800003
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 81 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+
+(process:2663): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+1457111177462	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: timeout
+1457111190332	FirefoxAccounts	ERROR	Could not retrieve profile data: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190332	FirefoxAccounts	ERROR	Could not retrieve profile data: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190335	FirefoxAccounts	ERROR	Could not retrieve profile data: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190335	FirefoxAccounts	ERROR	Could not retrieve profile data: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190337	FirefoxAccounts	ERROR	FxA rejecting with error NETWORK_ERROR, details: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190337	FirefoxAccounts	ERROR	FxA rejecting with error NETWORK_ERROR, details: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190338	FirefoxAccounts	ERROR	FxA rejecting with error NETWORK_ERROR, details: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111190338	FirefoxAccounts	ERROR	FxA rejecting with error NETWORK_ERROR, details: {"name":"FxAccountsProfileClientError","code":null,"errno":998,"error":"NETWORK_ERROR","message":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]"}
+1457111200343	FirefoxAccounts	ERROR	error POSTing /certificate/sign: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111200343	FirefoxAccounts	ERROR	error POSTing /certificate/sign: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111200343	FirefoxAccounts	ERROR	HAWK.signCertificate error: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111200343	FirefoxAccounts	ERROR	HAWK.signCertificate error: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111200345	Sync.BrowserIDManager	ERROR	Non-authentication error in _fetchTokenForUser: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111200346	Sync.BrowserIDManager	ERROR	Background fetch for key bundle failed: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111290366	FirefoxAccounts	ERROR	error GETing /account/status?uid=2c34250108134836a5942f4187aa844c: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111290366	FirefoxAccounts	ERROR	error GETing /account/status?uid=2c34250108134836a5942f4187aa844c: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111290367	FirefoxAccounts	ERROR	accountStatus failed with: null: null
+1457111290367	FirefoxAccounts	ERROR	accountStatus failed with: null: null
+1457111290368	Sync.BrowserIDManager	ERROR	Error while trying to determine FXA existence: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111290368	Sync.BrowserIDManager	ERROR	Could not authenticate: {"error":{},"errorString":"[Exception... \"NS_ERROR_ABORT\"  nsresult: \"0x80004004 (NS_ERROR_ABORT)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457111290371	Sync.ErrorHandler	ERROR	Sync encountered a login error
+
+(firefox:2505): libnotify-WARNING **: Failed to connect to proxy
+1457111616624	addons.update-checker	WARN	Update manifest for firefox@getpocket.com did not contain an updates property
+1457111617248	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1457111617990	addons.xpi	ERROR	Failed to clean updated system add-ons directories.: Unix error 2 during operation DirectoryIterator.prototype.next on file /home/butlerx/.mozilla/firefox/9kv0f7ck.dev-edition-default/features (No such file or directory) ((unknown module)) No traceback available
+1457111894483	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457111894895	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457111986917	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457111987334	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457112588003	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457112588387	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457113195332	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457113196555	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457113797960	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457113798536	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457114025980	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457114026514	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457114627958	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457114628462	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457115230912	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457115231873	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457115834217	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457115838462	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+hashcompleter: notifying failure
+1457116441288	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457116442779	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457117045650	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457117046144	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 16765 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+
+(process:27334): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(firefox:27140): libnotify-WARNING **: Failed to connect to proxy
+1457178031090	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457178031689	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][OnMaybeDequeueOne] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x800007,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x800007,name=PHttpChannel::Msg_Cancel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2A0045,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+The configuration couldn't be loaded: No such file or directory
+1457178956934	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1457178957766	addons.xpi	ERROR	Failed to clean updated system add-ons directories.: Unix error 2 during operation DirectoryIterator.prototype.next on file /home/butlerx/.mozilla/firefox/v3ao59k2.default-1449660806161/features (No such file or directory) ((unknown module)) No traceback available
+
+(process:19718): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(firefox:19535): libnotify-WARNING **: Failed to connect to proxy
+1457179212309	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457179212699	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457179303517	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457179303907	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457179904686	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457179905138	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457180506159	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457180506612	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457181107432	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457181107877	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+1457181708449	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457181708856	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457182309958	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457182310415	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457182910972	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457182911403	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+1457184732722	FirefoxAccounts	ERROR	error POSTing /account/device: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184732722	FirefoxAccounts	ERROR	error POSTing /account/device: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184732723	FirefoxAccounts	ERROR	device registration failed: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184732723	FirefoxAccounts	ERROR	device registration failed: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184733874	Sync.Engine.Bookmarks	ERROR	Failed to set previousFailed: null
+1457184733888	Sync.ErrorHandler	ERROR	Some engines did not sync correctly.
+1457184737679	Sync.ErrorHandler	ERROR	Sync encountered an error
+1457184737700	FirefoxAccounts	ERROR	error POSTing /account/device: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184737700	FirefoxAccounts	ERROR	error POSTing /account/device: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184737700	FirefoxAccounts	ERROR	device registration failed: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457184737700	FirefoxAccounts	ERROR	device registration failed: {"error":{},"errorString":"[Exception... \"NS_ERROR_UNKNOWN_HOST\"  nsresult: \"0x804b001e (NS_ERROR_UNKNOWN_HOST)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x2A0045,name=PBrowser::Msg___delete__) Channel closing: too late to send/recv, messages will be lost
+
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'WebKitWebView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkScrolledWindow': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkOverlay': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriView': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriNotebook': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkHPaned': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'GtkVBox': out of memory
+
+(midori4:11770): Gtk-WARNING **: drawing failure for widget 'MidoriBrowser': out of memory
+
+(firefox:14110): Gtk-CRITICAL **: gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+
+(firefox:18018): Gtk-CRITICAL **: gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+ATTENTION: default value of option force_s3tc_enable overridden by environment.
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+composite: missing an image filename `/tmp/screen.png' @ error/composite.c/CompositeImageCommand/1616.
+i3lock: unrecognized option '--textcolor=ffffff00'
+i3lock: Syntax: i3lock [-v] [-n] [-b] [-d] [-c color] [-u] [-p win|default] [-i image.png] [-t] [-e] [-I] [-f]
+Importing pynotify failed, notifications disabled.
+Has notifications support False
+Loading...
+Connecting to daemon...
+Connected.
+displaytray True
+Done loading.
+refreshing...
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : koffeeAP
+Failed to find a 'require' line in template pints
+ESSID : Russian women in your area
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+ESSID : bitbuzz
+Failed to find a 'require' line in template pints
+ESSID : eircom26789434
+Failed to find a 'require' line in template pints
+ESSID : Dublin_Bus_WIFI
+Failed to find a 'require' line in template pints
+ESSID : bitbuzz
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : Russian women in your area
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : NUIGWiFi
+Failed to find a 'require' line in template pints
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : NUIGALWAY
+Failed to find a 'require' line in template pints
+ESSID : eduroam
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+refreshing...
+ESSID : <hidden>
+Failed to find a 'require' line in template pints
+ESSID : Esquires Coffee House
+Failed to find a 'require' line in template pints
+ESSID : Esquires Coffee House
+Failed to find a 'require' line in template pints
+ESSID : CIE_tours_Wi-Fi
+Failed to find a 'require' line in template pints
+ESSID : eirc/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 39428 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+[Child 22873] WARNING: pipe error: Broken pipe: file /build/firefox/src/firefox-44.0.2/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 760
+[i3bar/src/child.c:366] ERROR: stdin: received EOF
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+/bin/sh: devmon: command not found
+E: [pulseaudio] main.c: Daemon startup failed.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800003
+/usr/share/wicd/gtk/gui.py:583: Warning: Source ID 101 was not found when attempting to remove it
+  gobject.source_remove(self.update_cb)
+/bin/sh: devmon: command not found
+E: [pulseaudio] main.c: Daemon startup failed.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800003
+
+(process:4643): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(firefox:4574): libnotify-WARNING **: Failed to connect to proxy
+1457698205513	Sync.ErrorHandler	ERROR	Sync encountered a login error
+1457698205545	Sync.BrowserIDManager	ERROR	Non-authentication error in _fetchTokenForUser: TokenServerClientNetworkError({"error":{}}) (resource://gre/modules/services-common/tokenserverclient.js:38:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.js:62:16 < onResponse@tokenserverclient.js:273:12 < onStopRequest@rest.js:463:7
+1457698205546	Sync.BrowserIDManager	ERROR	Background fetch for key bundle failed: TokenServerClientNetworkError({"error":{}}) (resource://gre/modules/services-common/tokenserverclient.js:38:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.js:62:16 < onResponse@tokenserverclient.js:273:12 < onStopRequest@rest.js:463:7
+1457698205556	FirefoxAccounts	ERROR	error GETing /account/status?uid=2c34250108134836a5942f4187aa844c: {"error":{},"errorString":"[Exception... \"NS_ERROR_NOT_AVAILABLE\"  nsresult: \"0x80040111 (NS_ERROR_NOT_AVAILABLE)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457698205556	FirefoxAccounts	ERROR	error GETing /account/status?uid=2c34250108134836a5942f4187aa844c: {"error":{},"errorString":"[Exception... \"NS_ERROR_NOT_AVAILABLE\"  nsresult: \"0x80040111 (NS_ERROR_NOT_AVAILABLE)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457698205557	FirefoxAccounts	ERROR	accountStatus failed with: null: null
+1457698205557	FirefoxAccounts	ERROR	accountStatus failed with: null: null
+1457698205558	Sync.BrowserIDManager	ERROR	Error while trying to determine FXA existence: {"error":{},"errorString":"[Exception... \"NS_ERROR_NOT_AVAILABLE\"  nsresult: \"0x80040111 (NS_ERROR_NOT_AVAILABLE)\"  location: \"JS frame :: resource://services-common/rest.js :: onStopRequest :: line 461\"  data: no]","message":null,"code":null,"errno":null}
+1457698205558	Sync.BrowserIDManager	ERROR	Could not authenticate: TokenServerClientNetworkError({"error":{}}) (resource://gre/modules/services-common/tokenserverclient.js:38:36) JS Stack trace: TokenServerClientNetworkError@tokenserverclient.js:62:16 < onResponse@tokenserverclient.js:273:12 < onStopRequest@rest.js:463:7
+1457698206304	Sync.LogManager	ERROR	Failed to cleanup logs: Error: OS.File has been shut down. Rejecting post to DirectoryIterator_prototype_next (resource://gre/modules/osfile/osfile_async_front.jsm:396:29) JS Stack trace: post@osfile_async_front.jsm:396:29 < _next@osfile_async_front.jsm:1384:19 < loop@osfile_async_front.jsm:1358:14 < Handler.prototype.process@Promise-backend.js:933:23 < this.PromiseWalker.walkerLoop@Promise-backend.js:812:7 < Promise*this.PromiseWalker.scheduleWalkerLoop@Promise-backend.js:743:11 < this.PromiseWalker.schedulePromise@Promise-backend.js:775:7 < this.PromiseWalker.completePromise@Promise-backend.js:710:7 < this.BasePromiseWorker.prototype._worker/worker.onmessage@PromiseWorker.jsm:231:9 < Spinner.prototype.observe@AsyncShutdown.jsm:529:9
+[i3bar/src/child.c:366] ERROR: stdin: received EOF
+[i3bar/src/child.c:487] ERROR: Child (pid: 683) unexpectedly exited with status 0
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+/bin/sh: devmon: command not found
+E: [pulseaudio] main.c: Daemon startup failed.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800003
+
+(midori4:19278): Pango-CRITICAL **: pango_layout_get_cursor_pos: assertion 'index >= 0 && index <= layout->length' failed
+ERROR block_reap:328: [volume] internal error
+ERROR block_reap:328: [volume] bad exit code 127
+ERROR block_reap:328: [volume] bad exit code 127
+ERROR block_reap:328: [volume] bad exit code 127
+Gtk-Message: GtkDialog mapped without a transient parent. This is discouraged.
+
+(firefox:32105): Gtk-CRITICAL **: gtk_clipboard_set_with_data: assertion 'targets != NULL' failed
+BUG: single log message > 4k
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+11/03/16 14:56:04 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:56:04 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:56:04 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 14:56:04 - ERROR: CONFIG: Line 159:         }
+11/03/16 14:56:04 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:56:04 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:56:04 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:56:04 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.4/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:56:04 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:56:04 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:56:04 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:56:04 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:56:04 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.4/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:56:04 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:56:04 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:56:04 - ERROR: CONFIG: Line 164: }
+11/03/16 14:56:04 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:56:04 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:56:04 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.4/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:56:04 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:56:04 - ERROR: CONFIG: Line 164: }
+11/03/16 14:56:04 - ERROR: CONFIG:           ^
+11/03/16 14:56:04 - ERROR: CONFIG: Line 165: 
+11/03/16 14:56:04 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 14:56:04 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00000
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00000
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00003
+11/03/16 14:56:04 - ERROR: Received ExposeEvent for unknown window 0x00a00003
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00003
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00006
+11/03/16 14:56:04 - ERROR: Received ExposeEvent for unknown window 0x00a00006
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00006
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00009
+11/03/16 14:56:04 - ERROR: Received ConfigureNotify for unknown window 0x00a00009
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1183, y = 16
+button released on x = 1183, y = 16
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1183, y = 16
+button released on x = 1183, y = 16
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+button pressed on x = 1283, y = 23
+button released on x = 1283, y = 23
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23816.nagbar_cmd
+11/03/16 14:57:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:57:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:57:22 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 14:57:22 - ERROR: CONFIG: Line 159:         }
+11/03/16 14:57:22 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:57:22 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:57:22 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:57:22 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:57:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:57:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:57:22 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:57:22 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:57:22 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:57:22 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^
+11/03/16 14:57:22 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:57:22 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:57:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:57:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:57:22 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:57:22 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:57:22 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:57:22 - ERROR: CONFIG:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:57:22 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:57:22 - ERROR: CONFIG: Line 165: }
+11/03/16 14:57:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:57:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:57:22 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:57:22 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:57:22 - ERROR: CONFIG: Line 165: }
+11/03/16 14:57:22 - ERROR: CONFIG:           ^
+11/03/16 14:57:22 - ERROR: CONFIG: Line 166: 
+11/03/16 14:57:22 - ERROR: CONFIG: Line 167: # Colors
+11/03/16 14:57:22 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 14:57:22 - ERROR: ERROR: i3-nagbar did not exit normally.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800421
+BUG: single log message > 4k
+i3: kill(configerror_nagbar) failed: [libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+No such process
+11/03/16 14:59:14 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:14 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:14 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 14:59:14 - ERROR: CONFIG: Line 159:         }
+11/03/16 14:59:14 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:14 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:14 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:14 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:59:14 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:14 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:14 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:14 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:14 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:59:14 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^
+11/03/16 14:59:14 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:14 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:14 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:14 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:14 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:14 - ERROR: CONFIG: Line 162:         status_command 
+11/03/16 14:59:14 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:14 - ERROR: CONFIG:           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:14 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:14 - ERROR: CONFIG: Line 165: }
+11/03/16 14:59:14 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:14 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:14 - ERROR: CONFIG: Line 163: /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:14 - ERROR: CONFIG: Line 164: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:14 - ERROR: CONFIG: Line 165: }
+11/03/16 14:59:14 - ERROR: CONFIG:           ^
+11/03/16 14:59:14 - ERROR: CONFIG: Line 166: 
+11/03/16 14:59:14 - ERROR: CONFIG: Line 167: # Colors
+11/03/16 14:59:14 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 14:59:15 - ERROR: Received ExposeEvent for unknown window 0x00600009
+11/03/16 14:59:15 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1269, y = 16
+button released on x = 1269, y = 16
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1269, y = 16
+button released on x = 1269, y = 16
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+button pressed on x = 1138, y = 16
+button released on x = 1138, y = 16
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.23971.nagbar_cmd
+11/03/16 14:59:52 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:52 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:52 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 14:59:52 - ERROR: CONFIG: Line 159:         }
+11/03/16 14:59:52 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:52 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:52 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:52 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:52 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:52 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:52 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:52 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:52 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:52 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:52 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:52 - ERROR: CONFIG: Line 164: }
+11/03/16 14:59:52 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:52 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:52 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:52 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:52 - ERROR: CONFIG: Line 164: }
+11/03/16 14:59:52 - ERROR: CONFIG:           ^
+11/03/16 14:59:52 - ERROR: CONFIG: Line 165: 
+11/03/16 14:59:52 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 14:59:52 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 14:59:52 - ERROR: ERROR: i3-nagbar did not exit normally.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800433
+BUG: single log message > 4k
+i3: kill(configerror_nagbar) failed: No such process
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+11/03/16 14:59:57 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:57 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:57 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 14:59:57 - ERROR: CONFIG: Line 159:         }
+11/03/16 14:59:57 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:57 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:57 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:57 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:57 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:57 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:57 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 14:59:57 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 14:59:57 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:57 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 14:59:57 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:57 - ERROR: CONFIG: Line 164: }
+11/03/16 14:59:57 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 14:59:57 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 14:59:57 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 14:59:57 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 14:59:57 - ERROR: CONFIG: Line 164: }
+11/03/16 14:59:57 - ERROR: CONFIG:           ^
+11/03/16 14:59:57 - ERROR: CONFIG: Line 165: 
+11/03/16 14:59:57 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 14:59:57 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 14:59:57 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 14:59:57 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 14:59:57 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 14:59:57 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 14:59:57 - ERROR: Received ExposeEvent for unknown window 0x00600009
+11/03/16 14:59:57 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 17
+button released on x = 1160, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 17
+button released on x = 1160, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1173, y = 14
+button released on x = 1173, y = 14
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 17
+button released on x = 1160, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1173, y = 14
+button released on x = 1173, y = 14
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1172, y = 15
+button released on x = 1172, y = 15
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 17
+button released on x = 1160, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1173, y = 14
+button released on x = 1173, y = 14
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1172, y = 15
+button released on x = 1172, y = 15
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1267, y = 18
+button released on x = 1267, y = 18
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 17
+button released on x = 1160, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1173, y = 14
+button released on x = 1173, y = 14
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1172, y = 15
+button released on x = 1172, y = 15
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1267, y = 18
+button released on x = 1267, y = 18
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+button pressed on x = 1266, y = 20
+button released on x = 1297, y = 210
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24036.nagbar_cmd
+11/03/16 15:03:16 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:03:16 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:03:16 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:03:16 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:03:16 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 15:03:16 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:03:16 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:03:16 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:03:16 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:03:16 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:03:16 - ERROR: CONFIG: Line 160:         i3bar_command i3bgbar
+11/03/16 15:03:16 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:03:16 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:03:16 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:03:16 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:03:16 - ERROR: CONFIG: Line 164: }
+11/03/16 15:03:16 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:03:16 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:03:16 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:03:16 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:03:16 - ERROR: CONFIG: Line 164: }
+11/03/16 15:03:16 - ERROR: CONFIG:           ^
+11/03/16 15:03:16 - ERROR: CONFIG: Line 165: 
+11/03/16 15:03:16 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:03:16 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 15:03:16 - ERROR: ERROR: i3-nagbar did not exit normally.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800440
+i3: kill(configerror_nagbar) failed: No such process
+11/03/16 15:04:23 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:23 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:23 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:04:23 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:04:23 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:04:23 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:04:23 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:04:23 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:23 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:23 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:23 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:04:23 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:04:23 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:23 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:04:23 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:04:23 - ERROR: CONFIG: Line 164: }
+11/03/16 15:04:23 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:23 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:23 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:23 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:04:23 - ERROR: CONFIG: Line 164: }
+11/03/16 15:04:23 - ERROR: CONFIG:           ^
+11/03/16 15:04:23 - ERROR: CONFIG: Line 165: 
+11/03/16 15:04:23 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:04:23 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 0080044a
+BUG: single log message > 4k
+i3: kill(configerror_nagbar) failed: No such process
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+11/03/16 15:04:26 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:26 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:26 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:04:26 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:04:26 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:04:26 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:04:26 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:04:26 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:26 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:26 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:26 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:04:26 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:04:26 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:26 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:04:26 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:04:26 - ERROR: CONFIG: Line 164: }
+11/03/16 15:04:26 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:04:26 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:04:26 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:04:26 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:04:26 - ERROR: CONFIG: Line 164: }
+11/03/16 15:04:26 - ERROR: CONFIG:           ^
+11/03/16 15:04:26 - ERROR: CONFIG: Line 165: 
+11/03/16 15:04:26 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:04:26 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:04:26 - ERROR: Received ExposeEvent for unknown window 0x0060000c
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:04:26 - ERROR: Received ExposeEvent for unknown window 0x0060000f
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600015
+11/03/16 15:04:26 - ERROR: Received ConfigureNotify for unknown window 0x00600015
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1150, y = 10
+button released on x = 1150, y = 10
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1150, y = 10
+button released on x = 1150, y = 10
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+button pressed on x = 1151, y = 15
+button released on x = 1254, y = 21
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1150, y = 10
+button released on x = 1150, y = 10
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+button pressed on x = 1151, y = 15
+button released on x = 1254, y = 21
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+button pressed on x = 1257, y = 17
+button released on x = 1257, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.24423.nagbar_cmd
+11/03/16 15:08:46 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:46 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:46 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:08:46 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:08:46 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:08:46 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:08:46 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:08:46 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:46 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:46 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:46 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:08:46 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:08:46 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:46 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:08:46 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:08:46 - ERROR: CONFIG: Line 164: }
+11/03/16 15:08:46 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:46 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:46 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:46 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:08:46 - ERROR: CONFIG: Line 164: }
+11/03/16 15:08:46 - ERROR: CONFIG:           ^
+11/03/16 15:08:46 - ERROR: CONFIG: Line 165: 
+11/03/16 15:08:46 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:08:46 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 15:08:46 - ERROR: ERROR: i3-nagbar did not exit normally.
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800456
+i3: kill(configerror_nagbar) failed: No such process
+11/03/16 15:08:56 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:56 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:56 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:08:56 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:08:56 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:08:56 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:08:56 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:08:56 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:56 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:56 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:56 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/i3status.conf
+11/03/16 15:08:56 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:08:56 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:56 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:08:56 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:08:56 - ERROR: CONFIG: Line 164: }
+11/03/16 15:08:56 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:08:56 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:08:56 - ERROR: CONFIG: Line 162:         status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:08:56 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:08:56 - ERROR: CONFIG: Line 164: }
+11/03/16 15:08:56 - ERROR: CONFIG:           ^
+11/03/16 15:08:56 - ERROR: CONFIG: Line 165: 
+11/03/16 15:08:56 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:08:56 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+[i3bar/src/xcb.c:922] ERROR: PropertyNotify received for unknown window 00800460
+BUG: single log message > 4k
+i3: kill(configerror_nagbar) failed: No such process
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+11/03/16 15:25:01 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:25:01 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:25:01 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:25:01 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:25:01 - ERROR: CONFIG: Line 160:         i3bar_command ~/.dotfiles/i3/lemonbar/i3_lemonbar.sh
+11/03/16 15:25:01 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:25:01 - ERROR: CONFIG: Line 161:         font pango:terminus\ Powerline 8
+11/03/16 15:25:01 - ERROR: CONFIG: Line 162: #status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:25:01 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:25:01 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:25:01 - ERROR: CONFIG: Line 162: #status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:25:01 - ERROR: CONFIG: Line 163: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:25:01 - ERROR: CONFIG: Line 164: }
+11/03/16 15:25:01 - ERROR: CONFIG:           ^
+11/03/16 15:25:01 - ERROR: CONFIG: Line 165: 
+11/03/16 15:25:01 - ERROR: CONFIG: Line 166: # Colors
+11/03/16 15:25:01 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:25:02 - ERROR: Received ExposeEvent for unknown window 0x0060000c
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:25:02 - ERROR: Received ExposeEvent for unknown window 0x0060000f
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+11/03/16 15:25:02 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font terminus\ Powerline, size 8
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1168, y = 17
+button released on x = 1168, y = 17
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27458.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27458.nagbar_cmd
+1457709954211	addons.update-checker	WARN	Update manifest for {972ce4c6-7e08-4474-a285-3208198ce6fd} did not contain an updates property
+1457709954987	addons.xpi	ERROR	Failed to clean updated system add-ons directories.: Unix error 2 during operation DirectoryIterator.prototype.next on file /home/butlerx/.mozilla/firefox/v3ao59k2.default-1449660806161/features (No such file or directory) ((unknown module)) No traceback available
+BUG: single log message > 4k
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+11/03/16 15:28:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:28:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:28:22 - ERROR: CONFIG: Line 158: #          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+11/03/16 15:28:22 - ERROR: CONFIG: Line 159:         }
+11/03/16 15:28:22 - ERROR: CONFIG: Line 160:         i3bar_command ~/.i3/lemonbar/i3_lemonbar.sh
+11/03/16 15:28:22 - ERROR: CONFIG:                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+11/03/16 15:28:22 - ERROR: CONFIG: Line 161: #status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:28:22 - ERROR: CONFIG: Line 162: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:28:22 - ERROR: CONFIG: Expected one of these tokens: <end>, '#', 'set', 'bindsym', 'bindcode', 'bind', 'bar', 'font', 'mode', 'gaps', 'smart_borders', 'smart_gaps', 'floating_minimum_size', 'floating_maximum_size', 'floating_modifier', 'default_orientation', 'workspace_layout', 'new_window', 'new_float', 'hide_edge_borders', 'for_window', 'assign', 'no_focus', 'focus_follows_mouse', 'mouse_warping', 'force_focus_wrapping', 'force_xinerama', 'force-xinerama', 'workspace_auto_back_and_forth', 'fake_outputs', 'fake-outputs', 'force_display_urgency_hint', 'focus_on_window_activation', 'show_marks', 'workspace', 'ipc_socket', 'ipc-socket', 'restart_state', 'popup_during_fullscreen', 'exec_always', 'exec', 'client.background', 'client.focused_inactive', 'client.focused', 'client.unfocused', 'client.urgent', 'client.placeholder'
+11/03/16 15:28:22 - ERROR: CONFIG: (in file /home/butlerx/.i3/config)
+11/03/16 15:28:22 - ERROR: CONFIG: Line 161: #status_command /usr/lib/python3.5/site-packages/powerline/bindings/i3/powerline-i3.py
+11/03/16 15:28:22 - ERROR: CONFIG: Line 162: #        status_command i3blocks -c ~/.i3/block.conf
+11/03/16 15:28:22 - ERROR: CONFIG: Line 163: }
+11/03/16 15:28:22 - ERROR: CONFIG:           ^
+11/03/16 15:28:22 - ERROR: CONFIG: Line 164: 
+11/03/16 15:28:22 - ERROR: CONFIG: Line 165: # Colors
+11/03/16 15:28:22 - ERROR: FYI: You are using i3 version 4.11-373-gd37ab01 (2015-10-02, branch "gaps")
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600000
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600003
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600006
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600009
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:28:22 - ERROR: Received ExposeEvent for unknown window 0x0060000c
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x0060000c
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:28:22 - ERROR: Received ExposeEvent for unknown window 0x0060000f
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x0060000f
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+11/03/16 15:28:22 - ERROR: Received ExposeEvent for unknown window 0x00600012
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600012
+11/03/16 15:28:22 - ERROR: Received ConfigureNotify for unknown window 0x00600015
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 18
+button released on x = 1160, y = 18
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 18
+button released on x = 1160, y = 18
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+button pressed on x = 1158, y = 10
+button released on x = 1158, y = 10
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+button with label *edit config* and action *i3-sensible-editor "/home/butlerx/.i3/config" && i3-msg reload
+*
+now 1 buttons
+button with label *show errors* and action *i3-sensible-pager "/run/user/1000/i3/errorlog.540"
+*
+now 2 buttons
+[libi3] libi3/font.c Using Pango font DejaVu Sans Mono, size 9
+[libi3] libi3/font.c X11 root window dictates 96.094581 DPI
+button pressed on x = 1160, y = 18
+button released on x = 1160, y = 18
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+button pressed on x = 1158, y = 10
+button released on x = 1158, y = 10
+argv0 = i3-nagbar
+terminal_cmd = i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+executing: i3-sensible-terminal -e /run/user/1000/i3/nagbar-cmd.27693.nagbar_cmd
+button pressed on x = 1357, y = 10
+button released on x = 1357, y = 10
+
+(process:30918): GLib-CRITICAL **: g_path_get_basename: assertion 'file_name != NULL' failed
+
+(firefox:30846): libnotify-WARNING **: Failed to connect to proxy
