@@ -177,6 +177,6 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " github-issue
+"source ~/.github
 let g:github_upstream_issues = 1
 let g:gissues_async_omni = 1
-source ~/.github
