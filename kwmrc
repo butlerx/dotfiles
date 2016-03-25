@@ -111,7 +111,7 @@ kwmc config prefix-border color FF458588
 kwmc bind cmd+alt+ctrl-q quit
 
 # Launch iTerm2
-kwmc bind cmd-return sys open -na /Users/butlerx/Applications/iTerm2.app
+kwmc bind cmd-return sys open -na /Users/butlerx/Applications/iTerm.app
 
 # Toggle Focus Autoraise
 kwmc bind cmd+alt+ctrl-t config focus toggle

@@ -11,6 +11,7 @@ source ${HOME}/.dotfiles/zsh/history.zsh
 source ${HOME}/.dotfiles/zsh/zsh_hooks.zsh
 source ${HOME}/.dotfiles/zsh/iterm2_shell_integration.zsh
 eval "$(thefuck --alias)"
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
