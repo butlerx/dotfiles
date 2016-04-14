@@ -1,1 +1,1 @@
-/usr/bin/c++   -O3 -DNDEBUG    CMakeFiles/tmux-mem-cpu-load.dir/tmux-mem-cpu-load.cpp.o  -o tmux-mem-cpu-load -rdynamic 
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   -O3 -DNDEBUG -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/tmux-mem-cpu-load.dir/tmux-mem-cpu-load.cpp.o  -o tmux-mem-cpu-load  
