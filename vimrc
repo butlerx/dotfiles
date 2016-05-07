@@ -9,6 +9,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Bundles
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
@@ -40,7 +41,7 @@ call vundle#end()
 syntax enable
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-colorscheme seti
+colorscheme monokai
 set background=dark
 
 set autoindent
