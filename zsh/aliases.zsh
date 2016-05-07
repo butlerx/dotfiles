@@ -136,7 +136,7 @@ alias rm='rm -i' # make rm command (potentially) less destructive
 alias cl='clear'
 
 # Force tmux to use 256 colors
-alias tmux='TERM=screen-256color-bce tmux'
+alias tmux='TERM=screen-256color tmux'
 
 # alias to cat this file to display
 alias acat='< ~/.zsh/aliases.zsh'
