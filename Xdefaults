@@ -109,14 +109,15 @@ URxvt*urgentOnBell:                   	true
 ! URxvt*secondaryScreen:                boolean
 ! URxvt*secondaryScroll:                boolean
 URxvt*perl-lib:                       	/usr/lib/urxvt/perl
-URxvt*url-launcher: 		        /usr/bin/firfox
-URxvt*matcher.button:			1
+URxvt*url-launcher: 		                /usr/bin/firfox
+URxvt*matcher.button:			              1
 ! URxvt*perl-eval:                      perl-eval
 ! URxvt*perl-ext-common:                string
-URxvt*perl-ext-common:                	default,url-select,clipboard,matcher
-URxvt.keysym.M-u: 			perl:url-select:select_next
-URxvt.url-select.launcher: 		/usr/bin/xdg-open
-URxvt.url-select.underline: 		true
+URxvt*perl-ext-common:                	default,url-select,clipboard,matcher,keyboard-select
+URxvt.keysym.M-u: 			                perl:url-select:select_next
+URxvt.keysym.M-Escape:                  perl:keyboard-select:activate
+URxvt.url-select.launcher: 		          /usr/bin/xdg-open
+URxvt.url-select.underline: 		        true
 
 URxvt*iso14755:                       	false
 URxvt*iso14755_52:                    	false
