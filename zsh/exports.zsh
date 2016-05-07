@@ -1,6 +1,6 @@
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:~/kwm/bin:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin
 
 # Set default console Java to 1.6
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
@@ -19,7 +19,7 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-export EDITOR='vim'
+export EDITOR='nvim'
 
 #export NODE_PATH=/opt/github/homebrew/lib/node_modules
 #export PYTHONPATH=/usr/local/lib/python2.6/site-packages
@@ -36,7 +36,7 @@ export PROJECT_HOME=$HOME/Projects/django
 export HOMEBREW_GITHUB_API_TOKEN=
 
 #nvm
-export NVM_DIR="/Users/butlerx/.nvm"
+export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export NODE_PATH=/usr/local/lib/node_modules
 

@@ -8,18 +8,15 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundles
-Plugin 'jaxbot/github-issues.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
+Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
-Plugin 'benmills/vimux.git'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
 Plugin 'gregsexton/gitv'
 Plugin 'honza/vim-snippets'
-Plugin 'Keithbsmiley/rspec.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/vim-easymotion'
 Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
@@ -27,12 +24,8 @@ Plugin 'moll/vim-node'
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
-Plugin 'sjl/gundo.vim'
-Plugin 'skalnik/vim-vroom.git'
-Plugin 'tpope/vim-bundler'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'fatih/vim-go'
 Plugin 'scrooloose/nerdtree'
@@ -42,12 +35,13 @@ Plugin 'mattn/gist-vim'
 Plugin 'lervag/vimtex'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine'
 call vundle#end()
 
 syntax enable
 filetype plugin indent on
 set omnifunc=syntaxcomplete#Complete
-colorscheme seti
+colorscheme monokai
 set background=dark
 
 set autoindent
@@ -70,6 +64,7 @@ set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
+set mouse=""
 set noeb vb t_vb=
 set nofen
 set notimeout
@@ -107,10 +102,17 @@ let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
         \ 'active_filetypes': [],
         \ 'passive_filetypes': ['html'] }
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:vim_json_syntax_conceal = 0
-let g:vroom_use_vimux = 1
 
 "custom commands
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
@@ -141,7 +143,7 @@ let g:airline#extensions#tabline#right_alt_sep = '|'
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR
+map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -176,7 +178,16 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
-" github-issue
-let g:github_upstream_issues = 1
-let g:gissues_async_omni = 1
-source ~/.github
+au BufRead,BufNewFile *.md setlocal textwidth=80
+autocmd BufRead,BufNewFile *.md setlocal spell
+set complete+=kspell
+
+" Vim
+let g:indentLine_color_term = 239
+
+"GVim
+let g:indentLine_color_gui = '#A4E57E'
+
+" none X terminal
+let g:indentLine_color_tty_light = 7 " (default: 4)
+let g:indentLine_color_dark = 1 " (default: 2)

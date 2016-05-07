@@ -58,6 +58,7 @@ if [[ $IS_MAC -eq 1 ]]; then
     alias newbrew='brew install'
     # rebuild Launch Services to remove duplicate entries on Open With menu
     alias rebuildopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.fram ework/Support/lsregister -kill -r -domain local -domain system -domain user'
+    alias htop='sudo htop'
 fi
 
 
@@ -133,11 +134,9 @@ alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
 alias rm='rm -i' # make rm command (potentially) less destructive
 alias cl='clear'
-alias vim='nvim'
-alias vi='vim'
 
 # Force tmux to use 256 colors
-alias tmux='TERM=screen-256color-bce tmux'
+alias tmux='TERM=screen-256color tmux'
 
 # alias to cat this file to display
 alias acat='< ~/.zsh/aliases.zsh'

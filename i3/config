@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -71,7 +71,6 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+s layout stacked
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -83,8 +82,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
-
+bindsym $mod+s focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1 irc
@@ -146,19 +144,19 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-          position top
-          colors { # Whole color settings
-            background #000000#000000
-            statusline #ffffff#ffffff
-            separator  #007fff#007fff
-            # Type             border         background     font
-            focused_workspace  #008fff#008fff #007fff#007fff #ffffff#ffffff
-            active_workspace   #333333#333333 #5f676a#5f676a #ffffff#ffffff
-            inactive_workspace #333333#333333 #222222#222222 #888888#888888
-            urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
-          }
-          font pango:terminus\ Powerline 8
-          status_command i3blocks -c ~/.i3/block.conf
+        position top
+        colors { # Whole color settings
+          background #000000#000000
+          statusline #ffffff#ffffff
+          separator  #007fff#007fff
+          # Type             border         background     font
+          focused_workspace  #008fff#008fff #007fff#007fff #ffffff#ffffff
+          active_workspace   #333333#333333 #5f676a#5f676a #ffffff#ffffff
+          inactive_workspace #333333#333333 #222222#222222 #888888#888888
+          urgent_workspace   #aa0000#aa0000 #990000#990000 #ffffff#ffffff
+        }
+        font pango:Hack 8
+        status_command i3blocks -c ~/.i3/block.conf
 }
 
 # Colors
@@ -179,9 +177,8 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/scre
 
 #smart_borders on|no_gaps
 for_window [class="^.*"] border pixel 0
-gaps inner 5
-gaps outer 5
-smart_gaps on
+gaps inner 15
+gaps outer 10
 
 #Nautilus
 bindsym $mod+Shift+U exec nautilus --no-desktop --browser
@@ -190,3 +187,18 @@ bindsym $mod+Shift+U exec nautilus --no-desktop --browser
 bindsym $mod+o exec rofi -show window
 bindsym $mod+i exec rofi -show ssh
 bindsym $mod+d exec rofi -show run
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
