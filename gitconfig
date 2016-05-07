@@ -1,0 +1,50 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = butlerx
+	email = cianbutlerx@gmail.com
+[push]
+	default = simple
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[github]
+	user = butlerx
+[ghi]
+	token = !security find-internet-password -a butlerx -s github.com -l 'ghi token' -w
+[alias]
+	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+	lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	amend = commit -a --amend
+	undo = reset HEAD~1 --mixed
+  a = add
+  ap = add -p
+  c = commit --verbose
+  ca = commit -a --verbose
+  cm = commit -m
+  cam = commit -a -m
+  m = commit --amend --verbose
+
+  d = diff
+  ds = diff --stat
+  dc = diff --cached
+
+  s = status -s
+  co = checkout
+  cob = checkout -b
+  # list branches sorted by last modified
+  b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
+
+  # list aliases
+  la = "!git config -l | grep alias | cut -c 7-"
+
+  rao = remote add origin
+  ac = !git add . && git commit -am
+  pushitgood = push -u origin --all
+  cp = cherry-pick
+  st = status -s
+  cl = clone
+  ec = config --global -e
+[core]
+	autocrlf = input
+	editor = nvim
+	pager = less -F -X

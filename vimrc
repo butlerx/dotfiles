@@ -177,9 +177,14 @@ call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
-au BufRead,BufNewFile *.md setlocal textwidth=80
-autocmd BufRead,BufNewFile *.md setlocal spell
-set complete+=kspell
+" Force syntax for template files
+au BufNewFile,BufRead *.ejs set filetype=javascript
+au BufNewFile,BufRead *.dust set filetype=javascricpt
+
+"spell check markdown and limit to 80 charcters
+"au BufRead,BufNewFile *.md setlocal textwidth=80
+"autocmd BufRead,BufNewFile *.md setlocal spell
+"set complete+=kspell
 
 " Vim
 let g:indentLine_color_term = 239
