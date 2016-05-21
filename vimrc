@@ -11,6 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
+Plugin 'chrisbra/csv.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
 Plugin 'godlygeek/tabular'
@@ -38,8 +39,8 @@ Plugin 'vim-airline/vim-airline-themes'
 Plugin 'Yggdroot/indentLine'
 call vundle#end()
 
-syntax enable
 filetype plugin indent on
+syntax enable
 set omnifunc=syntaxcomplete#Complete
 colorscheme monokai
 set background=dark

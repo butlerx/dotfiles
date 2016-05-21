@@ -25,3 +25,6 @@ fi
 if [[ -r /usr/local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/local/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
+
+export NVM_DIR="/home/butlerx/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

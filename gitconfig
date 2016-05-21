@@ -5,8 +5,6 @@
 	email = cianbutlerx@gmail.com
 [push]
 	default = simple
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [github]
 	user = butlerx
 [ghi]
@@ -37,9 +35,9 @@
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
 
-  rao = remote add origin
+  raf = remote add fork
   ac = !git add . && git commit -am
-  pushitgood = push -u origin --all
+  pushitgood = push -u fork --all
   cp = cherry-pick
   st = status -s
   cl = clone
