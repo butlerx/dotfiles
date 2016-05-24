@@ -14,7 +14,7 @@
 [alias]
 	yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
 	lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
-	amend = commit -a --amend
+	amend = commit -a --amend --no-edit
 	undo = reset HEAD~1 --mixed
   a = add
   ap = add -p
@@ -48,3 +48,9 @@
 	autocrlf = input
 	editor = nvim
 	pager = less -F -X
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
