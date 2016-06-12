@@ -85,9 +85,9 @@ bindsym $mod+a focus parent
 bindsym $mod+s focus child
 
 # switch to workspace
-bindsym $mod+1 workspace 1 irc
-bindsym $mod+2 workspace 2 web
-bindsym $mod+3 workspace 3 term
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
 bindsym $mod+4 workspace 4
 bindsym $mod+5 workspace 5
 bindsym $mod+6 workspace 6
@@ -97,9 +97,9 @@ bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1 irc
-bindsym $mod+Shift+2 move container to workspace 2 web
-bindsym $mod+Shift+3 move container to workspace 3 term
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
 bindsym $mod+Shift+4 move container to workspace 4
 bindsym $mod+Shift+5 move container to workspace 5
 bindsym $mod+Shift+6 move container to workspace 6
@@ -141,8 +141,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start yabar to display a workspace bar (plus the system information)
 exec --no-startup-id yabar -c .i3/yabar.conf
 
 # Colors
@@ -150,11 +149,13 @@ client.focused #007fbf #007fbf #ffffff
 client.unfocused #666666 #666666 #ffffff
 client.urgent #aa0000 #990000 #ffffff
 
-# Startup programs
+# Set background
 exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
-exec --no-startup-id devmon --no-gui
+# Start Audio
 exec --no-startup-id pulseaudio --start
+# Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
+# Start Wifi
 exec --no-startup-id wicd-gtk -t
 
 # Custom KeyBinds
@@ -170,15 +171,15 @@ smart_gaps on
 #Nautilus
 bindsym $mod+Shift+U exec nautilus --no-desktop --browser
 
-#rofi
+# rofi
 bindsym $mod+o exec rofi -show window
 bindsym $mod+i exec rofi -show ssh
 bindsym $mod+d exec rofi -show run
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
