@@ -37,7 +37,7 @@
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
 
-  rao = remote add origin
+  raf = remote add fork
   ac = !git add . && git commit -am
   pushitgood = push -u origin --all
   cp = cherry-pick
