@@ -76,7 +76,7 @@ URxvt*urgentOnBell:                   	true
 !URxvt*font:                           	xft:Hack:size=8:antialias=false
 !URxvt*boldFont:                       	xft:Hack:bold:size=8:antialias=false
 !URxvt*italicFont:                     	xft:Hack:italic:size=8:antialias=false
- URxvt*font:                          	xft:terminus:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
+ URxvt*font:                          	xft:terminus:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true,xft:Font\ Awesome:antialias=true:pixelsize=12
  URxvt*boldFont:                      	xft:terminus:bold:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
  URxvt*italicFont:                    	xft:terminus:italic:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
 ! URxvt*boldItalicFont:                 fontname
@@ -109,14 +109,13 @@ URxvt*urgentOnBell:                   	true
 ! URxvt*secondaryScreen:                boolean
 ! URxvt*secondaryScroll:                boolean
 URxvt*perl-lib:                       	/usr/lib/urxvt/perl
-URxvt*url-launcher: 		        /usr/bin/firfox
-URxvt*matcher.button:			1
+URxvt*matcher.button:			              1
 ! URxvt*perl-eval:                      perl-eval
 ! URxvt*perl-ext-common:                string
 URxvt*perl-ext-common:                	default,url-select,clipboard,matcher
-URxvt.keysym.M-u: 			perl:url-select:select_next
-URxvt.url-select.launcher: 		/usr/bin/xdg-open
-URxvt.url-select.underline: 		true
+URxvt*keysym.M-u: 			                perl:url-select:select_next
+URxvt*url-select.launcher: 		          /usr/bin/xdg-open
+URxvt.url-select.underline: 		        true
 
 URxvt*iso14755:                       	false
 URxvt*iso14755_52:                    	false
