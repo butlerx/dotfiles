@@ -1,6 +1,5 @@
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin
 
 # Set default console Java to 1.6
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
@@ -43,3 +42,6 @@ export NODE_PATH=/usr/local/lib/node_modules
 #Go
 #export GOROOT=/usr/lib/go                           │
 export GOPATH=$HOME/go
+
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+

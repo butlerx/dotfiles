@@ -1,8 +1,8 @@
 
-xterm*termName: xterm-256color
-XTerm*locale: true
-xterm*saveLines: 4096
-xterm*reverseVideo: on
+xterm*termName:                         xterm-256color
+XTerm*locale:                           true
+xterm*saveLines:                        4096
+xterm*reverseVideo:                     on
 
 ! URxvt*termName:                       string
 ! URxvt*geometry:                       geometry
@@ -25,8 +25,8 @@ URxvt*scrollBar:                      	false
 ! URxvt*inheritPixmap:                  boolean
 URxvt*transparent:                    	true
 ! URxvt*tintColor:                      #fdf6e3
-URxvt*shading:                        	25
-URxvt*blurRadius:                     	8x8
+URxvt*shading:                        	30
+URxvt*blurRadius:                     	5
 ! URxvt*fading:                         80
 ! URxvt*fadeColor:                      #fdf6e3
 ! URxvt*utmpInhibit:                    boolean
@@ -73,12 +73,12 @@ URxvt*urgentOnBell:                   	true
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-! URxvt*font:                           	xft:Hack:size=8:antialias=false
-! URxvt*boldFont:                       	xft:Hack:bold:size=8:antialias=false
-! URxvt*italicFont:                     	xft:Hack:italic:size=8:antialias=false
-URxvt*font:                          	xft:Terminess Powerline:size=8:antialias=false
-URxvt*boldFont:                      	xft:Terminess Powerline:bold:size=8:antialias=false
-URxvt*italicFont:                    	xft:Terminess Powerline:italic:size=8:antialias=false
+!URxvt*font:                           	xft:Hack:size=8:antialias=false
+!URxvt*boldFont:                       	xft:Hack:bold:size=8:antialias=false
+!URxvt*italicFont:                     	xft:Hack:italic:size=8:antialias=false
+ URxvt*font:                          	xft:terminus:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
+ URxvt*boldFont:                      	xft:terminus:bold:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
+ URxvt*italicFont:                    	xft:terminus:italic:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
 ! URxvt*boldItalicFont:                 fontname
 ! URxvt*intensityStyles:                boolean
 ! URxvt*inputMethod:                    name
@@ -89,7 +89,6 @@ URxvt*italicFont:                    	xft:Terminess Powerline:italic:size=8:anti
 ! URxvt*iconName:                       string
 ! URxvt*saveLines:                      number
 ! URxvt*buffered:                       boolean
-! URxvt*depth:                          number
 ! URxvt*visual:                         number
 ! URxvt*transient-for:                  windowid
 ! URxvt*override-redirect:              boolean
@@ -194,6 +193,12 @@ URxvt*color15 : #EEEEEC
 ! --- end of terminal colors section -------------------------------------------
 ! ----------------------------------------------------------------------------
 
-URxvt.keysym.M-Escape: perl:keyboard-select:active
+URxvt.keysym.M-Escape:        perl:keyboard-select:active
 URxvt.keysym.Shift-Control-V: perl:clipboard:paste
 URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+
+!-*-{ Xft settings
+Xft*dpi:       96
+Xft*antialias: True
+Xft*hinting:   Full
+!-*-}

@@ -20,4 +20,3 @@ Host home
   user butlerx
 
 Host github.com
-  IdentityFile ~/.ssh/github

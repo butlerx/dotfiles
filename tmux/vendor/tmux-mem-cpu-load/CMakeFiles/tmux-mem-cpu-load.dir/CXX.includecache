@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/butlerx/.tmux/vendor/tmux-mem-cpu-load/tmux-mem-cpu-load.cpp
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/tmux-mem-cpu-load.cpp
 fstream
 -
 iostream
