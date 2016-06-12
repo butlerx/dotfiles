@@ -1,0 +1,7 @@
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/edit_cache.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/rebuild_cache.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/list_install_components.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/install.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/install/strip.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/install/local.dir
+/Users/butlerx/.dotfiles/tmux/vendor/tmux-mem-cpu-load/CMakeFiles/tmux-mem-cpu-load.dir
