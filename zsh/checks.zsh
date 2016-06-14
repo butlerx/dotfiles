@@ -18,3 +18,8 @@ fi
 if [[ -x `which dnf` ]]; then
   HAS_YUM=1
 fi
+
+if [[ -x `which yaourt` ]]; then
+  HAS_YAOURT=1
+fi
+
