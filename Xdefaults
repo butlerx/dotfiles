@@ -73,9 +73,6 @@ URxvt*urgentOnBell:                   	true
 ! URxvt*pointerColor2:                  color
 ! URxvt*borderColor:                    color
 ! URxvt*iconFile:                       file
-!URxvt*font:                           	xft:Hack:size=8:antialias=false
-!URxvt*boldFont:                       	xft:Hack:bold:size=8:antialias=false
-!URxvt*italicFont:                     	xft:Hack:italic:size=8:antialias=false
  URxvt*font:                          	xft:terminus:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
  URxvt*boldFont:                      	xft:terminus:bold:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
  URxvt*italicFont:                    	xft:terminus:italic:size=8:antialias=false,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
@@ -203,8 +200,3 @@ Xft*dpi:       96
 Xft*antialias: True
 Xft*hinting:   Full
 !-*-}
-
-URxvt.keysym.M-Down:        \033[1;3B
-URxvt.keysym.M-Up:          \033[1;3A
-URxvt.keysym.M-Left:        \033[1;3D
-URxvt.keysym.M-Right:       \033[1;3C
