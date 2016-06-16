@@ -38,6 +38,7 @@
   raf = remote add fork
   ac = !git add . && git commit -am
   pushitgood = push -u fork --all
+  forcepush = push --force
   cp = cherry-pick
   st = status -s
   cl = clone
