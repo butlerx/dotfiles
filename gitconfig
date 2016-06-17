@@ -5,8 +5,6 @@
 	email = cianbutlerx@gmail.com
 [push]
 	default = simple
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [github]
 	user = butlerx
 [ghi]
