@@ -1,6 +1,4 @@
 #!/bin/bash
-while true
-do
   markup=
   workspaces_status=$(i3-msg -t get_workspaces)
   output=$1
@@ -20,4 +18,3 @@ do
   done
 
   echo $markup
-done
