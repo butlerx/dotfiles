@@ -10,11 +10,11 @@
       focused=$(jq '.[] | select(.num == '$w') | .focused' <<< "$workspaces_status")
       urgent=$(jq '.[] | select(.num == '$w') | .urgent' <<< "$workspaces_status")
 
-      unset mk_active mk_visible mk_urgent
-      [[ $visible == true ]] && mk_visible='bgcolor="#5ba7c3"'
-      [[ $focused == true ]] && mk_active='underline="single" underline_color="#cccccc"'
-      [[ $urgent == true ]] && mk_urgent='bgcolor="#cc0000" underline="single" underline_color="#cccccc"'
-      markup+="<span $mk_visible $mk_active $mk_urgent> $w </span> "
+      unset bgcolor underline
+      [[ $visible == true ]] && bgcolor='bgcolor="#5ba7c3"'
+      [[ $focused == true ]] && underline='underline="single" underline_color="#cccccc"'
+      [[ $urgent == true ]] && bgcolor='bgcolor="#cc0000"' && underline='underline="single" underline_color="#cccccc"'
+      markup+="<span $bgcolor $underline> $w </span> "
   done
 
   echo $markup
