@@ -30,7 +30,7 @@ font pango:DejaVu Sans Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec urxvt256c-ml
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -177,6 +177,7 @@ bindsym Print exec scrot '%Y-%m-%d-%T_$wx$h_scrot.png' -e 'mv $f ~/Pictures/scre
 #smart_borders on|no_gaps
 gaps inner 15
 gaps outer 10
+for_window [class="^.*"] border pixel 0
 smart_gaps on
 
 #Nautilus
