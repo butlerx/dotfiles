@@ -14,7 +14,7 @@
       [[ $visible == true ]] && bgcolor='bgcolor="#5ba7c3"'
       [[ $focused == true ]] && underline='underline="single" underline_color="#cccccc"'
       [[ $urgent == true ]] && bgcolor='bgcolor="#cc0000"' && underline='underline="single" underline_color="#cccccc"'
-      markup+="<span $bgcolor $underline> $w </span> "
+      markup+="<span $bgcolor $underline>   $w   </span>"
   done
 
   echo $markup

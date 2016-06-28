@@ -72,12 +72,12 @@ URxvt*urgentOnBell:                 true
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file
-URxvt*font:                         xft:Hack:size=6:antialias=true:hinting=true
-URxvt*boldFont:                     xft:Hack:bold:size=6:antialias=true:hinting=true
-URxvt*italicFont:                   xft:Hack:italic:pixelsize=6:antialias=true:hinting=true
-! URxvt*font:                       xft:Terminus:size=8:antialias=true,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
-! URxvt*boldFont:                   xft:Terminus:bold:size=8:antialias=true,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
-! URxvt*italicFont:                 xft:Terminus:italic:size=8:antialias=true,xft:Terminess\ Powerline:pixelsize=12:antialias=true:hinting=true
+URxvt*font:                         xft:Hack:size=8:antialias=true:hinting=true
+URxvt*boldFont:                     xft:Hack:bold:size=8:antialias=true:hinting=true
+URxvt*italicFont:                   xft:Hack:italic:pixelsize=8:antialias=true:hinting=true
+! URxvt*font:                       xft:Terminus:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
+! URxvt*boldFont:                   xft:Terminus:bold:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
+! URxvt*italicFont:                 xft:Terminus:italic:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
 ! URxvt*boldItalicFont:             fontname
 ! URxvt*intensityStyles:            boolean
 ! URxvt*inputMethod:                name
@@ -232,7 +232,7 @@ rofi.font:           Hack 21
 rofi.kb-row-up:      Up,Control+p,Shift+Tab,Shift+Alt+Tab
 rofi.kb-row-tab:     Tab,Alt+Tab
 rofi.padding:        20
-rofi.width:          20
+rofi.width:          50
 rofi.bw:             1
 rofi.opacity:        90
 rofi.fullscreen:     false
