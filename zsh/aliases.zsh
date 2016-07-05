@@ -65,7 +65,7 @@ fi
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias rb='ssh -N -f -L 6697:irc.redbrick.dcu.ie:6667 pygmalion.redbrick.dcu.ie'
+alias rb='ssh -N -f -L 6667:irc.redbrick.dcu.ie:6667 pygmalion.redbrick.dcu.ie'
 #alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
 
 # -------------------------------------------------------------------
@@ -139,8 +139,6 @@ alias cl='clear'
 alias tmux='TERM=screen-256color tmux'
 
 # alias to cat this file to display
-alias acat='< ~/.zsh/aliases.zsh'
-alias fcat='< ~/.zsh/functions.zsh'
 alias sz='source ~/.zshrc'
 
 
