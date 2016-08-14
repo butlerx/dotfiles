@@ -72,9 +72,9 @@ URxvt*urgentOnBell:                 true
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file
-URxvt*font:                         xft:Hack:size=8:antialias=true:hinting=true
-URxvt*boldFont:                     xft:Hack:bold:size=8:antialias=true:hinting=true
-URxvt*italicFont:                   xft:Hack:italic:pixelsize=8:antialias=true:hinting=true
+URxvt*font:                         xft:Hack:size=8:antialias=true:hinting=true,xtf:Emoji\ One\ Color:size=8:antialias=true:hinting=true
+URxvt*boldFont:                     xft:Hack:bold:size=8:antialias=true:hinting=true,xtf:Emoji\ One\ Color:size=8:antialias=true:hinting=true
+URxvt*italicFont:                   xft:Hack:italic:pixelsize=122:antialias=true:hinting=true,xtf:Emoji\ One\ Color:size=8:antialias=true:hinting=true
 ! URxvt*font:                       xft:Terminus:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
 ! URxvt*boldFont:                   xft:Terminus:bold:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
 ! URxvt*italicFont:                 xft:Terminus:italic:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
