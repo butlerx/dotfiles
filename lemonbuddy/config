@@ -41,6 +41,7 @@ module_margin_right = 0
 
 font-0 = Droid Sans:size=6;0
 font-1 = FontAwesome:size=8:0
+font-2 = MaterialIcons-Regular:size=8;0
 
 modules-left = i3
 modules-center = clock
@@ -48,23 +49,22 @@ modules-right =  wireless-network backlight cpu ram volume battery
 
 [module/cpu]
 type = internal/cpu
-label =  %percentage%
+label =    %percentage%
 format-underline = #c42
 format-padding = 2
 
 [module/ram]
 type = internal/memory
-label =  %gb_used%
+label =    %gb_used%
 format-underline = #42c
 format-padding = 2
 
 [module/clock]
 type = internal/date
-date =  %Y-%m-%d %H:%M
-date_detailed = %%{F#888}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date =  %Y-%m-%d  %H:%M
+date_detailed = %%{F#888}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 format-underline = #493
 format-padding = 2
-label = 
 
 [module/volume]
 type = internal/volume
@@ -86,14 +86,13 @@ format-volume = <ramp-volume> <label-volume>
 ;   <bar-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
-label-muted =  Mute
-ramp-volume-0 = 
-ramp-volume-1 = 
+label-muted =  Mute
+ramp-volume-0 = 
+ramp-volume-1 = 
 ramp-volume-2 = 
 
 [module/i3]
 type = internal/i3
-vim:ft=dosini
 ; workspace_icon-[0-9]+ = label;icon
 workspace_icon-0 = 1;
 workspace_icon-1 = 2;
@@ -164,13 +163,13 @@ card = intel_backlight
 ;   <ramp>
 ;   <bar>
 format-underline = #267682
+format-padding = 2
 format = <ramp> <label>
 label = %percentage%
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
 
 [module/wireless-network]
 type = internal/network
@@ -192,7 +191,7 @@ format-disconnected = <label-disconnected>
 ;   %essid%     [wireless]
 ;   %signal%    [wireless]
 ;   %linkspeed% [wired]
-; Default: %ifname% %local_ip%
+; Default:  %ifname% %local_ip%
 label-connected = %essid% %local_ip%
 label-connected-foreground = #eefafafa
 label-disconnected = not connected
@@ -207,9 +206,11 @@ label-disconnected-foreground = #66ffffff
 label-packetloss = %linkspeed%
 label-packetloss-foreground = #eefafafa
 
-ramp-signal-0 = 😱
-ramp-signal-1 = 😠
-ramp-signal-2 = 😒
-ramp-signal-3 = 😊
-ramp-signal-4 = 😃
-ramp-signal-5 = 😈
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-5 = 
+
+ ;vim:ft=dosini
