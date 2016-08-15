@@ -87,6 +87,10 @@ format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
 label-muted =  Mute
+bar-volume-width = 25
+bar-volume-indicator = 
+bar-volume-fill = ─
+bar-volume-empty = ─
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -194,7 +198,7 @@ format-disconnected = <label-disconnected>
 ; Default:  %ifname% %local_ip%
 label-connected = %essid% %local_ip%
 label-connected-foreground = #eefafafa
-label-disconnected = not connected
+label-disconnected =    not connected
 label-disconnected-foreground = #66ffffff
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
@@ -209,8 +213,7 @@ label-packetloss-foreground = #eefafafa
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-5 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
  ;vim:ft=dosini
