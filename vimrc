@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundles
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'sickill/vim-monokai'
