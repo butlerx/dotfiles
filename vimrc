@@ -12,6 +12,8 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'jimmyhchan/dustjs.vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'chrisbra/csv.vim'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'elzr/vim-json'
@@ -181,8 +183,8 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " Force syntax for template files
-au BufNewFile,BufRead *.ejs set filetype=javascript
-au BufNewFile,BufRead *.dust set filetype=javascricpt
+au BufRead,BufNewFile *.ejs setfiletype javascript
+au BufRead,BufNewFile *.dust setfiletype dustjs
 
 "spell check markdown and limit to 80 charcters
 "au BufRead,BufNewFile *.md setlocal textwidth=80
