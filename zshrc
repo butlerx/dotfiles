@@ -25,5 +25,4 @@ fi
 if [[ -r /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
-
 source /usr/share/nvm/init-nvm.sh

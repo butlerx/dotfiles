@@ -72,12 +72,10 @@ URxvt*urgentOnBell:                 true
 ! URxvt*pointerColor2:              color
 ! URxvt*borderColor:                color
 ! URxvt*iconFile:                   file
-URxvt*font:                         xft:Hack:size=8:antialias=true:hinting=true
-URxvt*boldFont:                     xft:Hack:bold:size=8:antialias=true:hinting=true
-URxvt*italicFont:                   xft:Hack:italic:pixelsize=8:antialias=true:hinting=true
-! URxvt*font:                       xft:Terminus:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
-! URxvt*boldFont:                   xft:Terminus:bold:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
-! URxvt*italicFont:                 xft:Terminus:italic:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
+URxvt*font:                         xft:Terminess\ powerline:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:pixelsize=20:antialias=true:hinting=true
+URxvt*boldFont:                     xft:Terminess\ powerline:bold:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:bold:pixelsize=20:antialias=true:hinting=true
+URxvt*italicFont:                   xft:Terminess\ powerline:italic:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:italic:pixelsize=20:antialias=true:hinting=true
+URxvt.letterSpace:                  -0.5
 ! URxvt*boldItalicFont:             fontname
 ! URxvt*intensityStyles:            boolean
 ! URxvt*inputMethod:                name

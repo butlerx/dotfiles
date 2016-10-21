@@ -4,7 +4,7 @@ tmpbg='/tmp/screen.png'
 
 scrot "$tmpbg"
 
-convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
+convert "$tmpbg" -scale 4% -scale 2500% "$tmpbg"
 composite -gravity center "$tmpbg" "$tmpbg"
 
 #enable i3lock with colours & modified image
