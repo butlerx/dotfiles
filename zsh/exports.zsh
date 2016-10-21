@@ -44,4 +44,4 @@ export NODE_PATH=/usr/local/lib/node_modules
 #export GOROOT=/usr/lib/go                           │
 export GOPATH=$HOME/go
 
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+export PATH=$PATH:~/bin:/usr/local/bin:$HOME/.yarn/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/latest/bin

@@ -26,3 +26,6 @@ if [[ -r /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh ]
     source /usr/lib/python3.5/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
 source /usr/share/nvm/init-nvm.sh
+
+# added by travis gem
+[ -f /home/butlerx/.travis/travis.sh ] && source /home/butlerx/.travis/travis.sh

@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 " Bundles
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'jimmyhchan/dustjs.vim'
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
@@ -141,6 +143,8 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_alt_sep = '|'
 
+let g:ycm_server_python_interpreter = '/usr/bin/python'
+
 "Nerdtree
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
@@ -181,8 +185,9 @@ call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " Force syntax for template files
-au BufNewFile,BufRead *.ejs set filetype=javascript
-au BufNewFile,BufRead *.dust set filetype=javascricpt
+au BufRead,BufNewFile *.ejs setfiletype javascript
+au BufRead,BufNewFile *.dust setfiletype dustjs
+
 
 "spell check markdown and limit to 80 charcters
 "au BufRead,BufNewFile *.md setlocal textwidth=80
