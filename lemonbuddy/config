@@ -20,7 +20,7 @@ bottom = false
 dock = false
 
 width = 100%
-height = 40
+height = 35
 
 ;offset_x = 0
 ;offset_y = 0
@@ -29,19 +29,17 @@ background = #00ffffff
 foreground = #fff
 ;linecolor = #ff0000
 
-spacing = 10
+spacing = 2
 lineheight = 5
 
 ;locale = en_US.UTF-8
 
-padding_left = 1
-padding_right = 1
-module_margin_left = 0
-module_margin_right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Droid Sans:size=6;0
-font-1 = FontAwesome:size=8:0
-font-2 = MaterialIcons-Regular:size=8;0
+font-1 = FontAwesome:size=7:0
+font-2 = MaterialIcons-Regular:size=7;0
 
 modules-left = i3
 modules-center = clock
@@ -55,22 +53,19 @@ format-padding = 2
 
 [module/ram]
 type = internal/memory
-label =    %gb_used%
+label =   %gb_used%/%gb_total%
 format-underline = #42c
 format-padding = 2
 
 [module/clock]
 type = internal/date
 date =  %Y-%m-%d  %H:%M
-date_detailed = %%{F#888}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date-alt = %%{F#888}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 format-underline = #493
 format-padding = 2
 
 [module/volume]
 type = internal/volume
-;speaker_mixer = Speaker
-;headphone_mixer = Headphone
-;headphone_control_numid = 9
 format-volume-underline = #933484
 format-volume-padding = 2
 format-muted-underline = #933484
@@ -97,20 +92,17 @@ ramp-volume-2 = 
 
 [module/i3]
 type = internal/i3
-; workspace_icon-[0-9]+ = label;icon
-workspace_icon-0 = 1;
-workspace_icon-1 = 2;
-workspace_icon-2 = 3;
-workspace_icon-3 = 4;
-workspace_icon-4 = 5;
-workspace_icon-5 = 6;
-workspace_icon-6 = 7;
-workspace_icon-7 = 8;
-workspace_icon-default = 
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-default = 
+pin-workspaces = true
+
 label-focused = %index% %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
@@ -198,7 +190,7 @@ format-disconnected = <label-disconnected>
 ; Default:  %ifname% %local_ip%
 label-connected = %essid% %local_ip%
 label-connected-foreground = #eefafafa
-label-disconnected =    not connected
+label-disconnected =  not connected
 label-disconnected-foreground = #66ffffff
 ; Available tokens:
 ;   %ifname%    [wireless+wired]
@@ -210,11 +202,11 @@ label-disconnected-foreground = #66ffffff
 label-packetloss = %linkspeed%
 label-packetloss-foreground = #eefafafa
 
-ramp-signal-0 = 
-ramp-signal-1 = 
+ramp-signal-0 = 
+ramp-signal-1 = 
 ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
 
 [bar/second]
 monitor = DP1
@@ -222,7 +214,7 @@ bottom = false
 dock = false
 
 width = 100%
-height = 40
+height = 35
 
 ;offset_x = 0
 ;offset_y = 0
@@ -231,19 +223,17 @@ background = #00ffffff
 foreground = #fff
 ;linecolor = #ff0000
 
-spacing = 10
+spacing = 2
 lineheight = 5
 
 ;locale = en_US.UTF-8
 
-padding_left = 1
-padding_right = 1
-module_margin_left = 0
-module_margin_right = 0
+module-margin-left = 1
+module-margin-right = 1
 
 font-0 = Droid Sans:size=6;0
-font-1 = FontAwesome:size=8:0
-font-2 = MaterialIcons-Regular:size=8;0
+font-1 = FontAwesome:size=7:0
+font-2 = MaterialIcons-Regular:size=7;0
 
 modules-left = i3
 modules-center = clock

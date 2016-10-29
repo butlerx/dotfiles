@@ -121,7 +121,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always $HOME/.config/lemonbuddy/launch.sh
+exec_always lemonbuddy i3
 
 # Colors
 client.focused #007fbf #007fbf #ffffff
