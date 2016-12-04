@@ -8,11 +8,11 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Bundles
+Plugin 'shime/vim-livedown'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'jimmyhchan/dustjs.vim'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'sickill/vim-monokai'
 Plugin 'trusktr/seti.vim'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -25,9 +25,7 @@ Plugin 'majutsushi/tagbar'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
 Plugin 'moll/vim-node'
-Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
-Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
@@ -74,7 +72,6 @@ set nofen
 set notimeout
 set nottimeout
 set number
-"set relativenumber
 set ruler
 set scrolloff=1
 set shiftwidth=2
@@ -115,13 +112,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:UltiSnipsExpandTrigger="<c-j>"
 let g:vim_json_syntax_conceal = 0
 
 "custom commands
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-:nnoremap <Leader>r :VroomRunTestFile<CR>
-:nnoremap <F5> :GundoToggle<CR>
 
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
@@ -190,9 +184,10 @@ au BufRead,BufNewFile *.dust setfiletype dustjs
 
 
 "spell check markdown and limit to 80 charcters
-"au BufRead,BufNewFile *.md setlocal textwidth=80
-"autocmd BufRead,BufNewFile *.md setlocal spell
-"set complete+=kspell
+au BufRead,BufNewFile *.txt setlocal textwidth=80
+autocmd BufRead,BufNewFile *.md setlocal spell
+autocmd BufRead,BufNewFile *.txt setlocal spell
+set complete+=kspell
 
 " Vim
 let g:indentLine_color_term = 239

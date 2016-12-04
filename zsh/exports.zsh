@@ -1,8 +1,7 @@
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
 
-# Set default console Java to 1.6
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 
 # Setup terminal, and turn on colors
 export TERM=screen-256color
@@ -44,4 +43,7 @@ export NODE_PATH=/usr/local/lib/node_modules
 #export GOROOT=/usr/lib/go                           │
 export GOPATH=$HOME/go
 
-export PATH=$PATH:~/bin:/usr/local/bin:$HOME/.yarn/bin:/usr/local/sbin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+export GEM_HOME=$HOME/.gem
+export GEM_PATH=$(ruby -e 'print Gem.user_dir')
+
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin::/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin::$GEM_PATH/bin

@@ -121,7 +121,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always lemonbuddy i3
+exec_always ~/bin/startbar
 
 # Colors
 client.focused #007fbf #007fbf #ffffff

@@ -182,3 +182,7 @@ send() {
   rm -f $tmpfile
   return 0
 }
+
+docker-ip() {
+  docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "$@"
+}
