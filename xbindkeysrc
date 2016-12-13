@@ -1,51 +1,57 @@
+# thumb button => play/pause music
+# Credit to gregmuellegger https://bbs.archlinux.org/viewtopic.php?pid=1551271#p1551271
+"sleep 0.1 && xte 'key XF86AudioPlay'"
+   m:0xc + c:23
+
+# These Are for a chromebook c720 and stupid anywhere else
 # added Home, End, Pg Up, Pg Down, and Del keys using the Alt+arrow key combos
 #Delete
-"xvkbd -xsendevent -text '\[Delete]'"
-    m:0x8 + c:22
-    Alt + BackSpace
+#"xvkbd -xsendevent -text '\[Delete]'"
+#    m:0x8 + c:22
+#    Alt + BackSpace
 
 #End
-"xvkbd -xsendevent -text '\[End]'"
-    m:0x4 + m:0x8 + c:114
-    Ctrl + Alt + Right
+#"xvkbd -xsendevent -text '\[End]'"
+#    m:0x4 + m:0x8 + c:114
+#    Ctrl + Alt + Right
 
 #Home
-"xvkbd -xsendevent -text '\[Home]'"
-    m:0x4 + m:0x8 + c:113
-    Ctrl + Alt + Left
+#"xvkbd -xsendevent -text '\[Home]'"
+#    m:0x4 + m:0x8 + c:113
+#    Ctrl + Alt + Left
 
 #Page Down
-"xvkbd -xsendevent -text '\[Page_Down]'"
-    m:0x4 + m:0x8 + c:116
-    Ctrl + Alt + Down
+#"xvkbd -xsendevent -text '\[Page_Down]'"
+#    m:0x4 + m:0x8 + c:116
+#    Ctrl + Alt + Down
 
 #Page Up
-"xvkbd -xsendevent -text '\[Page_Up]'"
-    m:0x4 + m:0x8 + c:111
-    Ctrl + Alt + Up
+#"xvkbd -xsendevent -text '\[Page_Up]'"
+#    m:0x4 + m:0x8 + c:111
+#    Ctrl + Alt + Up
 
 #Backlight Down
-"xbacklight -dec 5"
-    m:0x8 + c:72
-    Alt + F6
+#"xbacklight -dec 5"
+#   m:0x8 + c:72
+#    Alt + F6
 
 #Backlight Up
-"xbacklight -inc 5"
-  m:0x8 + c:73
-  Alt + F7
+#"xbacklight -inc 5"
+#  m:0x8 + c:73
+#  Alt + F7
 
 #Mute
-"pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle"
-  m:0x8 + c:74
-  Alt + F8
+#"amixer set Master toggle"
+#  m:0x8 + c:74
+#  Alt + F8
 
 #Decrease Volume
-"pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -10%"
-  m:0x8 + c:75
-  Atl + F9
+#"amixer set Master 10%-"
+#  m:0x8 + c:75
+#  Atl + F9
 
 #Increase Volume
-"pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +10%"
-  m:0x8 + c:76
-  Alt + F10
+#"amixer set Master 5%+ unmute"
+#  m:0x8 + c:76
+#  Alt + F10
 
