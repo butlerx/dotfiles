@@ -28,10 +28,10 @@ alias bk='cd $OLDPWD'
 # directory information
 # -------------------------------------------------------------------
 alias lh='ls -d .*' # show hidden files/directories only
-alias lsd='ls -aFhlG'
+alias lsd='ls -aFhl'
 alias l='ls -al'
-alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
-alias ll='ls -GFhl' # Same as above, but in long listing format
+alias ls='ls -Fh --color' # Colorize output, add file type indicator, and put sizes in human readable format
+alias ll='ls -Fhl --color' # Same as above, but in long listing format
 alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
 
@@ -42,6 +42,9 @@ alias filecount='find . -type f | wc -l' # number of files (not directories)
 # Mac only
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
+    alias lsd='ls -aFhlG'
+    alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
+    alias ll='ls -GFhl' # Same as above, but in long listing format
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
     alias oo='open .' # open current directory in OS X Finder
     alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
@@ -65,7 +68,8 @@ fi
 # -------------------------------------------------------------------
 # remote machines
 # -------------------------------------------------------------------
-alias rb='ssh -N -f -L 6667:irc.redbrick.dcu.ie:6667 pygmalion.redbrick.dcu.ie'
+alias rb='ssh -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
+alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
 #alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
 
 # -------------------------------------------------------------------
