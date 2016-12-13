@@ -42,6 +42,9 @@ alias filecount='find . -type f | wc -l' # number of files (not directories)
 # Mac only
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
+    alias lsd='ls -aFhlG'
+    alias ls='ls -GFh' # Colorize output, add file type indicator, and put sizes in human readable format
+    alias ll='ls -GFhl' # Same as above, but in long listing format
     alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
     alias oo='open .' # open current directory in OS X Finder
     alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
