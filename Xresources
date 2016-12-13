@@ -113,7 +113,7 @@ URxvt*transparent                 : true
 URxvt*urgentOnBell                : true
 URxvt*visualBell                  : false
 URxvt.keysym.M-Escape             : perl:keyboard-select:active
-URxvt.keysym.M-u                  : perl:url-select: select_next
+URxvt.keysym.M-u                  : perl:url-select:select_next
 URxvt.keysym.Shift-Control-C      : perl:clipboard:copy
 URxvt.keysym.Shift-Control-V      : perl:clipboard:paste
 URxvt.letterSpace                 : -0.5
