@@ -4,7 +4,7 @@ filetype off
 " Vundle initialization
 set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 
 " Bundles
 Plugin 'Valloric/YouCompleteMe'
@@ -82,11 +82,11 @@ set timeoutlen=10000
 set ttimeoutlen=10000
 set virtualedit=block
 set wildmenu
-
+" Stop C-r from being seen ad backspace
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 "Set leader to space
 let mapleader = "\<Space>"
-
-"Plugin settings
+" Symtastic settings
 let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_mode_map = { 'mode': 'active',
@@ -95,32 +95,28 @@ let g:syntastic_mode_map = { 'mode': 'active',
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
+" vim-json
 let g:vim_json_syntax_conceal = 0
-
-"custom commands
+" Delete Selected word from whole file
 :nnoremap <Leader>s :%s/\<<C-r><C-w>\>//g<Left><Left>
-
+" Highlight white space at the end of a line
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
-
-let g:Powerline_symbols = 'fancy'
+" vim airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#right_alt_sep = '|'
-
+" YouCompleteMe
 let g:ycm_server_python_interpreter = '/usr/bin/python'
-
 "Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
@@ -129,6 +125,7 @@ autocmd VimEnter *
   \ |   NERDTree
   \ |   wincmd w
   \ | endif
+autocmd VimEnter * NERDTree | wincmd w
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -149,7 +146,6 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
  exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
-
 call NERDTreeHighlightFile('jade'   , 'green'   , 'none' , 'green'   , '#151515')
 call NERDTreeHighlightFile('ini'    , 'yellow'  , 'none' , 'yellow'  , '#151515')
 call NERDTreeHighlightFile('md'     , 'blue'    , 'none' , '#3366FF' , '#151515')
@@ -163,28 +159,20 @@ call NERDTreeHighlightFile('css'    , 'cyan'    , 'none' , 'cyan'    , '#151515'
 call NERDTreeHighlightFile('coffee' , 'Red'     , 'none' , 'red'     , '#151515')
 call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515')
 call NERDTreeHighlightFile('php'    , 'Magenta' , 'none' , '#ff00ff' , '#151515')
-
 " Force syntax for template files
 au BufRead,BufNewFile *.ejs setfiletype javascript
 au BufRead,BufNewFile *.dust setfiletype dustjs
-
-"spell check markdown and limit to 80 charcters
+" Spell check markdown and limit to 80 charcters
 au BufRead,BufNewFile *.txt setlocal textwidth=80
 autocmd BufRead,BufNewFile *.md setlocal spell
 autocmd BufRead,BufNewFile *.txt setlocal spell
 set complete+=kspell
-
-nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-
-" Vim
+" See line indentation
 let g:indentLine_color_term = 239
-"GVim
 let g:indentLine_color_gui = '#A4E57E'
-" none X terminal
 let g:indentLine_color_tty_light = 7 " (default: 4)
 let g:indentLine_color_dark = 1 " (default: 2)
-
-"define :Hipster command to dump in a paragraph of Hipster ipsum
+" Define :Hipster command to dump in a paragraph of Hipster ipsum
 command! -nargs=0 Hipster :normal iTrust fund fashion axe bitters art party
   \ raw denim. XOXO distillery tofu, letterpress cred literally gluten-free
   \ flexitarian fap. VHS fashion axe gluten-free 90's church-key, kogi

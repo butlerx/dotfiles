@@ -3,7 +3,7 @@ mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s $HOME/.dotfiles/vimrc $XDG_CONFIG_HOME/nvim/init.vim
 git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
-vim +PluginInstall +qall
+nvim +PluginInstall +qall
 ~/.vim/bundle/YouCompleteMe/install.py --clang-completer --omnisharp-completer --gocode-completer --tern-completer --racer-completer
 #zsh
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
