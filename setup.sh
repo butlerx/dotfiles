@@ -2,7 +2,7 @@
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s $HOME/.dotfiles/vimrc $XDG_CONFIG_HOME/nvim/init.vim
-nvim +PluginInstall +qall
+nvim +qall
 #zsh
 ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 #tmux
