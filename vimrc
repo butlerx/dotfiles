@@ -1,47 +1,43 @@
-set nocompatible
-filetype off
-
-" Vundle initialization
-set rtp+=~/.vim/bundle/Vundle.vim/
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" Bundles
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'Yggdroot/indentLine'
-Plugin 'chrisbra/csv.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'elzr/vim-json'
-Plugin 'godlygeek/tabular'
-Plugin 'gregsexton/gitv'
-Plugin 'honza/vim-snippets'
-Plugin 'jimmyhchan/dustjs.vim'
-Plugin 'mattn/gist-vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'mhinz/vim-signify'
-Plugin 'mhinz/vim-startify'
-Plugin 'moll/vim-node'
-Plugin 'ryanoasis/vim-devicons'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'shime/vim-livedown'
-Plugin 'sickill/vim-monokai'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-surround'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'vimwiki/vimwiki'
-call vundle#end()
+" Plug initialization
+if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+  silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
+call plug#begin()
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Yggdroot/indentLine'
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'ekalinin/Dockerfile.vim', { 'for': 'Dockerfile' }
+Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'godlygeek/tabular'
+Plug 'gregsexton/gitv'
+Plug 'honza/vim-snippets'
+Plug 'jimmyhchan/dustjs.vim', { 'for': 'dustjs' }
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
+Plug 'moll/vim-node'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/syntastic'
+Plug 'shime/vim-livedown', { 'for': 'markdown' }
+Plug 'sickill/vim-monokai'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
+call plug#end()
 
 syntax enable
 filetype plugin on
-set omnifunc=syntaxcomplete#Complete
 colorscheme monokai
-set background=dark
-
 set autoindent
+set background=dark
 set backspace=2
 set cindent shiftwidth=2
 set diffopt=filler,iwhite
@@ -63,11 +59,13 @@ set incsearch
 set laststatus=2
 set linebreak
 set mouse=""
+set nocompatible
 set noeb vb t_vb=
 set nofen
 set notimeout
 set nottimeout
 set number
+set omnifunc=syntaxcomplete#Complete
 set ruler
 set scrolloff=1
 set shiftwidth=2
@@ -124,8 +122,10 @@ autocmd VimEnter *
   \ |   Startify
   \ |   NERDTree
   \ |   wincmd w
+  \ | else
+  \ |   NERDTree
+  \ |   wincmd w
   \ | endif
-autocmd VimEnter * NERDTree | wincmd w
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -161,7 +161,6 @@ call NERDTreeHighlightFile('js'     , 'Red'     , 'none' , '#ffa500' , '#151515'
 call NERDTreeHighlightFile('php'    , 'Magenta' , 'none' , '#ff00ff' , '#151515')
 " Force syntax for template files
 au BufRead,BufNewFile *.ejs setfiletype javascript
-au BufRead,BufNewFile *.dust setfiletype dustjs
 " Spell check markdown and limit to 80 charcters
 au BufRead,BufNewFile *.txt setlocal textwidth=80
 autocmd BufRead,BufNewFile *.md setlocal spell
