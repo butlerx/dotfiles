@@ -1,7 +1,7 @@
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
-
+set $alt Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 font pango:DejaVu Sans Mono 18
 
@@ -129,12 +129,12 @@ client.urgent #aa0000 #990000 #ffffff
 
 # Set background
 exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
-# Start Audio
-#exec --no-startup-id pulseaudio --start
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
 # set dpi
 exec xrdb ~/.Xresources
+# Use Gestures
+exec --no-startup-id libinput-gestures-setup start
 
 # Custom KeyBinds
 bindsym Control+mod4+l exec sh ~/.i3/i3lock.sh
@@ -150,18 +150,19 @@ smart_gaps on
 bindsym $mod+Shift+U exec nautilus --no-desktop --browser
 
 # rofi
-bindsym $mod+o exec rofi -show window
-bindsym $mod+i exec rofi -show ssh
+bindsym $alt+Tab exec rofi -show window
+bindsym $mod+o exec rofi -show ssh
+bindsym $mod+i exec rofi -show ssh -ssh-client mosh
 bindsym $mod+d exec rofi -show run
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute#increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 10%- #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
