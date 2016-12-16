@@ -37,7 +37,6 @@ export HOMEBREW_GITHUB_API_TOKEN=
 #nvm
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-export NODE_PATH=/usr/local/lib/node_modules
 
 #Go
 #export GOROOT=/usr/lib/go                           │
@@ -45,5 +44,6 @@ export GOPATH=$HOME/go
 
 export GEM_HOME=$HOME/.gem
 export GEM_PATH=$(ruby -e 'print Gem.user_dir')
+export YARN_PATH=$(yarn global bin)
 
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin::/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$GOPATH/bin::$GEM_PATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin::/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$YARN_PATH:$GOPATH/bin::$GEM_PATH/bin
