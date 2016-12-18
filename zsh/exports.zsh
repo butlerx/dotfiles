@@ -43,6 +43,7 @@ export GOPATH=$HOME/go
 
 export GEM_HOME=$HOME/.gem
 export GEM_PATH=$(ruby -e 'print Gem.user_dir')
-export YARN_PATH=$(yarn global bin)
+export YARN_BIN=$(yarn global bin)
+export RBENV_PATH=$HOME/.rbenv
 
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin::/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$YARN_PATH:$GOPATH/bin::$GEM_PATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$YARN_BIN:$GOPATH/bin:$RBENV_PATH/bin:$GEM_PATH/bin
