@@ -19,31 +19,23 @@ export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
 export EDITOR='nvim'
 
-#export NODE_PATH=/opt/github/homebrew/lib/node_modules
-#export PYTHONPATH=/usr/local/lib/python2.6/site-packages
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
-
-#export GH_ISSUE_CREATE_TOKEN=083f60c674d8eb41f98258df9fc8d94cb733218a
 
 # Virtual Environment Stuff
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
-export HOMEBREW_GITHUB_API_TOKEN=
+#export GH_ISSUE_CREATE_TOKEN=
+#export HOMEBREW_GITHUB_API_TOKEN=
 
-#nvm
+#node
 export NVM_DIR=$HOME/.nvm
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+export YARN_BIN=$(yarn global bin)
 
 #Go
-#export GOROOT=/usr/lib/go                           │
 export GOPATH=$HOME/go
 
-export GEM_HOME=$HOME/.gem
-export GEM_PATH=$(ruby -e 'print Gem.user_dir')
-export YARN_BIN=$(yarn global bin)
-export RBENV_PATH=$HOME/.rbenv
-
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:/usr/local/opt/go/libexec/bin:/opt/pkg/sbin:/opt/pkg/bin:$YARN_BIN:$GOPATH/bin:$RBENV_PATH/bin:$GEM_PATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin
