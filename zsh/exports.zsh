@@ -2,7 +2,6 @@
 # zshenv has already started PATH with rbenv so append only here
 
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 
 # Setup terminal, and turn on colors
 export TERM=screen-256color
