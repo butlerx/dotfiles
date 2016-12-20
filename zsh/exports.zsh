@@ -1,7 +1,8 @@
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
 
-export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
+#export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 
 # Setup terminal, and turn on colors
 export TERM=screen-256color
@@ -30,9 +31,6 @@ export PROJECT_HOME=$HOME/Projects/django
 #export GH_ISSUE_CREATE_TOKEN=
 #export HOMEBREW_GITHUB_API_TOKEN=
 
-#node
-export NVM_DIR=$HOME/.nvm
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 export YARN_BIN=$(yarn global bin)
 
 #Go

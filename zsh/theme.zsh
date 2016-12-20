@@ -1,11 +1,8 @@
-source ~/powerlevel9k/powerlevel9k.zsh-theme
-
-#POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm)
 POWERLEVEL9K_STATUS_VERBOSE=false
 export DEFAULT_USER=$USER
-export export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
+export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 #nvm
@@ -29,6 +26,7 @@ POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\u25CF'
 POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u00b1'
 POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\u2193'
 POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\u2191'
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
 POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
 POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
@@ -49,7 +47,6 @@ function zle-line-init {
   zle reset-prompt
   zle -R
 }
-
 function zle-line-finish {
   powerlevel9k_prepare_prompts
   if (( ${+terminfo[rmkx]} )); then
@@ -58,13 +55,11 @@ function zle-line-finish {
   zle reset-prompt
   zle -R
 }
-
 function zle-keymap-select {
   powerlevel9k_prepare_prompts
   zle reset-prompt
   zle -R
 }
-
 zle -N zle-line-init
 zle -N ale-line-finish
 zle -N zle-keymap-select
