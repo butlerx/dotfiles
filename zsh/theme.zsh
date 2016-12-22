@@ -1,5 +1,5 @@
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm custom_playerctl)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm)
 POWERLEVEL9K_STATUS_VERBOSE=false
 export DEFAULT_USER=$USER
 export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
