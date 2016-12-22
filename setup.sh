@@ -8,6 +8,5 @@ ln -s $HOME/.dotfiles/zshrc $HOME/.zshrc
 #tmux
 ln -s $HOME/.dotfiles/tmux/tmux.conf $HOME/.tmux.conf
 sudo pip install psutil
-sudo cp ~/.dotfiles/tmux/vendor/basic-cpu-and-memory.tmux /usr/local/bin/tmux-mem-cpu-load
-sudo chmod +x /usr/local/bin/tmux-mem-cpu-load
+sudo cp ~/.dotfiles/tmux/basic-cpu-and-memory.tmux /usr/local/bin/tmux-mem-cpu-load
 tmux source-file $HOME/.tmux.conf
