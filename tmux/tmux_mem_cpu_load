@@ -5,31 +5,40 @@ and code from psutil top.py.
 """
 import os
 import sys
-if os.name != 'posix':
-        sys.exit('platform not supported')
 import psutil
+if os.name != 'posix':
+    sys.exit('platform not supported')
+
 
 def get_dashes(perc):
+    """ Generate dashes """
     dashes = "|" * int((float(perc) / 10))
     empty_dashes = " " * (10 - len(dashes))
+
     return dashes, empty_dashes
 
+
 def info():
+    """ Get Free Memory and cpu """
     mem = psutil.virtual_memory()
-    cpu_dashes, cpu_empty_dashes = get_dashes(psutil.cpu_percent(interval=0.1))
+    cpu = psutil.cpu_percent(interval=0.1)
+    cpu_dashes, cpu_empty_dashes = get_dashes(cpu)
     line = "%s/%s MB [%s%s]%5s%%" % (
         str(int(mem.used / 1024 / 1024)),
         str(int(mem.total / 1024 / 1024)),
-        cpu_dashes, cpu_empty_dashes,
-        psutil.cpu_percent(interval=0.1),
+        cpu_dashes, cpu_empty_dashes, cpu,
     )
+
     return line
 
+
 def main():
+    """main"""
     try:
         print(info())
     except (KeyboardInterrupt, SystemExit):
         pass
+
 
 if __name__ == '__main__':
     main()
