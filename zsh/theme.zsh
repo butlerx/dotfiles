@@ -1,14 +1,13 @@
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm custom_playerctl)
 POWERLEVEL9K_STATUS_VERBOSE=false
 export DEFAULT_USER=$USER
 export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 #nvm
-POWERLEVEL9K_NVM_BACKGROUND="black"
-POWERLEVEL9K_NVM_FOREGROUND="249"
-POWERLEVEL9K_NVM_VISUAL_IDENTIFIER_COLOR="green"
+POWERLEVEL9K_NVM_BACKGROUND='28'
+POWERLEVEL9K_NVM_FOREGROUND='15'
 
 # Directory
 POWERLEVEL9K_DIR_PATH_SEPARATOR=$' \uE0B1 '
@@ -63,3 +62,18 @@ function zle-keymap-select {
 zle -N zle-line-init
 zle -N ale-line-finish
 zle -N zle-keymap-select
+
+# Playerctl
+POWERLEVEL9K_CUSTOM_PLAYERCTL='playerctl_status'
+POWERLEVEL9K_CUSTOM_PLAYERCTL_FOREGROUND='white'
+POWERLEVEL9K_CUSTOM_PLAYERCTL_BACKGROUND='black'
+playerctl_status () {
+  state=$(playerctl status);
+  if [ $state != "Playing" ]; then
+  else
+    artist=$(playerctl metadata artist)
+    track=$(playerctl metadata title)
+
+    echo -n "$artist - $track";
+  fi
+}
