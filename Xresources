@@ -2,8 +2,6 @@ xterm*termName                    : xterm-256color
 XTerm*locale                      : true
 xterm*saveLines                   : 4096
 xterm*reverseVideo                : on
-
-<<<<<<< HEAD
 ! URxvt*answerbackString          : string
 ! URxvt*background.border         : boolean
 ! URxvt*background.expr           : string
@@ -108,7 +106,7 @@ URxvt*iso14755_52                 : false
 URxvt*italicFont:                 xft:Terminus:italic:size=6:antialias=true,xft:Terminess\ Powerline:pixelsize=8:antialias=true:hinting=true
 URxvt*matcher.button              : 1
 URxvt*perl-lib                    : /usr/lib/urxvt/perl
-URxvt*scrollBar                   : tree
+URxvt*scrollBar                   : true
 URxvt*shading                     : 30
 URxvt*transparent                 : true
 URxvt*urgentOnBell                : true
@@ -161,7 +159,6 @@ URxvt*color7                      : #D3D7CF
 URxvt*color15                     : #EEEEEC
 
 ! Xft settings
-Xft.dpi                           : 180
 Xft.antialias                     : True
 Xft.hinting                       : Full
 Xft.autohint                      : 0

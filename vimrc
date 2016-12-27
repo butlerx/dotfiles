@@ -5,7 +5,7 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall | source $MYVIMRC
 endif
 call plug#begin('~/.local/share/nvim')
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+"Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Yggdroot/indentLine'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
@@ -120,10 +120,8 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter *
   \   if !argc() && !exists("s:std_in")
   \ |   Startify
-  \ |   NERDTree
   \ |   wincmd w
   \ | else
-  \ |   NERDTree
   \ |   wincmd w
   \ | endif
 map <C-n> :NERDTreeToggle<CR>

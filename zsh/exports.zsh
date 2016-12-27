@@ -31,9 +31,9 @@ export PROJECT_HOME=$HOME/Projects/django
 #export GH_ISSUE_CREATE_TOKEN=
 #export HOMEBREW_GITHUB_API_TOKEN=
 
-export YARN_BIN=$(yarn global bin)
+#export YARN_BIN=$(yarn global bin)
 
 #Go
 export GOPATH=$HOME/go
 
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$GOPATH/bin

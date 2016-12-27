@@ -1,4 +1,5 @@
 source ${HOME}/.dotfiles/zsh/checks.zsh
+source ${HOME}/.dotfiles/zsh/chip.zsh
 source ${HOME}/.dotfiles/zsh/colors.zsh
 source ${HOME}/.dotfiles/zsh/setopt.zsh
 source ${HOME}/.dotfiles/zsh/exports.zsh
