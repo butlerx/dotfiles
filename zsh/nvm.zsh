@@ -14,14 +14,15 @@ load-nvmrc() {
     nvm use default
   fi
 }
-export NVM_DIR=$HOME/.nvm
+export NVM_DIR=$HOME/.dotfiles/nvm
 if [[ -r /usr/share/nvm/init-nvm.sh ]]; then
   source /usr/share/nvm/init-nvm.sh --no-use
+  source /usr/share/nvm/bash_completion
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
 elif [[ -r $NVM_DIR/nvm.sh ]]; then
   source $NVM_DIR/nvm.sh --no-use
-  source /usr/share/nvm/bash_completion
+  source $NVM_DIR/bash_completion
   [ -e "$NVM_DIR/nvm-exec" ] || (mkdir -p "$NVM_DIR" && (echo '/usr/share/nvm/nvm-exec "$@"' > "$NVM_DIR/nvm-exec") && chmod +x "$NVM_DIR/nvm-exec")
   add-zsh-hook chpwd load-nvmrc
   load-nvmrc
