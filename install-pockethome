@@ -1,0 +1,15 @@
+#!/bin/bash
+
+echo 'Downloading new package link'
+wget -O /tmp/package.txt 'https://drive.google.com/uc?export=download&id=0B1jRc4IqT9kiSVVIOE8wd2w4Zkk'
+echo 'Checking if new version is available'
+cat /tmp/package.txt | head -1 > /tmp/version
+cat /tmp/package.txt | tail -1 > /tmp/link
+(diff /tmp/version ~/.pocket-home/.version && echo 'Already up-to-date.') || \
+    (echo 'Updating...' && \
+    mkdir -p ~/.pocket-home/ && \
+    cp /tmp/version ~/.pocket-home/.version &&\
+    rm -f /tmp/package.deb && \
+    wget -O /tmp/package.deb -i /tmp/link && \
+    sudo dpkg -i /tmp/package.deb && \
+    echo 'Installation finished.')

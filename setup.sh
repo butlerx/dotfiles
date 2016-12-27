@@ -1,4 +1,6 @@
 #!/bin/bash
+
+sudo apt install mednafen zsh ssh vim nvim weechat vlc rxvt-unicode-256color tmux dwb htop git chromium-browser feh -y
 #vim
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
