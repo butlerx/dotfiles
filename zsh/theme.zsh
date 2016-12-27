@@ -1,6 +1,7 @@
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm)
 POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_MODE='flat'
 export DEFAULT_USER=$USER
 export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "

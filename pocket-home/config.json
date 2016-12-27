@@ -1,0 +1,107 @@
+{
+  "defaultPage": "Apps",
+  "pages": [
+    {
+      "name": "Apps",
+      "items": [
+        {
+          "name": "Terminal",
+          "icon": "appIcons/terminal.png",
+          "shell": "urxvt"
+        },
+        {
+          "name": "PICO-8",
+          "icon": "appIcons/pico8.png",
+          "shell": "pico8"
+        },
+        {
+          "name": "mednafen",
+          "icon": "appIcons/mednafen2.png",
+          "shell": "~/medGui.sh"
+        },
+        {
+          "name": "Write",
+          "icon": "appIcons/texteditor.png",
+          "shell": "leafpad"
+        },
+        {
+          "name": "Firefox",
+          "icon": "appIcons/weasel.png",
+          "shell": "iceweasel"
+        },
+        {
+          "name": "IRC",
+          "icon": "appIcons/hexchat4.png",
+          "shell": "weechat"
+        },
+        {
+          "name": "Browse Files",
+          "icon": "appIcons/filebrowser.png",
+          "shell": "pcmanfm"
+        },
+        {
+          "name": "Doom",
+          "icon": "appIcons/Doom.png",
+          "shell": "prboom"
+        },
+        {
+          "name": "Sunvox",
+          "icon": "appIcons/musicsequencer.png",
+          "shell": "sunvox"
+        },
+        {
+          "name": "Browser",
+          "icon": "appIcons/webbrowser.png",
+          "shell": "dwb"
+        },
+        {
+          "name": "Surf",
+          "icon": "appIcons/surf.png",
+          "shell": "surf google.com"
+        },
+        {
+          "name": "VLC",
+          "icon": "/home/chip/appIcons/vlc.png",
+          "shell": "vlc"
+        }
+      ],
+      "cornerButtons": [
+        {
+          "location": "TopLeft",
+          "name": "Battery",
+          "icon": "battery_0.png"
+        },
+        {
+          "location": "TopRight",
+          "name": "WiFi",
+          "icon": "wifiOff.png"
+        },
+        {
+          "location": "BottomLeft",
+          "name": "Power",
+          "icon": "powerIcon.png"
+        },
+        {
+          "location": "BottomRight",
+          "name": "Settings",
+          "icon": "settingsIcon.png"
+        }
+      ]
+    },
+    {
+      "name": "Settings"
+    },
+    {
+      "name": "Power"
+    },
+    {
+      "name": "WiFi"
+    },
+    {
+      "name": "Battery"
+    }
+  ],
+  "background": "4D4D4D",
+  "timeformat": "24h",
+  "cursor": "notvisible"
+}
