@@ -7,6 +7,7 @@ endif
 call plug#begin('~/.local/share/nvim')
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Yggdroot/indentLine'
+Plug 'bogado/file-line'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
@@ -16,6 +17,7 @@ Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
 Plug 'honza/vim-snippets'
 Plug 'jimmyhchan/dustjs.vim', { 'for': 'dustjs' }
+Plug 'junegunn/goyo.vim'
 Plug 'mattn/gist-vim'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'

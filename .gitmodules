@@ -1,3 +1,6 @@
 [submodule "powerlevel9k"]
 	path = powerlevel9k
 	url = git://github.com/bhilburn/powerlevel9k.git
+[submodule "nvm"]
+	path = nvm
+	url = https://github.com/creationix/nvm.git
