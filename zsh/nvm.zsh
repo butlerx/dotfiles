@@ -4,7 +4,7 @@ load-nvmrc() {
   local nvmrc_path="$(nvm_find_nvmrc)"
   if [ -n "$nvmrc_path" ]; then
     local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-    if [ "$nvmrc_node_version" = "N/A" ] && [ "$nvmrc_node_version" != "$node_version" ]; then
+    if [ "$nvmrc_node_version" = "N/A" ]; then
       nvm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
       nvm use
@@ -15,6 +15,7 @@ load-nvmrc() {
   fi
 }
 export NVM_DIR=$HOME/.dotfiles/nvm
+export NVM_LAZY_LOAD=true
 if [[ -r /usr/share/nvm/init-nvm.sh ]]; then
   source /usr/share/nvm/init-nvm.sh --no-use
   source /usr/share/nvm/bash_completion
