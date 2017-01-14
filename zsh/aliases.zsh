@@ -73,7 +73,7 @@ alias grep='grep --color=auto'
 # remote machines
 # -------------------------------------------------------------------
 alias rb='ssh -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
-alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
+alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 136.206.15.24'
 #alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
 
 # -------------------------------------------------------------------
