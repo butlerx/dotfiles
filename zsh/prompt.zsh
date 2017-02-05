@@ -89,9 +89,9 @@ else
   }
 
   function prompt_char {
-      git branch >/dev/null 2>/dev/null && echo '>' && return
-      hg root >/dev/null 2>/dev/null && echo '~>'&& return
-      echo '>'
+      git branch >/dev/null 2>/dev/null && echo '> ' && return
+      hg root >/dev/null 2>/dev/null && echo '~> '&& return
+      echo '> '
   }
 
   function box_name {
@@ -153,11 +153,10 @@ else
 
   }
 
-
   # If inside a Git repository, print its branch and state
   function git_prompt_string() {
     local git_where="$(parse_git_branch)"
-    [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
+    [ -n "$git_where" ] && echo "$(parse_git_state) %{$fg[blue]%}[${git_where#(refs/heads/|tags/)}]"
   }
 
   # determine Ruby version whether using RVM or rbenv
@@ -177,6 +176,6 @@ else
   function current_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
   }
-  PROMPT='${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)$(prompt_char)'
-  RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
+  PROMPT='${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}:%{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(prompt_char)'
+  RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%} $(git_prompt_string)%{$reset_color%}'
 fi
