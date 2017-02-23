@@ -11,7 +11,7 @@ Plug 'bogado/file-line'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
-Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'elzr/vim-json',
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
@@ -88,7 +88,7 @@ nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 let mapleader = "\<Space>"
 " Symtastic settings
 let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html'] }
