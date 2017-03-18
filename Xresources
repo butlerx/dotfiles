@@ -100,11 +100,11 @@ xterm*reverseVideo                : on
 ! URxvt*visual                    : number
 ! URxvt*xrm                       : string
 *.URxvt*urgentOnBell              : true
-URxvt*boldFont                    : xft:Terminess\ powerline:bold:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:bold:pixelsize=20:antialias=true:hinting=true
-URxvt*font                        : xft:Terminess\ powerline:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:pixelsize=20:antialias=true:hinting=true
+URxvt*boldFont                    : xft:TerminessTTF Nerd Font:bold:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:bold:pixelsize=18:antialias=true:hinting=true
+URxvt*font                        : xft:TerminessTTF Nerd Font:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:pixelsize=18:antialias=true:hinting=true
 URxvt*iso14755                    : false
 URxvt*iso14755_52                 : false
-URxvt*italicFont                  : xft:Terminess\ powerline:italic:pixelsize=26:antialias=true:hinting=true,xft:Knack Nerd Font:italic:pixelsize=20:antialias=true:hinting=true
+URxvt*italicFont                  : xft:TerminessTTF Nerd Font:italic:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:italic:pixelsize=18:antialias=true:hinting=true
 URxvt*matcher.button              : 1
 URxvt*perl-lib                    : /usr/lib/urxvt/perl
 URxvt*scrollBar                   : false
