@@ -40,8 +40,9 @@ read answer
 if echo "$answer" | grep -iq "^y" ; then
   ln -s $HOME/.dotfiles/xinitrc $HOME/.xinitrc
   ln -s $HOME/.dotfiles/i3 $HOME/.i3
+  ln -s $HOME/.dotfiles/polybar $HOME/.config/polybar/config
   git clone https://github.com/butlerx/bash-bin.git $HOME/bin
-  echo "This setup uses rofi, nautalis and feh which youll need to setup with your package manager"
+  echo "This setup uses rofi, polybar, nautalis and feh which youll need to setup with your package manager"
 else
   echo "To each there own"
 fi
