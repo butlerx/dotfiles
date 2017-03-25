@@ -154,6 +154,7 @@ bindsym $alt+Tab exec rofi -show window
 bindsym $mod+o exec rofi -show ssh
 bindsym $mod+i exec rofi -show ssh -ssh-client mosh
 bindsym $mod+d exec rofi -show run
+bindsym $mod+p exec rofi-pass
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume

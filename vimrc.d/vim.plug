@@ -1,0 +1,29 @@
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
+Plug 'Yggdroot/indentLine'
+Plug 'bogado/file-line'
+Plug 'chrisbra/csv.vim', { 'for': 'csv' }
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
+Plug 'elzr/vim-json',
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'godlygeek/tabular'
+Plug 'gregsexton/gitv'
+Plug 'honza/vim-snippets'
+Plug 'jimmyhchan/dustjs.vim', { 'for': 'dustjs' }
+Plug 'junegunn/goyo.vim'
+Plug 'mattn/gist-vim'
+Plug 'mattn/webapi-vim'
+Plug 'mhinz/vim-signify'
+Plug 'mhinz/vim-startify'
+Plug 'moll/vim-node'
+Plug 'ryanoasis/vim-devicons'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/syntastic'
+Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
+Plug 'sickill/vim-monokai'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+Plug 'vimwiki/vimwiki'
