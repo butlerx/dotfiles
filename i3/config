@@ -132,7 +132,7 @@ exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
 # set dpi
-exec xrdb ~/.Xresources
+exec xrdb ~/.dotfiles/Xresources
 # Use Gestures
 exec --no-startup-id libinput-gestures-setup start
 

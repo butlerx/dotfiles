@@ -34,3 +34,14 @@ read $GITHUB_EMAIL
 git config --global user.name $GITHUB_USER
 git config --global github.user $GITHUB_USER
 git config --global user.name $GITHUB_EMAIL
+# X11
+echo "Do you use i3? (y/N)"
+read answer
+if echo "$answer" | grep -iq "^y" ; then
+  ln -s $HOME/.dotfiles/xinitrc $HOME/.xinitrc
+  ln -s $HOME/.dotfiles/i3 $HOME/.i3
+  git clone https://github.com/butlerx/bash-bin.git $HOME/bin
+  echo "This setup uses rofi, nautalis and feh which youll need to setup with your package manager"
+else
+  echo "To each there own"
+fi
