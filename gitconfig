@@ -6,8 +6,6 @@
   default = simple
 [github]
   user = butlerx
-[ghi]
-  token = !security find-internet-password -a butlerx -s github.com -l 'ghi token' -w
 [alias]
   yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
   lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
