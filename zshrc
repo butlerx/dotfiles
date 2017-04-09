@@ -1,8 +1,8 @@
 for file in ${HOME}/.dotfiles/zsh/*.zsh; do
   source "$file"
 done
-source $HOME/.cargo/env
+if [[ -r ${HOME}/.cargo/env ]]; then
+  source $HOME/.cargo/env
+fi
 eval "$(thefuck --alias)"
 fpath=(/usr/local/share/zsh-completions $fpath)
-
-export PATH="$HOME/.yarn/bin:$PATH"
