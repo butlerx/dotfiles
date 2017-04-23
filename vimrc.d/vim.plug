@@ -1,4 +1,3 @@
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Yggdroot/indentLine'
 Plug 'bogado/file-line'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }

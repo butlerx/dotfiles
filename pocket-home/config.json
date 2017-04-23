@@ -33,11 +33,6 @@
           "shell": "dwb"
         },
         {
-          "icon": "/home/chip/.dotfiles/appIcons/hexchat4.png",
-          "name": "IRC",
-          "shell": "weechat"
-        },
-        {
           "icon": "appIcons/filebrowser.png",
           "name": "Browse Files",
           "shell": "pcmanfm"
