@@ -132,7 +132,7 @@ exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
 # set dpi
-exec xrdb ~/.Xresources
+exec xrdb ~/.dotfiles/Xresources
 # Use Gestures
 exec --no-startup-id libinput-gestures-setup start
 
@@ -154,6 +154,7 @@ bindsym $alt+Tab exec rofi -show window
 bindsym $mod+o exec rofi -show ssh
 bindsym $mod+i exec rofi -show ssh -ssh-client mosh
 bindsym $mod+d exec rofi -show run
+bindsym $mod+p exec rofi-pass
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume

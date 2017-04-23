@@ -187,6 +187,12 @@ docker-ip () {
   docker inspect --format '{{range .NetworkSettings.Networks}}{{.IPAddress}}, {{end}}' "$@"
 }
 
+docker-clean () {
+  docker rm -v $(docker ps -a -q -f status=exited)
+  docker rmi $(docker images -f "dangling=true" -q)
+  docker volume rm $(docker volume ls -qf dangling=true)
+}
+
 up () {
   LEVEL=$1
   for ((i = 1; i <= LEVEL; i++))

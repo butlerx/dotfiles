@@ -32,7 +32,7 @@ alias lsd='ls -aFhl'
 alias l='ls -al'
 alias ls='ls -Fh --color' # Colorize output, add file type indicator, and put sizes in human readable format
 alias ll='ls -Fhl --color' # Same as above, but in long listing format
-alias tree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
+alias ltree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
 
 alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
@@ -73,7 +73,7 @@ alias grep='grep --color=auto'
 # remote machines
 # -------------------------------------------------------------------
 alias rb='ssh -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
-alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
+alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 136.206.15.25'
 #alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
 
 # -------------------------------------------------------------------

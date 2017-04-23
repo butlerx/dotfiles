@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 source ${HOME}/.dotfiles/zsh/checks.zsh
 source ${HOME}/.dotfiles/zsh/chip.zsh
 source ${HOME}/.dotfiles/zsh/colors.zsh
@@ -15,6 +16,13 @@ if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
 	source ${HOME}/.dotfiles/zsh/theme.zsh
 else
 	source ${HOME}/.dotfiles/zsh/prompt.zsh
+=======
+for file in ${HOME}/.dotfiles/zsh/*.zsh; do
+  source "$file"
+done
+if [[ -r ${HOME}/.cargo/env ]]; then
+  source $HOME/.cargo/env
+>>>>>>> master
 fi
 eval "$(thefuck --alias)"
 fpath=(/usr/local/share/zsh-completions $fpath)
