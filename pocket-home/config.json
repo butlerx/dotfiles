@@ -1,107 +1,74 @@
 {
+  "background": "4D4D4D",
+  "cursor": "notvisible",
   "defaultPage": "Apps",
   "pages": [
     {
-      "name": "Apps",
+      "cornerButtons": [
+        {"icon": "battery_0.png", "location": "TopLeft", "name": "Battery"},
+        {"icon": "wifiOff.png", "location": "TopRight", "name": "WiFi"},
+        {"icon": "powerIcon.png", "location": "BottomLeft", "name": "Power"},
+        {
+          "icon": "settingsIcon.png",
+          "location": "BottomRight",
+          "name": "Settings"
+        }
+      ],
       "items": [
+        {"icon": "appIcons/terminal.png", "name": "Terminal", "shell": "urxvt"},
+        {"icon": "appIcons/pico8.png", "name": "PICO-8", "shell": "pico8"},
         {
-          "name": "Terminal",
-          "icon": "appIcons/terminal.png",
-          "shell": "urxvt"
-        },
-        {
-          "name": "PICO-8",
-          "icon": "appIcons/pico8.png",
-          "shell": "pico8"
-        },
-        {
+          "icon": "/home/chip/.dotfiles/appIcons/mednafen2.png",
           "name": "mednafen",
-          "icon": "appIcons/mednafen2.png",
-          "shell": "~/medGui.sh"
+          "shell": "medgui.sh"
         },
         {
-          "name": "Write",
           "icon": "appIcons/texteditor.png",
+          "name": "Write",
           "shell": "leafpad"
         },
         {
-          "name": "Firefox",
-          "icon": "appIcons/weasel.png",
-          "shell": "iceweasel"
-        },
-        {
-          "name": "IRC",
-          "icon": "appIcons/hexchat4.png",
-          "shell": "weechat"
-        },
-        {
-          "name": "Browse Files",
-          "icon": "appIcons/filebrowser.png",
-          "shell": "pcmanfm"
-        },
-        {
-          "name": "Doom",
-          "icon": "appIcons/Doom.png",
-          "shell": "prboom"
-        },
-        {
-          "name": "Sunvox",
-          "icon": "appIcons/musicsequencer.png",
-          "shell": "sunvox"
-        },
-        {
+          "icon": "/home/chip/.dotfiles/appIcons/webbrowser.png",
           "name": "Browser",
-          "icon": "appIcons/webbrowser.png",
           "shell": "dwb"
         },
         {
-          "name": "Surf",
-          "icon": "appIcons/surf.png",
-          "shell": "surf google.com"
+          "icon": "/home/chip/.dotfiles/appIcons/hexchat4.png",
+          "name": "IRC",
+          "shell": "weechat"
         },
         {
+          "icon": "appIcons/filebrowser.png",
+          "name": "Browse Files",
+          "shell": "pcmanfm"
+        },
+        {
+          "icon": "/home/chip/.dotfiles/appIcons/minecraft.png",
+          "name": "Minecraft",
+          "shell": "/home/chip/chipcraft-master/mcpi/start.sh"
+        },
+        {
+          "icon": "/home/chip/.dotfiles/appIcons/Doom.png",
+          "name": "Doom",
+          "shell": "prboom"
+        },
+        {
+          "icon": "appIcons/musicsequencer.png",
+          "name": "Sunvox",
+          "shell": "sunvox"
+        },
+        {
+          "icon": "/home/chip/.dotfiles/appIcons/vlc.png",
           "name": "VLC",
-          "icon": "/home/chip/appIcons/vlc.png",
           "shell": "vlc"
         }
       ],
-      "cornerButtons": [
-        {
-          "location": "TopLeft",
-          "name": "Battery",
-          "icon": "battery_0.png"
-        },
-        {
-          "location": "TopRight",
-          "name": "WiFi",
-          "icon": "wifiOff.png"
-        },
-        {
-          "location": "BottomLeft",
-          "name": "Power",
-          "icon": "powerIcon.png"
-        },
-        {
-          "location": "BottomRight",
-          "name": "Settings",
-          "icon": "settingsIcon.png"
-        }
-      ]
+      "name": "Apps"
     },
-    {
-      "name": "Settings"
-    },
-    {
-      "name": "Power"
-    },
-    {
-      "name": "WiFi"
-    },
-    {
-      "name": "Battery"
-    }
+    {"name": "Settings"},
+    {"name": "Power"},
+    {"name": "WiFi"},
+    {"name": "Battery"}
   ],
-  "background": "4D4D4D",
-  "timeformat": "24h",
-  "cursor": "notvisible"
+  "timeformat": "24h"
 }

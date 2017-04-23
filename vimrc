@@ -11,6 +11,7 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
 Plug 'elzr/vim-json', { 'for': 'json' }
+Plug 'tpope/vim-jdaddy', { 'for': 'json' }
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
