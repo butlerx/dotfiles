@@ -21,6 +21,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
+Plug 'severin-lemaignan/vim-minimap'
 Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-fugitive'
