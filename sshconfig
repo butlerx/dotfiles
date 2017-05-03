@@ -15,5 +15,5 @@ Host github.com
   user git
 
 Host halfpint
-  HostName halpint.redbrick.dcu.ie
+  HostName halfpint.redbrick.dcu.ie
   user alfred

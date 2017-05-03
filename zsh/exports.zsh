@@ -28,12 +28,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
-#export GH_ISSUE_CREATE_TOKEN=
 #export HOMEBREW_GITHUB_API_TOKEN=
-
-export YARN_BIN=$(yarn global bin)
-
-#Go
+export YARN_BIN=$HOME/.yarn/bin
 export GOPATH=$HOME/go
-
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin
+export GEMPATH="$(ruby -e 'print Gem.user_dir')"
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin:$GEMPATH/bin
