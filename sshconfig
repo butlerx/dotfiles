@@ -15,5 +15,13 @@ Host github.com
   user git
 
 Host halfpint
-  HostName halpint.redbrick.dcu.ie
+  HostName halfpint.redbrick.dcu.ie
+  user alfred
+
+Host paphos
+  HostName paphos.redbrick.dcu.ie
+  user alfred
+
+Host zeus
+  HostName zeus.redbrick.dcu.ie
   user alfred
