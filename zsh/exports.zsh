@@ -17,9 +17,10 @@ export GREP_COLOR='3;33'
 export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
-export PAGER='less'
-export EDITOR='vim'
-#export EDITOR='nvim'
+#export PAGER='/usr/share/vim/vim74/macros/less.sh' # Use vim as a pager
+#export EDITOR='vim'
+export PAGER='vimpager'
+export EDITOR='nvim'
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
