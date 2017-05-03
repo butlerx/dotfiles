@@ -18,7 +18,8 @@ export ARCHFLAGS='-arch x86_64'
 
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='less'
-export EDITOR='nvim'
+export EDITOR='vim'
+#export EDITOR='nvim'
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
@@ -28,12 +29,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
-#export GH_ISSUE_CREATE_TOKEN=
 #export HOMEBREW_GITHUB_API_TOKEN=
-
-export YARN_BIN=$(yarn global bin)
-
-#Go
+export YARN_BIN=$HOME/.yarn/bin
 export GOPATH=$HOME/go
-
+#export GEMPATH="$(ruby -e 'print Gem.user_dir')"
 export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin

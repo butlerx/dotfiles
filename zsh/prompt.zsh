@@ -177,6 +177,6 @@ else
   function current_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")
   }
-  PROMPT='${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%} ${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)$(prompt_char)'
+  PROMPT='${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) '
   RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
 fi

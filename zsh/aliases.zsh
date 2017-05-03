@@ -137,6 +137,8 @@ alias pyoff="deactivate"
 # -------------------------------------------------------------------
 # Oddball stuff
 # -------------------------------------------------------------------
+alias less='/usr/share/vim/vim74/macros/less.sh' # Use vim as a pager
+#alias less='vimpager'
 alias sloc='/usr/local/sloccount/bin/sloccount'
 alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
@@ -158,12 +160,6 @@ alias gen='date ; rake generate ; date ;'
 alias ingen='date ; rake integrate ; generate ; date ;'
 alias deploy='rm deploy.log ; rake deploy > deploy.log ; tail -n 3 deploy.log ;'
 alias np='newpost.rb'
-
-# copy .htaccess files for zanshin.net and its image sub-directory
-alias htaccess='scp /Users/mark/Projects/octopress/zanshin/source/htaccess/.htaccess markn@markn.webfactional.com:~/webapps/zanshin ; scp /Users/mark/Projects/octopress/zanshin/source/images/.htaccess markn@markn.webfactional.com:~/webapps/zanshin/images ;'
-
-# deploy zanshin.net and move its .htaccess files
-alias dz='deploy ; htaccess ;'
 
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
