@@ -137,8 +137,7 @@ alias pyoff="deactivate"
 # -------------------------------------------------------------------
 # Oddball stuff
 # -------------------------------------------------------------------
-#alias less='/usr/share/vim/vim74/macros/less.sh' # Use vim as a pager
-alias less='vimpager'
+alias less='$PAGER'
 alias sloc='/usr/local/sloccount/bin/sloccount'
 alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30' # fancy top
