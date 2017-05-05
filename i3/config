@@ -151,7 +151,7 @@ bindsym $mod+Shift+U exec nautilus --no-desktop --browser
 
 # rofi
 bindsym $alt+Tab exec rofi -show window
-bindsym $mod+o exec rofi -show ssh
+bindsym $mod+o exec rofi -show ssh -ssh-client 'mosh notthe.cloud -ssh=ssh ssh'
 bindsym $mod+i exec rofi -show ssh -ssh-client mosh
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec rofi-pass
@@ -159,7 +159,7 @@ bindsym $mod+p exec rofi-pass
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id amixer set Master 5%- unmute #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute sound
+bindsym XF86AudioMute exec --no-startup-id amixer -q -D pulse sset Master toggle # mute sound
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
