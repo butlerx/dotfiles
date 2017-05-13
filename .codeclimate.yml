@@ -1,0 +1,25 @@
+engines:
+  duplication:
+    enabled: true
+  fixme:
+    enabled: true
+  pep8:
+    enabled: true
+    checks:
+      E501:
+        enabled: false
+      E302:
+        enabled: false
+  radon:
+    enabled: true
+    checks:
+      Complexity:
+        enabled: false
+  shellcheck:
+    enabled: true
+  vint:
+    enabled: true
+ratings:
+  paths:
+  - "**"
+exclude_paths: ["./weechat"]

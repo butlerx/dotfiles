@@ -31,7 +31,12 @@ export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
 #export HOMEBREW_GITHUB_API_TOKEN=
-export YARN_BIN=$HOME/.yarn/bin
+PATH="/home/butlerx/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/butlerx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"; export PERL_MM_OPT;
+export YARN_BIN=$(yarn global bin)
 export GOPATH=$HOME/go
 #export GEMPATH="$(ruby -e 'print Gem.user_dir')"
 export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin
