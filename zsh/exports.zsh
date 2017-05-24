@@ -1,9 +1,6 @@
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
 
-#export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
-
 # Setup terminal, and turn on colors
 export TERM=screen-256color
 export CLICOLOR=1
@@ -31,12 +28,14 @@ export PROJECT_HOME=$HOME/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
 #export HOMEBREW_GITHUB_API_TOKEN=
-PATH="/home/butlerx/perl5/bin${PATH:+:${PATH}}"; export PATH;
+export PERL_BIN="$HOME/perl5/bin"
 PERL5LIB="/home/butlerx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"; export PERL_MM_OPT;
 export YARN_BIN=$(yarn global bin)
 export GOPATH=$HOME/go
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
+#export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 #export GEMPATH="$(ruby -e 'print Gem.user_dir')"
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin:$PERL_BIN

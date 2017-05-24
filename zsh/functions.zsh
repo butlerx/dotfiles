@@ -5,20 +5,20 @@
 ex() {
     if [[ -f $1 ]]; then
         case $1 in
-          *.tar.bz2) tar xvjf $1;;
-          *.tar.gz) tar xvzf $1;;
-          *.tar.xz) tar xvJf $1;;
-          *.tar.lzma) tar --lzma xvf $1;;
-          *.bz2) bunzip $1;;
-          *.rar) unrar $1;;
-          *.gz) gunzip $1;;
-          *.tar) tar xvf $1;;
-          *.tbz2) tar xvjf $1;;
-          *.tgz) tar xvzf $1;;
-          *.zip) unzip $1;;
-          *.Z) uncompress $1;;
-          *.7z) 7z x $1;;
-          *.dmg) hdiutul mount $1;; # mount OS X disk images
+          *.tar.bz2) tar xvjf "$1";;
+          *.tar.gz) tar xvzf "$1";;
+          *.tar.xz) tar xvJf "$1";;
+          *.tar.lzma) tar --lzma xvf "$1";;
+          *.bz2) bunzip "$1";;
+          *.rar) unrar "$1";;
+          *.gz) gunzip "$1";;
+          *.tar) tar xvf "$1";;
+          *.tbz2) tar xvjf "$1";;
+          *.tgz) tar xvzf "$1";;
+          *.zip) unzip "$1";;
+          *.Z) uncompress "$1";;
+          *.7z) 7z x "$1";;
+          *.dmg) hdiutul mount "$1";; # mount OS X disk images
           *) echo "'$1' cannot be extracted via >ex<";;
     esac
     else
@@ -45,7 +45,7 @@ any() {
 # display a neatly formatted path
 # -------------------------------------------------------------------
 path() {
-  echo $PATH | tr ":" "\n" | \
+  echo "$PATH" | tr ":" "\n" | \
     awk "{ sub(\"/usr\",   \"$fg_no_bold[green]/usr$reset_color\"); \
            sub(\"/bin\",   \"$fg_no_bold[blue]/bin$reset_color\"); \
            sub(\"/opt\",   \"$fg_no_bold[cyan]/opt$reset_color\"); \
@@ -60,20 +60,31 @@ path() {
 if [[ $IS_MAC -eq 1 ]]; then
 
     # view man pages in Preview
-    pman() { ps=`mktemp -t manpageXXXX`.ps ; man -t $@ > "$ps" ; open "$ps" ; }
+    pman() {
+      ps=$(mktemp -t manpageXXXX).ps;
+      man -t "$@" > "$ps";
+      open "$ps";
+    }
 
     # function to show interface IP assignments
-    ips() { foo=`/Users/mark/bin/getip.py; /Users/mark/bin/getip.py en0; /Users/mark/bin/getip.py en1`; echo $foo; }
+    ips() {
+      foo=$(/Users/mark/bin/getip.py; /Users/mark/bin/getip.py en0; /Users/mark/bin/getip.py en1);
+      echo "$foo";
+    }
 
     # notify function - http://hints.macworld.com/article.php?story=20120831112030251
-    notify() { automator -D title=$1 -D subtitle=$2 -D message=$3 ~/Library/Workflows/DisplayNotification.wflow }
+    notify() {
+      automator -D title="$1" -D subtitle="$2" -D message="$3" ~/Library/Workflows/DisplayNotification.wflow
+    }
 fi
 
 # -------------------------------------------------------------------
 # nice mount (http://catonmat.net/blog/another-ten-one-liners-from-commandlingfu-explained)
 # displays mounted drive information in a nicely formatted manner
 # -------------------------------------------------------------------
-function nicemount() { (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t ; }
+function nicemount() {
+  (echo "DEVICE PATH TYPE FLAGS" && mount | awk '$2="";1') | column -t
+}
 
 # -------------------------------------------------------------------
 # myIP address
@@ -90,15 +101,15 @@ function myip() {
 # (s)ave or (i)nsert a directory.
 # -------------------------------------------------------------------
 s() { pwd > ~/.save_dir ; }
-i() { cd "$(cat ~/.save_dir)" ; }
+i() { cd "$(cat ~/.save_dir)" || return ; }
 
 # -------------------------------------------------------------------
 # console function
 # -------------------------------------------------------------------
 function console () {
-  if [[ $# > 0 ]]; then
+  if [[ $# -gt 0 ]]; then
     query=$(echo "$*"|tr -s ' ' '|')
-    tail -f /var/log/system.log|grep -i --color=auto -E "$query"
+    tail -f /var/log/system.log | grep -i --color=auto -E "$query"
   else
     tail -f /var/log/system.log
   fi
@@ -109,7 +120,7 @@ function console () {
 # http://vikros.tumblr.com/post/23750050330/cute-little-function-time
 # -------------------------------------------------------------------
 givedef() {
-  if [[ $# -ge 2 ]] then
+  if [[ $# -ge 2 ]]; then
     echo "givedef: too many arguments" >&2
     return 1
   else
@@ -119,67 +130,63 @@ givedef() {
 
 transfer() {
   #  check arguments
-  if [ $# -eq 0 ];
-  then
-    echo "No arguments specified. Usage:\necho transfer /tmp/test.md\ncat /tmp/test.md | transfer test.md"
+  if [ $# -eq 0 ]; then
+    printf "No arguments specified. Usage:\n transfer /tmp/test.md\ncat /tmp/test.md | transfer"
     return 1
   fi
   # get temporarily filename, output is written to this file show progress can be showed
-  tmpfile=$( mktemp -t transferXXX )
   file=$3
   while getopts ":e:" opt; do
     case $opt in
       e)
-        encryptfile=$( mktemp -t transferXXX )
-        keybase encrypt -i $file $OPTARG >> encrypted
-        cat $encrypted
-        send $encrypted
-        rm -f $encrypted
+        encrypted=$( mktemp -t transferXXX )
+        keybase encrypt -i "$file" "$OPTARG" >> "$encrypted"
+        cat "$encrypted"
+        send "$encrypted"
+        rm -f "$encrypted"
         exit 0
         ;;
       \?)
-        echo "Invalid option: -$OPTARG" >&2
+        echo "Invalid option: -""$OPTARG" >&2
         exit 1
         ;;
       :)
-        echo "Option -$OPTARG requires an argument." >&2
+        echo "Option -""$OPTARG" "requires an argument." >&2
         exit 1
         ;;
     esac
   done
-  send $encrypted
+  send "$encrypted"
 }
 
 send() {
   # upload stdin or file
   file=$1
-  if tty -s;
-  then
+  if tty -s; then
     basefile=$(basename "$file" | sed -e 's/[^a-zA-Z0-9._-]/-/g')
-    if [ ! -e $file ];
-    then
-      echo "File $file doesn't exists."
+    if [ ! -e "$file" ]; then
+      echo "File" "$file" "doesn't exists."
       return 1
     fi
-    if [ -d $file ];
-    then
+    if [ -d "$file" ]; then
       # zip directory and transfer
       zipfile=$( mktemp -t transferXXX.zip )
-      cd $(dirname $file) && zip -r -q - $(basename $file) >> $zipfile
-      curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/$basefile.zip" >> $tmpfile
-      rm -f $zipfile
+      cd "$(dirname "$file")" && zip -r -q - "$(basename "$file")" >> "$zipfile"
+      tmpfile=$( mktemp -t transferXXX )
+      curl --progress-bar --upload-file "$zipfile" "https://transfer.sh/""$basefile"".zip" >> "$tmpfile"
+      rm -f "$zipfile"
     else
       # transfer file
-      curl --progress-bar --upload-file "$file" "https://transfer.sh/$basefile" >> $tmpfile
+      curl --progress-bar --upload-file "$file" "https://transfer.sh/""$basefile" >> "$tmpfile"
     fi
   else
     # transfer pipe
-    curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> $tmpfile
+    curl --progress-bar --upload-file "-" "https://transfer.sh/$file" >> "$tmpfile"
   fi
   # cat output link
-  cat $tmpfile
+  cat "$tmpfile"
   # cleanup
-  rm -f $tmpfile
+  rm -f "$tmpfile"
   return 0
 }
 
@@ -188,74 +195,67 @@ docker-ip () {
 }
 
 docker-clean () {
-  docker rm -v $(docker ps -a -q -f status=exited)
-  docker rmi $(docker images -f "dangling=true" -q)
-  docker volume rm $(docker volume ls -qf dangling=true)
+  if docker ps -a -q -f status=exited; then docker rm -v "$(docker ps -a -q -f status=exited)"; fi
+  if docker images -f "dangling=true" -q; then docker rmi "$(docker images -f "dangling=true" -q)"; fi
+  if docker volume ls -qf dangling=true; then docker volume rm "$(docker volume ls -qf dangling=true)"; fi
 }
 
 up () {
   LEVEL=$1
-  for ((i = 1; i <= LEVEL; i++))
-  do
-    CDIR=../$CDIR
+  for ((i = 1; i <= "$LEVEL"; i++)); do
+    CDIR=../"$CDIR"
   done
-  cd $CDIR
-  echo "You are in: "$PWD
+  cd "$CDIR" || return
+  echo "You are in:" "$PWD"
 }
 
 add () {
   a=$1; b=$2
-  echo "$a + $b = $(expr $a + $b)"
+  echo "$a" + "$b" = $((a + b))
 }
 
 sub () {
   a=$1; b=$2
-  echo "$a - $b = $(expr $a - $b)"
+  echo "$a" - "$b" = $((a - b))
 }
 
 mulp () {
   a=$1; b=$2
-  echo "$a * $b = $(expr $a \* $b)"
+  echo "$a" "*" "$b" = $((a * b))
 }
 
 div () {
   a=$1; b=$2
-  echo "$a / $b = $(expr $a / $b)"
+  echo "$a" / "$b" = $((a / b))
 }
 
 armstrong () {
-  n=$1
-  arm=0
-  temp=$n
-  while [ $n -ne 0 ]
-  do
-    r=$(expr $n % 10)
-    arm=$(expr $arm + $r \* $r \* $r)
-    n=$(expr $n / 10)
+  n=$1; arm=0; temp="$n"
+  while [ "$n" -ne 0 ]; do
+    r=$((n % 10))
+    arm=$((arm + r * r * r))
+    n=$((n / 10))
   done
-  if [ $arm -eq $temp ]
-  then
-    echo $temp "is Armstrong"
+  if [ "$arm" -eq "$temp" ]; then
+    echo "$temp" "is Armstrong"
   else
-    echo $temp "Not Armstrong"
+    echo "$temp" "Not Armstrong"
   fi
 }
 
 Binary2Decimal () {
-  Binary=$1;
-  re='^[0-9]+$';
-  if ! [[ $Binary =~ $re ]]; then
+  Binary=$1; re='^[0-9]+$';
+  if ! [[ "$Binary" =~ $re ]]; then
     echo "Enter a valid number "
   else
-    while [ $Binary -ne 0 ]; do
-      Bnumber=$Binary
+    while [ "$Binary" -ne 0 ]; do
       Decimal=0
       power=1
-      while [ $Binary -ne 0 ]; do
-        rem=$(expr $Binary % 10 )
+      while [ "$Binary" -ne 0 ]; do
+        rem=$((Binary % 10))
         Decimal=$((Decimal+(rem*power)))
         power=$((power*2))
-        Binary=$(expr $Binary / 10)
+        Binary=$((Binary / 10))
       done
       echo  "$Decimal"
     done
@@ -263,22 +263,22 @@ Binary2Decimal () {
 }
 
 Decimal2Binary () {
-  for ((i=32;i>=0;i--)); do
-    r=$(( 2**$i))
+  for ((i=32; i >= 0; i--)); do
+    r=$(( 2**i))
     Probablity+=( $r  )
   done
   [[ $# -eq 0 ]] && { echo -e "Usage \n$0 numbers"; }
-  for input_int in $@; do
+  for input_int in "$@"; do
     echo -en "Decimal\t\tBinary\n"
     s=0
     test ${#input_int} -gt 11 && { echo "Support Upto 10 Digit number :: skiping \"$input_int\""; continue; }
     printf "%-10s\t" "$input_int"
-    for n in ${Probablity[@]}; do
+    for n in "${Probablity[@]}"; do
       if [[ $input_int -lt ${n} ]]; then
         [[ $s = 1 ]] && printf "%d" 0
       else
         printf "%d" 1 ; s=1
-        input_int=$(( $input_int - ${n} ))
+        input_int=$(( input_int - n ))
       fi
     done
   echo -e
@@ -287,11 +287,11 @@ Decimal2Binary () {
 
 isprime () {
   n=$1; i=1; c=1;
-  while [ $i -le $n ]; do
-    i=$(expr $i + 1)
-    r=$(expr $n % $i)
+  while [ $i -le "$n" ]; do
+    i=$((i + 1))
+    r=$((n % i))
     if [ $r -eq 0 ]; then
-      c=$(expr $c + 1)
+      c=$((c + 1))
     fi
   done
   if [ $c -eq 2 ]; then
@@ -304,82 +304,57 @@ isprime () {
 colour () {
   spam=$1
   clear
-  echo -e "\033[1m $spam"
+  echo -e "\033[1m" "$spam"
    # bold effect
   echo -e "\033[5m Blink"
          # blink effect
-  echo -e "\033[0m $spam"
+  echo -e "\033[0m" "$spam"
    # back to noraml
-  echo -e "\033[31m $spam"
+  echo -e "\033[31m" "$spam"
    # Red color
-  echo -e "\033[32m $spam"
+  echo -e "\033[32m" "$spam"
    # Green color
-  echo -e "\033[33m $spam"
+  echo -e "\033[33m" "$spam"
    # See remaing on screen
-  echo -e "\033[34m $spam"
-  echo -e "\033[35m $spam"
-  echo -e "\033[36m $spam"
+  echo -e "\033[34m" "$spam"
+  echo -e "\033[35m" "$spam"
+  echo -e "\033[36m" "$spam"
   echo -e -n "\033[0m"
     # back to noraml
-  echo -e "\033[41m $spam"
-  echo -e "\033[42m $spam"
-  echo -e "\033[43m $spam"
-  echo -e "\033[44m $spam"
-  echo -e "\033[45m $spam"
-  echo -e "\033[46m $spam"
-  echo -e "\033[0m $spam"
+  echo -e "\033[41m" "$spam"
+  echo -e "\033[42m" "$spam"
+  echo -e "\033[43m" "$spam"
+  echo -e "\033[44m" "$spam"
+  echo -e "\033[45m" "$spam"
+  echo -e "\033[46m" "$spam"
+  echo -e "\033[0m" "$spam"
 }
 
 lowercase () {
   fileName=$1
-  if [ ! -f $fileName ]; then
-    echo "Filename $fileName does not exists"
+  if [ ! -f "$fileName" ]; then
+    echo "Filename" "$fileName" "does not exists"
     exit 1
   fi
-  tr '[A-Z]' '[a-z]' < $fileName >> small.txt
+  tr '[:upper:]' '[:lower:]' < "$fileName" >> small.txt
 }
 
 diskUsed () {
   PART=nvme0n1p3
-  USE=`df -h |grep $PART | awk '{ print $5 }' | cut -d'%' -f1`
-  echo "Percent used: $USE"
+  USE=$(df -h |grep $PART | awk '{ print $5 }' | cut -d'%' -f1)
+  echo "Percent used:" "$USE"
 }
 
 process () {
-  echo "Hello $USER"
-  echo "Hey i am" $HOST "and will be telling you about the current processes"
+  echo "Hello" "$USER"
+  echo "Hey i am" "$HOST" "and will be telling you about the current processes"
   echo "Running processes List"
   ps
 }
 
-dual-screen () {
-  xrandr --output eDP1 --auto --output DP1 --auto --left-of eDP1
-  nohup startDualBar </dev/null >/dev/null 2>&1 &
-}
-
-startDualBar () {
-  killall -q polybar
-  # Wait until the processes have been shut down
-  while pgrep -x polybar >/dev/null; do sleep 1; done
-  nohup polybar i3 </dev/null >/dev/null 2>&1 &
-  nohup polybar second </dev/null >/dev/null 2>&1 &
-}
-
-single-screen () {
-  xrandr --auto
-  nohup startbar </dev/null >/dev/null 2>&1 &
-}
-
-startbar () {
-  killall -q polybar
-  # Wait until the processes have been shut down
-  while pgrep -x polybar >/dev/null; do sleep 1; done
-  nohup polybar i3 </dev/null >/dev/null 2>&1 &
-}
-
 specialPattern () {
   MAX_NO=$1
-  if ! [ $MAX_NO -ge 5 -a $MAX_NO -le 9 ] ; then
+  if ! [ "$MAX_NO" -ge 5 ] && [ "$MAX_NO" -le 9 ] ; then
     echo "WTF... I ask to enter number between 5 and 9, Try Again"
   else
     clear
@@ -407,9 +382,9 @@ specialPattern () {
 timeTable () {
   n=$1; i=1
   while [ $i -ne 10 ]; do
-    i=$(expr $i + 1)
-    table=$(expr $i \* $n)
-    echo $table
+    i=$((i + 1))
+    table=$(( i * n))
+    echo "$table"
   done
 }
 
@@ -427,9 +402,9 @@ health () {
   df -h | xargs | awk '{print "Free/total disk: " $11 " / " $9}'
   free -m | xargs | awk '{print "Free/total memory: " $17 " / " $8 " MB"}'
   echo "--------------------"
-  start_log=`head -1 /var/log/messages |cut -c 1-12`
-  oom=`grep -ci kill /var/log/messages`
-  echo -n "OOM errors since $start_log :" $oom
+  start_log=$(head -1 /var/log/messages |cut -c 1-12)
+  oom=$(grep -ci kill /var/log/messages)
+  echo -n "OOM errors since ""$start_log"" :" "$oom"
   echo ""
   echo "--------------------"
   echo "Utilization and most expensive processes:"
@@ -452,29 +427,29 @@ health () {
 
 encrypt () {
   file=$1;
-  keybase encrypt -i $file -o $file.keybase butlerx
-  rm -rf $file
+  keybase encrypt -i "$file" -o "$file".keybase butlerx
+  rm -rf "$file"
 }
 
 decrypt () {
   file=$1;
-  keybase decrypt -i $file
+  keybase decrypt -i "$file"
 }
 
 gpgEncrypt () {
   file=$1;
-  gpg -c $file
-  rm -rf $file
+  gpg -c "$file"
+  rm -rf "$file"
 }
 
 gpgDecrypt () {
   file=$1;
-  gpg -d $file
+  gpg -d "$file"
 }
 
 evenOdd () {
-  num=$(expr $1 % 2)
-  if [ $num -eq 0 ]; then
+  num=$(( $1 % 2))
+  if [ "$num" -eq 0 ]; then
     echo "is a Even Number"
   else
     echo "is a Odd Number"
@@ -491,37 +466,37 @@ simpleCalc () {
     echo "3.Multiplication"
     echo "4.Division"
     echo "Enter your choice"
-    read ch
+    read -r ch
     case $ch in
-      1)sum=`expr $n1 + $n2`
+      1)sum=$((n1 + n2))
         echo "Sum ="$sum;;
-      2)sum=`expr $n1 - $n2`
+      2)sum=$((n1 - n2))
         echo "Sub = "$sum;;
-      3)sum=`expr $n1 \* $n2`
+      3)sum=$((n1 * n2))
         echo "Mul = "$sum;;
-      4)sum=`expr $n1 / $n2`
+      4)sum=$((n1 / n2))
         echo "Div = "$sum;;
       *)echo "Invalid choice";;
     esac
     echo "Do u want to continue (y/n)) ?"
-    read i
+    read -r i
   done
 }
 
 fibonacci () {
   a=$1; fact=1
-  while [ $a -ne 1 ]; do
-    fact=$(expr $fact \* $a)
-    a=$(expr $a - 1)
-    echo $fact
+  while [ "$a" -ne 1 ]; do
+    fact=$((fact * a))
+    a=$((a - 1))
+    echo "$fact"
   done
 }
 
 fractorial () {
   a=$1; fact=1
-  while [ $a -ne 0 ]; do
-    fact=$(expr $fact \* $a)
-    a=$(expr $a - 1)
+  while [ "$a" -ne 0 ]; do
+    fact=$((fact * a))
+    a=$((a - 1))
   done
-  echo $fact
+  echo "$fact"
 }
