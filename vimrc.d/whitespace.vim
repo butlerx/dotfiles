@@ -1,5 +1,6 @@
 " Highlight white space at the end of a line
 highlight ExtraWhitespace ctermbg=red guibg=red
+set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/

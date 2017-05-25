@@ -2,6 +2,7 @@
 [user]
   name = butlerx
   email = cianbutlerx@gmail.com
+	signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
 [push]
   default = simple
 [github]
@@ -52,3 +53,5 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
+[commit]
+	gpgsign = true
