@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
   name = butlerx
-  email = cianbutlerx@gmail.com
+  email = butlerx@notthe.cloud
 	signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
 [push]
   default = simple
@@ -10,6 +10,11 @@
 [alias]
   yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
   lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+  today = log --since=00:00:00 --all --no-merges --oneline --author=butlerx@notthe.cloud
+  recap = log --all --oneline --no-merges --author=butlerx@notthe.cloud
+  overview = log --all --oneline --no-merges
+  recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+  grpah = log --graph --all --decorate --stat --date=iso
   amend = commit -a --amend --no-edit
   undo = reset HEAD~1 --mixed
   a = add

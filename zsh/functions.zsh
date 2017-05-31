@@ -195,9 +195,9 @@ docker-ip () {
 }
 
 docker-clean () {
-  if docker ps -a -q -f status=exited; then docker rm -v "$(docker ps -a -q -f status=exited)"; fi
-  if docker images -f "dangling=true" -q; then docker rmi "$(docker images -f "dangling=true" -q)"; fi
-  if docker volume ls -qf dangling=true; then docker volume rm "$(docker volume ls -qf dangling=true)"; fi
+  docker rm -v $(docker ps -a -q -f status=exited) 2> /dev/null
+  docker rmi $(docker images -f "dangling=true" -q) 2> /dev/null
+  docker volume rm $(docker volume ls -qf dangling=true) 2> /dev/null
 }
 
 up () {

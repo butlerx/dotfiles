@@ -1,6 +1,5 @@
 " Symtastic settings
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_zsh_checkers = ['shellcheck', 'zsh']
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html'] }
