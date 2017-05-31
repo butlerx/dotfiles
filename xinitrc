@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # merge in defaults and keymaps
-[[ -f ~/.dotfiles/Xresources ]] && xrdb -merge -I$HOME ~/.dotfiles/Xresources
+[[ -f ~/.dotfiles/Xresources ]] && xrdb -merge -I"$HOME" ~/.dotfiles/Xresources
 [[ -f /etc/X11/xinit/.Xresources ]] && xrdb -merge /etc/X11/xinit/.Xresources
 [[ -f /etc/X11/xinit/.Xmodmap ]] && xmodmap /etc/X11/xinit/.Xmodmap
 [[ -f ~/.dotfiles/Xmodmap ]] && xmodmap ~/.dotfiles/Xmodmap

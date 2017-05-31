@@ -1,9 +1,11 @@
 # Dotfiles
-I custom zsh, Vim, weechat and tmux setup.
 
+**The commit messages are usless because they are all generated with [`git yolo`](https://github.com/butlerx/dotfiles/blob/master/gitconfig#L11)**
+My custom zsh, Vim, weechat and tmux setup.
 The tmux and weechat are standard just with custom stylings and plugins enabled.
 
 ### VIM
+
 The Vim config is compatible with Vim and NeoVim.  
 It uses [Plug](https://github.com/junegunn/vim-plug) for Plugin managment. The
 Plugins installed are set in the `.dotfiles/vimrc.d/vim.plug` file.  
@@ -11,6 +13,7 @@ The Config is loaded sourced for `.dotfiles/vimrc.d`. All `.vim` files in this
 folder are auto loaded.
 
 ### Zsh
+
 These are a collection of custom zsh settings and fuctions. The theme
 [Powerlevel9k](https://github.com/bhilburn/powerlevel9k) is used as a base with
 custom layout. If powerlevel9k fails to install zsh falls back to a simpler
