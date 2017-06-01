@@ -2,7 +2,10 @@
 highlight ExtraWhitespace ctermbg=red guibg=red
 set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
 match ExtraWhitespace /\s\+$/
-autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
-autocmd InsertLeave * match ExtraWhitespace /\s\+$/
-autocmd BufWinLeave * call clearmatches()
+augroup Whitespace
+  au!
+  au BufWinEnter * match ExtraWhitespace /\s\+$/
+  au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+  au InsertLeave * match ExtraWhitespace /\s\+$/
+  au BufWinLeave * call clearmatches()
+augroup END

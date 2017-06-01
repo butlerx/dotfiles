@@ -1,5 +1,6 @@
 " Symtastic settings
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_vim_checkers = ['vint']
 let g:syntastic_mode_map = { 'mode': 'active',
   \ 'active_filetypes': [],
   \ 'passive_filetypes': ['html'] }

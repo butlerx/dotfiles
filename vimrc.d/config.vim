@@ -1,12 +1,12 @@
-syntax enable
+color monokai
 filetype plugin on
-colorscheme monokai
+"Set leader to space
+let g:mapleader = "\<Space>"
 set autoindent
 set background=dark
 set backspace=2
 set cindent shiftwidth=2
 set diffopt=filler,iwhite
-set encoding=utf-8
 set expandtab
 set fileencoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
@@ -23,7 +23,6 @@ set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
-set nocompatible
 set noeb vb t_vb=
 set nofen
 set notimeout
@@ -44,5 +43,4 @@ set timeoutlen=10000
 set ttimeoutlen=10000
 set virtualedit=block
 set wildmenu
-"Set leader to space
-let mapleader = "\<Space>"
+syntax enable

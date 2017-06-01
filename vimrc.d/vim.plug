@@ -1,5 +1,3 @@
-Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Yggdroot/indentLine'
 Plug 'bogado/file-line'
@@ -11,25 +9,19 @@ Plug 'elzr/vim-json',
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
-Plug 'honza/vim-snippets'
 Plug 'jimmyhchan/dustjs.vim', { 'for': 'dustjs' }
-Plug 'junegunn/goyo.vim'
-Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'scrooloose/syntastic'
-Plug 'severin-lemaignan/vim-minimap'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
-Plug 'wfleming/vim-codeclimate'
-
 " vim: set syntax=vim:

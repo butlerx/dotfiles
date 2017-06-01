@@ -1,28 +1,31 @@
-"Nerdtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter *
-  \   if !argc() && !exists("s:std_in")
-  \ |   Startify
-  \ |   NERDTree
-  \ |   wincmd w
-  \ | else
-  \ |   NERDTree
-  \ |   wincmd w
-  \ | endif
+scriptencoding utf-8
+augroup NERDTree
+  au!
+  au StdinReadPre * let s:std_in=1
+  au VimEnter *
+    \   if !argc() && !exists('s:std_in')
+    \ |   Startify
+    \ |   NERDTree
+    \ |   wincmd w
+    \ | else
+    \ |   NERDTree
+    \ |   wincmd w
+    \ | endif
+  au bufenter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
+augroup END
 map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeIndicatorMapCustom = {
-  \ "Modified"  : "✹",
-  \ "Staged"    : "✚",
-  \ "Untracked" : "✭",
-  \ "Renamed"   : "➜",
-  \ "Unmerged"  : "═",
-  \ "Deleted"   : "✖",
-  \ "Dirty"     : "✗",
-  \ "Clean"     : "✔︎",
-  \ "Unknown"   : "?"
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Deleted'   : '✖',
+  \ 'Dirty'     : '✗',
+  \ 'Clean'     : '✔︎',
+  \ 'Unknown'   : '?'
   \ }
 " NERDTress File highlighting
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
