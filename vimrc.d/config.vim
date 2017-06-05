@@ -23,8 +23,9 @@ set ignorecase
 set incsearch
 set laststatus=2
 set linebreak
-set noeb vb t_vb=
-set nofen
+set list lcs=tab:\|\
+set noerrorbells vb t_vb=
+set nofoldenable
 set notimeout
 set nottimeout
 set number

@@ -1,6 +1,4 @@
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --all' }
 Plug 'Yggdroot/indentLine'
-Plug 'bogado/file-line'
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
@@ -15,13 +13,18 @@ Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc' | Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
+else
+  Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
+endif
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'scrooloose/syntastic'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
+Plug 'w0rp/ale'
 " vim: set syntax=vim:
