@@ -135,6 +135,8 @@ exec --no-startup-id xbindkeys
 exec xrdb ~/.dotfiles/Xresources
 # Use Gestures
 exec --no-startup-id libinput-gestures-setup start
+# Auto lock
+exec --no-startup-id xss-lock -- sh ~/.i3/i3lock.sh
 
 # Custom KeyBinds
 bindsym Control+mod4+l exec sh ~/.i3/i3lock.sh
