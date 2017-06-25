@@ -40,7 +40,6 @@ xterm*reverseVideo                : on
 ! URxvt*jumpScroll                : boolean
 ! URxvt*keysym.sym                : keysym
 ! URxvt*kuake.hotkey              : string
-! URxvt*letterSpace               : number
 ! URxvt*lineSpace                 : number
 ! URxvt*loginShell                : boolean
 ! URxvt*mapAlert                  : boolean
@@ -100,11 +99,11 @@ xterm*reverseVideo                : on
 ! URxvt*visual                    : number
 ! URxvt*xrm                       : string
 *.URxvt*urgentOnBell              : true
-URxvt*boldFont                    : xft:TerminessTTF Nerd Font:bold:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:bold:pixelsize=18:antialias=true:hinting=true
-URxvt*font                        : xft:TerminessTTF Nerd Font:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:pixelsize=18:antialias=true:hinting=true
+URxvt*boldFont                    : xft:TerminessTTF Nerd Font:bold:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:bold:pixelsize=22:antialias=true:hinting=true
+URxvt*font                        : xft:TerminessTTF Nerd Font:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:pixelsize=22:antialias=true:hinting=true
 URxvt*iso14755                    : false
 URxvt*iso14755_52                 : false
-URxvt*italicFont                  : xft:TerminessTTF Nerd Font:italic:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:italic:pixelsize=18:antialias=true:hinting=true
+URxvt*italicFont                  : xft:TerminessTTF Nerd Font:italic:pixelsize=22:antialias=true:hinting=true,xft:Knack Nerd Font:italic:pixelsize=22:antialias=true:hinting=true
 URxvt*matcher.button              : 1
 URxvt*perl-lib                    : /usr/lib/urxvt/perl
 URxvt*scrollBar                   : false
