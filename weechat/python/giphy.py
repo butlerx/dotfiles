@@ -45,7 +45,7 @@ def giphy(data, buf, args):
     else:
         search_string = arg + "+" + search_string
         image_url = random(URL + RANDOM + API, search_string)
-    weechat.command(buf, "giphy %s -- %s" % (search_string.replace("+", " "),
+    weechat.command(buf, "giphy %s -- %s" % (search_string.replace("+", " ").strip(),
                     image_url))
     return weechat.WEECHAT_RC_OK
 

@@ -59,4 +59,6 @@
   smudge = git-lfs smudge -- %f
   required = true
 [commit]
-	gpgsign = true
+  gpgsign = true
+[gpg]
+	program = gpg2

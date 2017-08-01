@@ -28,10 +28,12 @@ alias bk='cd $OLDPWD'
 # directory information
 # -------------------------------------------------------------------
 alias lh='ls -d .*' # show hidden files/directories only
-alias lsd='ls -aFhl'
 alias l='ls -al'
-alias ls='ls -Fh --color' # Colorize output, add file type indicator, and put sizes in human readable format
-alias ll='ls -Fhl --color' # Same as above, but in long listing format
+if [[ $IS_LINUX -eq 1 ]]; then
+  alias lsd='ls -aFhl'
+  alias ls='ls -Fh --color' # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ll='ls -Fhl --color' # Same as above, but in long listing format
+fi
 alias ltree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
 
