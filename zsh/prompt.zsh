@@ -10,7 +10,7 @@ if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
   POWERLEVEL9K_STATUS_VERBOSE=false
   POWERLEVEL9K_MODE='awesome-fontconfig'
   export DEFAULT_USER=$USER
-  export AWS_DEFAULT_PROFILE='cianbuterx@gmail.com'
+  export AWS_DEFAULT_PROFILE='cianbutlerx@gmail.com'
   export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
   #nvm

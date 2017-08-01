@@ -210,7 +210,7 @@ Xft.rgba                          : rgb
 rofi.font                         : Hack 21
 rofi.kb-row-up                    : Up,Control+p,Shift+Tab,Shift+Alt+Tab
 rofi.kb-row-tab                   : Tab,Alt+Tab
-rofi.padding                      : 20
+rofi.padding                      : 25
 rofi.width                        : 50
 rofi.bw                           : 1
 rofi.opacity                      : 90
@@ -219,5 +219,5 @@ rofi.color-enabled                : true
 rofi.separator-style              : dashed
 rofi.color-window                 : xbackground, xcolor3, xcolor2
 rofi.color-normal                 : xbackground, xforeground, xbackground, xbackground, xcolor5
-rofi.color-active                 : xbackground, xcolor1, xbackground xbackground, xcolor0
+rofi.color-active                 : xbackground, xcolor1, xbackground, xbackground, xcolor0
 rofi.color-urgent                 : xbackground, xcolor4, xbackground, xbackground, xcolor0

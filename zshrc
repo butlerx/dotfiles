@@ -6,5 +6,7 @@ done
 if [[ -r ${HOME}/.cargo/env ]]; then
   source "$HOME/.cargo/env"
 fi
+source <(kompose completion zsh)
+source <(kubectl completion zsh)
 eval "$(thefuck --alias)"
 fpath=(/usr/local/share/zsh-completions $fpath)

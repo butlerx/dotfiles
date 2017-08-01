@@ -36,6 +36,7 @@ PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"; export PERL_MM_OPT;
 export YARN_BIN=$(yarn global bin)
 export GOPATH=$HOME/go
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
+export PYTHON_USER=$HOME/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 #export GEMPATH="$(ruby -e 'print Gem.user_dir')"
-export PATH=$PATH:~/bin:/usr/local/bin:/usr/local/sbin:$YARN_BIN:$GOPATH/bin:$PERL_BIN
+export PATH=$PATH:~/bin:$YARN_BIN:$GOPATH/bin:$PYTHON_USER
