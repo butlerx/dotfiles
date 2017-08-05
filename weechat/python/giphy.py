@@ -11,7 +11,6 @@
 #
 # 2017-04-19, butlerx
 #   Version 1.0.1: remove + from message
-#
 # 2017-04-18, butlerx
 #   Version 1.0.0: initial version
 #
@@ -19,20 +18,21 @@
 import requests
 import weechat
 
-SCRIPT_NAME    = "giphy"
-SCRIPT_AUTHOR  = "butlerx <butlerx@notthe.cloud>"
-SCRIPT_VERSION = "1.0"
-SCRIPT_LICENSE = "GPL"
-SCRIPT_DESC    = "Insert giphy gif"
+SCRIPT_NAME = "giphy"
+SCRIPT_AUTHOR = "butlerx <butlerx@redbrick.dcu.ie>"
+SCRIPT_VERSION = "1.0.1"
+SCRIPT_LICENSE = "GPL3"
+SCRIPT_DESC = "Insert giphy gif"
 
-URL         = "http://api.giphy.com/v1/gifs/"
-API         = "&api_key=dc6zaTOxFJmzC"
-RANDOM      = "random?tag=%s"
-TRANSLATE   = "translate?s=%s"
-SEARCH      = "search?limit=1&q=%s"
+URL = "http://api.giphy.com/v1/gifs/"
+API = "&api_key=dc6zaTOxFJmzC"
+RANDOM = "random?tag=%s"
+TRANSLATE = "translate?s=%s"
+SEARCH = "search?limit=1&q=%s"
 
 
 def giphy(data, buf, args):
+    """ Parse args to decide what api to use """
     search_string = args.split()
     arg = search_string.pop(0)
     search_string = "+".join(search_string)
@@ -45,13 +45,14 @@ def giphy(data, buf, args):
     else:
         search_string = arg + "+" + search_string
         image_url = random(URL + RANDOM + API, search_string)
-    weechat.command(buf, "giphy %s -- %s" % (search_string.replace("+", " ").strip(),
-                    image_url))
+    weechat.command(buf, "giphy %s -- %s" %
+                    (search_string.replace("+", " ").strip(), image_url))
     return weechat.WEECHAT_RC_OK
 
 
-def translate(api, search):
-    response = requests.get(api % search)
+def translate(api, search_term):
+    """Query giphy translate api for search"""
+    response = requests.get(api % search_term)
     data = response.json()
     try:
         # Translate
@@ -61,8 +62,9 @@ def translate(api, search):
     return image_url
 
 
-def random(api, search):
-    response = requests.get(api % search)
+def random(api, search_term):
+    """Query giphy random api for search"""
+    response = requests.get(api % search_term)
     data = response.json()
     try:
         # Random
@@ -72,8 +74,9 @@ def random(api, search):
     return image_url
 
 
-def search(api, search):
-    response = requests.get(api % search)
+def search(api, search_term):
+    """Query giphy search api for search"""
+    response = requests.get(api % search_term)
     data = response.json()
     try:
         image_url = data["data"][0]["images"]["original"]["url"]

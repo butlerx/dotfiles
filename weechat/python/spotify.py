@@ -58,8 +58,8 @@ SCRIPT_DESC    = "Look up spotify urls"
 settings = {
     "buffers"       : 'freenode.#mychan,',     # comma separated list of buffers
     "emit_notice"   : 'off',                   # on or off, use notice or msg
-    "client_id"     : '11a293ca53774ccca3f1b0bdee5aab36',
-    "client_secret" : 'dd4a0cb7a5cc4150865852dc30a92655'
+    "client_id"     : 'client_id',
+    "client_secret" : 'client_secret'
 }
 
 settings_help = {
@@ -73,7 +73,6 @@ spotify_track_res = (re.compile(r'spotify:(?P<type>\w+):(?P<id>\w{22})'),
                      re.compile(r'https?://open.spotify.com/(?P<type>\w+)/(?P<id>\w{22})'))
 
 def get_spotify_ids(s):
-    w.prnt("", "%s" % s)
     for r in spotify_track_res:
         for type, track in r.findall(s):
             yield type, track
@@ -101,14 +100,22 @@ def parse_response(data, type):
         followers = data['followers']['total']
         return "%s - %s followers" % (name, followers)
 
+def get_oauth(arg):
+    token = w.config_get_plugin(arg)
+    if token.startswith('${sec.data'):
+        return w.string_eval_expression(token, {}, {}, {})
+    else:
+        return token
+
 def spotify_print_cb(data, buffer, time, tags, displayed, highlight, prefix, message):
     notice = w.config_get_plugin('emit_notice')
     buffer_name = w.buffer_get_string(buffer, "name")
-    server = buffer_name.split('.')[0]
-    channel = buffer_name.split('.')[1]
+    server, channel = buffer_name.split('.')
     buffers_to_check = w.config_get_plugin('buffers').split(',')
-    client_credentials_manager = SpotifyClientCredentials(w.config_get_plugin('client_id'), w.config_get_plugin('client_secret'))
+    client_credentials_manager = SpotifyClientCredentials(get_oauth('client_id'), get_oauth('client_secret'))
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
+    weechat.prnt("", get_oauth('client_id'), get_oauth('client_secret'))
+
 
     command = "msg"
     if notice == "on":
