@@ -114,8 +114,6 @@ def spotify_print_cb(data, buffer, time, tags, displayed, highlight, prefix, mes
     buffers_to_check = w.config_get_plugin('buffers').split(',')
     client_credentials_manager = SpotifyClientCredentials(get_oauth('client_id'), get_oauth('client_secret'))
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
-    weechat.prnt("", get_oauth('client_id'), get_oauth('client_secret'))
-
 
     command = "msg"
     if notice == "on":
