@@ -110,7 +110,8 @@ def get_oauth(arg):
 def spotify_print_cb(data, buffer, time, tags, displayed, highlight, prefix, message):
     notice = w.config_get_plugin('emit_notice')
     buffer_name = w.buffer_get_string(buffer, "name")
-    server, channel = buffer_name.split('.')
+    if '.' in buffer_name:
+        server, channel = buffer_name.split('.')
     buffers_to_check = w.config_get_plugin('buffers').split(',')
     client_credentials_manager = SpotifyClientCredentials(get_oauth('client_id'), get_oauth('client_secret'))
     spotify = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
