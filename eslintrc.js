@@ -1,64 +1,30 @@
-'use strict';
 module.exports = {
-  'env': {
-    'es6' : true,
-    'node': true,
+  env: {
+    es6 : true,
+    node: true
   },
-  'extends': ['eslint:recommended'],
-  'rules'  : {
-    'strict': [
-      2,
-      'global',
-    ],
-    'indent': [
-      'error',
-      2,
-    ],
-    'linebreak-style': [
-      'error',
-      'unix',
-    ],
-    'quotes': [
-      'error',
-      'single',
-    ],
-    'semi': [
-      'error',
-      'always',
-    ],
-    'comma-dangle': [
-      'error',
-      'always-multiline',
-    ],
-    'key-spacing': [
+  extends: ['airbnb'],
+  rules  : {
+    'linebreak-style'     : ['error', 'unix'],
+    'arrow-parens'        : ['error', 'as-needed'],
+    'no-param-reassign'   : ['error', { props: false }],
+    'func-style'          : ['error', 'declaration', { allowArrowFunctions: true }],
+    'no-use-before-define': ['error', { functions: false }],
+    'no-shadow'           : [
       'error',
       {
-        'multiLine': {
-          'beforeColon': false,
-          'afterColon' : true,
-        },
-        'align': {
-          'beforeColon': false,
-          'afterColon' : true,
-          'on'         : 'colon',
-          'mode'       : 'strict',
-        },
-      },
+        builtinGlobals: true,
+        hoist         : 'functions',
+        allow         : ['resolve', 'reject', 'err']
+      }
     ],
-    'no-var': [
-      'error',
-    ],
-    'prefer-arrow-callback': [
-      'error', {
-        'allowNamedFunctions': true,
-      },
-    ],
-    'prefer-const': [
+    'consistent-return': 0,
+    'key-spacing'      : [
       'error',
       {
-        'destructuring'         : 'any',
-        'ignoreReadBeforeAssign': false,
-      },
-    ],
-  },
+        multiLine: { beforeColon: false, afterColon: true },
+        align    : { beforeColon: false, afterColon: true, on: 'colon', mode: 'strict' }
+      }
+    ]
+  }
 };
