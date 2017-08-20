@@ -5,8 +5,8 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)e
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
   source ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm)
-  #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs nvm custom_playerctl_status)
+  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+  #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
   POWERLEVEL9K_STATUS_VERBOSE=false
   POWERLEVEL9K_MODE='awesome-fontconfig'
   export DEFAULT_USER=$USER
