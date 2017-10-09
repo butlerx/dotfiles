@@ -2,7 +2,7 @@
 [user]
   name = butlerx
   email = butlerx@notthe.cloud
-	signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
+  signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
 [push]
   default = simple
 [github]
@@ -61,4 +61,4 @@
 [commit]
   gpgsign = true
 [gpg]
-	program = gpg2
+  program = gpg

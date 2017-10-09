@@ -1,0 +1,14 @@
+pane	0	1	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+pane	0	2	:coderdojo	1	:*	0	:/Users/butlerx/cp-local-development/workspace-zen/cp-eventbrite-service	1	git	:git add -p
+pane	0	3	:zsh	0	:#	0	:/Users/butlerx/coderdojo-stats	1	zsh	:
+pane	0	4	:zsh	0	:#-	0	:/Users/butlerx/Downloads/cd-procedures-master	1	zsh	:
+pane	0	4	:zsh	0	:#-	1	:/Users/butlerx/Downloads/cd-procedures-master	0	zsh	:
+pane	0	5	:zsh	0	:#	0	:/Users/butlerx/projects/best-resume-ever	1	zsh	:
+pane	0	6	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+window	0	1	0	:#	c4fe,318x74,0,0,1
+window	0	2	1	:*	c4ff,318x74,0,0,2
+window	0	3	0	:#	c501,318x74,0,0,4
+window	0	4	0	:#-	489e,318x74,0,0{159x74,0,0,5,158x74,160,0,6}
+window	0	5	0	:#	c504,318x74,0,0,7
+window	0	6	0	:#	c505,318x74,0,0,8
+state	0	

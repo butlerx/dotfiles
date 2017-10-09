@@ -1,0 +1,15 @@
+pane	0	1	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+pane	0	2	:coderdojo	0	:#-	0	:/Users/butlerx/coderdojo/cp-local-development/workspace-zen/cp-zen-platform	0	zsh	:
+pane	0	2	:coderdojo	0	:#-	1	:/Users/butlerx/coderdojo/cp-local-development	1	zsh	:
+pane	0	3	:zsh	0	:#	0	:/Users/butlerx/coderdojo/coderdojo-stats	0	zsh	:
+pane	0	3	:zsh	0	:#	1	:/Users/butlerx/coderdojo/coderdojo-stats	1	zsh	:
+pane	0	4	:zsh	1	:*	0	:/Users/butlerx/projects/static-site	1	zsh	:
+pane	0	5	:zsh	0	:#	0	:/Users/butlerx/projects/useradm	1	zsh	:
+pane	0	6	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+window	0	1	0	:#	c4fe,318x74,0,0,1
+window	0	2	0	:#-	0b89,318x74,0,0{159x74,0,0,18,158x74,160,0,19}
+window	0	3	0	:#	e4a6,318x74,0,0{159x74,0,0,4,158x74,160,0,16}
+window	0	4	1	:*	c502,318x74,0,0,5
+window	0	5	0	:#	62b0,318x74,0,0,11
+window	0	6	0	:#	c505,318x74,0,0,8
+state	0	

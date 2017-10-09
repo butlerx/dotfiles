@@ -1,0 +1,14 @@
+pane	0	1	:zsh	0	:#	0	:/Users/butlerx	1	nvim	:nvim .dotfiles/zsh/functions.zsh
+pane	0	2	:coderdojo	0	:-	0	:/Users/butlerx/coderdojo/cp-local-development/workspace-zen/cp-zen-frontend	1	zsh	:
+pane	0	3	:zsh	1	:*	0	:/Users/butlerx/coderdojo/cd-warehouse	1	nvim	:nvim etl/main.py
+pane	0	3	:zsh	1	:*	1	:/Users/butlerx/coderdojo/cd-warehouse	0	docker-compose	:docker-compose up
+pane	0	4	:zsh	0	:#	0	:/Users/butlerx/projects/hacktoberfest-checker	1	nvim	:nvim public/js/main.js
+pane	0	5	:zsh	0	:#	0	:/Users/butlerx/projects/useradm	1	zsh	:
+pane	0	6	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+window	0	1	0	:#	be5e,278x72,0,0,1
+window	0	2	0	:-	be5f,278x72,0,0,2
+window	0	3	1	:*	71de,278x72,0,0{139x72,0,0,4,138x72,140,0,16}
+window	0	4	0	:#	be62,278x72,0,0,5
+window	0	5	0	:#	5f60,278x72,0,0,11
+window	0	6	0	:#	be65,278x72,0,0,8
+state	0	

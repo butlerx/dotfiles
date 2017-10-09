@@ -7,16 +7,15 @@ Plug 'elzr/vim-json',
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
 Plug 'godlygeek/tabular'
 Plug 'gregsexton/gitv'
-Plug 'jimmyhchan/dustjs.vim', { 'for': 'dustjs' }
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
 if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc' | Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
+  Plug 'roxma/vim-hug-neovim-rpc' | Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} | Plug 'roxma/ncm-flow' | Plug 'Shougo/neco-vim'
 else
-  Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'}
+  Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} | Plug 'roxma/ncm-flow' | Plug 'Shougo/neco-vim'
 endif
 Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'

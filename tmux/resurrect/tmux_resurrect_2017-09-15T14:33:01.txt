@@ -1,0 +1,15 @@
+pane	0	1	:zsh	0	:#-	0	:/Users/butlerx	1	kubectl	:kubectl edit deployment zen
+pane	0	2	:coderdojo	0	:#	0	:/Users/butlerx/cp-local-development/workspace-zen/cp-zen-frontend	1	nvim	:nvim .circleci
+pane	0	2	:coderdojo	0	:#	1	:/Users/butlerx/cp-local-development/workspace-zen/cp-zen-platform	0	zsh	:
+pane	0	3	:zsh	0	:	0	:/Users/butlerx/eslint-config-coderdojo	1	zsh	:
+pane	0	4	:zsh	1	:*	0	:/Users/butlerx/coderdojo-stats/dump	0	nvim	:nvim backupToS3.sh
+pane	0	4	:zsh	1	:*	1	:/Users/butlerx	1	zsh	:
+pane	0	5	:zsh	0	:#	0	:/Users/butlerx/projects/static-site	1	zsh	:
+pane	0	6	:zsh	0	:#	0	:/Users/butlerx	1	zsh	:
+window	0	1	0	:#-	c8fe,318x75,0,0,1
+window	0	2	0	:#	88aa,318x75,0,0{158x75,0,0,2,159x75,159,0,3}
+window	0	3	0	:	c901,318x75,0,0,4
+window	0	4	1	:*	c88c,318x75,0,0{158x75,0,0,5,159x75,159,0,10}
+window	0	5	0	:#	c905,318x75,0,0,8
+window	0	6	0	:#	c906,318x75,0,0,9
+state	0	
