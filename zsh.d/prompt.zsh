@@ -3,23 +3,19 @@ autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
-  source ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
   POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-  POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
-  #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
+  if playerctl > /dev/null; then
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
+  else
+    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+  fi
   POWERLEVEL9K_STATUS_VERBOSE=false
   POWERLEVEL9K_MODE='awesome-fontconfig'
   export DEFAULT_USER=$USER
   export AWS_DEFAULT_PROFILE='cianbutlerx@gmail.com'
-  export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
-
-  #nvm
-  POWERLEVEL9K_NVM_BACKGROUND='28'
-  POWERLEVEL9K_NVM_FOREGROUND='15'
 
   # Directory
   POWERLEVEL9K_DIR_PATH_SEPARATOR=$' \uE0B1 '
-  POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
   POWERLEVEL9K_DIR_HOME_BACKGROUND="238"
   POWERLEVEL9K_DIR_HOME_FOREGROUND="255"
   POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="238"
@@ -84,19 +80,20 @@ if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
       echo -n "$artist - $track";
     fi
   }
+  source ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
 else
   function virtualenv_info {
-      [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
   }
 
   function prompt_char {
-      git branch >/dev/null 2>/dev/null && echo '>' && return
-      hg root >/dev/null 2>/dev/null && echo '~>'&& return
-      echo '>'
+    git branch >/dev/null 2>/dev/null && echo '>' && return
+    hg root >/dev/null 2>/dev/null && echo '~>'&& return
+    echo '>'
   }
 
   function box_name {
-      [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+    [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
   }
 
   # Modify the colors and symbols in these variables as desired.
@@ -160,20 +157,6 @@ else
     local git_where="$(parse_git_branch)"
     [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
   }
-
-  # determine Ruby version whether using RVM or rbenv
-  # the chpwd_functions line cause this to update only when the directory changes
-  function _update_ruby_version() {
-      typeset -g ruby_version=''
-      if which rvm-prompt &> /dev/null; then
-        ruby_version="$(rvm-prompt i v g)"
-      else
-        if which rbenv &> /dev/null; then
-          ruby_version="$(rbenv version | sed -e "s/ (set.*$//")"
-        fi
-      fi
-  }
-  chpwd_functions+=(_update_ruby_version)
 
   function current_pwd {
     echo $(pwd | sed -e "s,^$HOME,~,")

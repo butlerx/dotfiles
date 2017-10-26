@@ -21,6 +21,7 @@ export EDITOR='nvim'
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
+export LANG="en_US.UTF-8"
 
 # Virtual Environment Stuff
 export WORKON_HOME=$HOME/.virtualenvs
