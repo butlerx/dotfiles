@@ -41,3 +41,4 @@ export PYTHON_USER=$HOME/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 #export GEMPATH="$(ruby -e 'print Gem.user_dir')"
 export PATH=$PATH:~/bin:/usr/local/bin:$YARN_BIN:$GOPATH/bin:$PYTHON_USER
+export KOPS_STATE_STORE=s3://clusters.coderdojo.com
