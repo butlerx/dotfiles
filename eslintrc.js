@@ -19,12 +19,5 @@ module.exports = {
       }
     ],
     'consistent-return': 0,
-    'key-spacing'      : [
-      'error',
-      {
-        multiLine: { beforeColon: false, afterColon: true },
-        align    : { beforeColon: false, afterColon: true, on: 'colon', mode: 'strict' }
-      }
-    ]
   }
 };

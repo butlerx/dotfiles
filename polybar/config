@@ -16,6 +16,7 @@
 
 [bar/i3]
 monitor = eDP1
+monitor-fallback = eDP1
 bottom = false
 dock = false
 
@@ -25,6 +26,9 @@ height = 35
 ;offset_x = 0
 ;offset_y = 0
 
+tray-position = right
+tray-background = #000
+tray-padding = 1
 background = #00ffffff
 foreground = #fff
 ;linecolor = #ff0000
@@ -43,7 +47,7 @@ font-2 = MaterialIcons-Regular:size=7;0
 
 modules-left = i3
 modules-center = clock
-modules-right =  wireless-network backlight cpu ram volume battery
+modules-right = wireless-network backlight cpu ram volume battery
 
 [module/cpu]
 type = internal/cpu

@@ -3,7 +3,7 @@
 set $mod Mod4
 set $alt Mod1
 # Font for window titles. Will also be used by the bar unless a different font
-font pango:DejaVu Sans Mono 18
+font pango:DejaVu Sans Mono 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -131,8 +131,6 @@ client.urgent #aa0000 #990000 #ffffff
 exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
-# set dpi
-exec xrdb ~/.dotfiles/Xresources
 # Use Gestures
 exec --no-startup-id libinput-gestures-setup start
 # Auto lock
@@ -153,7 +151,7 @@ bindsym $mod+Shift+U exec nautilus --no-desktop --browser
 
 # rofi
 bindsym $alt+Tab exec rofi -show window
-bindsym $mod+o exec rofi -show ssh -ssh-client 'mosh notthe.cloud -ssh=ssh ssh'
+bindsym $mod+o exec rofi -show ssh
 bindsym $mod+i exec rofi -show ssh -ssh-client mosh
 bindsym $mod+d exec rofi -show run
 bindsym $mod+p exec rofi-pass
