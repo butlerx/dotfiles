@@ -12,6 +12,6 @@ call plug#begin('~/.local/share/nvim')
 call plug#end()
 
 set encoding=utf-8
-for f in split(glob('~/.dotfiles/vimrc.d/*.vim'), '\n')
-  exe 'source' f
+for g:f in split(glob('~/.dotfiles/vimrc.d/*.vim'), '\n')
+  exe 'source' g:f
 endfor
