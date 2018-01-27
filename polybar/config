@@ -29,21 +29,23 @@ height = 35
 tray-position = right
 tray-background = #000
 tray-padding = 1
+
 background = #00ffffff
 foreground = #fff
 ;linecolor = #ff0000
 
 spacing = 2
 lineheight = 5
+underline-size = 5
 
 ;locale = en_US.UTF-8
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Droid Sans:size=6;0
-font-1 = FontAwesome:size=7:0
-font-2 = MaterialIcons-Regular:size=7;0
+font-0 = Droid Sans:size=12;0
+font-1 = FontAwesome:size=14:0
+font-2 = MaterialIcons-Regular:size=14;0
 
 modules-left = i3
 modules-center = clock

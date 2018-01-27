@@ -18,8 +18,7 @@ function! s:Lebab(...)
   let l:transforms = a:000
   let l:filename = expand('%:p')
 
-  let l:command_line = 'lebab '.shellescape(l:filename).
-        \ ' --transform '.join(l:transforms, ',')
+  let l:command_line = 'lebab '.shellescape(l:filename).' --transform '.join(l:transforms, ',')
 
   let l:new_lines = systemlist(l:command_line)
   if v:shell_error
