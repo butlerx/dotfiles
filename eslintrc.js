@@ -11,6 +11,5 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'func-style': ['error', 'declaration', { allowArrowFunctions: true }],
     'no-use-before-define': ['error', { functions: false }],
-    'consistent-return': 0,
   },
 };

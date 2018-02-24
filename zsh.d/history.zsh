@@ -1,4 +1,4 @@
 # HISTORY
-HISTSIZE=10000
-SAVEHIST=9000
-HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export SAVEHIST=9000
+export HISTFILE=~/.zsh_history

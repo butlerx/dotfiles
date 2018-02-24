@@ -12,8 +12,7 @@ au BufRead,BufNewFile *.mjs setfiletype javascript
 " This will run all the transforms specified and replace the buffer with the
 " results. The available transforms tab-complete.
 "
-command! -nargs=+ -complete=custom,s:LebabComplete
-      \ Lebab call s:Lebab(<f-args>)
+command! -nargs=+ -complete=custom,s:LebabComplete Lebab call s:Lebab(<f-args>)
 function! s:Lebab(...)
   let l:transforms = a:000
   let l:filename = expand('%:p')

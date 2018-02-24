@@ -6,7 +6,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
 Plug 'elzr/vim-json',
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'gregsexton/gitv'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'

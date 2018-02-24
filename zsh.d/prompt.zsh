@@ -3,44 +3,44 @@ autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
-  POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
+  export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
   if playerctl > /dev/null; then
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
+    export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
   else
-    POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+    export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
   fi
-  POWERLEVEL9K_STATUS_VERBOSE=false
-  POWERLEVEL9K_MODE='awesome-fontconfig'
+  export POWERLEVEL9K_STATUS_VERBOSE=false
+  export POWERLEVEL9K_MODE='awesome-fontconfig'
   export DEFAULT_USER=$USER
   export AWS_DEFAULT_PROFILE='cianbutlerx@gmail.com'
 
   # Directory
-  POWERLEVEL9K_DIR_PATH_SEPARATOR=$' \uE0B1 '
-  POWERLEVEL9K_DIR_HOME_BACKGROUND="238"
-  POWERLEVEL9K_DIR_HOME_FOREGROUND="255"
-  POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="238"
-  POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="255"
-  POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="238"
-  POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="255"
+  export POWERLEVEL9K_DIR_PATH_SEPARATOR=$' \uE0B1 '
+  export POWERLEVEL9K_DIR_HOME_BACKGROUND="238"
+  export POWERLEVEL9K_DIR_HOME_FOREGROUND="255"
+  export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="238"
+  export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="255"
+  export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="238"
+  export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="255"
 
   # Git
-  POWERLEVEL9K_VCS_STAGED_ICON=$'\u00b1'
-  POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\u25CF'
-  POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u00b1'
-  POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\u2193'
-  POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\u2191'
-  POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
-  POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
-  POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124'
-  POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
-  POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='190'
-  POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
+  export POWERLEVEL9K_VCS_STAGED_ICON=$'\u00b1'
+  export POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\u25CF'
+  export POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u00b1'
+  export POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\u2193'
+  export POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\u2191'
+  export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
+  export POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
+  export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124'
+  export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
+  export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='190'
+  export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
 
   # Vi-Mode
-  POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='076'
-  POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
-  POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='231'
-  POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='000'
+  export POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='076'
+  export POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
+  export POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='231'
+  export POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='000'
 
   function zle-line-init {
     powerlevel9k_prepare_prompts
@@ -68,22 +68,21 @@ if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
   zle -N zle-keymap-select
 
   # Playerctl
-  POWERLEVEL9K_CUSTOM_PLAYERCTL='playerctl_status'
-  POWERLEVEL9K_CUSTOM_PLAYERCTL_FOREGROUND='white'
-  POWERLEVEL9K_CUSTOM_PLAYERCTL_BACKGROUND='black'
+  export POWERLEVEL9K_CUSTOM_PLAYERCTL='playerctl_status'
+  export POWERLEVEL9K_CUSTOM_PLAYERCTL_FOREGROUND='white'
+  export POWERLEVEL9K_CUSTOM_PLAYERCTL_BACKGROUND='black'
   playerctl_status () {
     state=$(playerctl status);
-    if [ $state != "Playing" ]; then
-    else
+    if [ "$state" == "Playing" ]; then
       artist=$(playerctl metadata artist)
       track=$(playerctl metadata title)
       echo -n "$artist - $track";
     fi
   }
-  source ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
+  source "${HOME}"/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
 else
   function virtualenv_info {
-    [ $VIRTUAL_ENV ] && echo '('`basename $VIRTUAL_ENV`') '
+    [ "$VIRTUAL_ENV" ] && echo '('"$(basename "$VIRTUAL_ENV")"') '
   }
 
   function prompt_char {
@@ -93,19 +92,23 @@ else
   }
 
   function box_name {
-    [ -f ~/.box-name ] && cat ~/.box-name || hostname -s
+    if [ -f ~/.box-name ];then
+      cat ~/.box-name;
+    else
+      hostname -s;
+    fi
   }
 
   # Modify the colors and symbols in these variables as desired.
-  GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
-  GIT_PROMPT_PREFIX="%{$fg[green]%} [%{$reset_color%}"
-  GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
-  GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
-  GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
-  GIT_PROMPT_MERGING="%{$fg_bold[magenta]%}⚡︎%{$reset_color%}"
-  GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}u%{$reset_color%}"
-  GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}d%{$reset_color%}"
-  GIT_PROMPT_STAGED="%{$fg_bold[green]%}s%{$reset_color%}"
+  export GIT_PROMPT_SYMBOL="%{$fg[blue]%}±"
+  export GIT_PROMPT_PREFIX="%{$fg[green]%} [%{$reset_color%}"
+  export GIT_PROMPT_SUFFIX="%{$fg[green]%}]%{$reset_color%}"
+  export GIT_PROMPT_AHEAD="%{$fg[red]%}ANUM%{$reset_color%}"
+  export GIT_PROMPT_BEHIND="%{$fg[cyan]%}BNUM%{$reset_color%}"
+  export GIT_PROMPT_MERGING="%{$fg_bold[magenta]%}⚡︎%{$reset_color%}"
+  export GIT_PROMPT_UNTRACKED="%{$fg_bold[red]%}u%{$reset_color%}"
+  export GIT_PROMPT_MODIFIED="%{$fg_bold[yellow]%}d%{$reset_color%}"
+  export GIT_PROMPT_STAGED="%{$fg_bold[green]%}s%{$reset_color%}"
 
   # Show Git branch/tag, or name-rev if on detached head
   function parse_git_branch() {
@@ -117,19 +120,22 @@ else
 
     # Compose this value via multiple conditional appends.
     local GIT_STATE=""
+    local NUM_AHEAD=""
+    local GIT_DIR=""
+    local NUM_BEHIND=""
 
-    local NUM_AHEAD="$(git log --oneline @{u}.. 2> /dev/null | wc -l | tr -d ' ')"
+    NUM_AHEAD="$(git log --oneline @"{u}".. 2> /dev/null | wc -l | tr -d ' ')"
     if [ "$NUM_AHEAD" -gt 0 ]; then
       GIT_STATE=$GIT_STATE${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}
     fi
 
-    local NUM_BEHIND="$(git log --oneline ..@{u} 2> /dev/null | wc -l | tr -d ' ')"
+    NUM_BEHIND="$(git log --oneline ..@"{u}" 2> /dev/null | wc -l | tr -d ' ')"
     if [ "$NUM_BEHIND" -gt 0 ]; then
       GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
     fi
 
-    local GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
-    if [ -n $GIT_DIR ] && test -r $GIT_DIR/MERGE_HEAD; then
+    GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
+    if [ -n "$GIT_DIR" ] && test -r "$GIT_DIR"/MERGE_HEAD; then
       GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
     fi
 
@@ -154,13 +160,16 @@ else
 
   # If inside a Git repository, print its branch and state
   function git_prompt_string() {
-    local git_where="$(parse_git_branch)"
+    local git_where=""
+    git_where="$(parse_git_branch)"
     [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
   }
 
   function current_pwd {
-    echo $(pwd | sed -e "s,^$HOME,~,")
+    pwd | sed -e "s,^$HOME,~,"
   }
-  PROMPT='${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) '
-  RPROMPT='${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}'
+  PROMPT="${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) "
+  RPROMPT="${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}"
+  export PROMPT
+  export RPROMPT
 fi
