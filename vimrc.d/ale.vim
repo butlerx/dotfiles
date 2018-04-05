@@ -13,12 +13,19 @@ let g:ale_fixers = {
   \ 'sh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'go': ['gofmt', 'goimports', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'markdown': ['prettier'],
+  \ 'vimwiki': ['prettier'],
+  \ 'conf': ['trim_whitespace', 'remove_trailing_lines'],
   \ 'vue': ['prettier', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'java': ['google_java_format', 'trim_whitespace', 'remove_trailing_lines']}
 let g:ale_fix_on_save = 1
 let g:ale_go_gofmt_options = '-s'
 let g:ale_go_gometalinter_options = '--enable=gosimple --enable=staticcheck'
-let g:ale_linters = { 'javascript': ['eslint', 'flow'], 'go': ['gometalinter', 'gobuild'], 'zsh':['shell', 'shellcheck']}
+let g:ale_linters = {
+  \ 'javascript': ['eslint', 'flow'],
+  \ 'go': ['gometalinter', 'gobuild'],
+  \ 'rust': ['cargo', 'rls'],
+  \ 'zsh':['shell', 'shellcheck']}
+let g:ale_rust_rustc_options = ''
 let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'

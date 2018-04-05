@@ -1,29 +1,39 @@
 Plug 'Yggdroot/indentLine'
+Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
 Plug 'elzr/vim-json',
-Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': 'go' }
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go', 'gohtmltmpl'] }
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'gregsexton/gitv'
+Plug 'isobit/vim-caddyfile'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
+Plug 'mustache/vim-mustache-handlebars'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'posva/vim-vue'
 if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc' | Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} | Plug 'roxma/ncm-flow' | Plug 'Shougo/neco-vim'
-else
-  Plug 'roxma/nvim-completion-manager' | Plug 'roxma/python-support.nvim' | Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} | Plug 'roxma/ncm-flow' | Plug 'Shougo/neco-vim'
+  Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'roxma/nvim-completion-manager' |
+  Plug 'roxma/python-support.nvim' |
+  Plug 'roxma/nvim-cm-tern', {'do': 'npm install'} |
+  Plug 'roxma/ncm-flow' |
+  Plug 'roxma/nvim-cm-racer' |
+  Plug 'Shougo/neco-vim'
 Plug 'ryanoasis/vim-devicons'
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
+Plug 'udalov/kotlin-vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'w0rp/ale'
