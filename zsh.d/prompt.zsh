@@ -4,7 +4,7 @@ export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)e
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme ]]; then
   export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-  if playerctl > /dev/null; then
+  if type playerctl > /dev/null; then
     export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
   else
     export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
