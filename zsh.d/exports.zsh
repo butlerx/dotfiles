@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Currently this path is appended to dynamically when picking a ruby version
 # zshenv has already started PATH with rbenv so append only here
 
@@ -44,4 +46,3 @@ export PYTHON_USER=$HOME/.local/bin
 GEMPATH="$(ruby -e 'print Gem.user_dir')"
 export GEMPATH
 export PATH=$PATH:~/bin:/usr/local/bin:$YARN_BIN:$GOPATH/bin:$PYTHON_USER:$GEMPATH/bin
-export KOPS_STATE_STORE=s3://clusters.coderdojo.com

@@ -1,4 +1,4 @@
-#! /usr/bin/env zsh
+#!/usr/bin/env zsh
 
 #setopt promptsubst
 autoload -U colors && colors # Enable colors in prompt
