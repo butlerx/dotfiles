@@ -50,8 +50,6 @@
   ec = config --global -e
 [core]
   autocrlf = input
-  editor = nvim
-  pager = less -F -X
 [fetch]
   prune = true
 [filter "lfs"]
