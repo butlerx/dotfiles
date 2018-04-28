@@ -2,6 +2,10 @@ Host pyg
   HostName pyg.redbrick.dcu.ie
   user butlerx
 
+Host meth
+  HostName metharme.redbrick.dcu.ie
+  user butlerx
+
 Host rb
   HostName redbrick.dcu.ie
   user butlerx
@@ -24,4 +28,12 @@ Host paphos
 
 Host zeus
   HostName zeus.redbrick.dcu.ie
+  user alfred
+
+Host albus
+  HostName albus.redbrick.dcu.ie
+  user alfred
+
+Host pyg.alfred
+  HostName pyg.redbrick.dcu.ie
   user alfred

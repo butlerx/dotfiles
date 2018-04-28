@@ -1,17 +1,16 @@
 #!/usr/bin/env zsh
 
 docker-tty() {
-	tty=tty -s &&
-		docker run \
-			--tty \
-			--interactive \
-			--rm \
-			--user "$(id -u)":"$(id -g)" \
-			--volume /etc/passwd:/etc/passwd:ro \
-			--volume /etc/group:/etc/group:ro \
-			--volume "$(pwd)":/app \
-			--workdir /app \
-			"$@"
+	docker run \
+		--tty \
+		--interactive \
+		--rm \
+		--user "$(id -u)":"$(id -g)" \
+		--volume /etc/passwd:/etc/passwd:ro \
+		--volume /etc/group:/etc/group:ro \
+		--volume "$(pwd)":/app \
+		--workdir /app \
+		"$@"
 }
 
 compose() {
@@ -28,6 +27,10 @@ npm-docker() {
 
 maven() {
 	docker-tty maven $@
+}
+
+hadolint() {
+	docker run --rm -i hadolint/hadolint <$@
 }
 
 docker-ip() {

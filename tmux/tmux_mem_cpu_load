@@ -5,7 +5,9 @@ and code from psutil top.py.
 """
 import os
 import sys
+
 import psutil
+
 if os.name != 'posix':
     sys.exit('platform not supported')
 
@@ -13,9 +15,8 @@ if os.name != 'posix':
 def get_dashes(perc):
     """ Generate dashes """
     dashes = "|" * int((float(perc) / 10))
-    empty_dashes = " " * (10 - len(dashes))
 
-    return dashes, empty_dashes
+    return dashes, (" " * (10 - len(dashes)))
 
 
 def info():
@@ -23,22 +24,13 @@ def info():
     mem = psutil.virtual_memory()
     cpu = psutil.cpu_percent(interval=0.1)
     cpu_dashes, cpu_empty_dashes = get_dashes(cpu)
-    line = "%s/%s MB [%s%s]%5s%%" % (
-        str(int(mem.used / 1024 / 1024)),
-        str(int(mem.total / 1024 / 1024)),
-        cpu_dashes, cpu_empty_dashes, cpu,
-    )
-
-    return line
+    return "%s/%s MB [%s%s]%5s%%" % (str(int(mem.used / 1024 / 1024)),
+                                     str(int(mem.total / 1024 / 1024)),
+                                     cpu_dashes, cpu_empty_dashes, cpu)
 
 
-def main():
-    """main"""
+if __name__ == '__main__':
     try:
         print(info())
     except (KeyboardInterrupt, SystemExit):
         pass
-
-
-if __name__ == '__main__':
-    main()

@@ -149,7 +149,7 @@ gaps outer 10
 smart_gaps on
 
 #Nautilus
-bindsym $mod+Shift+U exec nautilus --no-desktop --browser
+bindsym $mod+Shift+U exec nautilus --browser
 
 # rofi
 bindsym $alt+Tab exec rofi -show window
