@@ -113,10 +113,8 @@ URxvt*urgentOnBell                : true
 URxvt*visualBell                  : false
 URxvt.keysym.M-Escape             : perl:keyboard-select:active
 URxvt.keysym.M-u                  : perl:url-select:select_next
-URxvt.keysym.Shift-Control-C      : perl:clipboard:copy
-URxvt.keysym.Shift-Control-V      : perl:clipboard:paste
-URxvt.letterSpace                 : -0.5
-URxvt.perl-ext-common             : default,url-select,clipboard,matcher,resize-font
+URxvt.letterSpace                 : 1
+URxvt.perl-ext-common             : default,url-select,matcher,resize-font
 URxvt.resize-font.bigger          : C-Up
 URxvt.resize-font.smaller         : C-Down
 URxvt.url-select.launcher         : /usr/bin/xdg-open
@@ -198,7 +196,7 @@ URxvt*color15                     : #EEEEEC
 *.depth                           : 32
 
 ! ROFI setup
-rofi.font                         : Hack 21
+rofi.font                         : Hack 14
 rofi.kb-row-up                    : Up,Control+p,Shift+Tab,Shift+Alt+Tab
 rofi.kb-row-tab                   : Tab,Alt+Tab
 rofi.padding                      : 25

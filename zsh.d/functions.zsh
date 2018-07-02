@@ -547,3 +547,11 @@ haste() {
 	printf "Upload failed."
 	return 1
 }
+
+weather() {
+  if [ "$1" = "" ]; then
+    curl wttr.in
+  else
+    curl wttr.in/"$1"
+  fi
+}

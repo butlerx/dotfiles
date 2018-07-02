@@ -15,7 +15,7 @@
   overview = log --all --oneline --no-merges
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   grpah = log --graph --all --decorate --stat --date=iso
-  amend = commit -a --amend --no-edit
+  amend = commit --amend --no-edit
   undo = reset HEAD~1 --mixed
   a = add
   ap = add -p
@@ -59,4 +59,4 @@
 [commit]
   gpgsign = true
 [gpg]
-  program = gpg
+  program = gpg2

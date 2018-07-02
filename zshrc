@@ -12,4 +12,9 @@ fi
 if type kubectl > /dev/null; then
   source <(kubectl completion zsh)
 fi
+if type helm > /dev/null; then
+  source <(helm completion zsh)
+fi
+source "$HOME/bin/complete"
+complete -F _bash_cli razz
 fpath=(/usr/local/share/zsh-completions $fpath)

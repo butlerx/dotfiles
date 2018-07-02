@@ -1,5 +1,6 @@
 let g:ale_fixers = {
   \ 'javascript': ['prettier_eslint', 'prettier', 'eslint', 'trim_whitespace', 'remove_trailing_lines'],
+  \ 'typescript': ['prettier', 'tslint', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'html': ['eslint', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'json': ['prettier', 'fixjson', 'jq',  'trim_whitespace', 'remove_trailing_lines'],
   \ 'scss': ['prettier', 'stylelint', 'trim_whitespace', 'remove_trailing_lines'],

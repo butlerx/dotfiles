@@ -17,7 +17,6 @@ else
 fi
 # zsh
 ln -s "$HOME/.dotfiles/zshrc" "$HOME/.zshrc"
-pip install --user thefuck
 cd "$HOME/.dotfiles" || exit
 git submodule init
 git submodule update

@@ -65,8 +65,8 @@ format-padding = 2
 
 [module/clock]
 type = internal/date
-date =  %Y-%m-%d  %H:%M
-date-alt = %%{F#888}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date =  %Y-%m-%d  %H:%M
+date-alt =  %%{F#888}%A, %d %B %Y   %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 format-underline = #493
 format-padding = 2
 
@@ -87,13 +87,9 @@ format-volume = <ramp-volume> <label-volume>
 ;   <bar-volume>
 format-muted = <label-muted>
 label-volume = %percentage%
-label-muted =  Mute
-bar-volume-width = 25
-bar-volume-indicator = 
-bar-volume-fill = ─
-bar-volume-empty = ─
-ramp-volume-0 = 
-ramp-volume-1 = 
+label-muted =  Mute
+ramp-volume-0 = 奔
+ramp-volume-1 = 墳
 ramp-volume-2 = 
 
 [module/i3]
