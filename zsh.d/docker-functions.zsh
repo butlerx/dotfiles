@@ -40,3 +40,7 @@ docker-ip() {
 wg() {
 	docker run -it --rm --log-driver none -v /tmp:/tmp --cap-add NET_ADMIN --net host --name wg r.j3ss.co/wg "$@"
 }
+
+browsh() {
+  docker run -it --rm browsh/browsh
+}

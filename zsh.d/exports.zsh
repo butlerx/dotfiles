@@ -37,12 +37,8 @@ export PERL5LIB="/home/butlerx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
 export PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
 export PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"
-YARN_BIN=$(yarn global bin)
-export YARN_BIN
 export GOPATH=$HOME/go
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 export PYTHON_USER=$HOME/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
-GEMPATH="$(ruby -e 'print Gem.user_dir')"
-export GEMPATH
-export PATH=$PATH:~/bin:/usr/local/bin:$YARN_BIN:$GOPATH/bin:$PYTHON_USER:$GEMPATH/bin
+export PATH=$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$(yarn global bin):$(ruby -e 'print Gem.user_dir'):$PYTHON_USER

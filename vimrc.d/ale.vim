@@ -40,8 +40,8 @@ nmap <silent> <M-j> <Plug>(ale_next_wrap)
 " Disable for minified code and enable whitespace trimming
 let g:ale_pattern_options = {
   \ '\.min\.js$': {'ale_linters': [], 'ale_fixers': []},
-  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []}}",
-  "\ '\.*': {'ale_fixers': ['trim_whitespace', 'remove_trailing_lines']}}
+  \ '\.min\.css$': {'ale_linters': [], 'ale_fixers': []},
+  \ '*': {'ale_fixers': ['trim_whitespace', 'remove_trailing_lines']}}
 
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
