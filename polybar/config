@@ -27,7 +27,7 @@ height = 35
 ;offset_y = 0
 
 tray-position = right
-tray-background = #000
+tray-background = #00ffffff
 tray-padding = 1
 
 background = #00ffffff
