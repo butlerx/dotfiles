@@ -10,7 +10,7 @@ let g:ale_fixers = {
   \ 'c': ['clang-format', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'cpp': ['clang-format', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'python': ['autopep8', 'yapf', 'isort', 'trim_whitespace', 'remove_trailing_lines'],
+  \ 'python': ['autopep8', 'black', 'yapf', 'isort', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'zsh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'sh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
   \ 'go': ['gofmt', 'goimports', 'trim_whitespace', 'remove_trailing_lines'],

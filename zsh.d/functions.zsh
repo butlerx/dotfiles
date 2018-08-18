@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 # -------------------------------------------------------------------
 # compressed file expander
 # (from https://github.com/myfreeweb/zshuery/blob/master/zshuery.sh)
@@ -54,7 +55,6 @@ path() {
 # Mac specific functions
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-
 	# view man pages in Preview
 	pman() {
 		ps=$(mktemp -t manpageXXXX).ps
@@ -549,9 +549,9 @@ haste() {
 }
 
 weather() {
-  if [ "$1" = "" ]; then
-    curl wttr.in
-  else
-    curl wttr.in/"$1"
-  fi
+	if [ "$1" = "" ]; then
+		curl -H "Accept-Language: ${LANG%_*}" wttr.in
+	else
+		curl -H "Accept-Language: ${LANG%_*}" wttr.in/"$1"
+	fi
 }

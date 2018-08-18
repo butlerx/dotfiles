@@ -3,6 +3,8 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 	# shellcheck source=~/.dotfiles/zsh/*.zsh
 	source "$file"
 done
-source "$HOME/bin/complete"
+if [ -f "$HOME/bin/complete" ]; then
+	source "$HOME/bin/complete"
+fi
 complete -F _bash_cli razz
 fpath=(/usr/local/share/zsh-completions $fpath)
