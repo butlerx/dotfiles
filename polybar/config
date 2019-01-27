@@ -15,13 +15,11 @@
 ;throttle_ms = 50
 
 [bar/i3]
-monitor = eDP1
-monitor-fallback = eDP1
+monitor = eDP-1
 bottom = false
-dock = false
 
 width = 100%
-height = 35
+height = 42
 
 ;offset_x = 0
 ;offset_y = 0
@@ -31,11 +29,11 @@ tray-background = #00ffffff
 tray-padding = 1
 
 background = #00ffffff
-foreground = #fff
+foreground = #fefefefe
 ;linecolor = #ff0000
 
 spacing = 2
-lineheight = 5
+lineheight = 10
 underline-size = 5
 
 ;locale = en_US.UTF-8
@@ -43,8 +41,8 @@ underline-size = 5
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Droid Sans:size=14;0
-font-1 = TerminessTTF Nerd Font:size=14:0
+font-0 = Droid Sans:size=22;0
+font-1 = TerminessTTF Nerd Font:size=22:0
 
 modules-left = i3
 modules-center = clock
@@ -164,14 +162,14 @@ format-underline = #267682
 format-padding = 2
 format = <ramp> <label>
 label = %percentage%
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
 
 [module/wireless-network]
 type = internal/network
-interface = wlp58s0
+interface = wlp4s0
 interval = 3.0
 format-connected-underline = #D95B43
 format-disconnected-underline = #D95B43
@@ -211,12 +209,11 @@ ramp-signal-3 = 
 ramp-signal-4 = 
 
 [bar/second]
-monitor = DP1
+monitor = DP-2
 bottom = false
-dock = false
 
 width = 100%
-height = 23
+height = 32
 
 ;offset_x = 0
 ;offset_y = 0

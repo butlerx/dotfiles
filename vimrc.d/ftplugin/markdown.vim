@@ -1,9 +1,4 @@
-" Spell check markdown and limit to 80 charcters
-au BufRead,BufNewFile *.txt setlocal textwidth=80
-au BufRead,BufNewFile *.md setlocal spell
-au BufRead,BufNewFile *.txt setlocal spell
 set complete+=kspell
-
 let g:vim_markdown_conceal = 0
 let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1

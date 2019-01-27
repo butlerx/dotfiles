@@ -6,13 +6,13 @@ git clone https://github.com/butlerx/dotfiles.git "$HOME/.dotfiles"
 # nvim or vim
 which nvim
 NVIM_INSTALL=$?
+mkdir -p "${XDG_CONFIG_HOME:=$HOME/.config}"
 if [ $NVIM_INSTALL -eq 0 ]; then
-	mkdir -p "${XDG_CONFIG_HOME:=$HOME/.config}"
-	ln -s ~/.vim "$XDG_CONFIG_HOME/nvim"
-	ln -s "$HOME/.dotfiles/vimrc" "$XDG_CONFIG_HOME/nvim/init.vim"
+	ln -s "$HOME/.dotfiles/vimrc.d" "$XDG_CONFIG_HOME/nvim"
 	nvim +qall
 else
-	ln -s "$HOME/.dotfiles/vimrc" "$HOME/.vimrc"
+	ln -s "$HOME/.dotfiles/vimrc.d" "$XDG_CONFIG_HOME/.vim"
+	ln -s "$XDG_CONFIG_HOME/.vim/init.vim" "$HOME/.vimrc"
 	vim +qall
 fi
 # zsh

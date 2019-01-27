@@ -555,3 +555,8 @@ weather() {
 		curl -H "Accept-Language: ${LANG%_*}" wttr.in/"$1"
 	fi
 }
+
+touch.py() {
+  mkdir -p "$@"
+  touch "$@"/__init__.py
+}

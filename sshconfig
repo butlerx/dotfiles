@@ -37,3 +37,20 @@ Host albus
 Host pyg.alfred
   HostName pyg.redbrick.dcu.ie
   user alfred
+
+Host notthe.cloud
+  HostName notthe.cloud
+  user butlerx
+  IdentityFile ~/.ssh/id_rsa_athens
+
+Host *.demonware.net
+  User cbutler
+  IdentityFile ~/.ssh/id_rsa
+
+Host las*
+  User cbutler
+  IdentityFile ~/.ssh/id_rsa
+
+Host tat*
+  User cbutler
+  IdentityFile ~/.ssh/id_rsa
