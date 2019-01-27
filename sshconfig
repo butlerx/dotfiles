@@ -38,6 +38,10 @@ Host pyg.alfred
   HostName pyg.redbrick.dcu.ie
   user alfred
 
+Host azazel
+  HostName 136.206.15.50
+  user butlerx
+
 Host notthe.cloud
   HostName notthe.cloud
   user butlerx

@@ -1,33 +1,30 @@
 let g:ale_fixers = {
-  \ 'javascript': ['prettier_eslint', 'prettier', 'eslint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'typescript': ['prettier', 'tslint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'html': ['eslint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'json': ['prettier', 'fixjson', 'jq',  'trim_whitespace', 'remove_trailing_lines'],
-  \ 'scss': ['prettier', 'stylelint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'css': ['prettier', 'stylelint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'less': ['prettier', 'stylelint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'stylus': ['stylelint', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'c': ['clang-format', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'cpp': ['clang-format', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'rust': ['rustfmt', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'python': ['black', 'yapf', 'isort', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'zsh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'sh': ['shfmt', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'go': ['gofmt', 'goimports', 'trim_whitespace', 'remove_trailing_lines'],
+  \ 'javascript': ['prettier', 'eslint'],
+  \ 'typescript': ['prettier', 'tslint'],
+  \ 'html': ['eslint'],
+  \ 'json': ['prettier', 'fixjson', 'jq'],
+  \ 'scss': ['prettier', 'stylelint'],
+  \ 'css': ['prettier', 'stylelint'],
+  \ 'less': ['prettier', 'stylelint'],
+  \ 'stylus': ['stylelint',],
+  \ 'c': ['clang-format'],
+  \ 'cpp': ['clang-format'],
+  \ 'rust': ['rustfmt'],
+  \ 'python': ['yapf', 'isort', 'black'],
+  \ 'zsh': ['shfmt'],
+  \ 'sh': ['shfmt'],
+  \ 'go': ['gofmt', 'goimports'],
   \ 'markdown': ['prettier'],
   \ 'vimwiki': ['prettier'],
-  \ 'conf': ['trim_whitespace', 'remove_trailing_lines'],
-  \ 'vue': ['prettier', 'trim_whitespace', 'remove_trailing_lines'],
-  \ 'java': ['google_java_format', 'trim_whitespace', 'remove_trailing_lines']}
+  \ 'vue': ['prettier'],
+  \ 'puppet': ['puppetlint'],
+  \ 'java': ['google_java_format']}
 let g:ale_fix_on_save = 1
 let g:ale_go_gofmt_options = '-s'
 let g:ale_go_gometalinter_options = '--enable=gosimple --enable=staticcheck'
 let g:ale_linters = {
-  \ 'javascript': ['eslint', 'flow'],
   \ 'go': ['gometalinter', 'gobuild'],
-  \ 'rust': ['cargo', 'rls'],
-  \ 'zsh':['shell', 'shellcheck']}
-let g:ale_rust_rustc_options = ''
+  \ 'typescript': ['tslint', 'tsserver', 'typecheck']}
 let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'E'
 let g:ale_echo_msg_warning_str = 'W'

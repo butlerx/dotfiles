@@ -3,6 +3,8 @@
   name = butlerx
   email = butlerx@notthe.cloud
   signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
+[includeIf "gitdir:~/projects/ihs/"]
+  path = ~/projects/ihs/.gitconfig
 [push]
   default = simple
 [github]

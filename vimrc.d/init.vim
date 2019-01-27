@@ -94,6 +94,10 @@ endif
 " Don't load GUI menus; set here before GUI starts
 if has('gui_running')
   set guioptions+=M
+  set guioptions+=LlRrb
+  set guioptions-=LlRrb
+  set guioptions-=T
+  set guioptions-=m
 endif
 
 " Allow buffers to have changes without being displayed
@@ -163,7 +167,7 @@ endif
 
 " Wildmenu settings; see also plugin/wildignore.vim
 set wildmenu                " Use wildmenu
-set wildmode=list:longest   " Tab press completes and lists
+"set wildmode=list:longest   " Tab press completes and lists
 silent! set wildignorecase  " Case insensitive, if supported
 
 " Let me move beyond buffer text in visual block mode
@@ -178,11 +182,6 @@ set fillchars+=stl:\ ,stlnc:\
 set foldcolumn=1
 set foldlevel=0
 set foldmethod=indent
-set guioptions+=LlRrb
-set guioptions-=LlRrb
-set guioptions-=T
-set guioptions-=m
-set hidden
 set ignorecase
 set laststatus=2
 set linebreak

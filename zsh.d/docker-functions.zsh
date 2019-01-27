@@ -48,3 +48,7 @@ wg() {
 browsh() {
 	docker run -it --rm browsh/browsh
 }
+
+wpscan () {
+  docker run -it --rm wpscanteam/wpscan "$@"
+}

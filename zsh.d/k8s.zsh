@@ -8,7 +8,7 @@ for app in $applications; do
 	fi
 done
 
-if type minikube >/dev/null; then
-	eval $(minikube docker-env)
-	source <(minikube completion zsh)
-fi
+#if type minikube >/dev/null; then
+	#eval $(minikube docker-env)
+	#source <(minikube completion zsh)
+#fi

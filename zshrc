@@ -6,6 +6,5 @@ done
 if [ -f "$HOME/bin/complete" ]; then
   source "$HOME/bin/complete"
 fi
-complete -F _bash_cli razz
 fpath=(/usr/local/share/zsh-completions $fpath)
 source "$HOME/.zprofile"

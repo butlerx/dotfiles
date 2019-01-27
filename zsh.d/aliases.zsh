@@ -30,9 +30,9 @@ alias bk='cd $OLDPWD'
 alias lh='ls -d .*' # show hidden files/directories only
 alias l='ls -al'
 if [[ $IS_LINUX -eq 1 ]]; then
-	alias lsd='ls -aFhl'
-	alias ls='ls -Fh --color'  # Colorize output, add file type indicator, and put sizes in human readable format
-	alias ll='ls -Fhl --color' # Same as above, but in long listing format
+  alias lsd='ls -aFhl'
+  alias ls='ls -Fh --color'  # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ll='ls -Fhl --color' # Same as above, but in long listing format
 fi
 alias ltree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr'        #directories sorted by size
@@ -44,26 +44,26 @@ alias filecount='find . -type f | wc -l' # number of files (not directories)
 # Mac only
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-	alias lsd='ls -aFhlG'
-	alias ls='ls -GFh'                 # Colorize output, add file type indicator, and put sizes in human readable format
-	alias ll='ls -GFhl'                # Same as above, but in long listing format
-	alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
-	alias oo='open .'                  # open current directory in OS X Finder
-	alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
-	alias mailsize='du -hs ~/Library/mail'
-	alias smart='diskutil info disk0 | grep SMART' # display SMART status of hard drive
-	# Hall of the Mountain King
-	alias cello='say -v cellos "di di di di di di di di di di di di di di di di di di di di di di di di di di"'
-	# alias to show all Mac App store apps
-	alias apps='mdfind "kMDItemAppStoreHasReceipt=1"'
-	# reset Address Book permissions in Mountain Lion (and later presumably)
-	alias resetaddressbook='tccutil reset AddressBook'
-	# refresh brew by upgrading all outdated casks
-	alias freshbrew='brew outdated | while read cask; do brew upgrade $cask; done'
-	alias newbrew='brew install'
-	# rebuild Launch Services to remove duplicate entries on Open With menu
-	alias rebuildopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.fram ework/Support/lsregister -kill -r -domain local -domain system -domain user'
-	alias htop='sudo htop'
+  alias lsd='ls -aFhlG'
+  alias ls='ls -GFh'                 # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ll='ls -GFhl'                # Same as above, but in long listing format
+  alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
+  alias oo='open .'                  # open current directory in OS X Finder
+  alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
+  alias mailsize='du -hs ~/Library/mail'
+  alias smart='diskutil info disk0 | grep SMART' # display SMART status of hard drive
+  # Hall of the Mountain King
+  alias cello='say -v cellos "di di di di di di di di di di di di di di di di di di di di di di di di di di"'
+  # alias to show all Mac App store apps
+  alias apps='mdfind "kMDItemAppStoreHasReceipt=1"'
+  # reset Address Book permissions in Mountain Lion (and later presumably)
+  alias resetaddressbook='tccutil reset AddressBook'
+  # refresh brew by upgrading all outdated casks
+  alias freshbrew='brew outdated | while read cask; do brew upgrade $cask; done'
+  alias newbrew='brew install'
+  # rebuild Launch Services to remove duplicate entries on Open With menu
+  alias rebuildopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.fram ework/Support/lsregister -kill -r -domain local -domain system -domain user'
+  alias htop='sudo htop'
 fi
 
 # -------------------------------------------------------------------
@@ -152,15 +152,6 @@ alias tmux='TERM=screen-256color tmux'
 alias sz='source ~/.zshrc'
 
 # -------------------------------------------------------------------
-# some Octopress helpers
-# -------------------------------------------------------------------
-alias generate='date ; rake generate ; date ;'
-alias gen='date ; rake generate ; date ;'
-alias ingen='date ; rake integrate ; generate ; date ;'
-alias deploy='rm deploy.log ; rake deploy > deploy.log ; tail -n 3 deploy.log ;'
-alias np='newpost.rb'
-
-# -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
 # -------------------------------------------------------------------
 alias wtf='dmesg'
@@ -182,27 +173,27 @@ alias cya='reboot'
 alias kthxbai='halt'
 
 abbr() {
-	URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-	lynx -accept_all_cookies https://www.acronymfinder.com/"$URL_PARAM".html
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://www.acronymfinder.com/"$URL_PARAM".html
 }
 dict() {
-	URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-	lynx -accept_all_cookies http://www.dictionary.com/browse/"$URL_PARAM"
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies http://www.dictionary.com/browse/"$URL_PARAM"
 }
 ddg() {
-	URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-	lynx -accept_all_cookies https://duckduckgo.com/lite/?q="$URL_PARAM"
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://duckduckgo.com/lite/?q="$URL_PARAM"
 }
 alias duck='ddg'
 ports() {
-	URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-	lynx -accept_all_cookies https://www.freshports.org/search.php?query="$URL_PARAM"
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://www.freshports.org/search.php?query="$URL_PARAM"
 }
 wiki() {
-	URL_PARAM=$(sed "s/$@/ /+/g")
-	lynx -accept_all_cookies https://en.wikipedia.org/w/index.php?search="$URL_PARAM"
+  URL_PARAM=$(sed "s/$@/ /+/g")
+  lynx -accept_all_cookies https://en.wikipedia.org/w/index.php?search="$URL_PARAM"
 }
 hints() {
-	URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-	lynx -accept_all_cookies https://devhints.io/"$URL_PARAM"
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://devhints.io/"$URL_PARAM"
 }

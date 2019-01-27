@@ -1,1 +1,5 @@
-autocmd BufNewFile,BufRead *.mjs setfiletype javascript
+autocmd BufNewFile,BufRead
+      \ ?*.js
+      \,?*.mjs
+      \,?*.ejs
+      \ setfiletype javascript

@@ -64,9 +64,6 @@ augroup filetypedetect
         \,?*.dpkg-{bak,dist,new,old}
         \ call s:StripRepeat()
 
-  " Stuff Tom cares about enough and edits often enough to type based on
-  " filename patterns follows.
-
   " Apache config
   autocmd BufNewFile,BufRead
         \ .htaccess
@@ -195,10 +192,6 @@ augroup filetypedetect
         \ ?*.java
         \,?*.jav
         \ setfiletype java
-  " JSON files
-  autocmd BufNewFile,BufRead
-        \ ?*.js
-        \ setfiletype javascript
   " JSON files
   autocmd BufNewFile,BufRead
         \ ?*.json
@@ -422,19 +415,6 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead
         \ ?*.tsv
         \ setfiletype tsv
-  " VimL files
-  autocmd BufNewFile,BufRead
-        \ ?*.vim
-        \,*.exrc
-        \,*.gvimrc
-        \,*.vimrc
-        \,_exrc
-        \,_gvimrc
-        \,_vimrc
-        \,exrc
-        \,gvimrc
-        \,vimrc
-        \ setfiletype vim
   " .viminfo files
   autocmd BufNewFile,BufRead
         \ .viminfo
@@ -444,13 +424,6 @@ augroup filetypedetect
         \ .wgetrc
         \,wgetrc
         \ setfiletype wget
-  " Add automatic commands to find Xresources subfiles
-  autocmd BufNewFile,BufRead
-        \ .Xresources
-        \,*/.Xresources.d/*
-        \,Xresources
-        \,*/Xresources.d/*
-        \ setfiletype xdefaults
   " XHTML files
   autocmd BufNewFile,BufRead
         \ ?*.xhtml
@@ -469,18 +442,6 @@ augroup filetypedetect
         \ ?*.y
         \,?*.yy
         \ setfiletype yacc
-  " YAML files
-  autocmd BufNewFile,BufRead
-        \ ?*.yaml
-        \ setfiletype yaml
-  " Z shell files
-  autocmd BufNewFile,BufRead
-        \ ?*.zsh
-        \,.zprofile
-        \,.zshrc
-        \,zprofile
-        \,zshrc
-        \ setfiletype zsh
 
   " Load any extra rules in ftdetect directories
   runtime! ftdetect/*.vim
