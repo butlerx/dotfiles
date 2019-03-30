@@ -12,6 +12,9 @@ endif
 call plug#begin('~/.local/share/nvim')
   runtime plug.vim
 call plug#end()
+if exists('veonim')
+  runtime veonim.vim
+endif
 
 if has('autocmd')
   "Set leader to space
