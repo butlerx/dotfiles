@@ -7,10 +7,18 @@
 } */
 
 /* Auto hide tab bar */
-:root:not([customizing])
-  #navigator-toolbox:not(:hover):not(:focus-within)
-  #TabsToolbar {
-  visibility: collapse;
+#main-window[tabsintitlebar='true']:not([extradragspace='true'])
+  #TabsToolbar
+  > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar='true']) #TabsToolbar {
+  visibility: collapse !important;
+}
+#main-window[titlepreface^='[1] ']
+  #sidebar-box[sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action'] {
+  visibility: collapse !important;
 }
 
 /* Avoid transparent background for menubar if nav-toolbox not focussed */
@@ -18,8 +26,6 @@
   /* Colour matches the grey background of the default firefox theme. Can't see what variable it uses */
   background-color: rgb(232, 232, 231);
 }
-
-/* Make top bar more compact */
 
 /* Make nav-bar thinner */
 #nav-bar {
@@ -41,11 +47,6 @@ statuspanel[type='overLink'] {
 /* Partial removal of black bottom 1px line shown in fullscreen mode */
 #navigator-toolbox::after {
   display: none !important;
-}
-
-/* Kill tab bar */
-#TabsToolbar {
-  visibility: collapse;
 }
 
 /* Remove window decorations (Close, Minimize, Fullscreen) */

@@ -41,5 +41,5 @@ export GOPATH=$HOME/go
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 export PYTHON_USER=$HOME/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
-export PATH=$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$HOME/.npm-global/bin:$HOME/.cargo/bin:$HOME/.node_modules/bin:$(ruby -e 'print Gem.user_dir'):$PYTHON_USER
+export PATH=$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.node_modules/bin:$(ruby -e 'print Gem.user_dir'):$PYTHON_USER
 export npm_config_prefix=~/.node_modules
