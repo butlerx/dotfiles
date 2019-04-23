@@ -10,10 +10,6 @@ Host rb
   HostName redbrick.dcu.ie
   user butlerx
 
-Host dcu
-  HostName student.computing.dcu.ie
-  user butlec25
-
 Host github.com
   HostName github.com
   user git
@@ -45,16 +41,19 @@ Host azazel
 Host notthe.cloud
   HostName notthe.cloud
   user butlerx
-  IdentityFile ~/.ssh/id_rsa_athens
+
+Host gobut.me
+  HostName login.gobut.me
+  user butlerx
 
 Host *.demonware.net
   User cbutler
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa.dw
 
 Host las*
   User cbutler
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa.dw
 
 Host tat*
   User cbutler
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_rsa.dw
