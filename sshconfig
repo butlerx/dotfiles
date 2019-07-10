@@ -57,3 +57,7 @@ Host las*
 Host tat*
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
+
+Host sha*
+  User cbutler
+  IdentityFile ~/.ssh/id_rsa.dw

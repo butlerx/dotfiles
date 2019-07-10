@@ -17,6 +17,7 @@
   overview = log --all --oneline --no-merges
   recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
   grpah = log --graph --all --decorate --stat --date=iso
+  changelog =  log --pretty=tformat:'* %ad %an <%ae> %d\n - %s' --date=format:'%a %b %d %Y'
   amend = commit --amend --no-edit
   undo = reset HEAD~1 --mixed
   a = add

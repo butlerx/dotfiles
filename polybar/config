@@ -70,7 +70,7 @@ format-underline = #493
 format-padding = 2
 
 [module/volume]
-type = internal/volume
+type = internal/alsa
 format-volume-underline = #933484
 format-volume-padding = 2
 format-muted-underline = #933484
