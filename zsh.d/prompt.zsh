@@ -5,99 +5,28 @@ autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme ]]; then
-  export POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context vi_mode dir)
-  if type playerctl > /dev/null; then
-    export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs custom_playerctl_status)
-  else
-    export POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
-  fi
-  export POWERLEVEL9K_STATUS_VERBOSE=false
-  export POWERLEVEL9K_MODE='awesome-fontconfig'
-  export DEFAULT_USER=$USER
-  export AWS_DEFAULT_PROFILE='cianbutlerx@gmail.com'
-
-  # Directory
-  export POWERLEVEL9K_DIR_PATH_SEPARATOR=$' \uE0B1 '
-  export POWERLEVEL9K_DIR_HOME_BACKGROUND="238"
-  export POWERLEVEL9K_DIR_HOME_FOREGROUND="255"
-  export POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="238"
-  export POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="255"
-  export POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="238"
-  export POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="255"
-
-  # Git
-  export POWERLEVEL9K_VCS_STAGED_ICON=$'\u00b1'
-  export POWERLEVEL9K_VCS_UNTRACKED_ICON=$'\u25CF'
-  export POWERLEVEL9K_VCS_UNSTAGED_ICON=$'\u00b1'
-  export POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON=$'\u2193'
-  export POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON=$'\u2191'
-  export POWERLEVEL9K_VCS_CLEAN_FOREGROUND='white'
-  export POWERLEVEL9K_VCS_CLEAN_BACKGROUND='black'
-  export POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='124'
-  export POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='black'
-  export POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='190'
-  export POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='black'
-
-  # Vi-Mode
-  export POWERLEVEL9K_VI_MODE_INSERT_BACKGROUND='076'
-  export POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND='236'
-  export POWERLEVEL9K_VI_MODE_NORMAL_BACKGROUND='231'
-  export POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND='000'
-
-  function zle-line-init {
-    powerlevel9k_prepare_prompts
-    if (( ${+terminfo[smkx]} )); then
-      printf '%s' ${terminfo[smkx]}
-    fi
-    zle reset-prompt
-    zle -R
-  }
-  function zle-line-finish {
-    powerlevel9k_prepare_prompts
-    if (( ${+terminfo[rmkx]} )); then
-      printf '%s' ${terminfo[rmkx]}
-    fi
-    zle reset-prompt
-    zle -R
-  }
-  function zle-keymap-select {
-    powerlevel9k_prepare_prompts
-    zle reset-prompt
-    zle -R
-  }
-  zle -N zle-line-init
-  zle -N ale-line-finish
-  zle -N zle-keymap-select
-
-  # Playerctl
-  export POWERLEVEL9K_CUSTOM_PLAYERCTL='playerctl_status'
-  export POWERLEVEL9K_CUSTOM_PLAYERCTL_FOREGROUND='white'
-  export POWERLEVEL9K_CUSTOM_PLAYERCTL_BACKGROUND='black'
-  playerctl_status () {
-    state=$(playerctl status);
-    if [ "$state" == "Playing" ]; then
-      artist=$(playerctl metadata artist)
-      track=$(playerctl metadata title)
-      echo -n "$artist - $track";
-    fi
-  }
-  source "${HOME}"/.dotfiles/powerlevel9k/powerlevel9k.zsh-theme
+  # Temporarily disable aliases.
+  'builtin' 'unsetopt' 'aliases'
+  p10k_config
+  # Reenable aliases
+  setopt aliases
+  source "$HOME"/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme
 else
-  function virtualenv_info {
+  function virtualenv_info() {
     [ "$VIRTUAL_ENV" ] && echo '('"$(basename "$VIRTUAL_ENV")"') '
   }
 
-  function prompt_char {
+  function prompt_char() {
     git branch >/dev/null 2>/dev/null && echo '>' && return
-    hg root >/dev/null 2>/dev/null && echo '~>'&& return
+    hg root >/dev/null 2>/dev/null && echo '~>' && return
     echo '>'
   }
 
-  function box_name {
-    if [ -f ~/.box-name ];then
-      cat ~/.box-name;
+  function box_name() {
+    if [ -f ~/.box-name ]; then
+      cat ~/.box-name
     else
-      hostname -s;
+      hostname -s
     fi
   }
 
@@ -114,7 +43,7 @@ else
 
   # Show Git branch/tag, or name-rev if on detached head
   function parse_git_branch() {
-    (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2> /dev/null
+    (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2>/dev/null
   }
 
   # Show different symbols as appropriate for various Git repository states
@@ -126,30 +55,30 @@ else
     local GIT_DIR=""
     local NUM_BEHIND=""
 
-    NUM_AHEAD="$(git log --oneline @"{u}".. 2> /dev/null | wc -l | tr -d ' ')"
+    NUM_AHEAD="$(git log --oneline @"{u}".. 2>/dev/null | wc -l | tr -d ' ')"
     if [ "$NUM_AHEAD" -gt 0 ]; then
       GIT_STATE=$GIT_STATE${GIT_PROMPT_AHEAD//NUM/$NUM_AHEAD}
     fi
 
-    NUM_BEHIND="$(git log --oneline ..@"{u}" 2> /dev/null | wc -l | tr -d ' ')"
+    NUM_BEHIND="$(git log --oneline ..@"{u}" 2>/dev/null | wc -l | tr -d ' ')"
     if [ "$NUM_BEHIND" -gt 0 ]; then
       GIT_STATE=$GIT_STATE${GIT_PROMPT_BEHIND//NUM/$NUM_BEHIND}
     fi
 
-    GIT_DIR="$(git rev-parse --git-dir 2> /dev/null)"
+    GIT_DIR="$(git rev-parse --git-dir 2>/dev/null)"
     if [ -n "$GIT_DIR" ] && test -r "$GIT_DIR"/MERGE_HEAD; then
       GIT_STATE=$GIT_STATE$GIT_PROMPT_MERGING
     fi
 
-    if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
+    if [[ -n $(git ls-files --other --exclude-standard 2>/dev/null) ]]; then
       GIT_STATE=$GIT_STATE$GIT_PROMPT_UNTRACKED
     fi
 
-    if ! git diff --quiet 2> /dev/null; then
+    if ! git diff --quiet 2>/dev/null; then
       GIT_STATE=$GIT_STATE$GIT_PROMPT_MODIFIED
     fi
 
-    if ! git diff --cached --quiet 2> /dev/null; then
+    if ! git diff --cached --quiet 2>/dev/null; then
       GIT_STATE=$GIT_STATE$GIT_PROMPT_STAGED
     fi
 
@@ -159,7 +88,6 @@ else
 
   }
 
-
   # If inside a Git repository, print its branch and state
   function git_prompt_string() {
     local git_where=""
@@ -167,11 +95,11 @@ else
     [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
   }
 
-  function current_pwd {
+  function current_pwd() {
     pwd | sed -e "s,^$HOME,~,"
   }
-  PROMPT="${PR_GREEN}%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}${PR_BOLD_BLUE}$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}${PR_BOLD_YELLOW}$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) "
-  RPROMPT="${PR_GREEN}$(virtualenv_info)%{$reset_color%} ${PR_RED}${ruby_version}%{$reset_color%}"
+  PROMPT="$PR_GREEN%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}$PR_BOLD_BLUE$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}$PR_BOLD_YELLOW$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) "
+  RPROMPT="$PR_GREEN$(virtualenv_info)%{$reset_color%} $PR_RED$ruby_version%{$reset_color%}"
   export PROMPT
   export RPROMPT
 fi

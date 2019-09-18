@@ -281,7 +281,7 @@ __git_flow_version_list ()
 	versions=(${${(f)"$(_call_program versions git flow release list 2> /dev/null | tr -d ' |*')"}})
 	__git_command_successful || return
 
-	_wanted versions expl 'version' compadd $versions
+	_wanted versions expl 'version' compadd "$versions"
 }
 
 __git_flow_feature_list ()
@@ -292,7 +292,7 @@ __git_flow_feature_list ()
 	features=(${${(f)"$(_call_program features git flow feature list 2> /dev/null | tr -d ' |*')"}})
 	__git_command_successful || return
 
-	_wanted features expl 'feature' compadd $features
+	_wanted features expl 'feature' compadd "$features"
 }
 
 __git_remotes () {
@@ -306,9 +306,9 @@ __git_remotes () {
 
 	# TODO: Should combine the two instead of either or.
 	if (( $#remotes > 0 )); then
-		_wanted remotes expl remote compadd $* - $remotes
+		_wanted remotes expl remote compadd "$@" - "$remotes"
 	else
-		_wanted remotes expl remote _files $* - -W "($gitdir/remotes)" -g "$gitdir/remotes/*"
+		_wanted remotes expl remote _files "$@" - -W "($gitdir/remotes)" -g "$gitdir/remotes/*"
 	fi
 }
 
@@ -320,7 +320,7 @@ __git_flow_hotfix_list ()
 	hotfixes=(${${(f)"$(_call_program hotfixes git flow hotfix list 2> /dev/null | tr -d ' |*')"}})
 	__git_command_successful || return
 
-	_wanted hotfixes expl 'hotfix' compadd $hotfixes
+	_wanted hotfixes expl 'hotfix' compadd "$hotfixes"
 }
 
 __git_branch_names () {
@@ -330,7 +330,7 @@ __git_branch_names () {
 	branch_names=(${${(f)"$(_call_program branchrefs git for-each-ref --format='"%(refname)"' refs/heads 2>/dev/null)"}#refs/heads/})
 	__git_command_successful || return
 
-	_wanted branch-names expl branch-name compadd $* - $branch_names
+	_wanted branch-names expl branch-name compadd "$@" - "$branch_names"
 }
 
 __git_command_successful () {

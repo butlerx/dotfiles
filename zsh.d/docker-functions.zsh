@@ -8,29 +8,29 @@ docker-tty() {
 		--user "$(id -u)":"$(id -g)" \
 		--volume /etc/passwd:/etc/passwd:ro \
 		--volume /etc/group:/etc/group:ro \
-		--volume "$(pwd)":/app \
+		--volume "$PWD":/app \
 		--workdir /app \
 		"$@"
 }
 
 compose() {
-	docker-tty compose $@
+	docker-tty compose "$@"
 }
 
 yarn-docker() {
-	docker-tty node yarn $@
+	docker-tty node yarn "$@"
 }
 
 npm-docker() {
-	docker-tty node npm $@
+	docker-tty node npm "$@"
 }
 
 maven() {
-	docker-tty maven $@
+	docker-tty maven "$@"
 }
 
 hadolint() {
-	docker run --rm -i hadolint/hadolint <$@
+	docker run --rm -i hadolint/hadolint <"$@"
 }
 
 docker-ip() {

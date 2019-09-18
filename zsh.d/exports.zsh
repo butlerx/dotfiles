@@ -27,8 +27,8 @@ export LC_COLLATE=C
 export LANG="en_US.UTF-8"
 
 # Virtual Environment Stuff
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Projects/django
+export WORKON_HOME="$HOME"/.virtualenvs
+export PROJECT_HOME="$HOME"/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
 #export HOMEBREW_GITHUB_API_TOKEN=
@@ -37,9 +37,14 @@ export PERL5LIB="/home/butlerx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
 export PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
 export PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"
-export GOPATH=$HOME/go
+export GOPATH="$HOME"/go
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
-export PYTHON_USER=$HOME/.local/bin
+export PYTHON_USER="$HOME"/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
-export PATH=$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$HOME/.cargo/bin:$HOME/.node_modules/bin:$(ruby -e 'print Gem.user_dir'):$PYTHON_USER
+export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
+export PATH="$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$HOME/.cargo/bin:$KREW_BIN:$HOME/.node_modules/bin:$(ruby -e 'print Gem.user_dir'):$PYTHON_USER"
 export npm_config_prefix=~/.node_modules
+
+export BAT_THEME="Monokai Extended"
+export BAT_PAGER="less -RF"
+export ANSIBLE_COW_SELECTION=random

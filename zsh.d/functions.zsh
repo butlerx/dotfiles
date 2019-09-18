@@ -242,7 +242,7 @@ armstrong() {
 Binary2Decimal() {
   Binary=$1
   re='^[0-9]+$'
-  if ! [[ "$Binary" =~ $re ]]; then
+  if ! [[ "$Binary" =~ "$re" ]]; then
     echo "Enter a valid number "
   else
     while [ "$Binary" -ne 0 ]; do
@@ -290,14 +290,14 @@ isprime() {
   n=$1
   i=1
   c=1
-  while [ $i -le "$n" ]; do
+  while [ "$i" -le "$n" ]; do
     i=$((i + 1))
     r=$((n % i))
-    if [ $r -eq 0 ]; then
+    if [ "$r" -eq 0 ]; then
       c=$((c + 1))
     fi
   done
-  if [ $c -eq 2 ]; then
+  if [ "$c" -eq 2 ]; then
     echo Prime
   else
     echo Not Prime
@@ -344,7 +344,7 @@ lowercase() {
 
 diskUsed() {
   PART=nvme0n1p3
-  USE=$(df -h | grep $PART | awk '{ print $5 }' | cut -d'%' -f1)
+  USE=$(df -h | grep "$PART" | awk '{ print $5 }' | cut -d'%' -f1)
   echo "Percent used:" "$USE"
 }
 
@@ -385,7 +385,7 @@ specialPattern() {
 timeTable() {
   n=$1
   i=1
-  while [ $i -ne 10 ]; do
+  while [ "$i" -ne 10 ]; do
     i=$((i + 1))
     table=$((i * n))
     echo "$table"
@@ -466,7 +466,7 @@ simpleCalc() {
   i="y"
   n1=$1
   n2=$2
-  while [ $i = "y" ]; do
+  while [ "$i" = "y" ]; do
     echo "1.Addition"
     echo "2.Subtraction"
     echo "3.Multiplication"
@@ -476,19 +476,19 @@ simpleCalc() {
     case $ch in
     1)
       sum=$((n1 + n2))
-      echo "Sum ="$sum
+      echo "Sum =""$sum"
       ;;
     2)
       sum=$((n1 - n2))
-      echo "Sub = "$sum
+      echo "Sub = ""$sum"
       ;;
     3)
       sum=$((n1 * n2))
-      echo "Mul = "$sum
+      echo "Mul = ""$sum"
       ;;
     4)
       sum=$((n1 / n2))
-      echo "Div = "$sum
+      echo "Div = ""$sum"
       ;;
     *) echo "Invalid choice" ;;
     esac
@@ -530,7 +530,7 @@ haste() {
   elif [[ ! -e $1 ]]; then
     printf "Error: No such file."
     return 1
-  elif (($(stat -c %s "$1") > (512 * 1024 ** 1))); then
+  elif (("$(stat -c %s "$1")" > (512 * 1024 ** 1))); then
     printf "Error: File must be smaller than 512 KiB."
     return 1
   fi
@@ -575,7 +575,37 @@ vpn() {
 
   sudo openconnect \
     --servercert=sha256:376185de3cbbeb2f66941d339092e989d6c03fe540f5ace84353e5fd6880215f \
-    --authgroup="LDAP" --protocol=nc ${VPN_URL} \
+    --authgroup="LDAP" --protocol=nc "$VPN_URL" \
     --cafile='/etc/ssl/certs/ca-certificates.crt' --no-dtls \
     --user=cbutler
+}
+
+abbr() {
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://www.acronymfinder.com/"$URL_PARAM".html
+}
+
+dict() {
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies http://www.dictionary.com/browse/"$URL_PARAM"
+}
+
+duck () {
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://duckduckgo.com/lite/?q="$URL_PARAM"
+}
+
+ports() {
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://www.freshports.org/search.php?query="$URL_PARAM"
+}
+
+wiki() {
+  URL_PARAM=$(sed "s/$@/ /+/g")
+  lynx -accept_all_cookies https://en.wikipedia.org/w/index.php?search="$URL_PARAM"
+}
+
+hints() {
+  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
+  lynx -accept_all_cookies https://devhints.io/"$URL_PARAM"
 }

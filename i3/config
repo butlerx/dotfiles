@@ -128,7 +128,7 @@ client.unfocused #666666 #666666 #ffffff
 client.urgent #aa0000 #990000 #ffffff
 
 # Set background
-exec --no-startup-id feh --bg-fill ~/pictures/wallpaper.jpg
+exec --no-startup-id nitrogen
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
 # Use Gestures

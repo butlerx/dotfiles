@@ -154,7 +154,7 @@ alias sz='source ~/.zshrc'
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
 # -------------------------------------------------------------------
-alias wtf='dmesg'
+#alias wtf='dmesg'
 alias onoz='cat /var/log/errors.log'
 alias rtfm='man'
 alias visible='echo'
@@ -171,29 +171,10 @@ alias nomz='ps aux | less'
 alias nomnom='killall'
 alias cya='reboot'
 alias kthxbai='halt'
+alias please='sudo'
 
-abbr() {
-  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-  lynx -accept_all_cookies https://www.acronymfinder.com/"$URL_PARAM".html
-}
-dict() {
-  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-  lynx -accept_all_cookies http://www.dictionary.com/browse/"$URL_PARAM"
-}
-ddg() {
-  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-  lynx -accept_all_cookies https://duckduckgo.com/lite/?q="$URL_PARAM"
-}
-alias duck='ddg'
-ports() {
-  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-  lynx -accept_all_cookies https://www.freshports.org/search.php?query="$URL_PARAM"
-}
-wiki() {
-  URL_PARAM=$(sed "s/$@/ /+/g")
-  lynx -accept_all_cookies https://en.wikipedia.org/w/index.php?search="$URL_PARAM"
-}
-hints() {
-  URL_PARAM=$(echo "$@" | sed "s/ /+/g")
-  lynx -accept_all_cookies https://devhints.io/"$URL_PARAM"
-}
+# -------------------------------------------------------------------
+# probably will break something aliasing common commands
+# -------------------------------------------------------------------
+
+alias cat='bat'

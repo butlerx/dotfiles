@@ -2,11 +2,7 @@
 monitor = ${env:MONITOR:4k}
 
 width = 100%
-height = 42
-
-tray-position = ${env:TRAY_POSITION:right}
-tray-background = #00ffffff
-tray-padding = 1
+height = 36
 
 background = #00ffffff
 foreground = #fff
@@ -17,8 +13,8 @@ underline-size = 5
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Droid Sans:size=22;0
-font-1 = TerminessTTF Nerd Font:size=22:0
+font-0 = Droid Sans:size=16;0
+font-1 = TerminessTTF Nerd Font:size=16:0
 
 modules-left = i3
 modules-center = clock
@@ -38,13 +34,13 @@ background = #00ffffff
 foreground = #fefefefe
 
 spacing = 2
-underline-size = 7
+underline-size = 5
 
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Droid Sans:size=22;0
-font-1 = TerminessTTF Nerd Font:size=22:0
+font-0 = Droid Sans:size=14;0
+font-1 = TerminessTTF Nerd Font:size=14:0
 
 modules-left = i3
 modules-center = clock

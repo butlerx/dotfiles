@@ -2,9 +2,9 @@
 
 applications=(kompose kops kubectl helm)
 
-for app in $applications; do
-	if type $app >/dev/null; then
-		source <($app completion zsh)
+for app in "$applications"; do
+	if type "$app" >/dev/null; then
+		source <("$app" completion zsh)
 	fi
 done
 
