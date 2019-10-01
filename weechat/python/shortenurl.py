@@ -14,6 +14,15 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # History
+# 2019-02-20, Jochen Saalfeld <privat@jochen-saalfeld.de>
+#  version 0.6.4: Fix is.gd URL pulling
+#                 (fix displaying of shortened URL for is.gd)
+# 2018-11-02, Jochen Saalfeld <privat@jochen-saalfeld.de>
+#  version 0.6.3: Fix is.gd URL pattern
+#                 (api.php is depricated)
+# 2018-07-12, Daniel Karbach <daniel.karbach@localhorst.tv>
+#  version 0.6.2: Fix is.gd URL pattern
+#                 (longurl param is appended by urlencode)
 # 2017-05-04, Jochen Saalfeld <privat@jochen-saalfeld.de>
 #   version 0.6.1: Fix support for is.gd, since the API changed
 # 2014-08-18, Ilkka Laukkanen <ilkka@fastmail.fm>
@@ -38,15 +47,15 @@
 import re
 import weechat
 from urllib import urlencode
-from urllib2 import urlopen
+import urllib2
 
 SCRIPT_NAME = "shortenurl"
 SCRIPT_AUTHOR = "John Anderson <sontek@gmail.com>"
-SCRIPT_VERSION = "0.6.1"
+SCRIPT_VERSION = "0.6.4"
 SCRIPT_LICENSE = "GPL3"
 SCRIPT_DESC = "Shorten long incoming and outgoing URLs"
 
-ISGD = 'https://is.gd/api.php?longurl=%s'
+ISGD = 'https://is.gd/create.php?format=simple&%s'
 TINYURL = 'http://tinyurl.com/api-create.php?%s'
 
 # script options
@@ -140,11 +149,13 @@ def get_shortened_url(url):
         history = 1 if weechat.config_get_plugin('bitly_add_to_history') == 'true' else 0
         return api.shorten(url, {'history':history})
     if shortener == 'isgd':
-        url = ISGD % urlencode({'longurl': url})
+        url = ISGD % urlencode({'url': url})
     if shortener == 'tinyurl':
         url = TINYURL % urlencode({'url': url})
     try:
-        return urlopen(url).read()
+        opener = urllib2.build_opener()
+        opener.addheaders = [('User-Agent', 'weechat')]
+        return opener.open(url).read()
     except:
         return url
 
