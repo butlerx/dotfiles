@@ -5,3 +5,4 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 done
 fpath=(/usr/local/share/zsh-completions $fpath)
 source "$HOME/.zprofile"
+export XDG_RUNTIME_DIR=/run/user/$(id -u)

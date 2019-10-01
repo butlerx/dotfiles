@@ -19,7 +19,7 @@ export GPG_TTY
 export LESS='--ignore-case --raw-control-chars'
 #export PAGER='/usr/share/vim/vim74/macros/less.sh' # Use vim as a pager
 #export EDITOR='vim'
-export PAGER='vimpager'
+export PAGER='/usr/share/vim/vim81/macros/less.sh'
 export EDITOR='nvim'
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
@@ -38,6 +38,8 @@ export PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LO
 export PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""
 export PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"
 export GOPATH="$HOME"/go
+YARN_BIN=$(yarn global bin 2>/dev/null)
+export YARN_BIN
 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
 export PYTHON_USER="$HOME"/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"

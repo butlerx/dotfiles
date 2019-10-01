@@ -19,6 +19,6 @@ if [[ -x $(which dnf) ]]; then
 	export HAS_YUM=1
 fi
 
-if [[ -x $(which yaourt) ]]; then
+if [[ -x $(which aurman 2>/dev/null) ]]; then
 	export HAS_YAOURT=1
 fi
