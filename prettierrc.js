@@ -4,7 +4,7 @@ module.exports = {
   proseWrap: 'always',
   overrides: [
     {
-      files: ['*.js', '*.mjs'],
+      files: ['*.js', '*.ts', '*.jsx', '*.tsx'],
       options: {
         printWidth: 100,
       },

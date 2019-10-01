@@ -1,0 +1,58 @@
+@namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
+
+/* Hide grey container box
+:root:not([customizing]) #navigator-toolbox:not(:hover):not(:focus-within) {
+  max-height: 0;
+  min-height: calc(0px);
+} */
+
+/* Auto hide tab bar */
+#main-window[tabsintitlebar='true']:not([extradragspace='true'])
+  #TabsToolbar
+  > .toolbar-items {
+  opacity: 0;
+  pointer-events: none;
+}
+#main-window:not([tabsintitlebar='true']) #TabsToolbar {
+  visibility: collapse !important;
+}
+#main-window[titlepreface^='[1] ']
+  #sidebar-box[sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action'] {
+  visibility: collapse !important;
+}
+
+/* Avoid transparent background for menubar if nav-toolbox not focussed */
+#navigator-toolbox:not(:hover):not(:focus-within) #toolbar-menubar > * {
+  /* Colour matches the grey background of the default firefox theme. Can't see what variable it uses */
+  background-color: rgb(232, 232, 231);
+}
+
+/* Make nav-bar thinner */
+#nav-bar {
+  padding-top: 1px !important;
+  padding-bottom: 0 !important;
+}
+
+/* We need more padding when maximised (maybe just on Windows?) */
+#main-window[sizemode='maximized'] #nav-bar {
+  padding-top: 7px !important;
+}
+
+/* Hide URL notifications that aren't particularly useful and cover up the command line
+ * TODO: move it above the command line / bring functionality into status line like Vimperator */
+statuspanel[type='overLink'] {
+  display: none !important;
+}
+
+/* Partial removal of black bottom 1px line shown in fullscreen mode */
+#navigator-toolbox::after {
+  display: none !important;
+}
+
+/* Remove window decorations (Close, Minimize, Fullscreen) */
+#titlebar {
+  display: none !important;
+}
+#TabsToolbar .titlebar-placeholder {
+  display: none !important;
+}
