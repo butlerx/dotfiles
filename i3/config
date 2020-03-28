@@ -127,8 +127,6 @@ client.focused #007fbf #007fbf #ffffff
 client.unfocused #666666 #666666 #ffffff
 client.urgent #aa0000 #990000 #ffffff
 
-# Set background
-exec --no-startup-id nitrogen
 # Set Custom keyboard mapping
 exec --no-startup-id xbindkeys
 # Use Gestures
@@ -150,11 +148,11 @@ smart_gaps on
 bindsym $mod+Shift+U exec nautilus --browser
 
 # rofi
-bindsym $alt+Tab exec rofi -show window
-bindsym $mod+o exec rofi -show ssh
-bindsym $mod+i exec rofi -show ssh -ssh-client mosh
-bindsym $mod+d exec zsh -c "rofi -show run"
-bindsym $mod+p exec rofi-pass
+bindsym $alt+Tab exec --no-startup-id rofi -show window
+bindsym $mod+o exec --no-startup-id rofi -show ssh
+bindsym $mod+i exec --no-startup-id rofi -show ssh -ssh-client mosh
+bindsym $mod+d exec --no-startup-id zsh -c "rofi -show run"
+bindsym $mod+p exec --no-startup-id rofi-pass
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id amixer set Master 5%+ unmute #increase sound volume
@@ -173,5 +171,5 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86Tools exec sh ~/.i3/i3lock.sh
-bindsym XF86Display exec sh ~/bin/screens
+bindsym XF86Display exec autorandr
 exec xcompmgr -c -f -n

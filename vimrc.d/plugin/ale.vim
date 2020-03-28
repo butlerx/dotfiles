@@ -1,6 +1,7 @@
 let g:ale_fixers = {
   \ 'javascript': ['prettier', 'eslint'],
-  \ 'typescript': ['prettier', 'tslint'],
+  \ 'typescript': ['prettier', 'tslint', 'eslint'],
+  \ 'typescriptreact': ['prettier', 'tslint', 'eslint'],
   \ 'html': ['eslint'],
   \ 'json': ['prettier', 'fixjson', 'jq'],
   \ 'scss': ['prettier', 'stylelint'],

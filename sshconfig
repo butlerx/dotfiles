@@ -38,6 +38,31 @@ Host azazel
   HostName 136.206.15.50
   user butlerx
 
+Host icarus
+  Hostname icarus.internal
+  ProxyJump azazel
+  user root
+
+Host daedalus
+  Hostname daedalus.internal
+  ProxyJump azazel
+  user root
+
+Host hardcase
+  Hostname hardcase.internal
+  ProxyJump azazel
+  user root
+
+Host butlerxvm
+  Hostname butlerxvm.internal
+  ProxyJump azazel
+  user root
+
+Host m1cr0man
+  Hostname m1cr0man.internal
+  ProxyJump azazel
+  user root
+
 Host notthe.cloud
   HostName notthe.cloud
   user butlerx
