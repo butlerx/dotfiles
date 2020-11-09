@@ -1,4 +1,7 @@
 autoload -U compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/bin/terraform terraform
+
 zmodload -i zsh/complist
 
 # man zshcontrib

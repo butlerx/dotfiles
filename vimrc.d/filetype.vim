@@ -320,6 +320,7 @@ augroup filetypedetect
   " Ruby
   autocmd BufNewFile,BufRead
         \ ?*.rb
+        \,Puppetfile
         \ setfiletype ruby
   " sed files
   autocmd BufNewFile,BufRead
@@ -465,6 +466,12 @@ augroup filetypedetect
         \ */log/*
         \,?*.log
         \ setfiletype messages
+  autocmd BufNewFile,BufRead
+        \ *.pp
+        \ setfiletype puppet
+  autocmd BufNewFile,BufRead
+        \ *.epp
+        \ setfiletype embeddedpuppet
 
   " Clumsy attempt at typing files in `sudo -e` if a filename hasn't already
   " been found; strip temporary extension and re-run

@@ -10,7 +10,7 @@
 [github]
   user = butlerx
 [alias]
-  yolo = !git commit -m \"$(curl -s whatthecommit.com/index.txt)\"
+  yolo = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
   lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   today = log --since=00:00:00 --all --no-merges --oneline --author=butlerx@notthe.cloud
   recap = log --all --oneline --no-merges --author=butlerx@notthe.cloud
@@ -20,6 +20,7 @@
   changelog =  log --pretty=tformat:'* %ad %an <%ae> %d\n - %s' --date=format:'%a %b %d %Y'
   amend = commit --amend --no-edit
   undo = reset HEAD~1 --mixed
+  clean-branch = "!git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
   a = add
   ap = add -p
   c = commit --verbose
@@ -39,10 +40,10 @@
   b = "!git for-each-ref --sort='-authordate' --format='%(authordate)%09%(objectname:short)%09%(refname)' refs/heads | sed -e 's-refs/heads/--'"
   # list aliases
   la = "!git config -l | grep alias | cut -c 7-"
-  up = !git fetch origin && git rebase origin/master
+  up = "!git fetch origin && git rebase origin/master"
   raf = remote add fork
   rao = remote add origin
-  ac = !git add . && git commit -am
+  ac = "!git add . && git commit -am"
   pushitgood = push -u origin --all
   fuckpush = push -u fork --all
   forkpush = push -u fork
@@ -57,7 +58,7 @@
   pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
   # for bitbucket/stash remotes
   spr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
-	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
+  ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 
 [core]
   autocrlf = input
@@ -67,7 +68,7 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
-	process = git-lfs filter-process
+  process = git-lfs filter-process
 [commit]
   gpgsign = true
 [gpg]
@@ -76,3 +77,7 @@
 # This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
 [include]
   path = /home/butlerx/.netlify/helper/git-config
+[pull]
+  rebase = true
+[url "git@github.ihs.demonware.net:"]
+	insteadOf = https://github.ihs.demonware.net

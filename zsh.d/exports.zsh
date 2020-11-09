@@ -17,9 +17,7 @@ export ARCHFLAGS='-arch x86_64'
 GPG_TTY=$(tty)
 export GPG_TTY
 export LESS='--ignore-case --raw-control-chars'
-#export PAGER='/usr/share/vim/vim74/macros/less.sh' # Use vim as a pager
-#export EDITOR='vim'
-export PAGER='/usr/share/vim/vim81/macros/less.sh'
+export PAGER='bat'
 export EDITOR='nvim'
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
