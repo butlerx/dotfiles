@@ -174,3 +174,4 @@ alias please='sudo'
 # -------------------------------------------------------------------
 
 alias cat='bat'
+alias icat="kitty +kitten icat"

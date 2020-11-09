@@ -3,8 +3,9 @@ Host pyg
   user butlerx
 
 Host meth
-  HostName metharme.redbrick.dcu.ie
-  user butlerx
+  HostName metharme.internal
+  ProxyJump azazel
+  user root
 
 Host rb
   HostName redbrick.dcu.ie
