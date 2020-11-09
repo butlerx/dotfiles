@@ -3,22 +3,20 @@ Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.s
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
 Plug 'elzr/vim-json',
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go', 'gohtmltmpl'] }
+Plug 'google/vim-jsonnet',
 Plug 'godlygeek/tabular' | Plug 'plasticboy/vim-markdown'
 Plug 'gregsexton/gitv'
-Plug 'isobit/vim-caddyfile'
+Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript.tsx', 'typescriptreact', 'typescript', 'vue'] }
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'posva/vim-vue'
-if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'ncm2/ncm2' |
   Plug 'ncm2/ncm2-tern',  {'do': 'npm install'} |
   Plug 'filipekiss/ncm2-look.vim'|
@@ -39,22 +37,22 @@ Plug 'ncm2/ncm2' |
   Plug 'roxma/nvim-yarp' |
   Plug 'wellle/tmux-complete.vim'|
   Plug 'yuki-ycino/ncm2-dictionary'|
+Plug 'pangloss/vim-javascript', { 'for': ['typescript.tsx', 'typescriptreact', 'javascript', 'vue'] }
+Plug 'peitalin/vim-jsx-typescript', { 'for': ['typescript.tsx', 'typescriptreact'] }
+Plug 'posva/vim-vue', { 'for': 'vue' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
+if !has('nvim')
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' | Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'sheerun/vim-polyglot'
 Plug 'sickill/vim-monokai'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'udalov/kotlin-vim'
+Plug 'skanehira/preview-markdown.vim', { 'for': 'markdown' }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'vimwiki/vimwiki'
-Plug 'w0rp/ale'
-Plug 'c9s/helper.vim'
-Plug 'c9s/treemenu.vim'
-Plug 'c9s/vikube.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
 " vim: set syntax=vim:

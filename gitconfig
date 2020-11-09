@@ -57,6 +57,7 @@
   pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
   # for bitbucket/stash remotes
   spr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
+	ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 
 [core]
   autocrlf = input
@@ -66,7 +67,12 @@
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   required = true
+	process = git-lfs filter-process
 [commit]
   gpgsign = true
 [gpg]
   program = gpg2
+
+# This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
+[include]
+  path = /home/butlerx/.netlify/helper/git-config
