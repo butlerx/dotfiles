@@ -1,5 +1,3 @@
-from __future__ import print_function
-
 # -*- coding: utf-8 -*-
 #
 # Copyright (C) 2011 Arnaud Renevier <arno@renevier.net>
@@ -19,6 +17,8 @@ from __future__ import print_function
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import print_function
+
 SCRIPT_NAME    = "autoconnect"
 SCRIPT_AUTHOR  = "arno <arno@renevier.net>"
 SCRIPT_VERSION = "0.3.3"
@@ -30,7 +30,7 @@ try:
     import weechat
 except:
     print("This script must be run under WeeChat.")
-    print("Get WeeChat now at: http://www.weechat.org/")
+    print("Get WeeChat now at: https://weechat.org/")
     quit()
 
 
