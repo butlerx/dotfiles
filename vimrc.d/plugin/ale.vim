@@ -18,13 +18,24 @@ let g:ale_fixers = {
   \ 'markdown': ['prettier'],
   \ 'vimwiki': ['prettier'],
   \ 'vue': ['prettier'],
+  \ 'ansible': ['prettier'],
   \ 'puppet': ['puppetlint'],
   \ 'java': ['google_java_format']}
 let g:ale_fix_on_save = 1
 let g:ale_go_gofmt_options = '-s'
 let g:ale_go_gometalinter_options = '--enable=gosimple --enable=staticcheck'
+let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_analyzer_config = {
+  \'rust-analyzer': {
+  \ 'assist': {
+  \   'importMergeBehavior': 'last',
+  \   'importPrefix': 'by_self',
+  \ },
+  \ 'cargo.loadOutDirsFromCheck': v:true,
+  \ 'procMacro.enable': v:true }}
 let g:ale_linters = {
   \ 'go': ['golangci-lint', 'gobuild', 'golint'],
+  \ 'rust': ['cargo', 'rls'],
   \ 'typescript': ['tslint', 'tsserver', 'typecheck']}
 let g:ale_completion_enabled = 1
 let g:ale_echo_msg_error_str = 'E'

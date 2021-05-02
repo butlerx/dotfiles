@@ -81,3 +81,5 @@
   rebase = true
 [url "git@github.ihs.demonware.net:"]
 	insteadOf = https://github.ihs.demonware.net
+[init]
+	defaultBranch = main

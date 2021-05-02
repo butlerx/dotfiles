@@ -561,25 +561,6 @@ touch.py() {
   touch "$@"/__init__.py
 }
 
-vpn() {
-  VPN_URL="https://lassa.demonware.net/dana-na/auth/url_default/welcome.cgi"
-
-  while getopts "o" OPTION; do
-    case $OPTION in
-    o)
-      VPN_URL="https://lassa.demonware.net/okta"
-      ;;
-    *) ;;
-    esac
-  done
-
-  sudo openconnect \
-    --servercert=sha256:376185de3cbbeb2f66941d339092e989d6c03fe540f5ace84353e5fd6880215f \
-    --authgroup="LDAP" --protocol=nc "$VPN_URL" \
-    --cafile='/etc/ssl/certs/ca-certificates.crt' --no-dtls \
-    --user=cbutler
-}
-
 abbr() {
   URL_PARAM=$(echo "$@" | sed "s/ /+/g")
   lynx -accept_all_cookies https://www.acronymfinder.com/"$URL_PARAM".html

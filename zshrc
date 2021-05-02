@@ -6,7 +6,7 @@ done
 fpath=(~/.dotfiles/zsh-completions $fpath)
 source "$HOME/.zprofile"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.deno/bin:$PATH"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/butlerx/.netlify/helper/path.zsh.inc' ]; then
