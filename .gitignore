@@ -1,6 +1,8 @@
 *.log
 .i3log
 *.pem
+weechat/logs
+weechat/script/plugins.xml.gz
 
 ### DotfilesSh ###
 local-patch
