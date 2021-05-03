@@ -3,6 +3,8 @@
 *.pem
 weechat/logs
 weechat/script/plugins.xml.gz
+tmux/resurrect
+tmux/plugins
 
 ### DotfilesSh ###
 local-patch
@@ -231,6 +233,3 @@ Session.vim
 *~
 # auto-generated tag files
 tags
-tmux/resurrect
-# Ignore ssh private keys
-ssh/id_*
