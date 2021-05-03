@@ -232,3 +232,5 @@ Session.vim
 # auto-generated tag files
 tags
 tmux/resurrect
+# Ignore ssh private keys
+ssh/id_*

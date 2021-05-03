@@ -31,11 +31,10 @@ alias lh='ls -d .*' # show hidden files/directories only
 alias l='ls -al'
 if [[ $IS_LINUX -eq 1 ]]; then
   alias lsd='ls -aFhl'
-  alias ls='ls -Fh --color'  # Colorize output, add file type indicator, and put sizes in human readable format
-  alias ll='ls -Fhl --color' # Same as above, but in long listing format
+  alias ll='ls -Fhl' # Same as above, but in long listing format
 fi
 alias ltree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
-alias dus='du -sckx * | sort -nr'        #directories sorted by size
+alias dus='du -sckx * | sort -nr' #directories sorted by size
 
 alias wordy='wc -w * | sort | tail -n10' # sort files in current directory by the number of words they contain
 alias filecount='find . -type f | wc -l' # number of files (not directories)
@@ -140,6 +139,7 @@ alias adventure='emacs -batch -l dunnet' # play adventure in the console
 alias ttop='top -ocpu -R -F -s 2 -n30'   # fancy top
 alias rm='rm -i'                         # make rm command (potentially) less destructive
 alias cl='clear'
+alias tf='terraform'
 
 # Force tmux to use 256 colors
 alias tmux='TERM=screen-256color tmux'
@@ -173,5 +173,8 @@ alias please='sudo'
 # probably will break something aliasing common commands
 # -------------------------------------------------------------------
 
-alias cat='bat'
-alias icat="kitty +kitten icat"
+if [[ $IS_LINUX -eq 1 ]]; then
+  alias cat='bat'
+  alias icat="kitty +kitten icat"
+  alias ls='exa -Fh' # Colorize output, add file type indicator, and put sizes in human readable format
+fi

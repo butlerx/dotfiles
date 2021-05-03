@@ -1,3 +1,7 @@
+Host *
+  ServerAliveInterval 30
+  ServerAliveCountMax 2
+
 Host pyg
   HostName pyg.redbrick.dcu.ie
   user butlerx
@@ -72,7 +76,7 @@ Host gobut.me
   HostName login.gobut.me
   user butlerx
 
-Host *.demonware.net
+Host *.las.demonware.net
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
 
@@ -80,10 +84,23 @@ Host las*
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
 
-Host tat*
+Host 10.8.*.* *.gcp.demonware.net
+  User ext_cbutler_demonware_net
+  IdentityFile ~/.ssh/id_rsa.dw
+  StrictHostKeyChecking no
+  ServerAliveInterval 60
+  ForwardAgent yes
+
+Host *.sha.demonware.net
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
 
 Host sha*
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
+
+Host las61356
+  KexAlgorithms +diffie-hellman-group1-sha1
+
+Host las44466
+  KexAlgorithms +diffie-hellman-group1-sha1
