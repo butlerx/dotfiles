@@ -1,4 +1,5 @@
 Host *
+  ForwardAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 2
 
@@ -89,7 +90,6 @@ Host 10.8.*.* *.gcp.demonware.net
   IdentityFile ~/.ssh/id_rsa.dw
   StrictHostKeyChecking no
   ServerAliveInterval 60
-  ForwardAgent yes
 
 Host *.sha.demonware.net
   User cbutler
