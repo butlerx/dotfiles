@@ -5,9 +5,9 @@ Plug 'chrisbra/csv.vim', { 'for': 'csv' }
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'dense-analysis/ale'
 Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile', 'docker-compose'] }
-Plug 'elzr/vim-json',
+Plug 'elzr/vim-json'
 Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries', 'for': ['go', 'gohtmltmpl'] }
-Plug 'google/vim-jsonnet',
+Plug 'google/vim-jsonnet'
 Plug 'godlygeek/tabular' |
   Plug 'plasticboy/vim-markdown'
 Plug 'gregsexton/gitv'
@@ -16,6 +16,7 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript.tsx', 'typescriptreact'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node'
+Plug 'nvim-treesitter/nvim-treesitter', { 'branch': '0.5-compat', 'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'ncm2/ncm2' |
   Plug 'ncm2/ncm2-tern',  {'do': 'npm install'} |
   Plug 'filipekiss/ncm2-look.vim'|
@@ -23,7 +24,7 @@ Plug 'ncm2/ncm2' |
   Plug 'ncm2/ncm2-bufword' |
   Plug 'ncm2/ncm2-cssomni'|
   Plug 'ncm2/ncm2-github' |
-  Plug 'ncm2/ncm2-go', {'do': 'go get -u github.com/mdempsky/gocode' }|
+  "Plug 'ncm2/ncm2-go', {'do': 'go get -u github.com/mdempsky/gocode' }|
   Plug 'ncm2/ncm2-html-subscope'|
   Plug 'ncm2/ncm2-jedi'|
   Plug 'ncm2/ncm2-markdown-subscope'|

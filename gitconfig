@@ -61,7 +61,7 @@
   ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 
 [core]
-  autocrlf = input
+	autocrlf = input
 [fetch]
   prune = true
 [filter "lfs"]
@@ -83,3 +83,5 @@
 	insteadOf = https://github.ihs.demonware.net
 [init]
 	defaultBranch = main
+[rerere]
+	enabled = 1

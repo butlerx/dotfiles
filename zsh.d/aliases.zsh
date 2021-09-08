@@ -1,10 +1,4 @@
 # -------------------------------------------------------------------
-# use nocorrect alias to prevent auto correct from "fixing" these
-# -------------------------------------------------------------------
-alias foobar='nocorrect foobar'
-alias g8='nocorrect g8'
-
-# -------------------------------------------------------------------
 # Ruby stuff
 # -------------------------------------------------------------------
 alias ri='ri -Tf ansi'   # Search Ruby documentation
@@ -69,13 +63,6 @@ fi
 # Grep
 # -------------------------------------------------------------------
 alias grep='grep --color=auto'
-
-# -------------------------------------------------------------------
-# remote machines
-# -------------------------------------------------------------------
-alias rb='ssh -L 6697:irc.redbrick.dcu.ie:6667 redbrick.dcu.ie'
-alias rbtunnel='ssh -N -f -n -L 6697:irc.redbrick.dcu.ie:6667 136.206.15.25'
-#alias rbvm ='ssh -L 5900:136.206.16.1:5913 butlerx@login.redbrick.dcu.ie'
 
 # -------------------------------------------------------------------
 # database
@@ -150,7 +137,7 @@ alias sz='source ~/.zshrc'
 # -------------------------------------------------------------------
 # Source: http://aur.archlinux.org/packages/lolbash/lolbash/lolbash.sh
 # -------------------------------------------------------------------
-#alias wtf='dmesg'
+alias wtf='dmesg'
 alias onoz='cat /var/log/errors.log'
 alias rtfm='man'
 alias visible='echo'

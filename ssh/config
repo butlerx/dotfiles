@@ -9,7 +9,7 @@ Host pyg
 
 Host meth
   HostName metharme.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host rb
@@ -46,27 +46,27 @@ Host azazel
 
 Host icarus
   Hostname icarus.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host daedalus
   Hostname daedalus.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host hardcase
   Hostname hardcase.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host butlerxvm
   Hostname butlerxvm.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host m1cr0man
   Hostname m1cr0man.internal
-  ProxyJump azazel
+  ProxyJump pyg
   user root
 
 Host notthe.cloud

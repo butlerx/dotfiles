@@ -194,20 +194,3 @@ URxvt*color15                     : #EEEEEC
 *.color14                         : xcolor14
 *.color15                         : xcolor15
 *.depth                           : 32
-
-! ROFI setup
-rofi.bw                           : 1
-rofi.color-active                 : xbackground, xcolor1, xbackground, xbackground, xcolor0
-rofi.color-enabled                : true
-rofi.color-normal                 : xbackground, xforeground, xbackground, xbackground, xcolor5
-rofi.color-urgent                 : xbackground, xcolor4, xbackground, xbackground, xcolor0
-rofi.color-window                 : xbackground, xcolor3, xcolor2
-rofi.font                         : Hack 20
-rofi.fullscreen                   : false
-rofi.kb-row-tab                   : Tab,Alt+Tab
-rofi.kb-row-up                    : Up,Control+p,Shift+Tab,Shift+Alt+Tab
-rofi.opacity                      : 90
-rofi.padding                      : 25
-rofi.separator-style              : dashed
-rofi.terminal                     : kitty
-rofi.width                        : 50

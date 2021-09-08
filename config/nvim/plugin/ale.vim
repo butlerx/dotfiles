@@ -1,4 +1,5 @@
 let g:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'javascript': ['prettier', 'eslint'],
   \ 'typescript': ['prettier', 'tslint', 'eslint'],
   \ 'typescriptreact': ['prettier', 'tslint', 'eslint'],
@@ -18,12 +19,15 @@ let g:ale_fixers = {
   \ 'markdown': ['prettier'],
   \ 'vimwiki': ['prettier'],
   \ 'vue': ['prettier'],
+  \ 'yaml': ['prettier'],
   \ 'ansible': ['prettier'],
   \ 'puppet': ['puppetlint'],
   \ 'java': ['google_java_format']}
 let g:ale_fix_on_save = 1
 let g:ale_go_gofmt_options = '-s'
-let g:ale_go_gometalinter_options = '--enable=gosimple --enable=staticcheck'
+let g:ale_go_gometalinter_options = '--fast'
+let g:ale_go_golangci_lint_options = '--fast'
+let g:ale_go_golangci_lint_package = 1
 let g:ale_rust_cargo_use_clippy = 1
 let g:ale_rust_analyzer_config = {
   \'rust-analyzer': {

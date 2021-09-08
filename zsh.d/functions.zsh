@@ -557,8 +557,14 @@ weather() {
 }
 
 touch.py() {
-  mkdir -p "$@"
-  touch "$@"/__init__.py
+  DIR="$1"
+  mkdir -p "$DIR"
+  FILE="${DIR}.py"
+  if [ -f "$FILE" ]; then
+    mv "$FILE" "${DIR}/__init__.py"
+  else
+    touch "${DIR}/__init__.py"
+  fi
 }
 
 abbr() {
