@@ -12,9 +12,6 @@ endif
 call plug#begin('~/.local/share/nvim')
   runtime plug.vim
 call plug#end()
-if exists('veonim')
-  runtime veonim.vim
-endif
 
 if has('autocmd')
   "Set leader to space
@@ -63,8 +60,10 @@ set comments=
 
 " Add completion options
 if exists('+completeopt')
+  set completeopt+=noinsert
   set completeopt+=longest  " Insert longest common substring
   set completeopt+=menuone  " Show the menu even if only one match
+  set completeopt+=noselect  " Show the menu even if only one match
 endif
 
 
