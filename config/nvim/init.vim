@@ -44,10 +44,13 @@ set autoindent     " Use indent of previous line on new lines
 set expandtab      " Use spaces instead of tabs
 set shiftwidth=2   " Indent with two spaces
 set softtabstop=2  " Insert two spaces with tab key
+set smartindent    " Enable smart-indent
+set smarttab       " Enable smart-tabs
+set tabstop=2
 set cindent shiftwidth=2
 
 " Let me backspace over pretty much anything
-set backspace=2
+set backspace=indent,eol,start
 
 " Indent wrapped lines
 silent! set breakindent
@@ -64,12 +67,8 @@ if exists('+completeopt')
   set completeopt+=longest  " Insert longest common substring
   set completeopt+=menuone  " Show the menu even if only one match
   set completeopt+=noselect  " Show the menu even if only one match
-endif
-
-
-" Use UTF-8 if we can and env LANG didn't tell us not to
-if has('multi_byte') && !exists('$LANG') && &encoding ==# 'latin1'
-  set encoding=utf-8
+else
+  set completeopt=noinsert,longest,menuone,noselect
 endif
 
 " Don't wait for a key after Escape in insert mode
@@ -138,6 +137,10 @@ if &ruler
   set noruler
 endif
 
+" Show row and column ruler information
+set ruler
+set colorcolumn=100
+
 " Options for file search with gf/:find
 set path-=/usr/include  " Let the C/C++ filetypes set that
 set path+=**            " Search current directory's whole tree
@@ -163,6 +166,7 @@ if has('persistent_undo')
   set undofile
   set undodir^=~/.vim/cache/undo//
 endif
+set undolevels=1000 " Number of undo levels
 
 " Wildmenu settings; see also plugin/wildignore.vim
 set wildmenu                " Use wildmenu
@@ -174,30 +178,29 @@ if exists('+virtualedit')
   set virtualedit+=block
 endif
 
-
 set diffopt=filler,iwhite
 set fileencoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
 set foldcolumn=1
 set foldlevel=0
 set foldmethod=indent
-set ignorecase
+set ignorecase  " Always case-insensitive
 set laststatus=2
-set linebreak
+set linebreak   " Break lines at word (requires Wrap lines)
 set list lcs=tab:\|\
 set noerrorbells vb t_vb=
 set nofoldenable
-set number
+set number  " Show line numbers
 set omnifunc=syntaxcomplete#Complete
 set scrolloff=1
 set showcmd
-set showmatch
-set smartcase
-set softtabstop=2
-set tabstop=2
+set showmatch " Highlight matching brace
+set smartcase " Enable smart-case search
 set termencoding=utf-8
+set textwidth=100 " Line wrap (number of cols)
+set visualbell    " Use visual bell (no beeping)
 
-" Stop C-r from being seen ad backspace
+" Stop C-r from being seen as backspace
 nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 
 " \R reloads ~/.vimrc

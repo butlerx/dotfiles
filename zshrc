@@ -5,7 +5,7 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 done
 fpath=(~/.dotfiles/zsh-completions $fpath)
 source "$HOME/.zprofile"
-
+source "/opt/google-cloud-sdk/completion.zsh.inc"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.deno/bin:$PATH"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
