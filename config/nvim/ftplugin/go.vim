@@ -1,9 +1,0 @@
-let g:go_fmt_autosave = 0
-let g:go_imports_autosave = 0
-let g:go_metalinter_autosave_= 0
-let g:go_fmt_command='gopls'
-let g:go_metalinter_command = 'golangci-lint'
-let g:go_gopls_gofumpt=1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_types = 1

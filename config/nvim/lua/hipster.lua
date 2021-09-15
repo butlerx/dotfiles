@@ -1,8 +1,8 @@
 local hipster = {}
 
-local WORDS_IN_SENTENCE      = {min = 5, max = 15}
-local SENTENCES_IN_PARAGRAPH = {min = 2, max = 7 }
-local PARAGRAPHS_IN_TEXT     = {min = 2, max = 7 }
+local WORDS_IN_SENTENCE = { min = 5, max = 15 }
+local SENTENCES_IN_PARAGRAPH = { min = 2, max = 7 }
+local PARAGRAPHS_IN_TEXT = { min = 2, max = 7 }
 
 local function random_int(min, max)
     return math.random(min, max)
@@ -20,7 +20,7 @@ Craft beer chia readymade ethnic, hella kogi Vice jean shorts cliche cray mlkshk
 
 local function get_words(phrase)
     local list = {}
-    for word in phrase:gmatch('%a+') do
+    for word in phrase:gmatch "%a+" do
         table.insert(list, word:lower())
     end
     return list
@@ -28,9 +28,8 @@ end
 
 hipster._dict = get_words(BASE_PHRASE)
 
-
 function hipster:word()
-    return hipster._dict[random_int(1, #(hipster._dict))]
+    return hipster._dict[random_int(1, #hipster._dict)]
 end
 
 function hipster:sentence()
@@ -39,7 +38,7 @@ function hipster:sentence()
     for i = 1, n do
         words[i] = hipster:word()
     end
-    local s = table.concat(words, ' ')
+    local s = table.concat(words, " ")
     s = s .. "."
     s = s:sub(1, 1):upper() .. s:sub(2)
     return s
@@ -51,7 +50,7 @@ function hipster:paragraph()
     for i = 1, n do
         sentences[i] = hipster:sentence()
     end
-    return table.concat(sentences, ' ')
+    return table.concat(sentences, " ")
 end
 
 function hipster:text()
@@ -60,11 +59,11 @@ function hipster:text()
     for i = 1, n do
         paragraphs[i] = hipster:paragraph()
     end
-    return table.concat(paragraphs, '\n')
+    return table.concat(paragraphs, "\n")
 end
 
 function hipster:output()
-    vim.cmd('normal A'..hipster:text():gsub("\n", "\r"))
+    vim.cmd("normal A" .. hipster:text():gsub("\n", "\r"))
 end
 
 return hipster
