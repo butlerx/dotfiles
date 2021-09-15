@@ -19,4 +19,3 @@ augroup shebang_create_exec
   autocmd BufWritePre *
         \ call shebang_create_exec#Check(expand('<afile>:p'))
 augroup END
-

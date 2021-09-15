@@ -64,43 +64,6 @@ augroup filetypedetect
         \,?*.dpkg-{bak,dist,new,old}
         \ call s:StripRepeat()
 
-  " Apache config
-  autocmd BufNewFile,BufRead
-        \ .htaccess
-        \,*/apache*/?*.conf
-        \ setfiletype apache
-  " Assembly language files
-  autocmd BufNewFile,BufRead
-        \ ?*.s
-        \ setfiletype asm
-  " AWK files
-  autocmd BufNewFile,BufRead
-        \ ?*.awk
-        \ setfiletype awk
-  " BIND zone file
-  autocmd BufNewFile,BufRead
-        \ */bind/db.?*
-        \,*/namedb/db.?*
-        \,named.root
-        \ setfiletype bindzone
-  " C files
-  autocmd BufNewFile,BufRead
-        \ ?*.c
-        \,?*.h
-        \ setfiletype c
-  " C++ files
-  autocmd BufNewFile,BufRead
-        \ ?*.cpp
-        \,?*.cxx
-        \,?*.c++
-        \,?*.hh
-        \ setfiletype cpp
-  " crontab(5) files
-  autocmd BufNewFile,BufRead
-        \ crontab
-        \,crontab.*
-        \,cron.d/*
-        \ setfiletype crontab
   " CSS files
   autocmd BufNewFile,BufRead
         \ ?*.css
@@ -135,23 +98,6 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead
         \ .gdbinit
         \ setfiletype gdb
-  " Git commit messages
-  autocmd BufNewFile,BufRead
-        \ COMMIT_EDITMSG
-        \,MERGE_MSG
-        \,TAG_EDITMSG
-        \ setfiletype gitcommit
-  " Git config files
-  autocmd BufNewFile,BufRead
-        \ *.git/config
-        \,.gitconfig
-        \,.gitmodules
-        \,gitconfig
-        \ setfiletype gitconfig
-  " Git rebase manifests
-  autocmd BufNewFile,BufRead
-        \ git-rebase-todo
-        \ setfiletype gitrebase
   " GnuPG configuration files
   autocmd BufNewFile,BufRead
         \ *gnupg/options
@@ -171,18 +117,6 @@ augroup filetypedetect
         \ .gktrc*,
         \,gktrc*
         \ setfiletype gtkrc
-  " Vim help files
-  autocmd BufNewFile,BufRead
-        \ ~/.vim/doc/?*.txt
-        \,*/vim-*/doc/?*.txt
-        \,*/*.vim/doc/?*.txt
-        \,$VIMRUNTIME/doc/?*.txt
-        \ setfiletype help
-  " HTML files
-  autocmd BufNewFile,BufRead
-        \ ?*.html
-        \,?*.htm
-        \ setfiletype html
   " inittab(5) files
   autocmd BufNewFile,BufRead
         \ inittab
@@ -209,15 +143,6 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead
         \ ?*.m4
         \ setfiletype m4
-  " Mail messages
-  autocmd BufNewFile,BufRead
-        \ ?*.msg
-        \,mutt-*-[0-9]\+-[0-9]\+-[0-9]\+
-        \ setfiletype mail
-  " Mail messages
-  autocmd BufNewFile,BufRead
-        \ aliases
-        \ setfiletype mailaliases
   " Makefiles
   autocmd BufNewFile,BufRead
         \ Makefile
@@ -235,12 +160,6 @@ augroup filetypedetect
         \,.muttrc
         \,/etc/Muttrc.d/*
         \ setfiletype muttrc
-  " BIND configuration file
-  autocmd BufNewFile,BufRead
-        \ named.conf
-        \,rndc.conf
-        \,rndc.key
-        \ setfiletype named
   " Nano configuration file
   autocmd BufNewFile,BufRead
         \ *.nanorc
@@ -272,32 +191,6 @@ augroup filetypedetect
         \,$TMPDIR/pass.?*/?*.txt
         \,/tmp/pass.?*/?*.txt
         \ setfiletype password
-  " Perl 5 files
-  autocmd BufNewFile,BufRead
-        \ ?*.pl
-        \,?*.pm
-        \,*/t/?*.t
-        \,*/xt/?*.t
-        \,Makefile.PL
-        \ setfiletype perl
-  " Perl 6 files
-  autocmd BufNewFile,BufRead
-        \ ?*.p6
-        \,?*.pl6
-        \,?*.pm6
-        \ setfiletype perl6
-  " PHP files
-  autocmd BufNewFile,BufRead
-        \ ?*.php
-        \ setfiletype php
-  " Perl 5 POD files
-  autocmd BufNewFile,BufRead
-        \ ?*.pod
-        \ setfiletype pod
-  " Perl 6 POD files
-  autocmd BufNewFile,BufRead
-        \ ?*.pod6
-        \ setfiletype pod6
   " Python files
   autocmd BufNewFile,BufRead
         \ ?*.py
@@ -322,13 +215,6 @@ augroup filetypedetect
         \ ?*.rb
         \,Puppetfile
         \ setfiletype ruby
-  " Puppet files
-  autocmd BufNewFile,BufRead
-        \ ?*.pp
-        \ setfiletype puppet
-  autocmd BufNewFile,BufRead
-        \ ?*.epp
-        \ setfiletype embeddedpuppet
   " sed files
   autocmd BufNewFile,BufRead
         \ ?*.sed
@@ -337,61 +223,10 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead
         \ /etc/services
         \ setfiletype services
-  " Bash shell
-  autocmd BufNewFile,BufRead
-        \ ?*.bash
-        \,.bash_aliases
-        \,.bash_completion
-        \,.bash_logout
-        \,.bash_profile
-        \,.bashrc
-        \,bash-fc.?*
-        \,bash_aliases
-        \,bash_completion
-        \,bash_logout
-        \,bash_profile
-        \,bashrc
-        \ let b:is_bash = 1
-        \|setfiletype sh
-  " Korn shell
-  autocmd BufNewFile,BufRead
-        \ ?*.ksh
-        \,.kshrc
-        \,kshrc
-        \ let b:is_kornshell = 1
-        \|setfiletype sh
-  " POSIX/Bourne shell
-  autocmd BufNewFile,BufRead
-        \ ?*.sh
-        \,$ENV
-        \,.profile
-        \,.shinit
-        \,.shrc
-        \,.xinitrc
-        \,/etc/default/*
-        \,configure
-        \,profile
-        \,shinit
-        \,shrc
-        \,xinitrc
-        \ let b:is_posix = 1
-        \|setfiletype sh
-  " SQL
-  autocmd BufNewFile,BufRead
-        \ ?*.sql
-        \ setfiletype sql
-  " OpenSSH configuration
-  autocmd BufNewFile,BufRead
-        \ ssh_config,*/.ssh/config
-        \ setfiletype sshconfig
   " sudoers(5)
   autocmd BufNewFile,BufRead
         \ sudoers
         \,sudoers.tmp
-        \ setfiletype sshdconfig
-  " OpenSSH server configuration
-  autocmd BufNewFile,BufRead
-        \ sshd_config
         \ setfiletype sudoers
   " Subversion commit
   autocmd BufNewFile,BufRead
@@ -423,28 +258,15 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead
         \ ?*.tsv
         \ setfiletype tsv
-  " .viminfo files
-  autocmd BufNewFile,BufRead
-        \ .viminfo
-        \ setfiletype viminfo
   " .wgetrc files
   autocmd BufNewFile,BufRead
         \ .wgetrc
         \,wgetrc
         \ setfiletype wget
-  " XHTML files
-  autocmd BufNewFile,BufRead
-        \ ?*.xhtml
-        \,?*.xht
-        \ setfiletype xhtml
   " XML files
   autocmd BufNewFile,BufRead
         \ ?*.xml
         \ setfiletype xml
-  " Perl XS
-  autocmd BufNewFile,BufRead
-        \ ?*.xs
-        \ setfiletype xs
   " Yacc files
   autocmd BufNewFile,BufRead
         \ ?*.y

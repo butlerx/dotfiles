@@ -11,3 +11,16 @@ autocmd BufNewFile,BufRead
       \,gvimrc
       \,vimrc
       \ setfiletype vim
+"
+" Vim help files
+autocmd BufNewFile,BufRead
+      \ ~/.vim/doc/?*.txt
+      \,*/vim-*/doc/?*.txt
+      \,*/*.vim/doc/?*.txt
+      \,$VIMRUNTIME/doc/?*.txt
+      \ setfiletype help
+
+" .viminfo files
+autocmd BufNewFile,BufRead
+  \ .viminfo
+  \ setfiletype viminfo

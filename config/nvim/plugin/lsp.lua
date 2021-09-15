@@ -31,12 +31,20 @@ local on_attach = function(client, bufnr)
     map { "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>" }
     map { "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>" }
     map { "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>" }
-    map { "n", "<space>wl", "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>" }
+    map {
+        "n",
+        "<space>wl",
+        "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+    }
     map { "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>" }
     map { "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>" }
     map { "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>" }
     map { "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" }
-    map { "n", "<space>e", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>" }
+    map {
+        "n",
+        "<space>e",
+        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
+    }
     map { "n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>" }
     map { "n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>" }
     map { "n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" }
@@ -52,12 +60,12 @@ local on_attach = function(client, bufnr)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
             [[
-    augroup lsp_document_highlight
-    autocmd! * <buffer>
-    autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-    autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-    augroup END
-    ]],
+                augroup lsp_document_highlight
+                autocmd! * <buffer>
+                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+                augroup END
+            ]],
             false
         )
     end
@@ -101,7 +109,5 @@ cmp.setup {
             vim.fn["vsnip#anonymous"](args.body)
         end,
     },
-    mapping = {
-        ["<C-y>"] = cmp.mapping.confirm { select = true },
-    },
+    mapping = { ["<C-y>"] = cmp.mapping.confirm { select = true } },
 }
