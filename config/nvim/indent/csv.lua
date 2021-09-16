@@ -5,7 +5,7 @@ if vim.b.did_indent then
 end
 vim.b.did_indent = 1
 
--- Manual indenting and literal tabs for TSVs
+-- Manual indenting and literal tabs for CSVs
 setlocal.autoindent = false
 setlocal.expandtab = false
 setlocal.softtabstop = 0

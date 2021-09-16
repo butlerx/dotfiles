@@ -310,7 +310,7 @@ augroup filetypedetect
   autocmd BufNewFile,BufRead,StdinReadPost
         \ *
         \ if !did_filetype()
-        \|  runtime scripts.vim
+        \|  lua require'scripts'
         \|endif
 
   " If supported, on leaving insert mode, check whether the first line was

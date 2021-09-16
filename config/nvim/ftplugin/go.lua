@@ -1,3 +1,8 @@
+-- Only do this when not yet done for this buffer
+if vim.b.did_ftplugin then
+    return
+end
+
 vim.g.go_fmt_autosave = 0
 vim.g.go_imports_autosave = 0
 vim.g.go_metalinter_autosave = 0
