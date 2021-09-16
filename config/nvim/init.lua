@@ -116,7 +116,6 @@ set.ttimeoutlen = 10000
 -- Keep undo files, hopefully in a dedicated directory
 if fn.has "persistent_undo" then
     set.undofile = true
-    set.undodir:append { "~/.vim/cache/undo//" }
 end
 
 -- Number of undo levels
@@ -147,7 +146,6 @@ set.showcmd = true
 set.showmatch = true -- Highlight matching brace
 set.smartcase = true -- Enable smart-case search
 vim.cmd [[set termencoding=utf-8]]
-set.textwidth = 100 -- Line wrap (number of cols)
 set.visualbell = true -- Use visual bell (no beeping)
 
 -- Delete Selected word from whole file

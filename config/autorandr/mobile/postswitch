@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+if [[ $DEBUG == 'true' ]]; then
+  set -euxo pipefail
+else
+  set -euo pipefail
+fi
+IFS=$'\n\t'
+
+kill_polybar() {
+  pkill polybar || true
+  # Wait until the processes have been shut down
+  while pgrep -x polybar >/dev/null; do sleep 1; done
+}
+
+set_wallpaper() {
+  SCREEN=$1
+  MODE=$2
+  IMAGE=$3
+  nitrogen --head="$SCREEN" --set-"$MODE" --save ~/pictures/wallpapers/"$IMAGE"
+}
+
+start_bar() {
+  export MONITOR=$1
+  BAR=$2
+  polybar --reload "$BAR" </dev/null >"/var/tmp/polybar-$MONITOR.log" 2>&1 &
+}
+
+status_bar() {
+  kill_polybar
+  (
+    flock 200
+    start_bar eDP-1 1080p
+  ) 200>/var/tmp/polybar-launch.lock
+}
+
+postswitch() {
+  set_wallpaper 0 auto EFFECTS.jpg
+  status_bar
+}
+
+postswitch

@@ -148,11 +148,6 @@ augroup filetypedetect
         \ Makefile
         \,makefile
         \ setfiletype make
-  " Markdown files
-  autocmd BufNewFile,BufRead
-        \ ?*.markdown
-        \,?*.md
-        \ setfiletype markdown
   " Mutt configuration files
   autocmd BufNewFile,BufRead
         \ Muttrc
