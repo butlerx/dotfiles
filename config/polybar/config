@@ -104,16 +104,16 @@ label-focused = %index% %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
 label-focused-underline = #fba922
-label-focused-padding = 4
+label-focused-padding = 6
 label-unfocused = %index% %icon%
-label-unfocused-padding = 4
+label-unfocused-padding = 5
 label-visible = %index% %icon%
 label-visible-underline = #555555
-label-visible-padding = 4
+label-visible-padding = 5
 label-urgent = %index% %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-padding = 4
+label-urgent-padding = 5
 
 [module/battery]
 type = internal/battery
@@ -167,7 +167,7 @@ ramp-3 = 
 
 [module/wireless-network]
 type = internal/network
-interface = wlp4s0
+interface = ${env:WIRELESS:wlp58s0}
 interval = 3.0
 format-connected-underline = #D95B43
 format-disconnected-underline = #D95B43
