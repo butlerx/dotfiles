@@ -38,7 +38,7 @@ export PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"
 export GOPATH="$HOME"/go
 YARN_BIN=$(yarn global bin 2>/dev/null)
 export YARN_BIN
-export JAVA_HOME=/usr/lib/jvm/java-8-openjdk/jre
+export JAVA_HOME=/usr/lib/jvm/default
 export PYTHON_USER="$HOME"/.local/bin
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
