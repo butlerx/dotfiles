@@ -59,16 +59,6 @@ Host hardcase
   ProxyJump pyg
   user root
 
-Host butlerxvm
-  Hostname butlerxvm.internal
-  ProxyJump pyg
-  user root
-
-Host m1cr0man
-  Hostname m1cr0man.internal
-  ProxyJump pyg
-  user root
-
 Host notthe.cloud
   HostName notthe.cloud
   user butlerx
@@ -77,12 +67,10 @@ Host gobut.me
   HostName login.gobut.me
   user butlerx
 
-Host *.las.demonware.net
+Host las* *.las.demonware.net
   User cbutler
-  IdentityFile ~/.ssh/id_rsa.dw
-
-Host las*
-  User cbutler
+  HostKeyAlgorithms +ssh-rsa
+  PubkeyAcceptedKeyTypes +ssh-rsa
   IdentityFile ~/.ssh/id_rsa.dw
 
 Host 10.8.*.* *.gcp.demonware.net
@@ -91,16 +79,13 @@ Host 10.8.*.* *.gcp.demonware.net
   StrictHostKeyChecking no
   ServerAliveInterval 60
 
-Host *.sha.demonware.net
+Host sha* *.sha.demonware.net
   User cbutler
   IdentityFile ~/.ssh/id_rsa.dw
 
-Host sha*
-  User cbutler
-  IdentityFile ~/.ssh/id_rsa.dw
-
+# Centos 5
 Host las61356
   KexAlgorithms +diffie-hellman-group1-sha1
 
-Host las44466
-  KexAlgorithms +diffie-hellman-group1-sha1
+Host gerrit.las.demonware.net
+  Port 29418

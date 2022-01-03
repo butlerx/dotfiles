@@ -12,3 +12,6 @@ export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.
 if [ -f '/home/butlerx/.netlify/helper/path.zsh.inc' ]; then
   source '/home/butlerx/.netlify/helper/path.zsh.inc'
 fi
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/grr grr

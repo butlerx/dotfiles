@@ -1,47 +1,48 @@
 local Plug = vim.fn["plug#"]
 
-vim.call "plugins#PlugLoad"
+vim.call("plugins#PlugLoad")
 vim.call("plug#begin", "~/.local/share/nvim")
 
-Plug "Xuyuanp/nerdtree-git-plugin"
-Plug "Yggdroot/indentLine"
+Plug("Xuyuanp/nerdtree-git-plugin")
+Plug("Yggdroot/indentLine")
 Plug("cespare/vim-toml", { ["for"] = "toml" })
 Plug("chrisbra/csv.vim", { ["for"] = "csv" })
-Plug "christoomey/vim-tmux-navigator"
-Plug "dense-analysis/ale"
+Plug("christoomey/vim-tmux-navigator")
+Plug("dense-analysis/ale")
+Plug("ellisonleao/glow.nvim", { ["do"] = ":GlowInstall" })
 Plug("ekalinin/Dockerfile.vim", { ["for"] = [['Dockerfile', 'docker-compose']] })
-Plug "elzr/vim-json"
+Plug("elzr/vim-json")
 Plug("fatih/vim-go", { ["do"] = ":GoInstallBinaries", ["for"] = [['go', 'gohtmltmpl']] })
-Plug "godlygeek/tabular"
-Plug "google/vim-jsonnet"
-Plug "gregsexton/gitv"
-Plug "hashivim/vim-terraform"
-Plug "hrsh7th/cmp-buffer"
-Plug "hrsh7th/nvim-cmp"
-Plug "hrsh7th/vim-vsnip"
-Plug "kabouzeid/nvim-lspinstall"
+Plug("godlygeek/tabular")
+Plug("google/vim-jsonnet")
+Plug("gregsexton/gitv")
+Plug("hashivim/vim-terraform")
+Plug("hrsh7th/cmp-buffer")
+Plug("hrsh7th/nvim-cmp")
+Plug("hrsh7th/vim-vsnip")
+Plug("kabouzeid/nvim-lspinstall")
 Plug("leafgarland/typescript-vim", { ["for"] = [['typescript.tsx', 'typescriptreact', 'typescript', 'vue']] })
-Plug "lewis6991/gitsigns.nvim"
-Plug "mhinz/vim-startify"
-Plug "moll/vim-node"
-Plug "nathanmsmith/nvim-ale-diagnostic"
-Plug "neovim/nvim-lspconfig"
-Plug "nvim-lua/plenary.nvim"
+Plug("lewis6991/gitsigns.nvim")
+Plug("mhinz/vim-startify")
+Plug("moll/vim-node")
+Plug("nathanmsmith/nvim-ale-diagnostic")
+Plug("neovim/nvim-lspconfig")
+Plug("nvim-lua/plenary.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["branch"] = "0.5-compat", ["do"] = ":TSUpdate" })
-Plug 'nvim-treesitter/nvim-treesitter-refactor'
+Plug("nvim-treesitter/nvim-treesitter-refactor")
 Plug("pangloss/vim-javascript", { ["for"] = [['typescript.tsx', 'typescriptreact', 'javascript', 'vue']] })
-Plug "plasticboy/vim-markdown"
+Plug("plasticboy/vim-markdown")
 Plug("racer-rust/vim-racer", { ["for"] = "rust" })
-Plug "rodjek/vim-puppet"
+Plug("rodjek/vim-puppet")
 Plug("rust-lang/rust.vim", { ["for"] = "rust" })
-Plug "ryanoasis/vim-devicons"
-Plug "scrooloose/nerdcommenter"
-Plug "scrooloose/nerdtree"
-Plug "sheerun/vim-polyglot"
-Plug "sickill/vim-monokai"
-Plug "tpope/vim-fugitive"
-Plug "tpope/vim-surround"
-Plug "vim-airline/vim-airline"
-Plug "vim-airline/vim-airline-themes"
+Plug("ryanoasis/vim-devicons")
+Plug("scrooloose/nerdcommenter")
+Plug("scrooloose/nerdtree")
+Plug("sheerun/vim-polyglot")
+Plug("sickill/vim-monokai")
+Plug("tpope/vim-fugitive")
+Plug("tpope/vim-surround")
+Plug("vim-airline/vim-airline")
+Plug("vim-airline/vim-airline-themes")
 
-vim.call "plug#end"
+vim.call("plug#end")
