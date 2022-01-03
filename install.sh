@@ -17,7 +17,13 @@ function syncFile() {
 function doSync() {
   syncFile "Xmodmap"
   syncFile "Xresources"
-  syncFile "config"
+  syncFile "config/autorandr"
+  syncFile "config/kitty"
+  syncFile "config/libinput-gestures.conf"
+  syncFile "config/nvim"
+  syncFile "config/polybar"
+  syncFile "config/rofi"
+  syncFile "config/systemd"
   syncFile "eslintrc.js"
   syncFile "gitconfig"
   syncFile "gtkrc-3.0"
@@ -39,7 +45,7 @@ function doSync() {
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doSync
 else
-  read -rp "This may overwrite existing files in your home directory. Are you sure? (y/n) " -n 1
+  read -rp "This may overwrite existing files in your home directory. Are you sure? (y/N) " -n 1
   echo
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     doSync

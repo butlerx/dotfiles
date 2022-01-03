@@ -33,17 +33,18 @@ start_bar() {
   polybar --reload "$BAR" </dev/null >"/var/tmp/polybar-$MONITOR.log" 2>&1 &
 }
 
-postswitch() {
+status_bar() {
   kill_polybar
-  set_wallpaper 0 scaled IMG_20191017_113008-PANO.jpg
-  set_wallpaper 1 auto IMG_20191227_151937-EFFECTS.jpg
-  move_ws 3 left
-  xinput --map-to-output 'ELAN Touchscreen' eDP1
   (
     flock 200
     start_bar eDP1 4k
-    start_bar DP1 1080p
   ) 200>/var/tmp/polybar-launch.lock
+}
+
+postswitch() {
+  set_wallpaper 0 scaled wallpaper.jpg
+  status_bar
+  xinput --map-to-output 'ELAN Touchscreen' eDP1
 }
 
 postswitch
