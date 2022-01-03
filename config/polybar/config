@@ -1,3 +1,5 @@
+;vim:ft=dosini
+
 [bar/4k]
 monitor = ${env:MONITOR:4k}
 
@@ -18,7 +20,7 @@ font-1 = TerminessTTF Nerd Font:size=16:0
 
 modules-left = i3
 modules-center = clock
-modules-right =  wireless-network backlight cpu ram volume battery
+modules-right = xps-wireless backlight cpu ram volume battery
 
 [bar/1080p]
 monitor = ${env:MONITOR:1080p}
@@ -44,7 +46,7 @@ font-1 = TerminessTTF Nerd Font:size=14:0
 
 modules-left = i3
 modules-center = clock
-modules-right = wireless-network backlight cpu ram volume battery
+modules-right = x1-wireless backlight cpu ram volume battery
 
 [module/cpu]
 type = internal/cpu
@@ -104,16 +106,16 @@ label-focused = %index% %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #3f3f3f
 label-focused-underline = #fba922
-label-focused-padding = 6
+label-focused-padding = 4
 label-unfocused = %index% %icon%
-label-unfocused-padding = 5
+label-unfocused-padding = 4
 label-visible = %index% %icon%
 label-visible-underline = #555555
-label-visible-padding = 5
+label-visible-padding = 4
 label-urgent = %index% %icon%
 label-urgent-foreground = #000000
 label-urgent-background = #bd2c40
-label-urgent-padding = 5
+label-urgent-padding = 4
 
 [module/battery]
 type = internal/battery
@@ -165,7 +167,7 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 
-[module/wireless-network]
+[module/xps-wireless]
 type = internal/network
 interface = ${env:WIRELESS:wlp58s0}
 interval = 3.0
@@ -206,4 +208,23 @@ ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
 
-;vim:ft=dosini
+[module/x1-wireless]
+type = internal/network
+interface = ${env:WIRELESS:wlp4s0}
+interval = 3.0
+format-connected-underline = #D95B43
+format-disconnected-underline = #D95B43
+format-connected = <ramp-signal> <label-connected>
+format-disconnected = <label-disconnected>
+label-connected = %essid% %local_ip%
+label-connected-foreground = #eefafafa
+label-disconnected =  not connected
+label-disconnected-foreground = #66ffffff
+label-packetloss = %linkspeed%
+label-packetloss-foreground = #eefafafa
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
