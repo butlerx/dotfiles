@@ -54,7 +54,7 @@ modules-right = x1-wireless backlight cpu ram volume battery
 
 [module/cpu]
 type = internal/cpu
-label =    %percentage%
+label =   %percentage%
 format-underline = #c42
 format-padding = 2
 
@@ -66,8 +66,8 @@ format-padding = 2
 
 [module/clock]
 type = internal/date
-date =   %Y-%m-%d   %H:%M
-date-alt =  %%{F#888}%A, %d %B %Y   %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+date =   %Y-%m-%d    %H:%M
+date-alt =   %%{F#888}%A, %d %B %Y    %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
 format-underline = #493
 format-padding = 2
 
