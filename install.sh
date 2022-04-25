@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
-ln -s ./config ~/.config
+
+#ln -s ./config ~/.config
 
 set -e
 
@@ -9,39 +10,41 @@ CWD=$(pwd)
 
 printf "# Syncing to home folder...\n"
 
-function syncFile() {
-  local sourceFile="$1"
-  ln -sf "$CWD/${sourceFile}" "$HOME/.${sourceFile}"
-}
-
 function doSync() {
-  syncFile "Xmodmap"
-  syncFile "Xresources"
-  syncFile "config/autorandr"
-  syncFile "config/kitty"
-  syncFile "config/libinput-gestures.conf"
-  syncFile "config/nvim"
-  syncFile "config/polybar"
-  syncFile "config/rofi"
-  syncFile "config/systemd"
-  syncFile "eslintrc.js"
-  syncFile "gitconfig"
-  syncFile "gtkrc-3.0"
-  syncFile "i3"
-  syncFile "powerlevel9k"
-  syncFile "prettierrc.js"
-  syncFile "ssh"
-  syncFile "tmux"
-  syncFile "tmux.conf"
-  syncFile "vimrc"
-  syncFile "weechat"
-  syncFile "xbindkeysrc"
-  syncFile "xinitrc"
-  syncFile "zsh-completions"
-  syncFile "zsh.d"
-  syncFile "zshrc"
+  configs=(
+    "Xmodmap"
+    "Xresources"
+    "config/autorandr"
+    "config/flake8"
+    "config/kitty"
+    "config/libinput-gestures.conf"
+    "config/nvim"
+    "config/polybar"
+    "config/rofi"
+    "config/systemd"
+    "eslintrc.js"
+    "gitconfig"
+    "gtkrc-3.0"
+    "i3"
+    "powerlevel9k"
+    "prettierrc.js"
+    "ssh"
+    "tmux"
+    "tmux.conf"
+    "vimrc"
+    "weechat"
+    "xbindkeysrc"
+    "xinitrc"
+    "zsh-completions"
+    "zsh.d"
+    "zshrc"
+  )
+  for i in "${configs[@]}"; do
+    ln -sf "$CWD/${i}" "$HOME/.${i}"
+  done
   return 0
 }
+
 if [ "$1" == "--force" ] || [ "$1" == "-f" ]; then
   doSync
 else
@@ -61,5 +64,4 @@ echo "dotfiles have been synchronized!"
 echo "Installing Python-based utilities.."
 pip install -r "$CWD/requirements.txt"
 
-echo ""
-echo "All done!"
+printf "\nAll done!"

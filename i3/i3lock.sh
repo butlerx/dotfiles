@@ -14,25 +14,25 @@ scrot "$tmpbg"
 convert "$tmpbg" -scale 4% -scale 2500% "$tmpbg"
 
 i3lock -i "$tmpbg" \
-	--insidevercolor=$C \
-	--ringvercolor=$V \
-	--insidewrongcolor=$C \
-	--ringwrongcolor=$W \
-	--insidecolor=$C \
-	--ringcolor=$D \
-	--linecolor=$B \
-	--separatorcolor=$D \
-	--timecolor=$T \
-	--timesize=64 \
-	--datesize=28 \
-	--datecolor=$T \
-	--keyhlcolor=$W \
-	--bshlcolor=$W \
+	--insidever-color=$C \
+	--ringver-color=$V \
+	--insidewrong-color=$C \
+	--ringwrong-color=$W \
+	--inside-color=$C \
+	--ring-color=$D \
+	--line-color=$B \
+	--separator-color=$D \
+	--time-color=$T \
+	--time-size=64 \
+	--date-size=28 \
+	--date-color=$T \
+	--keyhl-color=$W \
+	--bshl-color=$W \
 	--clock \
 	--indicator \
-	--timestr="%H:%M:%S" \
-	--datestr="%A, %m %Y" \
-	--wrongtext="Nope!" \
+	--time-str="%H:%M:%S" \
+	--date-str="%A, %m %Y" \
+	--wrong-text="Nope!" \
 	--radius=180
 
 # Clean up

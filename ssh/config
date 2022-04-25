@@ -67,6 +67,12 @@ Host gobut.me
   HostName login.gobut.me
   user butlerx
 
+Host github.ihs.demonware.net
+  User git
+  HostKeyAlgorithms +ssh-rsa
+  PubkeyAcceptedKeyTypes +ssh-rsa
+  IdentityFile ~/.ssh/id_rsa.dw
+
 Host las* *.las.demonware.net
   User cbutler
   HostKeyAlgorithms +ssh-rsa
