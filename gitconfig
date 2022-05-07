@@ -1,6 +1,5 @@
-# This is Git's per-user configuration file.
 [user]
-  name = butlerx
+  name = Cian Butler
   email = butlerx@notthe.cloud
   signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
 [includeIf "gitdir:~/projects/ihs/"]
@@ -60,7 +59,6 @@
   # for bitbucket/stash remotes
   spr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
   ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
-
 [core]
 	autocrlf = input
 [fetch]
@@ -74,14 +72,8 @@
   gpgsign = true
 [gpg]
   program = gpg2
-
-# This next lines include Netlify's Git Credential Helper configuration in your Git configuration.
-[include]
-  path = /home/butlerx/.netlify/helper/git-config
 [pull]
   rebase = true
-[url "git@github.ihs.demonware.net:"]
-	insteadOf = https://github.ihs.demonware.net
 [init]
 	defaultBranch = main
 [rerere]
