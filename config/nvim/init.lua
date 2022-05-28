@@ -94,7 +94,7 @@ set.linebreak = true -- Break lines at word boundaries
 
 -- Show row and column ruler information
 set.ruler = true
-set.colorcolumn = "100"
+set.colorcolumn = "120"
 
 -- Options for file search with gf/:find
 set.path:remove { "/usr/include" } -- Let the C/C++ filetypes set that
