@@ -5,11 +5,16 @@ autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme ]]; then
-  # Temporarily disable aliases.
-  'builtin' 'unsetopt' 'aliases'
+  # Temporarily change options.
+  'builtin' 'local' '-a' 'p10k_config_opts'
+  [[ ! -o 'aliases' ]] || p10k_config_opts+=('aliases')
+  [[ ! -o 'sh_glob' ]] || p10k_config_opts+=('sh_glob')
+  [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
+  'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
   p10k_config
-  # Reenable aliases
-  setopt aliases
+  # Reenable options
+  ((${#p10k_config_opts})) && setopt ${p10k_config_opts[@]}
+  'builtin' 'unset' 'p10k_config_opts'
   source "$HOME"/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme
 else
   function virtualenv_info() {
