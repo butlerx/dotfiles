@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#! /usr/bin/env bash
 
 if [[ $DEBUG == 'true' ]]; then
   set -euxo pipefail
@@ -32,20 +32,3 @@ set_wallpaper() {
   IMAGE=$3
   nitrogen --head="$SCREEN" --set-"$MODE" --save ~/pictures/wallpapers/"$IMAGE"
 }
-
-postswitch() {
-  kill_polybar
-  set_wallpaper 1 scaled IMG_20190901_161515-PANO.jpg
-  set_wallpaper 0 auto EFFECTS.jpg
-  (
-    flock 200
-    start_bar DP-2 1080p
-    start_bar HDMI-1 1080p
-  ) 200>/var/tmp/polybar-launch.lock
-
-  move_ws 1 left
-  move_ws 2 left
-  move_ws 3 left
-}
-
-postswitch

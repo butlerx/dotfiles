@@ -1,50 +1,11 @@
 #!/usr/bin/env bash
 
-if [[ $DEBUG == 'true' ]]; then
-  set -euxo pipefail
-else
-  set -euo pipefail
-fi
-IFS=$'\n\t'
+source ../functions.sh
 
-kill_polybar() {
-  pkill polybar || true
-  # Wait until the processes have been shut down
-  while pgrep -x polybar >/dev/null; do sleep 1; done
-}
-
-move_ws() {
-  WORKSPACE=$1
-  DIRECTION=$2
-  i3-msg workspace "$WORKSPACE"
-  i3-msg move workspace to output "$DIRECTION"
-}
-
-set_wallpaper() {
-  SCREEN=$1
-  MODE=$2
-  IMAGE=$3
-  nitrogen --head="$SCREEN" --set-"$MODE" --save ~/pictures/wallpapers/"$IMAGE"
-}
-
-start_bar() {
-  export MONITOR=$1
-  BAR=$2
-  polybar --reload "$BAR" </dev/null >"/var/tmp/polybar-$MONITOR.log" 2>&1 &
-}
-
-status_bar() {
-  kill_polybar
-  (
-    flock 200
-    start_bar eDP1 4k
-  ) 200>/var/tmp/polybar-launch.lock
-}
-
-postswitch() {
-  set_wallpaper 0 scaled wallpaper.jpg
-  status_bar
-  xinput --map-to-output 'ELAN Touchscreen' eDP1
-}
-
-postswitch
+set_wallpaper 0 scaled wallpaper.jpg
+kill_polybar
+(
+  flock 200
+  start_bar eDP1 4k
+) 200>/var/tmp/polybar-launch.lock
+xinput --map-to-output 'ELAN Touchscreen' eDP1
