@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source ../functions.sh
+source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 
 set_wallpaper 0 scaled wallpaper.jpg
 kill_polybar

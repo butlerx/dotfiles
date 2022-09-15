@@ -29,13 +29,12 @@ export WORKON_HOME="$HOME"/.virtualenvs
 
 #export HOMEBREW_GITHUB_API_TOKEN=
 export GOPATH="$HOME"/go
-export YARN_BIN=$(yarn global bin 2>/dev/null)
 export JAVA_HOME=/usr/lib/jvm/default
 export PYTHON_USER="$HOME"/.local/bin
 # export RUBY_USER=$(ruby -e 'print Gem.user_dir')
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
-export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.deno/bin:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$RUBY_USER:$PYTHON_USER"
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$RUBY_USER:$PYTHON_USER"
 
 export npm_config_prefix=~/.node_modules
 
