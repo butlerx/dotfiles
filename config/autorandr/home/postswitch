@@ -11,5 +11,6 @@ set_wallpaper 1 auto IMG_20190903_163002-EFFECTS.jpg
   start_bar DP-2 1080p
 ) 200>/var/tmp/polybar-launch.lock
 
+# move_ws 1 left
 move_ws 2 left
 move_ws 3 left

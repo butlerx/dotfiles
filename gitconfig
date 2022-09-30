@@ -19,7 +19,7 @@
   changelog =  log --pretty=tformat:'* %ad %an <%ae> %d\n - %s' --date=format:'%a %b %d %Y'
   amend = commit --amend --no-edit
   undo = reset HEAD~1 --mixed
-  clean-branch = "!git branch --merged | egrep -v \"(^\\*|master|dev)\" | xargs git branch -d"
+  clean-branch = "!git branch --merged | grep -E -v \"(^\\*|master|dev)\" | xargs git branch -d"
   a = add
   ap = add -p
   c = commit --verbose
