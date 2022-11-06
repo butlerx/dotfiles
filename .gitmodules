@@ -1,6 +1,6 @@
 [submodule "powerlevel9k"]
-  path = powerlevel9k
-  url = git://github.com/bhilburn/powerlevel9k.git
+	path = powerlevel9k
+	url = https://github.com/romkatv/powerlevel10k
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
