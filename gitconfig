@@ -60,7 +60,7 @@
   spr  = "!f() { git fetch -fu ${2:-$(git remote |grep ^upstream || echo origin)} refs/pull-requests/$1/from:pr/$1 && git checkout pr/$1; }; f"
   ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [core]
-	autocrlf = input
+  autocrlf = input
 [fetch]
   prune = true
 [filter "lfs"]
@@ -75,6 +75,6 @@
 [pull]
   rebase = true
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [rerere]
-	enabled = 1
+  enabled = 1
