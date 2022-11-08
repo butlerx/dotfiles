@@ -9,7 +9,7 @@
 [github]
   user = butlerx
 [alias]
-  yolo = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
+  yolo = "!git commit -m \"$(curl -s https://whatthecommit.com/index.txt)\""
   lol = log --oneline --graph --decorate --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
   today = log --since=00:00:00 --all --no-merges --oneline --author=butlerx@notthe.cloud
   recap = log --all --oneline --no-merges --author=butlerx@notthe.cloud
