@@ -49,22 +49,22 @@ local on_attach = function(client, bufnr)
 	map({ "n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" })
 
 	-- Set some keybinds conditional on server capabilities
-	if client.resolved_capabilities.document_formatting then
+	if client.server_capabilities.documentFormattingProvider then
 		map({ "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>" })
-	elseif client.resolved_capabilities.document_range_formatting then
+	elseif client.server_capabilities.documentRangeFormattingProvider then
 		map({ "n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>" })
 	end
 
 	-- Set autocommands conditional on server_capabilities
-	if client.resolved_capabilities.document_highlight then
+	if client.server_capabilities.documentHighlightProvider then
 		vim.api.nvim_exec(
 			[[
-                augroup lsp_document_highlight
-                autocmd! * <buffer>
-                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-                augroup END
-            ]],
+				augroup lsp_document_highlight
+				autocmd! * <buffer>
+				autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+				autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+				augroup END
+			]],
 			false
 		)
 	end

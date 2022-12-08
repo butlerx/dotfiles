@@ -1,5 +1,4 @@
 require("nvim-treesitter.configs").setup {
-    ensure_installed = "maintained",
     refactor = {
         highlight = { enable = true },
         highlight_definitions = { enable = true },

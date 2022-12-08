@@ -1,7 +1,6 @@
 autoload -U compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
-complete -o nospace -C /usr/local/bin/grr grr
 
 # pip zsh completion start
 function _pip_completion() {
@@ -14,16 +13,6 @@ function _pip_completion() {
 }
 compctl -K _pip_completion pip
 # pip zsh completion end
-
-source "/opt/google-cloud-sdk/path.zsh.inc"
-source "/opt/google-cloud-sdk/completion.zsh.inc"
-
-applications=(kompose kops kubectl helm)
-for app in "$applications"; do
-  if type "$app" >/dev/null; then
-    source <("$app" completion zsh)
-  fi
-done
 
 zmodload -i zsh/complist
 

@@ -23,12 +23,12 @@ kill_polybar() {
 start_bar() {
   export MONITOR=$1
   BAR=$2
-  polybar --reload "$BAR" </dev/null >"/var/tmp/polybar-$MONITOR.log" 2>&1 &
+  polybar -c ~/.config/polybar/config.ini --reload "$BAR" </dev/null >"/var/tmp/polybar-$MONITOR.log" 2>&1 &
 }
 
 set_wallpaper() {
   SCREEN=$1
   MODE=$2
   IMAGE=$3
-  nitrogen --head="$SCREEN" --set-"$MODE" --save ~/pictures/wallpapers/"$IMAGE"
+  nitrogen --head="$SCREEN" --set-"$MODE" --save ~/Pictures/wallpapers/"$IMAGE"
 }

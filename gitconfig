@@ -6,8 +6,10 @@
   name = Cian Butler
   email = butlerx@notthe.cloud
   signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
-[includeIf "gitdir:~/projects/ihs/"]
-  path = ~/projects/ihs/.gitconfig
+[includeIf "gitdir:~/projects/evervault/"]
+  path = ~/projects/evervault/.gitconfig
+[includeIf "gitdir:~/projects/cian-ev/"]
+  path = ~/projects/cian-ev/.gitconfig
 [push]
   default = simple
 [github]

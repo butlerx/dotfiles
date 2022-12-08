@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
+
+kill_polybar
+set_wallpaper 0 scaled IMG_20190901_161515-PANO.jpg
+set_wallpaper 1 auto EFFECTS.jpg
+(
+  flock 200
+  start_bar DP-1 1080p
+  start_bar eDP-1 1080p
+) 200>/var/tmp/polybar-launch.lock
+
+move_ws 3 up
