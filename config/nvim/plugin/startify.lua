@@ -41,4 +41,4 @@ g.startify_bookmarks = {
     { g = "~/.gitconfig" },
     { z = "~/.zshrc" },
 }
-map { "n", "<leader>st", ":Startify<cr>" }
+map({ "n", "<leader>st", ":Startify<cr>" })

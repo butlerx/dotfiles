@@ -3,7 +3,7 @@ if vim.b.did_ftplugin then
     return
 end
 
-vim.opt.complete:append { "kspell" }
+vim.opt.complete:append({ "kspell" })
 vim.g.vim_markdown_conceal = 0
 vim.g.vim_markdown_math = 1
 vim.g.vim_markdown_frontmatter = 1

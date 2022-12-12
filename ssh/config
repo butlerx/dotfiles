@@ -70,32 +70,3 @@ Host notthe.cloud
 Host gobut.me
   HostName login.gobut.me
   user butlerx
-
-Host github.ihs.demonware.net
-  User git
-  HostKeyAlgorithms +ssh-rsa
-  PubkeyAcceptedKeyTypes +ssh-rsa
-  IdentityFile ~/.ssh/id_rsa.dw
-
-Host las* *.las.demonware.net
-  User cbutler
-  HostKeyAlgorithms +ssh-rsa
-  PubkeyAcceptedKeyTypes +ssh-rsa
-  IdentityFile ~/.ssh/id_rsa.dw
-
-Host 10.8.*.* *.gcp.demonware.net
-  User ext_cbutler_demonware_net
-  IdentityFile ~/.ssh/id_rsa.dw
-  StrictHostKeyChecking no
-  ServerAliveInterval 60
-
-Host sha* *.sha.demonware.net
-  User cbutler
-  IdentityFile ~/.ssh/id_rsa.dw
-
-# Centos 5
-Host las61356
-  KexAlgorithms +diffie-hellman-group1-sha1
-
-Host gerrit.las.demonware.net
-  Port 29418
