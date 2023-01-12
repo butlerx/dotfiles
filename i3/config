@@ -154,7 +154,7 @@ bindsym $mod+Shift+U exec Thunar
 bindsym $alt+Tab exec --no-startup-id rofi -show window
 bindsym $mod+o exec --no-startup-id rofi -show ssh
 bindsym $mod+i exec --no-startup-id rofi -show ssh -ssh-client mosh
-bindsym $mod+d exec --no-startup-id zsh -c "rofi -show run"
+bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 # Pulse Audio controls

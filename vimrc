@@ -1,5 +1,5 @@
-# pets: package=vim
-# pets: symlink=/home/butlerx/.vimrc
+" pets: package=vim
+" pets: symlink=/home/butlerx/.vimrc
 
 if has('syntax')
   " Use syntax highlighting

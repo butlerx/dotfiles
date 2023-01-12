@@ -1,16 +1,3 @@
-# pets: symlink=/home/butlerx/.config/autostart/i3.desktop
-# pets: package=i3-gaps
-# pets: package=exo
-# pets: package=garcon
-# pets: package=thunar
-# pets: package=thunar-volman
-# pets: package=tumbler
-# pets: package=xfce4-power-manager
-# pets: package=xfce4-session
-# pets: package=xfce4-settings
-# pets: package=xfconf
-# pets: package=xfdesktop
-
 [Desktop Entry]
 Version=0.9.4
 Type=Application
@@ -21,3 +8,5 @@ OnlyShowIn=XFCE;
 StartupNotify=false
 Terminal=false
 Hidden=false
+RunHook=0
+

@@ -165,6 +165,8 @@ URxvt*color14                     : #34E2E2
 URxvt*color7                      : #D3D7CF
 URxvt*color15                     : #EEEEEC
 
+rofi.terminal                     : kitty
+
 #define xbackground  #000022
 #define xforeground  #bb2244
 #define xcolor0      #ffaa55
