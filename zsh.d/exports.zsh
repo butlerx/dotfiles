@@ -34,9 +34,12 @@ export PYTHON_USER="$HOME"/.local/bin
 # export RUBY_USER=$(ruby -e 'print Gem.user_dir')
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
-export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$PYTHON_USER"
 
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export npm_config_prefix=~/.node_modules
+
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PNPM_HOME:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$PYTHON_USER"
 
 export BAT_THEME="Monokai Extended"
 export BAT_PAGER="less -RF"
