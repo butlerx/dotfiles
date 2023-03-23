@@ -3,6 +3,15 @@ XTerm*locale                      : true
 xterm*saveLines                   : 4096
 xterm*reverseVideo                : on
 
+! HiDPI setings
+! Xft.dpi: 192
+! Xft.autohint: 0
+! Xft.lcdfilter:  lcddefault
+! Xft.hintstyle:  hintfull
+! Xft.hinting: 1
+! Xft.antialias: 1
+! Xft.rgba: rgb
+
 ! URxvt*answerbackString          : string
 ! URxvt*background.border         : boolean
 ! URxvt*background.expr           : string
@@ -155,6 +164,8 @@ URxvt*color14                     : #34E2E2
 ! white
 URxvt*color7                      : #D3D7CF
 URxvt*color15                     : #EEEEEC
+
+rofi.terminal                     : kitty
 
 #define xbackground  #000022
 #define xforeground  #bb2244

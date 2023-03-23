@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.9.4
+Type=Application
+Name=i3
+Comment=The only way to use a computer
+Exec=i3
+OnlyShowIn=XFCE;
+StartupNotify=false
+Terminal=false
+Hidden=false
+RunHook=0
+

@@ -20,7 +20,7 @@ Craft beer chia readymade ethnic, hella kogi Vice jean shorts cliche cray mlkshk
 
 local function get_words(phrase)
     local list = {}
-    for word in phrase:gmatch "%a+" do
+    for word in phrase:gmatch("%a+") do
         table.insert(list, word:lower())
     end
     return list

@@ -5,9 +5,8 @@ if vim.b.did_indent then
 end
 vim.b.did_indent = 1
 
-
-" Manual indenting and literal tabs for passwords
-setlocal.noautoindent= true
-setlocal.noexpandtab= true
-setlocal.softtabstop=0
-vim.b.undo_indent = 'setlocal autoindent< expandtab< softtabstop<'
+-- Manual indenting and literal tabs for passwords
+setlocal.noautoindent = true
+setlocal.noexpandtab = true
+setlocal.softtabstop = 0
+vim.b.undo_indent = "setlocal autoindent< expandtab< softtabstop<"

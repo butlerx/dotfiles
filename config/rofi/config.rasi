@@ -1,9 +1,9 @@
 configuration {
-  modi: "window,run,ssh";
+  modi: "window,run,ssh,drun";
   font: "Hack 20";
   kb-row-up: "Up,Control+p,Shift+Tab,Shift+Alt+Tab";
   kb-row-down: "Down,Control+n";
-  kb-row-tab: "Tab,Alt+Tab";
+  kb-row-tab: "Alt+Tab";
   timeout {
       action: "kb-cancel";
       delay:  0;

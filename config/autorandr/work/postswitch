@@ -11,6 +11,6 @@ set_wallpaper 1 auto EFFECTS.jpg
 	start_bar eDP-1 1080p
 ) 200>/var/tmp/polybar-launch.lock
 
-# move_ws 1 left
-move_ws 2 right
-move_ws 3 right
+# move_ws 1 down
+move_ws 2 up
+move_ws 3 up

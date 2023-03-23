@@ -2,10 +2,9 @@
 
 source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 
-set_wallpaper 0 scaled wallpaper.jpg
+set_wallpaper 0 auto EFFECTS.jpg
 kill_polybar
 (
   flock 200
-  start_bar eDP1 4k
+  start_bar eDP-1 1080p
 ) 200>/var/tmp/polybar-launch.lock
-xinput --map-to-output 'ELAN Touchscreen' eDP1

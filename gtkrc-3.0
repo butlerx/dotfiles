@@ -1,3 +1,6 @@
+# pets: package=gtk3
+# pets: symlink=/home/butlerx/.gtkrc-3.0
+
 gtk-theme-name = "paper"
 gtk-font-name = "Open Sans 8"
 gtk-icon-theme-name = "gnome"

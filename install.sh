@@ -1,7 +1,5 @@
 #! /usr/bin/env bash
 
-#ln -s ./config ~/.config
-
 set -e
 
 cd "$(dirname "${BASH_SOURCE}")"
@@ -26,7 +24,6 @@ function doSync() {
     "gitconfig"
     "gtkrc-3.0"
     "i3"
-    "powerlevel9k"
     "prettierrc.js"
     "ssh"
     "tmux"

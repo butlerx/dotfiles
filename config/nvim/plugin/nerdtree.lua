@@ -1,4 +1,4 @@
-local utils = require "utils"
+local utils = require("utils")
 local g = vim.g
 local call = vim.call
 
@@ -19,7 +19,7 @@ local autocmds = {
 }
 
 utils.create_augroups(autocmds)
-utils.map { "", "<C-n>", ":NERDTreeToggle<CR>" }
+utils.map({ "", "<C-n>", ":NERDTreeToggle<CR>" })
 
 g.NERDTreeDirArrowExpandable = "▸"
 g.NERDTreeDirArrowCollapsible = "▾"
@@ -35,12 +35,12 @@ g.NERDTreeGitStatusIndicatorMapCustom = {
     ["Unknown"] = "?",
 }
 -- NERDTress File highlighting
-vim.cmd [[
+vim.cmd([[
   function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
     exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
     exec 'autocmd filetype nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
   endfunction
-]]
+]])
 
 call("NERDTreeHighlightFile", "jade", "green", "none", "green", "#151515")
 call("NERDTreeHighlightFile", "ini", "yellow", "none", "yellow", "#151515")

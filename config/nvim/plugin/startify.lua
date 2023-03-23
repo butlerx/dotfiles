@@ -37,8 +37,8 @@ g.startify_commands = {
 }
 
 g.startify_bookmarks = {
-    { c = "~/.config/nvim/init.vim" },
+    { c = "~/.config/nvim/init.lua" },
     { g = "~/.gitconfig" },
     { z = "~/.zshrc" },
 }
-map { "n", "<leader>st", ":Startify<cr>" }
+map({ "n", "<leader>st", ":Startify<cr>" })

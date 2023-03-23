@@ -1,3 +1,6 @@
+# pets: package=i3-gaps
+# pets: symlink=/home/butlerx/.i3/config
+
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 set $mod Mod4
@@ -144,14 +147,14 @@ gaps inner 15
 gaps outer 10
 smart_gaps on
 
-#Nautilus
-bindsym $mod+Shift+U exec nautilus --browser
+# Thunar
+bindsym $mod+Shift+U exec Thunar
 
 # rofi
 bindsym $alt+Tab exec --no-startup-id rofi -show window
 bindsym $mod+o exec --no-startup-id rofi -show ssh
 bindsym $mod+i exec --no-startup-id rofi -show ssh -ssh-client mosh
-bindsym $mod+d exec --no-startup-id zsh -c "rofi -show run"
+bindsym $mod+d exec --no-startup-id rofi -show drun
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 # Pulse Audio controls

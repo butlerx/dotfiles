@@ -14,8 +14,7 @@ export GREP_COLOR='3;33'
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS='-arch x86_64'
-GPG_TTY=$(tty)
-export GPG_TTY
+export GPG_TTY=$(tty)
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='bat'
 export EDITOR='nvim'
@@ -26,24 +25,21 @@ export LANG="en_US.UTF-8"
 
 # Virtual Environment Stuff
 export WORKON_HOME="$HOME"/.virtualenvs
-export PROJECT_HOME="$HOME"/Projects/django
 #source /usr/local/bin/virtualenvwrapper.sh
 
 #export HOMEBREW_GITHUB_API_TOKEN=
-export PERL_BIN="$HOME/perl5/bin"
-export PERL5LIB="/home/butlerx/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"
-export PERL_LOCAL_LIB_ROOT="/home/butlerx/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"
-export PERL_MB_OPT="--install_base \"/home/butlerx/perl5\""
-export PERL_MM_OPT="INSTALL_BASE=/home/butlerx/perl5"
 export GOPATH="$HOME"/go
-YARN_BIN=$(yarn global bin 2>/dev/null)
-export YARN_BIN
 export JAVA_HOME=/usr/lib/jvm/default
 export PYTHON_USER="$HOME"/.local/bin
+# export RUBY_USER=$(ruby -e 'print Gem.user_dir')
 #export JAVA_HOME="$(jrunscript -e 'java.lang.System.out.println(java.lang.System.getProperty("java.home"));')"
 export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
-export PATH=$PATH:~/bin:/usr/local/bin:$GOPATH/bin:$HOME/.cargo/bin:$KREW_BIN:$HOME/.deno/bin:$HOME/.node_modules/bin:$(ruby -e 'print Gem.user_dir'):$PYTHON_USER
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
 export npm_config_prefix=~/.node_modules
+
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PNPM_HOME:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$PYTHON_USER"
 
 export BAT_THEME="Monokai Extended"
 export BAT_PAGER="less -RF"

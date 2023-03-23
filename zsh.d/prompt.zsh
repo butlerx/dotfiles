@@ -5,11 +5,16 @@ autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme ]]; then
-  # Temporarily disable aliases.
-  'builtin' 'unsetopt' 'aliases'
+  # Temporarily change options.
+  'builtin' 'local' '-a' 'p10k_config_opts'
+  [[ ! -o 'aliases' ]] || p10k_config_opts+=('aliases')
+  [[ ! -o 'sh_glob' ]] || p10k_config_opts+=('sh_glob')
+  [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
+  'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
   p10k_config
-  # Reenable aliases
-  setopt aliases
+  # Reenable options
+  ((${#p10k_config_opts})) && setopt ${p10k_config_opts[@]}
+  'builtin' 'unset' 'p10k_config_opts'
   source "$HOME"/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme
 else
   function virtualenv_info() {
@@ -85,7 +90,6 @@ else
     if [[ -n $GIT_STATE ]]; then
       echo "$GIT_PROMPT_PREFIX$GIT_STATE$GIT_PROMPT_SUFFIX"
     fi
-
   }
 
   # If inside a Git repository, print its branch and state
@@ -98,6 +102,7 @@ else
   function current_pwd() {
     pwd | sed -e "s,^$HOME,~,"
   }
+
   PROMPT="$PR_GREEN%n%{$reset_color%}%{$FG[239]%}@%{$reset_color%}$PR_BOLD_BLUE$(box_name)%{$reset_color%}%{$FG[239]%}: %{$reset_color%}$PR_BOLD_YELLOW$(current_pwd)%{$reset_color%} $(git_prompt_string)%{$reset_color%}$(prompt_char) "
   RPROMPT="$PR_GREEN$(virtualenv_info)%{$reset_color%} $PR_RED$ruby_version%{$reset_color%}"
   export PROMPT
