@@ -6,5 +6,6 @@ set_wallpaper 0 auto EFFECTS.jpg
 kill_polybar
 (
   flock 200
+  sleep 0.5
   start_bar eDP-1 1080p
 ) 200>/var/tmp/polybar-launch.lock
