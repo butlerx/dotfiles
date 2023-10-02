@@ -8,3 +8,10 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 done
 fpath=(~/.dotfiles/zsh-completions $fpath)
 source "$HOME/.zprofile"
+
+# bun completions
+[ -s "/home/cianbutler/.bun/_bun" ] && source "/home/cianbutler/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

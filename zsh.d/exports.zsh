@@ -37,9 +37,11 @@ export KREW_BIN="${KREW_ROOT:-$HOME/.krew}"/bin
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export npm_config_prefix=~/.node_modules
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
 
-export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PNPM_HOME:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$PYTHON_USER"
+export PATH="$HOME/bin:$HOME/.cargo/bin:$HOME/.deno/bin:$PNPM_HOME:/usr/local/go/bin:$PATH:/usr/local/bin:$GOPATH/bin:$KREW_BIN:$HOME/.node_modules/bin:$PYTHON_USER"
 
 export BAT_THEME="Monokai Extended"
 export BAT_PAGER="less -RF"

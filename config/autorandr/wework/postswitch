@@ -5,13 +5,12 @@ source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 kill_polybar
 set_wallpaper 0 zoom-fill PXL_20221228_143940280-PANO.jpg
 set_wallpaper 1 auto EFFECTS.jpg
-sleep 0.5
 (
 	flock 200
-	start_bar DP-1 1080p
+	start_bar HDMI-1 1080p
 	start_bar eDP-1 1080p
 ) 200>/var/tmp/polybar-launch.lock
 
-# move_ws 1 left
-move_ws 2 right
-move_ws 3 right
+# move_ws 1 down
+#move_ws 2 up
+move_ws 3 up
