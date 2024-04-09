@@ -9,11 +9,11 @@ off
 output DP-1
 crtc 0
 mode 3840x2160
-pos 1920x0
+pos 0x0
 primary
 rate 30.00
 output eDP-1
 crtc 1
 mode 1920x1080
-pos 0x1080
+pos 997x2160
 rate 60.01

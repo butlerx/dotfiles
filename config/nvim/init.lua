@@ -149,7 +149,7 @@ vim.cmd([[set termencoding=utf-8]])
 set.visualbell = true -- Use visual bell (no beeping)
 
 -- Delete Selected word from whole file
-map({ "n", "<Leader>s", ":%s/<<C-r><C-w>>//g<Left><Left>" })
+map({ "n", "<Leader>s", ":%s/<C-r><C-w>//g<Left><Left>" })
 -- Stop C-r from being seen as backspace
 map({ "n", "<BS>", ":TmuxNavigateLeft<cr>" })
 -- \R reloads ~/.vimrc

@@ -1,0 +1,39 @@
+[font]
+size = 8.5
+#offset = { x = 1, y = 0}
+
+[window]
+opacity = 0.6
+
+[scrolling]
+history = 20000
+
+[colors.primary]
+foreground = "#d3d7cf"
+background = "#090300"
+
+[colors]
+cursor = { text = "#a54242" }
+selection = { text = "#090300", background  = "#a5a2a2"}
+transparent_background_colors = false
+draw_bold_text_with_bright_colors = true
+
+[colors.normal]
+black = "#090300"
+red = "#db2d20"
+green = "#01a252"
+yellow = "#fded02"
+blue = "#01a0e4"
+magenta = "#a16a94"
+cyan = "#b5e4f4"
+white = "#d3d7cf"
+
+[colors.bright]
+black = "#5c5855"
+red = "#db2d20"
+green = "#01a252"
+yellow = "#fded02"
+blue = "#01a0e4"
+magenta = "#a16a94"
+cyan = "#b5e4f4"
+white = "#eeeeec"

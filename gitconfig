@@ -10,6 +10,8 @@
   path = ~/projects/evervault/.gitconfig
 [includeIf "gitdir:~/projects/cian-ev/"]
   path = ~/projects/cian-ev/.gitconfig
+[includeIf "gitdir:~/projects/evervault-test/"]
+  path = ~/projects/evervault/.gitconfig
 [push]
   default = simple
 [github]
