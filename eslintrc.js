@@ -11,7 +11,6 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
     'prettier',
-    'prettier/react',
     'prettier/@typescript-eslint',
   ],
   plugins: ['@typescript-eslint', 'prettier'],
@@ -44,10 +43,7 @@ module.exports = {
     'linebreak-style': ['error', 'unix'],
     'no-param-reassign': ['error', { props: false }],
     'no-use-before-define': ['error', { functions: false }],
-    'react/jsx-filename-extension': [
-      2,
-      { extensions: ['.js', '.jsx', '.ts', '.tsx'] },
-    ],
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
     'react/prop-types': 0,
   },
 };

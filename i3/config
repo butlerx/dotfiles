@@ -123,7 +123,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always autorandr
+exec_always autorandr --change
 
 # Colors
 client.focused #007fbf #007fbf #ffffff
@@ -153,8 +153,9 @@ bindsym $mod+Shift+U exec Thunar
 # rofi
 bindsym $alt+Tab exec --no-startup-id rofi -show window
 bindsym $mod+o exec --no-startup-id rofi -show ssh
-bindsym $mod+i exec --no-startup-id rofi -show ssh -ssh-client mosh
-bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+o exec --no-startup-id rofi -show ssh -ssh-client mosh
+bindsym $mod+d exec --no-startup-id rofi -show drun -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
+bindsym $mod+Shift+d exec --no-startup-id rofi -show filebrowser
 bindsym $mod+p exec --no-startup-id rofi-pass
 
 # Pulse Audio controls

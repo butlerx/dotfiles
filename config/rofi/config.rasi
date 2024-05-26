@@ -1,5 +1,5 @@
 configuration {
-  modi: "window,run,ssh,drun";
+  modi: "window,run,ssh,drun,filebrowser,combi";
   font: "Hack 20";
   kb-row-up: "Up,Control+p,Shift+Tab,Shift+Alt+Tab";
   kb-row-down: "Down,Control+n";
