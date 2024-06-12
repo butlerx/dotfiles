@@ -1,0 +1,26 @@
+@-moz-document url(about:home), url(about:newtab), url(about:privatebrowsing) {
+  .click-target-container *,
+  .top-sites-list * {
+    color: #f7ece4 !important ;
+  }
+
+  body::before {
+    content: '';
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 99, 120, 1) 0%,
+      rgba(79, 82, 252, 1) 100%
+    );
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .wordmark {
+    display: none !important;
+  }
+}
