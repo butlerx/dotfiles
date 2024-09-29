@@ -14,7 +14,6 @@ function doSync() {
     "Xresources"
     "config/autorandr"
     "config/flake8"
-    "config/kitty"
     "config/libinput-gestures.conf"
     "config/nvim"
     "config/polybar"
