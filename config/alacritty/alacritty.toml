@@ -1,3 +1,6 @@
+# pets: package=cargo:alacritty
+# pets: symlink=~/.config/alacritty/alacritty.toml
+
 [font]
 size = 7.5
 #offset = { x = 1, y = 0}

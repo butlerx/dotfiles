@@ -22,8 +22,8 @@ All `.zsh` files in `.dotfiles/zsh` are autoloaded
 
 ## Install
 
-with [pets](https://github.com/ema/pets)
+with [pets](https://github.com/butlerx/pets-configurator)
 
 ```bash
-pets -conf-dir .dotfiles/
+pets --conf-dir .dotfiles/
 ```

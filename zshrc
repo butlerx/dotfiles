@@ -1,6 +1,6 @@
 # pets: package=zsh
-# pets: package=exa
-# pets: symlink=/home/butlerx/.zshrc
+# pets: package=cargo:exa
+# pets: symlink=~/.zshrc
 
 for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 	# shellcheck disable=SC1091
@@ -22,5 +22,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 [[ -f ~/.config/tabtab/zsh/__tabtab.zsh ]] && . ~/.config/tabtab/zsh/__tabtab.zsh || true
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion

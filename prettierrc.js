@@ -1,4 +1,4 @@
-// pets: symlink=/home/butlerx/.prettierrc.js
+// pets: symlink=~/.prettierrc.js
 
 module.exports = {
   singleQuote: true,

@@ -1,4 +1,4 @@
-# pets: symlink=/home/butlerx/.Xresources
+# pets: symlink=~/.Xresources
 
 xterm*termName                    : xterm-256color
 XTerm*locale                      : true

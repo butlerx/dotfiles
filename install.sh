@@ -9,13 +9,12 @@ CWD=$(pwd)
 printf "# Syncing to home folder...\n"
 
 function doSync() {
-  pets -conf-dir .
+  git submodule update --init --recursive
+  pets --conf-dir .
 
   config_dirs=(
-    "config/alacritty"
     "config/autorandr"
     "config/autostart"
-    "config/libinput-gestures.conf"
     "config/nvim"
     "config/rofi"
     "config/systemd"

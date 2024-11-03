@@ -1,6 +1,6 @@
 # pets: package=github-cli
 # pets: package=git
-# pets: symlink=/home/butlerx/.gitconfig
+# pets: symlink=~/.gitconfig
 
 [user]
   name = Cian Butler

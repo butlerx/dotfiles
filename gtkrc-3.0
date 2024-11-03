@@ -1,5 +1,5 @@
-# pets: package=gtk3
-# pets: symlink=/home/butlerx/.gtkrc-3.0
+# pets: package=yay:gtk3, package=apt:libgtk-3-dev
+# pets: symlink=~/.gtkrc-3.0
 
 gtk-theme-name = "paper"
 gtk-font-name = "Open Sans 8"

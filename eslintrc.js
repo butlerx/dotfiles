@@ -1,4 +1,4 @@
-// pets: symlink=/home/butlerx/.eslintrc.js
+// pets: symlink=~/.eslintrc.js
 const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
 const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs'];
 
