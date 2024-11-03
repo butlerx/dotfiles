@@ -1,3 +1,1 @@
-autocmd BufNewFile,BufRead
-      \ ?*.nu
-      \ setfiletype nu
+autocmd BufNewFile,BufRead ?*.nu setfiletype nu

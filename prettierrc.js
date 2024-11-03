@@ -1,3 +1,5 @@
+// pets: symlink=/home/butlerx/.prettierrc.js
+
 module.exports = {
   singleQuote: true,
   trailingComma: 'all',

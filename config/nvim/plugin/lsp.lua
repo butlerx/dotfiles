@@ -102,30 +102,61 @@ require("mason-lspconfig").setup_handlers({
     function(server_name)
         require("lspconfig")[server_name].setup({})
     end,
-    ["rust_analyzer"] = function()
-        require("rust-tools").setup({
-            settings = {
-                ["rust-analyzer"] = {
-                    cargo = {
-                        features = "all",
-                        extraEnv = { RUSTFLAGS = "-C debuginfo=0 -A dead_code" },
+    ["rust_analyzer"] = function() end,
+})
+
+vim.g.rustaceanvim = {
+    tools = {},
+    server = {
+        cmd = function()
+            local mason_registry = require("mason-registry")
+            local ra_binary = mason_registry.is_installed("rust-analyzer")
+                    -- This may need to be tweaked, depending on the operating system.
+                    and mason_registry.get_package("rust-analyzer"):get_install_path() .. "/rust-analyzer"
+                or "rust-analyzer"
+            return { ra_binary } -- You can add args to the list, such as '--log-file'
+        end,
+        default_settings = {
+            ["rust-analyzer"] = {
+                cargo = {
+                    features = "all",
+                    extraEnv = { RUSTFLAGS = "-C debuginfo=0 -A dead_code" },
+                    buildScripts = {
+                        enable = true,
                     },
                 },
+                imports = {
+                    granularity = {
+                        group = "module",
+                    },
+                    prefix = "self",
+                },
+                procMacro = {
+                    enable = true,
+                },
             },
-        })
-    end,
-})
+        },
+    },
+}
 
 require("mason-tool-installer").setup({
     ensure_installed = {
+        --"autoimport",
+        --"google_java_format",
+        --"lua-format",
         "bash-language-server",
         "black",
         "dockerfile-language-server",
+        "editorconfig-checker",
         "eslint-lsp",
-        "eslint",
         "gofumpt",
         "golangci-lint",
+        "golines",
+        "gomodifytags",
         "gopls",
+        "gotests",
+        "impl",
+        "json-to-struct",
         "lua-language-server",
         "luacheck",
         "luaformatter",
@@ -139,7 +170,9 @@ require("mason-tool-installer").setup({
         "shellcheck",
         "shfmt",
         "staticcheck",
+        "stylelint",
         "stylua",
+        "taplo",
         "tflint",
         "typescript-language-server",
         "vim-language-server",
@@ -224,7 +257,7 @@ require("conform").setup({
         json = { "prettier", "fixjson", "jq" },
         scss = { "prettier", "stylelint" },
         css = { "prettier", "stylelint" },
-        rust = { "rustfmt" },
+        rust = { "rustfmt", lsp_format = "fallback" },
         zsh = { "shellcheck", "shfmt" },
         bash = { "shellcheck", "shfmt" },
         sh = { "shellcheck", "shfmt" },
@@ -234,10 +267,23 @@ require("conform").setup({
         ansible = { "prettier" },
         java = { "google_java_format" },
         terraform = { "terraform_fmt", "trim_newlines", "trim_whitespace" },
+        toml = { "taplo" },
         ["_"] = { "trim_newlines", "trim_whitespace" },
     },
     format_on_save = {
         timeout_ms = 500,
-        lsp_fallback = true,
+        lsp_format = "fallback",
     },
 })
+
+vim.api.nvim_create_user_command("Format", function(args)
+    local range = nil
+    if args.count ~= -1 then
+        local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
+        range = {
+            start = { args.line1, 0 },
+            ["end"] = { args.line2, end_line:len() },
+        }
+    end
+    require("conform").format({ async = true, lsp_format = "fallback", range = range })
+end, { range = true })

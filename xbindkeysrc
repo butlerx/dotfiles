@@ -1,3 +1,4 @@
+# pets: symlink=/home/butlerx/.xbindkeysrc
 # thumb button => play/pause music
 # Credit to gregmuellegger https://bbs.archlinux.org/viewtopic.php?pid=1551271#p1551271
 "sleep 0.1 && xte 'key XF86AudioPlay'"
@@ -54,4 +55,3 @@
 #"amixer set Master 5%+ unmute"
 #  m:0x8 + c:76
 #  Alt + F10
-

@@ -54,7 +54,6 @@
 #nav-bar {
   background: none !important;
   box-shadow: none !important;
-  margin-right: calc(100vw - 350px) !important;
   padding-bottom: 0 !important;
   padding-top: 1px !important;
 }

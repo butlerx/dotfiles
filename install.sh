@@ -9,33 +9,21 @@ CWD=$(pwd)
 printf "# Syncing to home folder...\n"
 
 function doSync() {
-  configs=(
-    "Xmodmap"
-    "Xresources"
+  pets -conf-dir .
+
+  config_dirs=(
+    "config/alacritty"
     "config/autorandr"
-    "config/flake8"
+    "config/autostart"
     "config/libinput-gestures.conf"
     "config/nvim"
-    "config/polybar"
     "config/rofi"
     "config/systemd"
-    "eslintrc.js"
-    "gitconfig"
-    "gtkrc-3.0"
-    "i3"
-    "prettierrc.js"
-    "ssh"
-    "tmux"
-    "tmux.conf"
-    "vimrc"
     "weechat"
-    "xbindkeysrc"
-    "xinitrc"
     "zsh-completions"
     "zsh.d"
-    "zshrc"
   )
-  for i in "${configs[@]}"; do
+  for i in "${config_dirs[@]}"; do
     ln -sf "$CWD/${i}" "$HOME/.${i}"
   done
   return 0
