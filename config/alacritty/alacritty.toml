@@ -1,8 +1,8 @@
-# pets: package=cargo:alacritty
+# pets: package=cargo:alacritty package=apt:cmake package=apt:g++ package=apt:pkg-config package=apt:libfreetype6-dev package=apt:libfontconfig1-dev package=apt:libxcb-xfixes0-dev package=apt:libxkbcommon-dev package=apt:python3
 # pets: symlink=~/.config/alacritty/alacritty.toml
 
 [font]
-size = 7.5
+size = 8.5
 #offset = { x = 1, y = 0}
 
 [window]

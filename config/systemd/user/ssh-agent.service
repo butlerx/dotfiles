@@ -1,3 +1,5 @@
+# pets: symlink=~/.config/systemd/user/ssh-agent.service
+
 [Unit]
 Description=SSH key agent
 

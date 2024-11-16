@@ -1,5 +1,5 @@
-# pets: package=i3-gaps
-# pets: symlink=~/.i3/config
+# pets: package=i3
+# pets: symlink=~/.config/i3/config
 
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
@@ -135,7 +135,7 @@ exec --no-startup-id xbindkeys
 # Use Gestures
 exec --no-startup-id libinput-gestures-setup start
 # Auto lock
-exec --no-startup-id xss-lock -- sh ~/.i3/i3lock.sh
+exec --no-startup-id xss-lock -- sh ~/.config/i3/i3lock.sh
 
 # Custom KeyBinds
 bindsym Control+mod4+l exec sh ~/.i3/i3lock.sh

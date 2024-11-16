@@ -1,4 +1,4 @@
-# pets: symlink=/home/butlerx/.ssh/config, owner=butlerx, group=butlerx, mode=0644
+# pets: symlink=~/.ssh/config, owner=butlerx, group=butlerx, mode=0644
 # pets: package=openssh
 
 Host *

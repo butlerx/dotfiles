@@ -1,3 +1,5 @@
+# pets: symlink=~/.config/systemd/user/screenlock.service
+
 [Unit]
 Description=Starts i3lock at suspend time
 Before=sleep.target
@@ -7,7 +9,7 @@ User=butlerx
 Type=forking
 Environment=DISPLAY=:0
 ExecStartPre=
-ExecStart=/home/butlerx/.i3/i3lock.sh
+ExecStart=/home/butlerx/.config/i3/i3lock.sh
 
 [Install]
 WantedBy=sleep.target
