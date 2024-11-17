@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
-# pets: package=i3lock-color
-# pets: symlink=~/.config/i3/i3lock.sh, owner=butlerx, group=butlerx, mode=0755
+# pets: package=yay:i3lock-color
+# pets: symlink=~/.config/i3/i3lock.sh, mode=0755
 
 # Variables
 tmpbg='/tmp/screen.png'
