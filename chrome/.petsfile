@@ -1,0 +1,2 @@
+# pets: package=firefox
+# pets: symlink=~/.mozilla/firefox/butlerx.default/chrome

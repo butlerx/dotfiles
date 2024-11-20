@@ -1,5 +1,5 @@
 # pets: symlink=~/.flake8
-# pets: package=apt:python-flake8
+# pets: package=apt:flake8
 
 [flake8]
 max-line-length=120
