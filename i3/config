@@ -1,4 +1,4 @@
-# pets: package=i3
+# pets: package=i3, package=rofi, package=libinput-gestures, package=xbindkeys, package=xss-lock, package=xbacklight, package=playerctl, package=autorandr, package=xcompmgr, package=amixer, package=xfce4-session, package=thunar
 # pets: symlink=~/.config/i3/config
 
 # i3 config file (v4)
@@ -123,7 +123,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-exec_always autorandr --change
+exec_always autorandr --force --change
 
 # Colors
 client.focused #007fbf #007fbf #ffffff
