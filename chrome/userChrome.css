@@ -1,305 +1,46 @@
-@namespace url('http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul');
+/* Import theme */
 
-:root {
-  --animationSpeed: 0.15s;
-}
+@import 'Orchis/theme.css'; /**/
+/*@import "Orchis/theme-light.css"; /**/
+@import 'Orchis/theme-dark.css'; /**/
 
-.browserStack {
-  background: linear-gradient(
-    90deg,
-    rgba(255, 99, 120, 1) 0%,
-    rgba(79, 82, 252, 1) 100%
-  );
-}
-
-.browserContainer {
-  background-color: var(
-    --lwt-accent-color-inactive,
-    var(--lwt-accent-color)
-  ) !important;
-  background-image: var(--lwt-header-image), var(--lwt-additional-images) !important;
-  background-repeat: no-repeat, var(--lwt-background-tiling) !important;
-  background-position:
-    right top,
-    var(--lwt-background-alignment) !important;
-}
-
-/*============================================================================*/
-/* Tabs
- * - Auto hide tab bar
- */
-#main-window[tabsintitlebar='true']:not([extradragspace='true'])
-  #TabsToolbar
-  > .toolbar-items {
-  opacity: 0;
-  pointer-events: none;
-}
-
-#main-window:not([tabsintitlebar='true']) #TabsToolbar {
-  visibility: collapse !important;
-}
-
-#main-window[titlepreface^='[1] ']
-  #sidebar-box[sidebarcommand='treestyletab_piro_sakura_ne_jp-sidebar-action'] {
-  visibility: collapse !important;
-}
-
-/* Avoid transparent background for menubar if nav-toolbox not focussed */
-#navigator-toolbox:not(:hover):not(:focus-within) #toolbar-menubar > * {
-  /* Colour matches the grey background of the default firefox theme. Can't see what variable it uses */
-  background-color: rgb(232, 232, 231);
-}
-
-/* Simplifying interface */
-#nav-bar {
-  background: none !important;
-  box-shadow: none !important;
-  padding-bottom: 0 !important;
-  padding-top: 1px !important;
-}
-
-:root[uidensity='compact'] #nav-bar {
-  margin-top: -34px !important;
-  height: 37px !important;
-}
-
-:root:not([uidensity='compact']):not([uidensity='touch']) #nav-bar {
-  margin-top: -30px !important;
-  height: 50px !important;
-}
-
-:root[uidensity='touch'] #nav-bar {
-  margin-top: -30px !important;
-  height: 52px !important;
-}
-
-/* Hide URL notifications that aren't particularly useful and cover up the command line
- * TODO: move it above the command line / bring functionality into status line like Vimperator */
-statuspanel[type='overLink'] {
-  display: none !important;
-}
-
-/* Partial removal of black bottom 1px line shown in fullscreen mode */
-#navigator-toolbox::after {
-  display: none !important;
-}
-
-.titlebar-spacer {
-  display: flex !important;
-  width: 10px !important;
-}
-
-.tab-icon-image[src="chrome://branding/content/icon32.png"]
-{
-  content: url(images/grid.png) !important;
-}
-
-/*============================================================================*/
 /*
- * URL Bar
- *  - Hide urlbar elements when not active
- *  - Remove window decorations (Close, Minimize, Fullscreen) 
+ * Here you can enable other theme features not included by default.
+ * To enable a specific feature, uncomment its @import line by removing "/*" at
+ * the beginning of the line. To disable it, put the "/*" back.
  */
 
-#urlbar-background,
-#urlbar {
-  margin-top: 0.7px;
-  margin-left: 5px;
-  border: 1px !important;
-  border-radius: 5px !important;
-}
+/* Hide the tab bar when only one tab is open (GNOMISH)
+ * You should move the new tab button somewhere else for this to work, because by
+ * default it is on the tab bar too. */
+/*@import "Orchis/hide-single-tab.css"; /**/
 
-#urlbar:not(:hover):not([breakout][breakout-extend]) > #urlbar-background {
-  box-shadow: none !important;
-  background: none !important;
-}
+/* Limit the URL bar's autocompletion popup's width to the URL bar's width (GNOMISH) 
+ * This feature is included by default for Firefox 70+ */
+/*@import "Orchis/matching-autocomplete-width.css"; /**/
 
-.urlbar-icon,
-#userContext-indicator,
-#userContext-label {
-  fill: transparent !important;
-  background: transparent !important;
-  color: transparent !important;
-}
+/* Rounded title buttons (headerbar window controls) (GNOMISH) */
+/*@import "Orchis/rounded-title-buttons.css"; /**/
 
-#urlbar:hover .urlbar-icon,
-#urlbar:active .urlbar-icon,
-#urlbar[focused] .urlbar-icon {
-  fill: var(--toolbar-color) !important;
-}
+/* Active tab high contrast */
+/*@import "Orchis/active-tab-contrast.css"; /**/
 
-.subviewbutton,
-#urlbar-background,
-.urlbar-icon,
-#userContext-indicator,
-#userContext-label,
-.urlbar-input-box,
-#identity-box,
-#tracking-protection-icon-container,
-[anonid='urlbar-go-button'],
-.urlbar-icon-wrapper,
-#tracking-protection-icon,
-#identity-box image,
-stack,
-tab:not(:active) .tab-background,
-tab:not([beforeselected-visible])::after,
-tab[visuallyselected] .tab-background::before,
-tab[visuallyselected] .tab-background::before,
-.tab-close-button {
-  transition: var(--animationSpeed) !important;
-}
+/* Use system theme icons instead of Adwaita icons included by theme */
+/*@import "Orchis/system-icons.css"; /**/
 
-#urlbar-input {
-  transition: transform 0.1s linear;
-  transform: none !important;
-  padding-left: 13px !important;
-}
+/* Allow drag window from headerbar buttons (GNOMISH) [BUGGED] 
+ * It can activate button action, with unpleasant behavior. */
+/*@import "Orchis/drag-window-headerbar-buttons.css"; /**/
 
-/*============================================================================*/
+/* Make all tab icons look kinda like symbolic icons */
+/*@import "Orchis/symbolic-tab-icons.css"; /**/
 
-#urlbar-container {
-  min-width: 100px !important;
-}
+/* Hide window buttons (close/min/max) in maximized windows */
+/*@import "Orchis/hide-window-buttons.css"; /**/
 
-#urlbar[breakout][breakout-extend] {
-  min-width: 420px !important;
-}
-
-#titlebar {
-  display: none !important;
-}
-
-#TabsToolbar .titlebar-placeholder {
-  display: none !important;
-}
-
-/*============================================================================*/
-/*
- * Button Styles
- * - autohide back & forward button
- * - Custom icons
- */
-
-#forward-button {
-  list-style-image: url(images/right-arrow.svg) !important;
-  transform: scale(1, 1) !important;
-  transition:
-    margin-left 150ms var(--animation-easing-function),
-    opacity 250ms var(--animation-easing-function),
-    transform 350ms var(--animation-easing-function) !important;
-}
-
-#forward-button[disabled='true'] {
-  margin-top: 1.2px !important;
-  margin-left: -22px !important;
-  opacity: 0 !important;
-  transform: scale(0.8, 0.8) !important;
-  pointer-events: none !important;
-}
-
-#back-button {
-  list-style-image: url(images/left-arrow.svg) !important;
-  margin-top: 1.2px !important;
-  transform: scale(1, 1) !important;
-  transition:
-    margin-left 150ms var(--animation-easing-function),
-    opacity 250ms var(--animation-easing-function),
-    transform 350ms var(--animation-easing-function) !important;
-}
-
-#back-button[disabled='true'] {
-  margin-top: 1.2px !important;
-  margin-left: -26px !important;
-  opacity: 0 !important;
-  transform: scale(0.8, 0.8) !important;
-  pointer-events: none !important;
-}
-
-#sidebar-button {
-  list-style-image: url(images/sidebar.svg) !important;
-}
-
-.tab-close-button {
-  list-style-image: url(images/tabclose.svg) !important;
-}
-
-/*============================================================================*/
-
-/*============================================================================*/
-/* ----- A U T O   H I D E   &   R E P O S I T I O N   T H E   B O O K M A R K S   B A R ----- */
-
-/* Source file https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/autohide_bookmarks_toolbar.css made available under Mozilla Public License v. 2.0
-See the above repository for updates as well as full license text. */
-
-#PersonalToolbar {
-  --uc-bm-height: 20px; /* Might need to adjust if the toolbar has other buttons */
-  --uc-bm-padding: 2px; /* Vertical padding to be applied to bookmarks */
-  --uc-autohide-toolbar-delay: 50ms; /* The toolbar is hidden after 0.6s */
-
-  /* 0deg = "show" ; 90deg = "hide" ;  Set the following to control when bookmarks are shown */
-  --uc-autohide-toolbar-focus-rotation: 0deg; /* urlbar is focused */
-  --uc-autohide-toolbar-hover-rotation: 0deg; /* cursor is over the toolbar area */
-}
-
-:root[uidensity='compact'] #PersonalToolbar {
-  --uc-bm-padding: 1px;
-  --toolbarbutton-outer-padding: 1px !important;
-}
-:root[uidensity='touch'] #PersonalToolbar {
-  --uc-bm-padding: 7px;
-}
-
-#PersonalToolbar:not([customizing]) {
-  position: relative;
-  margin-bottom: calc(-4px - var(--uc-bm-height) - 2 * var(--uc-bm-padding));
-  transform: rotateX(90deg);
-  transform-origin: top;
-  transition: transform 135ms linear var(--uc-autohide-toolbar-delay) !important;
-  z-index: 1;
-  /* The following properties should allow the themes with trasparent toolbars to work */
-  background-color: transparent !important;
-  background-repeat: no-repeat, no-repeat, var(--lwt-background-tiling);
-  /* y position will be wrong if menubar is enabled... */
-  --uc-bg-y: calc(
-    -2 * (
-        var(--tab-block-margin) + var(--toolbarbutton-inner-padding) +
-          var(--toolbarbutton-outer-padding)
-      ) - var(--tab-min-height) - 24px - var(--bookmark-block-padding)
-  );
-  background-position:
-    top left,
-    top left,
-    var(--lwt-background-alignment, top left);
-  background-position-y: top, top, var(--uc-bg-y), var(--uc-bg-y),
-    var(--uc-bg-y);
-  background-image: var(
-      --toolbar-bgimage,
-      linear-gradient(transparent, transparent)
-    ),
-    linear-gradient(var(--toolbar-bgcolor), var(--toolbar-bgcolor)),
-    var(--lwt-header-image, var(--lwt-additional-images)) !important;
-}
-
-#PlacesToolbarItems > .bookmark-item,
-#OtherBookmarks,
-#PersonalToolbar > #import-button {
-  padding-block: var(--uc-bm-padding) !important;
-}
-
-#nav-bar:focus-within + #PersonalToolbar {
-  transition-delay: 100ms !important;
-  transform: rotateX(var(--uc-autohide-toolbar-focus-rotation, 0));
-}
-
-#navigator-toolbox:hover > #PersonalToolbar {
-  transition-delay: 100ms !important;
-  transform: rotateX(var(--uc-autohide-toolbar-hover-rotation, 0));
-}
-
-#navigator-toolbox:hover > #nav-bar:focus-within + #PersonalToolbar {
-  transform: rotateX(0);
-}
-
-#navigator-toolbox:is(:hover, :focus-within) {
-  border-bottom-color: transparent !important;
-}
+/* Import a custom stylesheet
+ * Everything you add in your customChrome.css file (it doesn't exist by
+ * default) will be included here and preserved between updates, so you can move
+ * your configuration to that file if you don't like setting it up after every
+ * update. You can also apply your own custom styles in that file. */
+@import 'customChrome.css'; /**/
