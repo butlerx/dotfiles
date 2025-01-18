@@ -1,1 +1,3 @@
 # pets: symlink=~/.config/autorandr
+# pets: package=autorandr
+# pets: package=nitrogen
