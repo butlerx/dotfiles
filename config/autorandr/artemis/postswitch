@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
+
+kill_polybar
+#set_wallpaper 0 zoom-fill PXL_20221228_143940280-PANO.jpg
+sleep 0.5
+(
+	flock 200
+	start_bar HDMI-1 artemis
+) 200>/var/tmp/polybar-launch.lock
