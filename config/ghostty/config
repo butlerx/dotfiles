@@ -1,3 +1,4 @@
+# pets: symlink=~/.config/ghostty/config
 theme = Monokai Soda
 background-opacity = 0.6
 adw-toolbar-style = flat

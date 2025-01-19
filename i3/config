@@ -1,4 +1,4 @@
-# pets: package=i3, package=rofi, package=libinput-gestures, package=xbindkeys, package=xss-lock, package=xbacklight, package=playerctl, package=autorandr, package=xcompmgr, package=amixer, package=xfce4-session, package=thunar
+# pets: package=i3, package=rofi, package=libinput-gestures, package=xbindkeys, package=xss-lock, package=xbacklight, package=playerctl, package=autorandr, package=amixer, package=xfce4-session, package=thunar
 # pets: symlink=~/.config/i3/config
 
 # i3 config file (v4)
@@ -176,4 +176,4 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86Tools exec sh ~/.i3/i3lock.sh
 bindsym XF86Display exec autorandr
-exec xcompmgr -c -f -n
+exec picom -bcf --config ~/.config/i3/picom.conf

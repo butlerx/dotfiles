@@ -3,7 +3,7 @@
 source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 
 kill_polybar
-#set_wallpaper 0 zoom-fill PXL_20221228_143940280-PANO.jpg
+set_wallpaper 0 zoom-fill PXL_20221228_143940280-PANO.jpg
 sleep 0.5
 (
 	flock 200
