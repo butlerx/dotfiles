@@ -9,7 +9,7 @@ set_wallpaper 1 auto IMG_20190903_163002-EFFECTS.jpg
 	flock 200
 	start_bar DP-1 1080p
 	start_bar HDMI-1 1080p
-	#move_ws 1 left
+	move_ws 1 left
 	move_ws 2 right
 	move_ws 3 right
 ) 200>/var/tmp/polybar-launch.lock
