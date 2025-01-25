@@ -1,4 +1,6 @@
-# pets: package=i3, package=rofi, package=libinput-gestures, package=xbindkeys, package=xss-lock, package=xbacklight, package=playerctl, package=autorandr, package=amixer, package=xfce4-session, package=thunar
+# pets: package=yay:i3-wm, package=yay:xorg-xbacklight, package=yay:alsa-utils
+# pets: package=apt:i3, package=apt:xbacklight, package=apt:amixer
+# pets: package=rofi, package=libinput-gestures, package=xbindkeys, package=xss-lock,  package=playerctl, package=autorandr,  package=xfce4-session, package=thunar
 # pets: symlink=~/.config/i3/config
 
 # i3 config file (v4)

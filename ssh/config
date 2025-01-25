@@ -1,5 +1,5 @@
 # pets: symlink=~/.ssh/config, owner=butlerx, group=butlerx, mode=0644
-# pets: package=openssh-client
+# pets: package=apt:openssh-client, package=yay:openssh
 
 Host *
   ForwardAgent yes
