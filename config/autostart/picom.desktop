@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+NoDisplay=false
+Name=Picom
+GenericName=X compositor
+Comment=An X compositor
+Categories=Utility;
+Keywords=compositor;composite manager;window effects;transparency;opacity;
+TryExec=picom -bcf
+Exec=picom -bcf
+StartupNotify=false
+Terminal=false
+# Thanks to quequotion for providing this file!
+Icon=compton

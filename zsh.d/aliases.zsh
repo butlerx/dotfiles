@@ -24,8 +24,8 @@ alias bk='cd $OLDPWD'
 alias lh='ls -d .*' # show hidden files/directories only
 alias l='ls -al'
 if [[ $IS_LINUX -eq 1 ]]; then
-  alias lsd='ls -aFhl'
-  alias ll='ls -Fhl' # Same as above, but in long listing format
+  alias lsd='ls -ahl'
+  alias ll='ls -hl' # Same as above, but in long listing format
 fi
 alias ltree="ls -R | grep ":$" | sed -e 's/:$//' -e 's/[^-][^\\/]*\\//--/g' -e 's/^/   /' -e 's/-/|/'"
 alias dus='du -sckx * | sort -nr' #directories sorted by size
@@ -37,9 +37,9 @@ alias filecount='find . -type f | wc -l' # number of files (not directories)
 # Mac only
 # -------------------------------------------------------------------
 if [[ $IS_MAC -eq 1 ]]; then
-  alias lsd='ls -aFhlG'
-  alias ls='ls -GFh'                 # Colorize output, add file type indicator, and put sizes in human readable format
-  alias ll='ls -GFhl'                # Same as above, but in long listing format
+  alias lsd='ls -ahlG'
+  alias ls='ls -Gh'                  # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ll='ls -Ghl'                 # Same as above, but in long listing format
   alias ql='qlmanage -p 2>/dev/null' # OS X Quick Look
   alias oo='open .'                  # open current directory in OS X Finder
   alias today='calendar -A 0 -f /usr/share/calendar/calendar.mark | sort'
@@ -162,6 +162,5 @@ alias please='sudo'
 
 if [[ $IS_LINUX -eq 1 ]]; then
   alias cat='bat'
-  alias icat="kitty +kitten icat"
-  alias ls='exa -Fh' # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ls='eza -h' # Colorize output, add file type indicator, and put sizes in human readable format
 fi

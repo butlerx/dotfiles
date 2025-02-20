@@ -178,4 +178,3 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym XF86Tools exec sh ~/.i3/i3lock.sh
 bindsym XF86Display exec autorandr
-exec picom -bcf --config ~/.config/i3/picom.conf
