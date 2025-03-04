@@ -5,12 +5,6 @@
   name = Cian Butler
   email = butlerx@notthe.cloud
   signingkey = C61F9E960956795F3DB41361B37CA765BAA89170
-[includeIf "gitdir:~/projects/evervault/"]
-  path = ~/projects/evervault/.gitconfig
-[includeIf "gitdir:~/projects/cian-ev/"]
-  path = ~/projects/cian-ev/.gitconfig
-[includeIf "gitdir:~/projects/evervault-test/"]
-  path = ~/projects/evervault/.gitconfig
 [push]
   default = simple
 [github]
@@ -69,6 +63,7 @@
   ignore = "!gi() { curl -sL https://www.gitignore.io/api/$@ ;}; gi"
 [core]
   autocrlf = input
+  excludesfile = ~/.gitignore
 [fetch]
   prune = true
 [filter "lfs"]
@@ -79,7 +74,7 @@
 [commit]
   gpgsign = true
 [gpg]
-  program = gpg2
+  program = gpg
 [pull]
   rebase = true
 [init]
@@ -87,4 +82,4 @@
 [rerere]
   enabled = 1
 [credential]
-	helper = store
+  helper = store

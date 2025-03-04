@@ -1,3 +1,4 @@
+FPATH="$HOME/.docker/completions:$FPATH"
 autoload -U compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/bin/terraform terraform
@@ -9,7 +10,7 @@ function _pip_completion() {
   read -cnr cword
   reply=($(COMP_WORDS="$words[*]" \
     COMP_CWORD=$((cword - 1)) \
-    PIP_AUTO_COMPLETE=1 $words[1]))
+    PIP_AUTO_COMPLETE=1 "$words"[1]))
 }
 compctl -K _pip_completion pip
 # pip zsh completion end

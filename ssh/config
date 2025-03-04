@@ -3,6 +3,8 @@
 
 Host *
   ForwardAgent yes
+  UseKeychain yes
+  AddKeysToAgent yes
   ServerAliveInterval 30
   ServerAliveCountMax 2
 

@@ -9,14 +9,6 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 	source "$file"
 done
 fpath=(~/.dotfiles/zsh-completions $fpath)
-source "$HOME/.zprofile"
-
-# bun completions
-[ -s "/home/cianbutler/.bun/_bun" ] && source "/home/cianbutler/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
 
 # tabtab source for packages
 # uninstall by removing these lines
@@ -33,3 +25,5 @@ case ":$PATH:" in
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+source "$HOME/.zprofile"
