@@ -162,5 +162,5 @@ alias please='sudo'
 
 if [[ $IS_LINUX -eq 1 ]]; then
   alias cat='bat'
-  alias ls='eza -h' # Colorize output, add file type indicator, and put sizes in human readable format
+  alias ls='exa -h' # Colorize output, add file type indicator, and put sizes in human readable format
 fi
