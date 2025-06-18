@@ -22,6 +22,7 @@
   undo = reset HEAD~1 --mixed
   clean-branch = "!git branch --merged | grep -E -v \"(^\\*|master|dev|develop|main)\" | xargs git branch -d"
   clean-merged = "!git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
+  clean-wd = "!c() { git checkout \"$(git symbolic-ref refs/remotes/origin/HEAD --short | sed 's|^origin/||')\"; git pull; git clean-merged; }; "
   a = add
   ap = add -p
   c = commit --verbose
