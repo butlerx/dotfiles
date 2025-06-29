@@ -29,7 +29,7 @@ utils.create_augroups = function(definitions)
             -- if type(def) == 'table' and type(def[#def]) == 'function' then
             -- 	def[#def] = lua_callback(def[#def])
             -- end
-            local command = table.concat(vim.tbl_flatten({ "autocmd", def }), " ")
+            local command = table.concat(vim.iter({ "autocmd", def }):flatten():totable(), " ")
             api.nvim_command(command)
         end
         api.nvim_command("augroup END")

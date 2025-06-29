@@ -145,7 +145,7 @@ set.scrolloff = 1
 set.showcmd = true
 set.showmatch = true -- Highlight matching brace
 set.smartcase = true -- Enable smart-case search
-vim.cmd([[set termencoding=utf-8]])
+--vim.cmd([[set termencoding=utf-8]])
 set.visualbell = true -- Use visual bell (no beeping)
 
 -- Delete Selected word from whole file
