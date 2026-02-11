@@ -17,6 +17,7 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias bk='cd $OLDPWD'
+alias cdg='cd $(git rev-parse --show-toplevel)/'
 
 # -------------------------------------------------------------------
 # directory information

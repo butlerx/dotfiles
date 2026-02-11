@@ -43,9 +43,9 @@ snacks.setup({
     dashboard = { enabled = false },
     explorer = { enabled = false },
     image = { enabled = false },
-    input = { enabled = false },
+    input = { enabled = true },
     lazygit = { enabled = false },
     notifier = { enabled = false },
-    picker = { enabled = false },
+    picker = { enabled = true },
 })
 

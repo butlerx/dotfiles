@@ -3,29 +3,27 @@ require("copilot").setup({
     panel = { enabled = false },
 })
 require("copilot_cmp").setup()
-require("img-clip").setup({
-    default = {
-        embed_image_as_base64 = false,
-        prompt_for_file_name = false,
-        drag_and_drop = {
-            insert_mode = true,
-        },
-        -- required for Windows users
-        use_absolute_path = true,
-    },
-})
+
 require("render-markdown").setup({
-    file_types = { "markdown", "Avante" },
+    file_types = { "markdown" },
+    latex = { enabled = false },
+    yaml = { enabled = false },
 })
-require("avante").setup({
-    provider = "copilot",
-    providers = {
-        copilot = {
-            model = "claude-sonnet-4",
-        },
+
+-- setup opencode.nvim
+---@type opencode.Opts
+vim.g.opencode_opts = {
+    provider = {
+        enabled = "tmux",
     },
-    behaviour = {
-        auto_suggestions = false,
-        auto_apply_diff_after_generation = true,
-    },
-})
+}
+
+-- Required for opencode to reload edited buffers
+vim.o.autoread = true
+
+-- opencode keymaps
+vim.keymap.set({ "n", "x" }, "<leader>oa", function() require("opencode").ask("@this: ", { submit = true }) end, { desc = "Ask opencode" })
+vim.keymap.set({ "n", "x" }, "<leader>os", function() require("opencode").select() end, { desc = "Select opencode action" })
+vim.keymap.set({ "n", "t" }, "<leader>oo", function() require("opencode").toggle() end, { desc = "Toggle opencode" })
+vim.keymap.set({ "n", "x" }, "go", function() return require("opencode").operator("@this ") end, { desc = "Add range to opencode", expr = true })
+vim.keymap.set("n", "goo", function() return require("opencode").operator("@this ") .. "_" end, { desc = "Add line to opencode", expr = true })

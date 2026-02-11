@@ -3,6 +3,9 @@ local set = vim.opt
 local fn = vim.fn
 local map = utils.map
 
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 vim.cmd([[runtime system.vim]])
 require("plugins")
 
@@ -61,7 +64,7 @@ if fn.has("folding") then
     set.foldcolumn = "1"
     set.foldlevel = 0
     set.foldmethod = "expr"
-    set.foldexpr = "nvim_treesitter#foldexpr()"
+    set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 end
 
 -- Delete comment leaders when joining lines, if supported

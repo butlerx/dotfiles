@@ -4,7 +4,6 @@ require("neo-tree").setup({
     close_if_last_window = true,
     popup_border_style = "rounded",
     enable_git_status = true,
-    enable_normal_mode_for_inputs = false,
     open_files_do_not_replace_types = { "terminal", "trouble", "qf" },
     sort_case_insensitive = false,
 
@@ -59,8 +58,9 @@ require("neo-tree").setup({
         window = {
             mappings = {
                 ["<bs>"] = "navigate_up",
+                ["u"] = "navigate_up",
                 ["."] = "set_root",
-                ["H"] = "toggle_hidden",
+                ["I"] = "toggle_hidden",
                 ["/"] = "fuzzy_finder",
                 ["D"] = "fuzzy_finder_directory",
                 ["#"] = "fuzzy_sorter",

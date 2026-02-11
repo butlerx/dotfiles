@@ -1,85 +1,79 @@
 local map = require("utils").map
 local cmp = require("cmp")
 
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+vim.diagnostic.config({
     underline = false,
     virtual_text = false,
     signs = true,
     update_in_insert = false,
-    format_on_save = true,
 })
 
--- keymaps
-local on_attach = function(client, bufnr)
-    local function buf_set_keymap(...)
-        vim.api.nvim_buf_set_keymap(bufnr, ...)
-    end
-    local function buf_set_option(...)
-        vim.api.nvim_buf_set_option(bufnr, ...)
-    end
+-- LSP keymaps and highlight via LspAttach autocmd
+vim.api.nvim_create_autocmd("LspAttach", {
+    group = vim.api.nvim_create_augroup("UserLspConfig", { clear = true }),
+    callback = function(ev)
+        local bufnr = ev.buf
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-    -- Enable completion triggered by <c-x><c-o>
-    buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
+        vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
 
-    -- Mappings.
-    map({ "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>" })
-    map({ "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" })
-    map({ "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" })
-    map({ "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>" })
-    map({ "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>" })
-    map({ "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>" })
-    map({ "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>" })
-    map({
-        "n",
-        "<space>wl",
-        "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
-    })
-    map({ "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>" })
-    map({ "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>" })
-    map({ "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>" })
-    map({ "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" })
-    map({
-        "n",
-        "<space>e",
-        "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>",
-    })
-    map({ "n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>" })
-    map({ "n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>" })
-    map({ "n", "<space>q", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>" })
+        -- Mappings.
+        map({ "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>" })
+        map({ "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" })
+        map({ "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>" })
+        map({ "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>" })
+        map({ "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>" })
+        map({ "n", "<space>wa", "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>" })
+        map({ "n", "<space>wr", "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>" })
+        map({
+            "n",
+            "<space>wl",
+            "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>",
+        })
+        map({ "n", "<space>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>" })
+        map({ "n", "<space>rn", "<cmd>lua vim.lsp.buf.rename()<CR>" })
+        map({ "n", "<space>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>" })
+        map({ "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>" })
+        map({
+            "n",
+            "<space>e",
+            "<cmd>lua vim.diagnostic.open_float()<CR>",
+        })
+        map({ "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>" })
+        map({ "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>" })
+        map({ "n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>" })
 
-    -- Set some keybinds conditional on server capabilities
-    if client.server_capabilities.documentFormattingProvider then
-        map({ "n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>" })
-    elseif client.server_capabilities.documentRangeFormattingProvider then
-        map({ "n", "<space>f", "<cmd>lua vim.lsp.buf.range_formatting()<CR>" })
-    end
+        -- Set some keybinds conditional on server capabilities
+        if
+            client
+            and (
+                client.server_capabilities.documentFormattingProvider
+                or client.server_capabilities.documentRangeFormattingProvider
+            )
+        then
+            map({ "n", "<space>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>" })
+        end
 
-    -- Set autocommands conditional on server_capabilities
-    if client.server_capabilities.documentHighlightProvider then
-        vim.api.nvim_exec(
-            [[
-        augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-        augroup END
-      ]],
-            false
-        )
-    end
-end
-
--- config that activates keymaps and enables snippet support
-local function make_config()
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-    capabilities.textDocument.completion.completionItem.snippetSupport = true
-    return {
-        -- enable snippet support
-        capabilities = capabilities,
-        -- map buffer local keybindings when the language server attaches
-        on_attach = on_attach,
-    }
-end
+        -- Set autocommands conditional on server_capabilities
+        if client and client.server_capabilities.documentHighlightProvider then
+            local group = vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
+            vim.api.nvim_create_autocmd("CursorHold", {
+                group = group,
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.document_highlight()
+                end,
+            })
+            vim.api.nvim_create_autocmd("CursorMoved", {
+                group = group,
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.clear_references()
+                end,
+            })
+        end
+    end,
+})
 
 require("mason").setup({
     ui = {
@@ -95,27 +89,15 @@ require("mason").setup({
 })
 
 require("mason-lspconfig").setup({
-    automatic_installation = true,
-})
-
-require("mason-lspconfig").setup_handlers({
-    function(server_name)
-        require("lspconfig")[server_name].setup({})
-    end,
-    ["rust_analyzer"] = function() end,
+    automatic_enable = {
+        exclude = { "rust_analyzer" }, -- Managed by rustaceanvim
+    },
 })
 
 vim.g.rustaceanvim = {
     tools = {},
     server = {
-        cmd = function()
-            local mason_registry = require("mason-registry")
-            local ra_binary = mason_registry.is_installed("rust-analyzer")
-                    -- This may need to be tweaked, depending on the operating system.
-                    and mason_registry.get_package("rust-analyzer"):get_install_path() .. "/rust-analyzer"
-                or "rust-analyzer"
-            return { ra_binary } -- You can add args to the list, such as '--log-file'
-        end,
+        cmd = { "rust-analyzer" },
         default_settings = {
             ["rust-analyzer"] = {
                 cargo = {
@@ -141,11 +123,7 @@ vim.g.rustaceanvim = {
 
 require("mason-tool-installer").setup({
     ensure_installed = {
-        --"autoimport",
-        --"google_java_format",
-        --"lua-format",
         "bash-language-server",
-        "black",
         "dockerfile-language-server",
         "editorconfig-checker",
         "eslint-lsp",
@@ -159,13 +137,12 @@ require("mason-tool-installer").setup({
         "json-to-struct",
         "lua-language-server",
         "luacheck",
-        "luaformatter",
         "markdownlint",
         "misspell",
         "prettier",
         "proselint",
-        "pyright",
         "revive",
+        "ruff",
         "rust-analyzer",
         "shellcheck",
         "shfmt",
@@ -174,6 +151,7 @@ require("mason-tool-installer").setup({
         "stylua",
         "taplo",
         "tflint",
+        "ty",
         "typescript-language-server",
         "vim-language-server",
         "vint",
@@ -188,12 +166,8 @@ require("mason-tool-installer").setup({
 -- Set up nvim-cmp.
 cmp.setup({
     snippet = {
-        -- REQUIRED - you must specify a snippet engine
         expand = function(args)
             vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
     window = {
@@ -251,14 +225,8 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("conform").setup({
     formatters_by_ft = {
-        lua = { "lua-format", "stylua" },
-        python = function(bufnr)
-            if require("conform").get_formatter_info("ruff_format", bufnr).available then
-                return { "autoimport", "ruff_format" }
-            else
-                return { "autoimport", "isort", "black" }
-            end
-        end,
+        lua = { "stylua" },
+        python = { "ruff_organize_imports", "ruff_format" },
         javascript = { "prettier", "eslint_d" },
         typescript = { "prettier", "eslint_d" },
         html = { "eslint_d" },
@@ -273,7 +241,6 @@ require("conform").setup({
         markdown = { "prettier" },
         yaml = { "yamlfmt", "prettier" },
         ansible = { "prettier" },
-        java = { "google_java_format" },
         terraform = { "terraform_fmt", "trim_newlines", "trim_whitespace" },
         toml = { "taplo" },
         ["*"] = { "trim_newlines", "trim_whitespace" },

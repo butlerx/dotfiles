@@ -15,30 +15,24 @@ local opts = {
 local mappings = {
     L = {
         name = "Rust",
-        h = { "<cmd>RustToggleInlayHints<Cr>", "Toggle Hints" },
-        r = { "<cmd>RustRunnables<Cr>", "Runnables" },
-        -- r = { "<cmd>lua _CARGO_RUN()<cr>", "Cargo Run" },
-        t = { "<cmd>lua _CARGO_TEST()<cr>", "Cargo Test" },
-        m = { "<cmd>RustExpandMacro<Cr>", "Expand Macro" },
-        c = { "<cmd>RustOpenCargo<Cr>", "Open Cargo" },
-        p = { "<cmd>RustParentModule<Cr>", "Parent Module" },
-        -- j = { "<cmd>RustJoinLines<Cr>", "Join Lines" },
-        -- s = { "<cmd>RustStartStandaloneServerForBuffer<Cr>", "Start Server Buf" },
-        d = { "<cmd>RustDebuggables<Cr>", "Debuggables" },
-        v = { "<cmd>RustViewCrateGraph<Cr>", "View Crate Graph" },
-        b = { "<cmd>RustRun<Cr>", "Run" },
-        R = {
-            "<cmd>lua require('rust-tools/workspace_refresh')._reload_workspace_from_cargo_toml()<Cr>",
-            "Reload Workspace",
+        h = {
+            function()
+                vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+            end,
+            "Toggle Hints",
         },
-        -- S = { "<cmd>RustSSR<Cr>", "SSR" },
-        o = { "<cmd>RustOpenExternalDocs<Cr>", "Open External Docs" },
-        -- h = { "<cmd>RustSetInlayHints<Cr>", "Enable Hints" },
-        -- H = { "<cmd>RustDisableInlayHints<Cr>", "Disable Hints" },
-        -- a = { "<cmd>RustHoverActions<Cr>", "Hover Actions" },
-        -- a = { "<cmd>RustHoverRange<Cr>", "Hover Range" },
-        -- j = { "<cmd>RustMoveItemDown<Cr>", "Move Item Down" },
-        -- k = { "<cmd>RustMoveItemUp<Cr>", "Move Item Up" },
+        r = { "<cmd>RustLsp runnables<Cr>", "Runnables" },
+        t = { "<cmd>RustLsp testables<Cr>", "Testables" },
+        m = { "<cmd>RustLsp expandMacro<Cr>", "Expand Macro" },
+        c = { "<cmd>RustLsp openCargo<Cr>", "Open Cargo" },
+        p = { "<cmd>RustLsp parentModule<Cr>", "Parent Module" },
+        d = { "<cmd>RustLsp debuggables<Cr>", "Debuggables" },
+        v = { "<cmd>RustLsp crateGraph<Cr>", "View Crate Graph" },
+        b = { "<cmd>RustLsp run<Cr>", "Run" },
+        R = { "<cmd>RustLsp reloadWorkspace<Cr>", "Reload Workspace" },
+        o = { "<cmd>RustLsp openDocs<Cr>", "Open External Docs" },
+        e = { "<cmd>RustLsp explainError<Cr>", "Explain Error" },
+        D = { "<cmd>RustLsp renderDiagnostic<Cr>", "Render Diagnostic" },
     },
 }
 
@@ -53,4 +47,4 @@ vim.notify = function(msg, ...)
     notify_filter(msg, ...)
 end
 
-vim.api.nvim_set_keymap("n", "<m-d>", "<cmd>RustOpenExternalDocs<Cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<m-d>", "<cmd>RustLsp openDocs<Cr>", { noremap = true, silent = true })
