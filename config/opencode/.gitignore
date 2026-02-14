@@ -1,0 +1,8 @@
+node_modules
+package.json
+bun.lock
+antigravity-accounts.json
+antigravity-signature-cache.json
+antigravity-logs/
+antigravity-accounts.json.*.tmp
+oh-my-opencode.json.bak.*

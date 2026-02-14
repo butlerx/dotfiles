@@ -9,6 +9,8 @@ vim.g.loaded_ruby_provider = 0
 vim.cmd([[runtime system.vim]])
 require("plugins")
 
+set.winborder = "rounded"
+
 if fn.has("autocmd") then
     -- Set leader to space
     vim.g.mapleader = " "
