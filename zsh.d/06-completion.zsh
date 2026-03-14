@@ -1,10 +1,14 @@
-FPATH="$HOME/.docker/completions:$FPATH"
-autoload -U compinit && compinit
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
+# Bun completions
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
+
+# bashcompinit only needed for terraform completion
+if (( $+commands[terraform] )); then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C /usr/bin/terraform terraform
+fi
 
 # pip zsh completion start
-function _pip_completion() {
+_pip_completion() {
   local words cword
   read -Acr words
   read -cnr cword

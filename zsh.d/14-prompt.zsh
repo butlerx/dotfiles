@@ -1,7 +1,6 @@
 #!/usr/bin/env zsh
 
 #setopt promptsubst
-autoload -U colors && colors # Enable colors in prompt
 export SPROMPT="Correct $fg[red]%R$reset_color to $fg[green]%r$reset_color [(y)es (n)o (a)bort (e)dit]? "
 
 if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme ]]; then
@@ -17,17 +16,17 @@ if [[ -r ${HOME}/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme ]]; then
   'builtin' 'unset' 'p10k_config_opts'
   source "$HOME"/.dotfiles/powerlevel9k/powerlevel10k.zsh-theme
 else
-  function virtualenv_info() {
+  virtualenv_info() {
     [ "$VIRTUAL_ENV" ] && echo '('"$(basename "$VIRTUAL_ENV")"') '
   }
 
-  function prompt_char() {
+  prompt_char() {
     git branch >/dev/null 2>/dev/null && echo '>' && return
     hg root >/dev/null 2>/dev/null && echo '~>' && return
     echo '>'
   }
 
-  function box_name() {
+  box_name() {
     if [ -f ~/.box-name ]; then
       cat ~/.box-name
     else
@@ -47,12 +46,12 @@ else
   export GIT_PROMPT_STAGED="%{$fg_bold[green]%}s%{$reset_color%}"
 
   # Show Git branch/tag, or name-rev if on detached head
-  function parse_git_branch() {
+  parse_git_branch() {
     (git symbolic-ref -q HEAD || git name-rev --name-only --no-undefined --always HEAD) 2>/dev/null
   }
 
   # Show different symbols as appropriate for various Git repository states
-  function parse_git_state() {
+  parse_git_state() {
 
     # Compose this value via multiple conditional appends.
     local GIT_STATE=""
@@ -93,13 +92,13 @@ else
   }
 
   # If inside a Git repository, print its branch and state
-  function git_prompt_string() {
+  git_prompt_string() {
     local git_where=""
     git_where="$(parse_git_branch)"
     [ -n "$git_where" ] && echo "on %{$fg[blue]%}${git_where#(refs/heads/|tags/)}$(parse_git_state)"
   }
 
-  function current_pwd() {
+  current_pwd() {
     pwd | sed -e "s,^$HOME,~,"
   }
 

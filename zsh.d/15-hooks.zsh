@@ -1,4 +1,4 @@
-function precmd() {
+precmd() {
 	# vcs_info
 	# Put the string "hostname::/full/directory/path" in the title bar:
 	echo -ne "\\e]2;$PWD\\a"
@@ -7,22 +7,28 @@ function precmd() {
 	echo -ne "\\e]1;$PWD:h:t/$PWD:t\\a"
 }
 
-function set_running_app() {
+set_running_app() {
 	printf "\\e]1; %s:t:$(history "$HISTCMD" | cut -b7-) \\a" "$PWD"
 }
 
-function preexec() {
+preexec() {
 	set_running_app
 }
 
-function postexec() {
+postexec() {
 	set_running_app
 }
 
 # place this after nvm initialization!
 autoload -U add-zsh-hook
 
-function load-nvmrc() {
+load-nvmrc() {
+	# Ensure NVM is loaded (triggers lazy-load if needed)
+	if ! (( $+functions[nvm_find_nvmrc] )); then
+		# NVM not yet loaded — load it now
+		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	fi
+
 	local nvmrc_path
 	nvmrc_path="$(nvm_find_nvmrc)"
 
@@ -42,4 +48,3 @@ function load-nvmrc() {
 }
 
 add-zsh-hook chpwd load-nvmrc
-load-nvmrc

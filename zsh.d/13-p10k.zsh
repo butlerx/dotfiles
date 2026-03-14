@@ -88,7 +88,7 @@ p10k_config() {
     # wifi                  # wifi speed
   )
 
-  if type playerctl > /dev/null; then
+  if (( $+commands[playerctl] )); then
     POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS+=(custom_playerctl_status)
   fi
 
@@ -341,7 +341,7 @@ p10k_config() {
   #
   # VCS_STATUS_* parameters are set by gitstatus plugin. See reference:
   # https://github.com/romkatv/gitstatus/blob/master/gitstatus.plugin.zsh.
-  function my_git_formatter() {
+  my_git_formatter() {
     emulate -L zsh
 
     if [[ -n $P9K_CONTENT ]]; then
@@ -1542,7 +1542,7 @@ p10k_config() {
   # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS. It displays an icon and orange text greeting the user.
   #
   # Type `p10k help segment` for documentation and a more sophisticated example.
-  function prompt_example() {
+  prompt_example() {
     p10k segment -f 208 -i '⭐' -t 'hello, %n'
   }
 
@@ -1558,7 +1558,7 @@ p10k_config() {
   #
   # Usually, you should either not define instant_prompt_* or simply call prompt_* from it. If
   # instant_prompt_* is not defined for a segment, the segment won't be shown in instant prompt.
-  function instant_prompt_example() {
+  instant_prompt_example() {
     # Since prompt_example always makes the same `p10k segment` calls, we can call it from
     # instant_prompt_example. This will give us the same `example` prompt segment in the instant
     # and regular prompts.
