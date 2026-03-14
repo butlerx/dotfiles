@@ -24,7 +24,7 @@ autoload -U add-zsh-hook
 
 load-nvmrc() {
 	# Ensure NVM is loaded (triggers lazy-load if needed)
-	if ! (( $+functions[nvm_find_nvmrc] )); then
+	if ! (($+functions[nvm_find_nvmrc])); then
 		# NVM not yet loaded — load it now
 		[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 	fi

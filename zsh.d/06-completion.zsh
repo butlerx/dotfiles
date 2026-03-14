@@ -2,19 +2,19 @@
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bashcompinit only needed for terraform completion
-if (( $+commands[terraform] )); then
-  autoload -U +X bashcompinit && bashcompinit
-  complete -o nospace -C /usr/bin/terraform terraform
+if (($+commands[terraform])); then
+	autoload -U +X bashcompinit && bashcompinit
+	complete -o nospace -C /usr/bin/terraform terraform
 fi
 
 # pip zsh completion start
 _pip_completion() {
-  local words cword
-  read -Acr words
-  read -cnr cword
-  reply=($(COMP_WORDS="$words[*]" \
-    COMP_CWORD=$((cword - 1)) \
-    PIP_AUTO_COMPLETE=1 "$words"[1]))
+	local words cword
+	read -Acr words
+	read -cnr cword
+	reply=($(COMP_WORDS="$words[*]" \
+		COMP_CWORD=$((cword - 1)) \
+		PIP_AUTO_COMPLETE=1 "$words"[1]))
 }
 compctl -K _pip_completion pip
 # pip zsh completion end

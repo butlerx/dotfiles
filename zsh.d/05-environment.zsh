@@ -21,9 +21,9 @@ export WORKON_HOME="$HOME"/.virtualenvs
 #export HOMEBREW_GITHUB_API_TOKEN=
 export GOPATH="$HOME"/go
 if [[ -d /usr/lib/jvm/default ]]; then
-  export JAVA_HOME=/usr/lib/jvm/default
+	export JAVA_HOME=/usr/lib/jvm/default
 elif [[ -x /usr/libexec/java_home ]]; then
-  export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)" || true
+	export JAVA_HOME="$(/usr/libexec/java_home 2>/dev/null)" || true
 fi
 export PYTHON_USER="$HOME"/.local/bin
 # export RUBY_USER=$(ruby -e 'print Gem.user_dir')
@@ -33,15 +33,27 @@ export PYTHON_USER="$HOME"/.local/bin
 export NVM_DIR="$HOME/.nvm"
 
 _nvm_lazy_load() {
-  unset -f nvm node npm npx 2>/dev/null
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+	unset -f nvm node npm npx 2>/dev/null
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 }
 
-nvm() { _nvm_lazy_load; nvm "$@"; }
-node() { _nvm_lazy_load; node "$@"; }
-npm() { _nvm_lazy_load; npm "$@"; }
-npx() { _nvm_lazy_load; npx "$@"; }
+nvm() {
+	_nvm_lazy_load
+	nvm "$@"
+}
+node() {
+	_nvm_lazy_load
+	node "$@"
+}
+npm() {
+	_nvm_lazy_load
+	npm "$@"
+}
+npx() {
+	_nvm_lazy_load
+	npx "$@"
+}
 
 # Bun
 export BUN_INSTALL="$HOME/.bun"
@@ -53,5 +65,5 @@ export BAT_PAGER="less -RF"
 export ANSIBLE_COW_SELECTION=random
 
 # Cross-platform tool hooks
-(( $+commands[direnv] )) && eval "$(direnv hook zsh)"
-(( $+commands[mise] )) && eval "$(mise activate zsh)"
+(($+commands[direnv])) && eval "$(direnv hook zsh)"
+(($+commands[mise])) && eval "$(mise activate zsh)"

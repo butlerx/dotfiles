@@ -21,27 +21,20 @@ p10k_config() {
 
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
     status                  # exit code of the last command
+    command_execution_time  # duration of the last command
     vcs                     # git status
     background_jobs         # presence of background jobs
     direnv                  # direnv status (https://direnv.net/)
-    asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+    mise                    # mise tool versions (https://mise.jdx.dev/)
     virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-    anaconda                # conda environment (https://conda.io/)
     pyenv                   # python environment (https://github.com/pyenv/pyenv)
-    goenv                   # go environment (https://github.com/syndbg/goenv)
-    nodenv                  # node.js version from nodenv (https://github.com/nodenv/nodenv)
     nvm                     # node.js version from nvm (https://github.com/nvm-sh/nvm)
-    nodeenv                 # node.js environment (https://github.com/ekalinin/nodeenv)
     node_version            # node.js version
     go_version              # go version (https://golang.org)
     rust_version            # rustc version (https://www.rust-lang.org)
-    luaenv                  # lua version from luaenv (https://github.com/cehoffman/luaenv)
     kubecontext             # current kubernetes context (https://kubernetes.io/)
     terraform               # terraform workspace (https://www.terraform.io)
     aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
-    azure                   # azure account name (https://docs.microsoft.com/en-us/cli/azure)
-    gcloud                  # google cloud cli account and project (https://cloud.google.com/)
-    google_app_cred         # google application credentials (https://cloud.google.com/docs/authentication/production)
     vim_shell               # vim shell indicator (:sh)
     vpn_ip                  # virtual private network indicator
   )
@@ -91,7 +84,6 @@ p10k_config() {
 
   # Hot reload can slow prompt by 1-2ms. Keep off unless actively tweaking config.
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
-
   typeset -g DEFAULT_USER="$USER"
 
   ##################################[ os_icon: os identifier ]##################################
@@ -128,7 +120,7 @@ p10k_config() {
     .bzr .citc .git .hg .svn .terraform CVS
     .node-version .python-version .go-version .ruby-version
     .lua-version .java-version .perl-version .php-version .tool-version
-    .shorten_folder_marker
+    .mise .mise.toml mise.toml .shorten_folder_marker
     Cargo.toml composer.json go.mod package.json stack.yaml
   )
   typeset -g POWERLEVEL9K_SHORTEN_FOLDER_MARKER="(${(j:|:)anchor_files})"
@@ -152,8 +144,8 @@ p10k_config() {
   # Styling per class: POWERLEVEL9K_DIR_{CLASS}_FOREGROUND, etc.
   typeset -g POWERLEVEL9K_DIR_CLASSES=(
     '~/projects/(ihs|cloudsmith-io|evervault)(/*)#'  WORK     '(╯°□°）╯︵ ┻━┻'
-    '~(/*)#'               HOME     '⌂'
-    '*'                    DEFAULT  '')
+    '~(/*)#'                                         HOME     '⌂'
+    '*'                                              DEFAULT  '')
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. '\uF126 ' = Powerline branch icon.
@@ -289,6 +281,15 @@ p10k_config() {
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=160
   typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_VISUAL_IDENTIFIER_EXPANSION='✘'
 
+  ###################[ command_execution_time: duration of the last command ]###################
+  # Only show when the last command took longer than this many seconds.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
+  # Round to whole seconds (0 = no fractional digits).
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=101
+  # Human-readable format: 1d 2h 3m 4s.
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
+
   #######################[ background_jobs: presence of background jobs ]#######################
   # Don't show the count, just the icon.
   typeset -g POWERLEVEL9K_BACKGROUND_JOBS_VERBOSE=false
@@ -308,34 +309,33 @@ p10k_config() {
   #######################[ direnv: direnv status (https://direnv.net/) ]########################
   typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=178
 
-  ###############[ asdf: asdf version manager (https://github.com/asdf-vm/asdf) ]###############
-  typeset -g POWERLEVEL9K_ASDF_FOREGROUND=66
-  # Sources: shell (env var), local (.tool-versions up the tree), global (~/.tool-versions).
-  typeset -g POWERLEVEL9K_ASDF_SOURCES=(shell local global)
-  # Hide version if it matches global. Override per-tool: POWERLEVEL9K_ASDF_${TOOL}_PROMPT_ALWAYS_SHOW.
-  typeset -g POWERLEVEL9K_ASDF_PROMPT_ALWAYS_SHOW=false
+  ###############[ mise: mise tool versions (https://mise.jdx.dev/) ]###############
+  typeset -g POWERLEVEL9K_MISE_FOREGROUND=66
+  # Sources: shell (env var), local (.mise.toml up the tree), global (~/.config/mise/config.toml).
+  typeset -g POWERLEVEL9K_MISE_SOURCES=(shell local global)
+  # Hide version if it matches global. Override per-tool: POWERLEVEL9K_MISE_${TOOL}_PROMPT_ALWAYS_SHOW.
+  typeset -g POWERLEVEL9K_MISE_PROMPT_ALWAYS_SHOW=false
   # Show tools with version "system".
-  typeset -g POWERLEVEL9K_ASDF_SHOW_SYSTEM=true
-  # Hide tools unless a matching file exists up the tree. Override per-tool: POWERLEVEL9K_ASDF_${TOOL}_SHOW_ON_UPGLOB.
-  # Example: POWERLEVEL9K_ASDF_NODEJS_SHOW_ON_UPGLOB='*.js|package.json'
-  typeset -g POWERLEVEL9K_ASDF_SHOW_ON_UPGLOB=
+  typeset -g POWERLEVEL9K_MISE_SHOW_SYSTEM=true
+  # Hide tools unless a matching file exists up the tree. Override per-tool: POWERLEVEL9K_MISE_${TOOL}_SHOW_ON_UPGLOB.
+  typeset -g POWERLEVEL9K_MISE_SHOW_ON_UPGLOB=
   # Per-tool colors.
-  typeset -g POWERLEVEL9K_ASDF_RUBY_FOREGROUND=168
-  typeset -g POWERLEVEL9K_ASDF_PYTHON_FOREGROUND=37
-  typeset -g POWERLEVEL9K_ASDF_GOLANG_FOREGROUND=37
-  typeset -g POWERLEVEL9K_ASDF_NODEJS_FOREGROUND=70
-  typeset -g POWERLEVEL9K_ASDF_RUST_FOREGROUND=37
-  typeset -g POWERLEVEL9K_ASDF_DOTNET_CORE_FOREGROUND=134
-  typeset -g POWERLEVEL9K_ASDF_FLUTTER_FOREGROUND=38
-  typeset -g POWERLEVEL9K_ASDF_LUA_FOREGROUND=32
-  typeset -g POWERLEVEL9K_ASDF_JAVA_FOREGROUND=32
-  typeset -g POWERLEVEL9K_ASDF_PERL_FOREGROUND=67
-  typeset -g POWERLEVEL9K_ASDF_ERLANG_FOREGROUND=125
-  typeset -g POWERLEVEL9K_ASDF_ELIXIR_FOREGROUND=129
-  typeset -g POWERLEVEL9K_ASDF_POSTGRES_FOREGROUND=31
-  typeset -g POWERLEVEL9K_ASDF_PHP_FOREGROUND=99
-  typeset -g POWERLEVEL9K_ASDF_HASKELL_FOREGROUND=172
-  typeset -g POWERLEVEL9K_ASDF_JULIA_FOREGROUND=70
+  typeset -g POWERLEVEL9K_MISE_RUBY_FOREGROUND=168
+  typeset -g POWERLEVEL9K_MISE_PYTHON_FOREGROUND=37
+  typeset -g POWERLEVEL9K_MISE_GOLANG_FOREGROUND=37
+  typeset -g POWERLEVEL9K_MISE_NODEJS_FOREGROUND=70
+  typeset -g POWERLEVEL9K_MISE_RUST_FOREGROUND=37
+  typeset -g POWERLEVEL9K_MISE_DOTNET_CORE_FOREGROUND=134
+  typeset -g POWERLEVEL9K_MISE_FLUTTER_FOREGROUND=38
+  typeset -g POWERLEVEL9K_MISE_LUA_FOREGROUND=32
+  typeset -g POWERLEVEL9K_MISE_JAVA_FOREGROUND=32
+  typeset -g POWERLEVEL9K_MISE_PERL_FOREGROUND=67
+  typeset -g POWERLEVEL9K_MISE_ERLANG_FOREGROUND=125
+  typeset -g POWERLEVEL9K_MISE_ELIXIR_FOREGROUND=129
+  typeset -g POWERLEVEL9K_MISE_POSTGRES_FOREGROUND=31
+  typeset -g POWERLEVEL9K_MISE_PHP_FOREGROUND=99
+  typeset -g POWERLEVEL9K_MISE_HASKELL_FOREGROUND=172
+  typeset -g POWERLEVEL9K_MISE_JULIA_FOREGROUND=70
 
   ###[ virtualenv: python virtual environment (https://docs.python.org/3/library/venv.html) ]###
   typeset -g POWERLEVEL9K_VIRTUALENV_FOREGROUND=37
@@ -343,11 +343,6 @@ p10k_config() {
   # Don't show virtualenv if pyenv is already showing the same info.
   typeset -g POWERLEVEL9K_VIRTUALENV_SHOW_WITH_PYENV=false
   typeset -g POWERLEVEL9K_VIRTUALENV_{LEFT,RIGHT}_DELIMITER=
-
-  #####################[ anaconda: conda environment (https://conda.io/) ]######################
-  typeset -g POWERLEVEL9K_ANACONDA_FOREGROUND=37
-  # Show CONDA_PROMPT_MODIFIER without parentheses, or the last path component of CONDA_PREFIX.
-  typeset -g POWERLEVEL9K_ANACONDA_CONTENT_EXPANSION='${${${${CONDA_PROMPT_MODIFIER#\(}% }%\)}:-${CONDA_PREFIX:t}}'
 
   ################[ pyenv: python environment (https://github.com/pyenv/pyenv) ]################
   typeset -g POWERLEVEL9K_PYENV_FOREGROUND=37
@@ -357,25 +352,8 @@ p10k_config() {
   # Show python version alongside pyenv env name when they differ.
   typeset -g POWERLEVEL9K_PYENV_CONTENT_EXPANSION='${P9K_CONTENT}${${P9K_CONTENT:#$P9K_PYENV_PYTHON_VERSION(|/*)}:+ $P9K_PYENV_PYTHON_VERSION}'
 
-  ################[ goenv: go environment (https://github.com/syndbg/goenv) ]################
-  typeset -g POWERLEVEL9K_GOENV_FOREGROUND=37
-  typeset -g POWERLEVEL9K_GOENV_SOURCES=(shell local global)
-  typeset -g POWERLEVEL9K_GOENV_PROMPT_ALWAYS_SHOW=false
-  typeset -g POWERLEVEL9K_GOENV_SHOW_SYSTEM=true
-
-  ##########[ nodenv: node.js version from nodenv (https://github.com/nodenv/nodenv) ]##########
-  typeset -g POWERLEVEL9K_NODENV_FOREGROUND=70
-  typeset -g POWERLEVEL9K_NODENV_SOURCES=(shell local global)
-  typeset -g POWERLEVEL9K_NODENV_PROMPT_ALWAYS_SHOW=false
-  typeset -g POWERLEVEL9K_NODENV_SHOW_SYSTEM=true
-
   ##############[ nvm: node.js version from nvm (https://github.com/nvm-sh/nvm) ]###############
   typeset -g POWERLEVEL9K_NVM_FOREGROUND=70
-
-  ############[ nodeenv: node.js environment (https://github.com/ekalinin/nodeenv) ]############
-  typeset -g POWERLEVEL9K_NODEENV_FOREGROUND=70
-  typeset -g POWERLEVEL9K_NODEENV_SHOW_NODE_VERSION=false
-  typeset -g POWERLEVEL9K_NODEENV_{LEFT,RIGHT}_DELIMITER=
 
   ##############################[ node_version: node.js version ]###############################
   typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=70
@@ -391,18 +369,10 @@ p10k_config() {
   typeset -g POWERLEVEL9K_RUST_VERSION_FOREGROUND=37
   typeset -g POWERLEVEL9K_RUST_VERSION_PROJECT_ONLY=true
 
-  ##########[ luaenv: lua version from luaenv (https://github.com/cehoffman/luaenv) ]###########
-  typeset -g POWERLEVEL9K_LUAENV_FOREGROUND=32
-  typeset -g POWERLEVEL9K_LUAENV_SOURCES=(shell local global)
-  typeset -g POWERLEVEL9K_LUAENV_PROMPT_ALWAYS_SHOW=false
-  typeset -g POWERLEVEL9K_LUAENV_SHOW_SYSTEM=true
-
   #############[ kubecontext: current kubernetes context (https://kubernetes.io/) ]#############
   # Classes: pattern → class. First match wins.
   # Style per-class: POWERLEVEL9K_KUBECONTEXT_{CLASS}_FOREGROUND, _CONTENT_EXPANSION, etc.
   typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
-    's*.kube.demonware.net'  PROD
-    'i*.kube.demonware.net'  TEST
     '*'                      DEFAULT)
   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_FOREGROUND=28
   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_CONTENT_EXPANSION='> ${P9K_CONTENT} <'
@@ -421,36 +391,13 @@ p10k_config() {
   typeset -g POWERLEVEL9K_TERRAFORM_OTHER_FOREGROUND=38
 
   #[ aws: aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) ]#
-  # Only show when typing one of these commands.
-  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|awless|terraform|pulumi|terragrunt'
+  # Show when typing AWS-related commands, or always when inside an aws-vault exec subshell.
+  typeset -g POWERLEVEL9K_AWS_SHOW_ON_COMMAND='aws|aws-vault|awless|terraform|tf|pulumi|terragrunt|mise'
   typeset -g POWERLEVEL9K_AWS_CLASSES=(
     '*'  DEFAULT)
   typeset -g POWERLEVEL9K_AWS_DEFAULT_FOREGROUND=208
   # Show profile and region. Available params: P9K_AWS_PROFILE, P9K_AWS_REGION.
   typeset -g POWERLEVEL9K_AWS_CONTENT_EXPANSION='${P9K_AWS_PROFILE//\%/%%}${P9K_AWS_REGION:+ ${P9K_AWS_REGION//\%/%%}}'
-
-  ##########[ azure: azure account name (https://docs.microsoft.com/en-us/cli/azure) ]##########
-  typeset -g POWERLEVEL9K_AZURE_SHOW_ON_COMMAND='az|terraform|pulumi|terragrunt'
-  typeset -g POWERLEVEL9K_AZURE_FOREGROUND=32
-
-  ##########[ gcloud: google cloud account and project (https://cloud.google.com/) ]###########
-  typeset -g POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND='gcloud|gcs|gsutil'
-  typeset -g POWERLEVEL9K_GCLOUD_FOREGROUND=32
-  # PARTIAL = project name not yet fetched (shows project ID).
-  # COMPLETE = project name known (shows project name).
-  # Available params: P9K_GCLOUD_{CONFIGURATION,ACCOUNT,PROJECT_ID,PROJECT_NAME}.
-  typeset -g POWERLEVEL9K_GCLOUD_PARTIAL_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_ID//\%/%%}'
-  typeset -g POWERLEVEL9K_GCLOUD_COMPLETE_CONTENT_EXPANSION='${P9K_GCLOUD_PROJECT_NAME//\%/%%}'
-  # How often to refresh project name from Google. Negative = only on config/account/project change.
-  typeset -g POWERLEVEL9K_GCLOUD_REFRESH_PROJECT_NAME_SECONDS=60
-
-  #[ google_app_cred: google application credentials (https://cloud.google.com/docs/authentication/production) ]#
-  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_SHOW_ON_COMMAND='terraform|pulumi|terragrunt'
-  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_CLASSES=(
-    '*'  DEFAULT)
-  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_FOREGROUND=32
-  # Available params: P9K_GOOGLE_APP_CRED_{TYPE,PROJECT_ID,CLIENT_EMAIL}.
-  typeset -g POWERLEVEL9K_GOOGLE_APP_CRED_DEFAULT_CONTENT_EXPANSION='${P9K_GOOGLE_APP_CRED_PROJECT_ID//\%/%%}'
 
   ###########################[ vim_shell: vim shell indicator (:sh) ]###########################
   typeset -g POWERLEVEL9K_VIM_SHELL_FOREGROUND=34
