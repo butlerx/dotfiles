@@ -22,11 +22,17 @@
 # Base directory for worktrees, relative to the repo root's parent
 # e.g. ~/code/myproject -> ~/code/myproject.worktrees/
 _gwt_base() {
+	# Always resolve to the MAIN worktree, not the current one.
+	# `git worktree list --porcelain` lists the main worktree first.
 	local toplevel
-	toplevel=$(git rev-parse --show-toplevel 2>/dev/null) || {
+	toplevel=$(git worktree list --porcelain 2>/dev/null | awk 'NR==1{print $2}') || {
 		echo "Not a git repository" >&2
 		return 1
 	}
+	if [[ -z "$toplevel" ]]; then
+		echo "Not a git repository" >&2
+		return 1
+	fi
 	echo "${toplevel}.worktrees"
 }
 
@@ -243,7 +249,7 @@ _gwt_rm() {
 
 	# Clean up base dir if empty
 	if [[ -d "$base_dir" ]] && [[ -z "$(ls -A "$base_dir" 2>/dev/null)" ]]; then
-		rmdir "$base_dir"
+		rmdir "$base_dir" 2>/dev/null
 	fi
 }
 
@@ -294,8 +300,10 @@ _gwt_cd() {
 
 	if [[ ! -d "$wt_path" ]]; then
 		echo "No worktree for branch: $1" >&2
-		echo "Available:" >&2
-		ls -1 "$base_dir" 2>/dev/null | sed 's/^/  /'
+		if [[ -d "$base_dir" ]] && [[ -n "$(ls -A "$base_dir" 2>/dev/null)" ]]; then
+			echo "Available:" >&2
+			ls -1 "$base_dir" 2>/dev/null | sed 's/^/  /' >&2
+		fi
 		return 1
 	fi
 
@@ -423,7 +431,7 @@ _gwt_clean() {
 
 	# Clean up base dir if empty
 	if [[ -d "$base_dir" ]] && [[ -z "$(ls -A "$base_dir" 2>/dev/null)" ]]; then
-		rmdir "$base_dir"
+		rmdir "$base_dir" 2>/dev/null
 	fi
 
 	echo "Cleaned $removed worktree(s). Remaining:"
@@ -574,3 +582,91 @@ gwt() {
 		;;
 	esac
 }
+
+# -------------------------------------------------------------------
+# Tab completion for gwt
+# -------------------------------------------------------------------
+
+# List existing worktree directory names (branch-slug form)
+_gwt_worktree_names() {
+	local base_dir
+	base_dir=$(git worktree list --porcelain 2>/dev/null | awk 'NR==1{print $2}')
+	[[ -z "$base_dir" ]] && return
+	base_dir="${base_dir}.worktrees"
+	[[ -d "$base_dir" ]] || return
+	local -a names
+	for d in "${base_dir}"/*(N/:t); do
+		names+=("$d")
+	done
+	compadd -a names
+}
+
+# List git branches (local + remote, deduplicated)
+_gwt_branches() {
+	local -a branches
+	branches=(${${(f)"$(git branch -a --no-color 2>/dev/null)"}##[* ] })
+	# Strip remotes/origin/ prefix and deduplicate
+	branches=(${branches/#remotes\/origin\//})
+	branches=(${(u)branches})
+	# Remove HEAD -> ... entries
+	branches=(${branches:#*HEAD*})
+	compadd -a branches
+}
+
+_gwt() {
+	local -a subcommands
+	subcommands=(
+		'add:Create a worktree for a branch'
+		'rm:Remove a worktree'
+		'cd:cd into worktree (no args = return to main)'
+		'list:List all worktrees'
+		'ls:List all worktrees'
+		'status:Status overview of all worktrees'
+		'st:Status overview of all worktrees'
+		'run:Run a command in a worktree'
+		'agent:Get/create worktree path for agents'
+		'clean:Remove worktrees with merged branches'
+		'oc:Open OpenCode TUI in a worktree'
+		'oc-run:Run headless OpenCode task in a worktree'
+		'help:Show help'
+	)
+
+	if (( CURRENT == 2 )); then
+		_describe -t commands 'gwt command' subcommands
+		return
+	fi
+
+	case "${words[2]}" in
+		rm|cd|run|status|st)
+			if (( CURRENT == 3 )); then
+				_gwt_worktree_names
+			fi
+			;;
+		add|agent)
+			if (( CURRENT == 3 )); then
+				_gwt_branches
+			elif (( CURRENT == 4 )); then
+				_gwt_branches
+			fi
+			;;
+		oc)
+			if (( CURRENT == 3 )); then
+				# Complete existing worktrees first, then branches
+				_alternative \
+					'worktrees:existing worktree:_gwt_worktree_names' \
+					'branches:git branch:_gwt_branches'
+			elif (( CURRENT == 4 )); then
+				_gwt_branches
+			fi
+			;;
+		oc-run)
+			if (( CURRENT == 3 )); then
+				_alternative \
+					'worktrees:existing worktree:_gwt_worktree_names' \
+					'branches:git branch:_gwt_branches'
+			fi
+			;;
+	esac
+}
+
+compdef _gwt gwt

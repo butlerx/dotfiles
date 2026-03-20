@@ -15,7 +15,8 @@ p10k_config() {
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     os_icon                 # os identifier
     context                 # user@hostname
-    dir                     # current directory
+    gwt_worktree            # git worktree indicator (before dir — replaces repo path)
+    dir                     # current directory (subdir only when in worktree)
     prompt_char             # prompt symbol
   )
 
@@ -143,9 +144,17 @@ p10k_config() {
   # Classes get _NOT_WRITABLE / _NON_EXISTENT suffixes automatically (SHOW_WRITABLE=v3).
   # Styling per class: POWERLEVEL9K_DIR_{CLASS}_FOREGROUND, etc.
   typeset -g POWERLEVEL9K_DIR_CLASSES=(
-    '~/projects/(ihs|cloudsmith-io|evervault)(/*)#'  WORK     '(╯°□°）╯︵ ┻━┻'
+    '*.worktrees/*'                                  WORKTREE '🚀'
+    '~/projects/(ihs|cloudsmith-io|evervault)(/*)#'  WORK     '🚀'
     '~(/*)#'                                         HOME     '⌂'
     '*'                                              DEFAULT  '')
+  # In worktrees, show only the subdirectory within the worktree root.
+  # At worktree root: dir segment is suppressed (gwt_worktree segment has full context).
+  # In a subdir: shows the relative path within the worktree.
+  typeset -g POWERLEVEL9K_DIR_WORKTREE_FOREGROUND=31
+  typeset -g POWERLEVEL9K_DIR_WORKTREE_SHORTENED_FOREGROUND=103
+  typeset -g POWERLEVEL9K_DIR_WORKTREE_ANCHOR_FOREGROUND=39
+  typeset -g POWERLEVEL9K_DIR_WORKTREE_CONTENT_EXPANSION='${${PWD#*.worktrees/*/}:#$PWD}'
 
   #####################################[ vcs: git status ]######################################
   # Branch icon. '\uF126 ' = Powerline branch icon.
@@ -410,6 +419,25 @@ p10k_config() {
   typeset -g POWERLEVEL9K_VPN_IP_INTERFACE='(gpd|wg|(.*tun)|tailscale)[0-9]*'
   # Show only one segment for the first matching interface (not one per interface).
   typeset -g POWERLEVEL9K_VPN_IP_SHOW_ALL=false
+
+  ##########################[ gwt_worktree: git worktree indicator ]###########################
+  # Shows repo name + worktree slug when inside a gwt worktree.
+  # The WORKTREE dir class (above) truncates the directory to show only the
+  # subdirectory within the worktree, so this segment provides the full context.
+  # e.g. dir shows "src/lib" and this shows "🌿 my-repo ⟫ branch-slug"
+  function prompt_gwt_worktree() {
+    [[ $PWD == *.worktrees/* ]] || return
+    # Path: .../my-repo.worktrees/branch-slug/...
+    local wt_base=${PWD%%.worktrees/*}        # .../my-repo.
+    local repo=${wt_base%.}                   # .../my-repo
+    repo=${repo:t}                            # my-repo
+    local after_worktrees=${PWD#*.worktrees/}
+    local slug=${after_worktrees%%/*}
+    p10k segment -f cyan -i '🌿' -t "${repo} ⟫ ${slug}"
+  }
+  function instant_prompt_gwt_worktree() {
+    prompt_gwt_worktree
+  }
 
   #############################[ playerctl (custom segment) ]############################
   typeset -g POWERLEVEL9K_CUSTOM_PLAYERCTL='playerctl_status'
