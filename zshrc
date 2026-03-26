@@ -16,3 +16,6 @@ for file in ${HOME}/.dotfiles/zsh.d/*.zsh; do
 done
 
 source "$HOME/.zprofile"
+
+# bun completions
+[ -s "/Users/cbutler/.bun/_bun" ] && source "/Users/cbutler/.bun/_bun"

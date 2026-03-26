@@ -396,7 +396,11 @@ _gwt_clean() {
 	local base_dir
 	base_dir=$(_gwt_base) || return 1
 
-	# First, prune any stale worktree references
+	# Fetch latest remote state so we know what's been merged/deleted on the remote
+	echo "Fetching remote..."
+	git fetch --prune --quiet 2>/dev/null
+
+	# Prune any stale worktree references
 	git worktree prune
 
 	if [[ ! -d "$base_dir" ]]; then
@@ -404,29 +408,65 @@ _gwt_clean() {
 		return 0
 	fi
 
-	local current_branch
-	current_branch=$(git rev-parse --abbrev-ref HEAD)
+	# Determine main branch once
+	local main_branch
+	for candidate in main master; do
+		if git show-ref --verify --quiet "refs/heads/${candidate}"; then
+			main_branch="$candidate"
+			break
+		fi
+	done
+
 	local removed=0
+	local branch reason
 
 	for wt_dir in "${base_dir}"/*(N/); do
-		local branch
-		branch=$(git -C "$wt_dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
-		[[ -z "$branch" ]] && continue
+		branch=""
+		reason=""
 
-		# Check if branch has been merged into main/master
-		local main_branch
-		for candidate in main master; do
-			if git show-ref --verify --quiet "refs/heads/${candidate}"; then
-				main_branch="$candidate"
-				break
-			fi
-		done
-
-		if [[ -n "$main_branch" ]] && git branch --merged "$main_branch" 2>/dev/null | grep -qw "$branch"; then
-			echo "Removing merged worktree: ${wt_dir:t} ($branch)"
-			git worktree remove "$wt_dir" --force
+		# Skip directories that aren't git worktrees (e.g. stale .worktrees dirs)
+		if ! git -C "$wt_dir" rev-parse --git-dir &>/dev/null; then
+			echo "Removing stale directory: ${wt_dir:t} (not a worktree)"
+			rm -rf "$wt_dir"
 			((removed++))
+			continue
 		fi
+
+		branch=$(git -C "$wt_dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
+
+		# Case 1: Detached HEAD — branch was likely deleted after merge
+		if [[ -z "$branch" || "$branch" == "HEAD" ]]; then
+			reason="detached HEAD (branch deleted)"
+
+		# Case 2: Branch no longer exists locally (stale worktree)
+		elif ! git show-ref --verify --quiet "refs/heads/${branch}" 2>/dev/null; then
+			reason="branch no longer exists"
+
+		# Case 3: Branch is merged into local main/master
+		elif [[ -n "$main_branch" ]] && git branch --merged "$main_branch" 2>/dev/null | grep -qw "$branch"; then
+			reason="merged into $main_branch"
+
+		# Case 4: Branch is merged into origin/main (PR merged on GitHub)
+		elif [[ -n "$main_branch" ]] && git branch --merged "origin/$main_branch" 2>/dev/null | grep -qw "$branch"; then
+			reason="merged into origin/$main_branch"
+
+		# Case 5: Remote branch is gone (deleted after PR merge)
+		elif ! git show-ref --verify --quiet "refs/remotes/origin/${branch}" 2>/dev/null; then
+			reason="remote branch deleted"
+
+		else
+			continue
+		fi
+
+		# Safety: skip worktrees with uncommitted changes
+		if git -C "$wt_dir" status --porcelain 2>/dev/null | grep -q .; then
+			echo "Skipping ${wt_dir:t} ($reason) — has uncommitted changes"
+			continue
+		fi
+
+		echo "Removing worktree: ${wt_dir:t} ($reason)"
+		git worktree remove "$wt_dir" --force
+		((removed++))
 	done
 
 	# Clean up base dir if empty
