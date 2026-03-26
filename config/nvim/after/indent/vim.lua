@@ -15,5 +15,5 @@ vim.cmd([[
 
 -- Comma  nds to undo the above
 if vim.b.undo_indent then
-    vim.b.undo_indent = vim.b.undo_indent .. "|setlocal shiftwidth<" .. "|setlocal softtabstop<"
+  vim.b.undo_indent = vim.b.undo_indent .. "|setlocal shiftwidth<" .. "|setlocal softtabstop<"
 end

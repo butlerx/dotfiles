@@ -5,7 +5,7 @@ local SENTENCES_IN_PARAGRAPH = { min = 2, max = 7 }
 local PARAGRAPHS_IN_TEXT = { min = 2, max = 7 }
 
 local function random_int(min, max)
-    return math.random(min, max)
+  return math.random(min, max)
 end
 
 local BASE_PHRASE = [[
@@ -19,51 +19,51 @@ Craft beer chia readymade ethnic, hella kogi Vice jean shorts cliche cray mlkshk
 ]]
 
 local function get_words(phrase)
-    local list = {}
-    for word in phrase:gmatch("%a+") do
-        table.insert(list, word:lower())
-    end
-    return list
+  local list = {}
+  for word in phrase:gmatch("%a+") do
+    table.insert(list, word:lower())
+  end
+  return list
 end
 
 hipster._dict = get_words(BASE_PHRASE)
 
 function hipster:word()
-    return hipster._dict[random_int(1, #hipster._dict)]
+  return hipster._dict[random_int(1, #hipster._dict)]
 end
 
 function hipster:sentence()
-    local n = random_int(WORDS_IN_SENTENCE.min, WORDS_IN_SENTENCE.max)
-    local words = {}
-    for i = 1, n do
-        words[i] = hipster:word()
-    end
-    local s = table.concat(words, " ")
-    s = s .. "."
-    s = s:sub(1, 1):upper() .. s:sub(2)
-    return s
+  local n = random_int(WORDS_IN_SENTENCE.min, WORDS_IN_SENTENCE.max)
+  local words = {}
+  for i = 1, n do
+    words[i] = hipster:word()
+  end
+  local s = table.concat(words, " ")
+  s = s .. "."
+  s = s:sub(1, 1):upper() .. s:sub(2)
+  return s
 end
 
 function hipster:paragraph()
-    local n = random_int(SENTENCES_IN_PARAGRAPH.min, SENTENCES_IN_PARAGRAPH.max)
-    local sentences = {}
-    for i = 1, n do
-        sentences[i] = hipster:sentence()
-    end
-    return table.concat(sentences, " ")
+  local n = random_int(SENTENCES_IN_PARAGRAPH.min, SENTENCES_IN_PARAGRAPH.max)
+  local sentences = {}
+  for i = 1, n do
+    sentences[i] = hipster:sentence()
+  end
+  return table.concat(sentences, " ")
 end
 
 function hipster:text()
-    local n = random_int(PARAGRAPHS_IN_TEXT.min, PARAGRAPHS_IN_TEXT.max)
-    local paragraphs = {}
-    for i = 1, n do
-        paragraphs[i] = hipster:paragraph()
-    end
-    return table.concat(paragraphs, "\n")
+  local n = random_int(PARAGRAPHS_IN_TEXT.min, PARAGRAPHS_IN_TEXT.max)
+  local paragraphs = {}
+  for i = 1, n do
+    paragraphs[i] = hipster:paragraph()
+  end
+  return table.concat(paragraphs, "\n")
 end
 
 function hipster:output()
-    vim.cmd("normal A" .. hipster:text():gsub("\n", "\r"))
+  vim.cmd("normal A" .. hipster:text():gsub("\n", "\r"))
 end
 
 return hipster

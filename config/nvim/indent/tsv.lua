@@ -1,7 +1,7 @@
 local setlocal = vim.bo
 -- Only do this when not done yet for this buffer
 if vim.b.did_indent then
-    return
+  return
 end
 vim.b.did_indent = 1
 

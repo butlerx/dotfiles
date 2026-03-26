@@ -1,6 +1,6 @@
 local Plug = vim.fn["plug#"]
 
-vim.call("plugins#PlugLoad")
+require("autoload.plugins").plug_load()
 vim.call("plug#begin", "~/.local/share/nvim")
 
 Plug("MeanderingProgrammer/render-markdown.nvim")

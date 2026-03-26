@@ -6,34 +6,35 @@ local map = utils.map
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
-vim.cmd([[runtime system.vim]])
+require("system")
+require("filetype_detect")
 require("plugins")
 
 set.winborder = "rounded"
 
 if fn.has("autocmd") then
-    -- Set leader to space
-    vim.g.mapleader = " "
-    vim.cmd([[filetype plugin indent on]])
+  -- Set leader to space
+  vim.g.mapleader = " "
+  vim.cmd([[filetype plugin indent on]])
 end
 if fn.has("syntax") then
-    -- Use syntax highlighting
-    if not vim.g.syntax_on then
-        vim.cmd([[syntax enable]])
-    end
-    -- Use my colorscheme if using the GUI or if we have 256 colors
-    if vim.api.nvim_eval("&t_Co >= 256") then
-        vim.cmd([[color monokai]])
-    end
-    -- If not monokai, then default with dark background
-    if not vim.g.colors_name then
-        vim.o.background = "dark"
-    end
+  -- Use syntax highlighting
+  if not vim.g.syntax_on then
+    vim.cmd([[syntax enable]])
+  end
+  -- Use my colorscheme if using the GUI or if we have 256 colors
+  if vim.api.nvim_eval("&t_Co >= 256") then
+    vim.cmd([[color monokai]])
+  end
+  -- If not monokai, then default with dark background
+  if not vim.g.colors_name then
+    vim.o.background = "dark"
+  end
 end
 
 -- Use UTF-8 if we can and env LANG didn't tell us not to
 if fn.has("multi_byte") and not fn.exists("$LANG") and vim.api.nvim_eval("&encoding") == "latin1" then
-    set.encoding = "utf-8"
+  set.encoding = "utf-8"
 end
 
 -- The all-important default indent settings; filetypes to tweak
@@ -53,20 +54,20 @@ set.comments = "" -- Clear default 'comments' value, let the filetype handle it
 
 -- Add completion options
 set.completeopt:append({
-    "noinsert",
-    "longest", -- Insert longest common substring
-    "menuone", -- Show the menu even if only one match
-    "noselect", -- Show the menu even if only one match
+  "noinsert",
+  "longest", -- Insert longest common substring
+  "menuone", -- Show the menu even if only one match
+  "noselect", -- Show the menu even if only one match
 })
 
 -- Fold based on indent, but only when I ask
 if fn.has("folding") then
-    set.foldlevelstart = 99
-    set.foldenable = false
-    set.foldcolumn = "1"
-    set.foldlevel = 0
-    set.foldmethod = "expr"
-    set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+  set.foldlevelstart = 99
+  set.foldenable = false
+  set.foldcolumn = "1"
+  set.foldlevel = 0
+  set.foldmethod = "expr"
+  set.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 end
 
 -- Delete comment leaders when joining lines, if supported
@@ -74,7 +75,7 @@ set.formatoptions:append({ "j" })
 
 -- If available, use GNU grep niceties for searching
 if fn.system("grep --version") ~= "^grep (GNU grep)" then
-    set.grepprg = "grep -HnRs --exclude='.git*'"
+  set.grepprg = "grep -HnRs --exclude='.git*'"
 end
 
 -- Allow buffers to have changes without being displayed
@@ -120,7 +121,7 @@ set.ttimeoutlen = 10000
 
 -- Keep undo files, hopefully in a dedicated directory
 if fn.has("persistent_undo") then
-    set.undofile = true
+  set.undofile = true
 end
 
 -- Number of undo levels
@@ -132,7 +133,7 @@ set.wildignorecase = true -- Case insensitive, if supported
 
 -- Let me move beyond buffer text in visual block mode
 if fn.exists("+virtualedit") then
-    set.virtualedit:append({ "block" })
+  set.virtualedit:append({ "block" })
 end
 
 set.diffopt = "filler,iwhite"

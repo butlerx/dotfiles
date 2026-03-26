@@ -1,6 +1,6 @@
 -- Only do this when not yet done for this buffer
 if vim.b.did_ftplugin then
-    return
+  return
 end
 
 vim.g.go_fmt_autosave = 0
