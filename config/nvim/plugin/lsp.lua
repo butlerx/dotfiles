@@ -39,8 +39,8 @@ vim.api.nvim_create_autocmd("LspAttach", {
       "<space>e",
       "<cmd>lua vim.diagnostic.open_float()<CR>",
     })
-    map({ "n", "[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>" })
-    map({ "n", "]d", "<cmd>lua vim.diagnostic.goto_next()<CR>" })
+    map({ "n", "[d", "<cmd>lua vim.diagnostic.jump({ count = -1, float = true })<CR>" })
+    map({ "n", "]d", "<cmd>lua vim.diagnostic.jump({ count = 1, float = true })<CR>" })
     map({ "n", "<space>q", "<cmd>lua vim.diagnostic.setloclist()<CR>" })
 
     -- Set some keybinds conditional on server capabilities

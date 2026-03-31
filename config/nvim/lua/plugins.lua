@@ -1,57 +1,168 @@
-local Plug = vim.fn["plug#"]
+local gh = function(repo)
+  return "https://github.com/" .. repo
+end
 
-require("autoload.plugins").plug_load()
-vim.call("plug#begin", "~/.local/share/nvim")
+-- Build hooks: must be registered BEFORE vim.pack.add() to catch initial installs
+vim.api.nvim_create_autocmd("PackChanged", {
+  callback = function(ev)
+    local name = ev.data.spec.name
+    local kind = ev.data.kind
 
-Plug("MeanderingProgrammer/render-markdown.nvim")
-Plug("MunifTanjim/nui.nvim")
-Plug("nickjvandyke/opencode.nvim")
-Plug("WhoIsSethDaniel/mason-tool-installer.nvim")
-Plug("Yggdroot/indentLine")
-Plug("cespare/vim-toml", { ["for"] = "toml" })
-Plug("chrisbra/csv.vim", { ["for"] = "csv" })
-Plug("christoomey/vim-tmux-navigator")
-Plug("ekalinin/Dockerfile.vim", { ["for"] = [['Dockerfile', 'docker-compose']] })
-Plug("elzr/vim-json")
-Plug("fatih/vim-go", { ["do"] = ":GoInstallBinaries", ["for"] = [['go', 'gohtmltmpl']] })
-Plug("folke/snacks.nvim")
-Plug("godlygeek/tabular")
-Plug("google/vim-jsonnet")
-Plug("gregsexton/gitv")
-Plug("hashivim/vim-terraform")
-Plug("hrsh7th/cmp-buffer")
-Plug("hrsh7th/cmp-cmdline")
-Plug("hrsh7th/cmp-nvim-lsp")
-Plug("hrsh7th/cmp-path")
-Plug("hrsh7th/cmp-vsnip")
-Plug("hrsh7th/nvim-cmp")
-Plug("hrsh7th/vim-vsnip")
-Plug("ibhagwan/fzf-lua")
-Plug("leafgarland/typescript-vim", { ["for"] = [['typescript.tsx', 'typescriptreact', 'typescript', 'vue']] })
-Plug("lewis6991/gitsigns.nvim")
-Plug("mason-org/mason-lspconfig.nvim", { ["tag"] = "v2.1.0" })
-Plug("mason-org/mason.nvim", { ["tag"] = "v2.2.1" })
-Plug("mhinz/vim-startify")
-Plug("moll/vim-node")
-Plug("mrcjkb/rustaceanvim")
-Plug("neovim/nvim-lspconfig")
-Plug("nvim-lua/plenary.nvim")
-Plug("nvim-telescope/telescope.nvim", { ["tag"] = "0.1.8" })
-Plug("nvim-tree/nvim-web-devicons")
-Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" })
-Plug("pangloss/vim-javascript", { ["for"] = [['typescript.tsx', 'typescriptreact', 'javascript', 'vue']] })
-Plug("rust-lang/rust.vim", { ["for"] = "rust" })
-Plug("ryanoasis/vim-devicons")
-Plug("scrooloose/nerdcommenter")
-Plug("nvim-neo-tree/neo-tree.nvim", { ["branch"] = "v3.x" })
-Plug("sheerun/vim-polyglot")
-Plug("sickill/vim-monokai")
-Plug("stevearc/conform.nvim")
-Plug("tpope/vim-fugitive")
-Plug("tpope/vim-surround")
-Plug("vim-airline/vim-airline")
-Plug("vim-airline/vim-airline-themes")
-Plug("zbirenbaum/copilot-cmp")
-Plug("zbirenbaum/copilot.lua")
+    if kind == "install" or kind == "update" then
+      if name == "nvim-treesitter" then
+        if not ev.data.active then
+          vim.cmd.packadd("nvim-treesitter")
+        end
+        vim.cmd("TSUpdate")
+      end
 
-vim.call("plug#end")
+      if name == "vim-go" then
+        if not ev.data.active then
+          vim.cmd.packadd("vim-go")
+        end
+        vim.cmd("GoInstallBinaries")
+      end
+    end
+  end,
+})
+
+-- Core plugins (loaded at startup)
+vim.pack.add({
+  -- Dependencies (order matters - list deps before dependents)
+  gh("nvim-lua/plenary.nvim"),
+  gh("MunifTanjim/nui.nvim"),
+  gh("nvim-tree/nvim-web-devicons"),
+  gh("ryanoasis/vim-devicons"),
+
+  -- Treesitter
+  gh("nvim-treesitter/nvim-treesitter"),
+
+  -- LSP & completion
+  gh("neovim/nvim-lspconfig"),
+  gh("mason-org/mason.nvim"),
+  gh("mason-org/mason-lspconfig.nvim"),
+  gh("WhoIsSethDaniel/mason-tool-installer.nvim"),
+  gh("hrsh7th/nvim-cmp"),
+  gh("hrsh7th/cmp-buffer"),
+  gh("hrsh7th/cmp-cmdline"),
+  gh("hrsh7th/cmp-nvim-lsp"),
+  gh("hrsh7th/cmp-path"),
+  gh("hrsh7th/cmp-vsnip"),
+  gh("hrsh7th/vim-vsnip"),
+  gh("stevearc/conform.nvim"),
+
+  -- Copilot & AI
+  gh("zbirenbaum/copilot.lua"),
+  gh("zbirenbaum/copilot-cmp"),
+  gh("MeanderingProgrammer/render-markdown.nvim"),
+  gh("nickjvandyke/opencode.nvim"),
+
+  -- Git
+  gh("tpope/vim-fugitive"),
+  gh("gregsexton/gitv"),
+  gh("lewis6991/gitsigns.nvim"),
+
+  -- Navigation & search
+  gh("nvim-telescope/telescope.nvim"),
+  gh("ibhagwan/fzf-lua"),
+  { src = gh("nvim-neo-tree/neo-tree.nvim"), version = "v3.x" },
+  gh("christoomey/vim-tmux-navigator"),
+
+  -- Editing
+  gh("tpope/vim-surround"),
+  gh("scrooloose/nerdcommenter"),
+  gh("godlygeek/tabular"),
+
+  -- UI
+  gh("sickill/vim-monokai"),
+  gh("vim-airline/vim-airline"),
+  gh("vim-airline/vim-airline-themes"),
+  gh("Yggdroot/indentLine"),
+  gh("folke/snacks.nvim"),
+  gh("mhinz/vim-startify"),
+
+  -- Language support (always loaded)
+  gh("sheerun/vim-polyglot"),
+})
+
+-- Filetype lazy-loaded plugins
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "toml" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("cespare/vim-toml") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "csv" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("chrisbra/csv.vim") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "Dockerfile", "docker-compose" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("ekalinin/Dockerfile.vim") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "go", "gohtmltmpl" },
+  once = true,
+  callback = function()
+    vim.pack.add({
+      { src = gh("fatih/vim-go") },
+    })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "json", "jsonc" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("elzr/vim-json") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "jsonnet" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("google/vim-jsonnet") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "terraform", "hcl" },
+  once = true,
+  callback = function()
+    vim.pack.add({ gh("hashivim/vim-terraform") })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "typescript.tsx", "typescriptreact", "typescript", "javascript", "vue" },
+  once = true,
+  callback = function()
+    vim.pack.add({
+      gh("leafgarland/typescript-vim"),
+      gh("pangloss/vim-javascript"),
+      gh("moll/vim-node"),
+    })
+  end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "rust" },
+  once = true,
+  callback = function()
+    vim.pack.add({
+      gh("rust-lang/rust.vim"),
+      gh("mrcjkb/rustaceanvim"),
+    })
+  end,
+})

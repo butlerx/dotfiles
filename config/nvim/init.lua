@@ -166,5 +166,4 @@ map({ "n", "<Bslash><Delete>", ":bdelete<CR>" })
 map({ "n", "<Bslash><Insert>", ":<C-U>enew<CR>" })
 -- \/ types :vimgrep for me ready to enter a search pattern
 map({ "n", "<Bslash>/", ":<C-U>vimgrep /c/ **<S-Left><S-Left><Right>" })
--- \p toggles paste mode
-map({ "n", "<Bslash>p", ":<C-U>set paste! paste?<CR>" })
+

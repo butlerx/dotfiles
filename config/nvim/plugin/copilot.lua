@@ -10,12 +10,9 @@ require("render-markdown").setup({
   yaml = { enabled = false },
 })
 
--- setup opencode.nvim
 ---@type opencode.Opts
 vim.g.opencode_opts = {
-  provider = {
-    enabled = "tmux",
-  },
+  server = {},
 }
 
 -- Required for opencode to reload edited buffers

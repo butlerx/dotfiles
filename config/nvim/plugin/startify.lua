@@ -30,8 +30,7 @@ g.startify_lists = {
 }
 
 g.startify_commands = {
-  { up = { "Update Plugins", ":PlugUpdate" } },
-  { ug = { "Upgrade Plugin Manager", ":PlugUpgrade" } },
+  { up = { "Update Plugins", "lua vim.pack.update()" } },
   { ts = { "Update Treesitter", "TSUpdate" } },
   { ch = { "Check Health", "checkhealth" } },
 }
