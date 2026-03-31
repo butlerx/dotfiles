@@ -12,7 +12,40 @@ require("render-markdown").setup({
 
 ---@type opencode.Opts
 vim.g.opencode_opts = {
-  server = {},
+  server = {
+    start = function()
+      if not vim.env.TMUX then
+        vim.notify("Not inside a tmux session", vim.log.levels.ERROR, { title = "opencode" })
+        return
+      end
+      vim.fn.system('tmux split-window -h -d -p 35 "opencode --port" \\; select-pane -T opencode')
+    end,
+    stop = function()
+      if not vim.env.TMUX then
+        return
+      end
+      local pane_id = vim.fn.system(
+        'tmux list-panes -F "#{pane_id} #{pane_title}" | grep opencode | cut -d" " -f1'
+      ):gsub("%s+", "")
+      if pane_id ~= "" then
+        vim.fn.system("tmux kill-pane -t " .. pane_id)
+      end
+    end,
+    toggle = function()
+      if not vim.env.TMUX then
+        vim.notify("Not inside a tmux session", vim.log.levels.ERROR, { title = "opencode" })
+        return
+      end
+      local pane_id = vim.fn.system(
+        'tmux list-panes -F "#{pane_id} #{pane_title}" | grep opencode | cut -d" " -f1'
+      ):gsub("%s+", "")
+      if pane_id ~= "" then
+        vim.fn.system("tmux kill-pane -t " .. pane_id)
+      else
+        vim.fn.system('tmux split-window -h -d -p 35 "opencode --port" \\; select-pane -T opencode')
+      end
+    end,
+  },
 }
 
 -- Required for opencode to reload edited buffers
