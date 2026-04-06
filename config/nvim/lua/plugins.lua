@@ -56,6 +56,8 @@ vim.pack.add({
   gh("zbirenbaum/copilot-cmp"),
   gh("MeanderingProgrammer/render-markdown.nvim"),
   gh("nickjvandyke/opencode.nvim"),
+  gh("coder/claudecode.nvim"),
+  gh("mr55p-dev/claude-tmux.nvim"),
 
   -- Git
   gh("tpope/vim-fugitive"),

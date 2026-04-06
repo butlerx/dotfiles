@@ -167,3 +167,15 @@ map({ "n", "<Bslash><Insert>", ":<C-U>enew<CR>" })
 -- \/ types :vimgrep for me ready to enter a search pattern
 map({ "n", "<Bslash>/", ":<C-U>vimgrep /c/ **<S-Left><S-Left><Right>" })
 
+
+-- PackClean command for cleaning orphaned vim.pack plugins
+vim.api.nvim_create_user_command("PackClean", function(opts)
+  require("pack_clean").clean({
+    bang = opts.bang,
+    args = opts.args,
+  })
+end, {
+  bang = true,
+  nargs = "?",
+  desc = "Clean orphaned vim.pack plugin directories. Use ! to actually delete.",
+})
