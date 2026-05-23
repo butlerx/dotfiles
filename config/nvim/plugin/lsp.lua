@@ -149,7 +149,7 @@ require("mason-tool-installer").setup({
     "staticcheck",
     "stylelint",
     "stylua",
-    "taplo",
+    "tombi",
     "tflint",
     "ty",
     "typescript-language-server",
@@ -183,6 +183,7 @@ cmp.setup({
   }),
   sources = cmp.config.sources({
     { name = "copilot" },
+    { name = "cmp_tabby" },
     { name = "nvim_lsp" },
   }, {
     { name = "nvim_lsp" },
@@ -242,7 +243,7 @@ require("conform").setup({
     yaml = { "yamlfmt", "prettier" },
     ansible = { "prettier" },
     terraform = { "terraform_fmt", "trim_newlines", "trim_whitespace" },
-    toml = { "taplo" },
+    toml = { "tombi" },
     ["*"] = { "trim_newlines", "trim_whitespace" },
   },
   format_on_save = function(bufnr)

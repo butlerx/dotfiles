@@ -54,6 +54,7 @@ vim.pack.add({
   -- Copilot & AI
   gh("zbirenbaum/copilot.lua"),
   gh("zbirenbaum/copilot-cmp"),
+  gh("nzlov/cmp-tabby"),
   gh("MeanderingProgrammer/render-markdown.nvim"),
   gh("nickjvandyke/opencode.nvim"),
   gh("coder/claudecode.nvim"),

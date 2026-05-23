@@ -153,4 +153,4 @@ alias please='sudo'
 
 alias less='$PAGER'
 alias cat='bat'
-alias ls='exa -h' # Colorize output, add file type indicator, and put sizes in human readable format
+alias ls='eza -h' # Colorize output, add file type indicator, and put sizes in human readable format
