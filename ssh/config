@@ -4,7 +4,8 @@
 Include ~/.orbstack/ssh/config
 
 # pets: symlink=~/.ssh/config, owner=butlerx, group=butlerx, mode=0644
-# pets: package=apt:openssh-client, package=yay:openssh
+# pets: package=apt:openssh-client, package=yay:openssh, package=homebrew:openssh
+# pets: pre=ssh -G localhost -F
 
 Host *
   ForwardAgent yes

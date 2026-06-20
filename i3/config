@@ -2,6 +2,8 @@
 # pets: package=apt:i3, package=apt:xbacklight, package=apt:alsa-tools
 # pets: package=rofi, package=xbindkeys, package=xss-lock,  package=playerctl, package=autorandr,  package=xfce4-session, package=thunar
 # pets: symlink=~/.config/i3/config
+# pets: when=os:linux
+# pets: pre=i3 -C -c
 
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!

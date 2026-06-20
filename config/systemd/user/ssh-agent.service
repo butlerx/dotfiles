@@ -1,4 +1,6 @@
 # pets: symlink=~/.config/systemd/user/ssh-agent.service
+# pets: when=os:linux
+# pets: post=systemctl --user daemon-reload
 
 [Unit]
 Description=SSH key agent

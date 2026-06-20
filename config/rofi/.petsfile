@@ -1,1 +1,2 @@
 # pets: symlink=~/.config/rofi
+# pets: when=os:linux

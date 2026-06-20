@@ -1,3 +1,4 @@
 # pets: symlink=~/.config/autorandr
+# pets: when=os:linux
 # pets: package=autorandr
 # pets: package=nitrogen

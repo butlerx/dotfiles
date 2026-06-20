@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 # pets: symlink=~/.xinitrc
+# pets: when=os:linux
 
 # merge in defaults and keymaps
 [ -f ~/.dotfiles/Xresources ] && xrdb -merge -I"$HOME" ~/.dotfiles/Xresources

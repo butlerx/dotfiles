@@ -1,4 +1,5 @@
 # pets: symlink=~/.Xresources
+# pets: when=os:linux
 
 xterm*termName                    : xterm-256color
 XTerm*locale                      : true

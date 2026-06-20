@@ -1,5 +1,6 @@
 # pets: symlink=~/.config/ghostty/config
 # pets: package=yay:ghostty
+# pets: package=homebrew:ghostty
 theme = Monokai Soda
 background-opacity = 0.8
 adw-toolbar-style = flat

@@ -73,7 +73,7 @@
   required = true
   process = git-lfs filter-process
 [commit]
-  gpgsign = true
+	gpgsign = true
 [gpg]
   program = gpg
 [pull]

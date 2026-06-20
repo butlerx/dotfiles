@@ -1,4 +1,6 @@
 # pets: symlink=~/.config/systemd/user/screenlock.service
+# pets: when=os:linux
+# pets: post=systemctl --user daemon-reload
 
 [Unit]
 Description=Starts i3lock at suspend time

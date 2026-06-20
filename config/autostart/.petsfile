@@ -1,4 +1,5 @@
 # pets: symlink=~/.config/autostart
+# pets: when=os:linux
 # pets: package=apt:xfce4
 # pets: package=apt:xfce4-goodies
 # pets: package=lightdm-gtk-greeter-settings

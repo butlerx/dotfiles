@@ -1,4 +1,5 @@
 # pets: symlink=~/.xbindkeysrc
+# pets: when=os:linux
 # thumb button => play/pause music
 # Credit to gregmuellegger https://bbs.archlinux.org/viewtopic.php?pid=1551271#p1551271
 "sleep 0.1 && xte 'key XF86AudioPlay'"

@@ -1,5 +1,6 @@
 # pets: symlink=~/.flake8
 # pets: package=apt:flake8
+# pets: when=os:linux
 
 [flake8]
 max-line-length=120
