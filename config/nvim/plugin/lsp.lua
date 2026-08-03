@@ -1,5 +1,6 @@
 local map = require("utils").map
 local cmp = require("cmp")
+local project = require("project")
 
 vim.diagnostic.config({
   underline = false,
@@ -94,10 +95,69 @@ require("mason-lspconfig").setup({
   },
 })
 
+-- Prefer a language server the repo installs itself (node_modules/.bin,
+-- .venv/bin, a mise pin) over the mason copy, so the server matches the
+-- dependencies it is analysing.
+--
+-- `cmd` must be a function rather than a list: the binary can only be resolved
+-- once root_dir is known, which is at spawn time. One nvim session therefore
+-- talks to a different binary per project.
+local function prefer_local_server(name)
+  local ok, conf = pcall(function()
+    return vim.lsp.config[name]
+  end)
+  if not ok or type(conf) ~= "table" or type(conf.cmd) ~= "table" then
+    return
+  end
+
+  local argv = conf.cmd
+  vim.lsp.config(name, {
+    cmd = function(dispatchers, config)
+      local root = config.root_dir
+      local cwd = config.cmd_cwd or ((root and vim.fn.isdirectory(root) == 1) and root or nil)
+      return vim.lsp.rpc.start(project.localize_argv(argv, root), dispatchers, {
+        cwd = cwd,
+        env = config.cmd_env,
+      })
+    end,
+  })
+end
+
+for _, name in ipairs(require("mason-lspconfig").get_installed_servers()) do
+  if name ~= "rust_analyzer" then
+    prefer_local_server(name)
+  end
+end
+
+-- Neovim-flavoured lua_ls defaults, for editing configs like this one. A repo
+-- shipping .luarc.json owns its settings outright, so bail before touching them.
+vim.lsp.config("lua_ls", {
+  on_init = function(client)
+    local folder = client.workspace_folders and client.workspace_folders[1]
+    if
+      folder
+      and folder.name ~= vim.fn.stdpath("config")
+      and (vim.uv.fs_stat(folder.name .. "/.luarc.json") or vim.uv.fs_stat(folder.name .. "/.luarc.jsonc"))
+    then
+      return
+    end
+
+    client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua or {}, {
+      completion = { enable = true, showWord = "Disable" },
+      runtime = { version = "LuaJIT", path = { "lua/?.lua", "lua/?/init.lua" } },
+      workspace = { checkThirdParty = false, library = { vim.env.VIMRUNTIME } },
+      telemetry = { enable = false },
+    })
+  end,
+})
+
 vim.g.rustaceanvim = {
   tools = {},
   server = {
-    cmd = { "rust-analyzer" },
+    -- A function so it resolves per rust buffer, not once at startup.
+    cmd = function()
+      return project.localize_argv({ "rust-analyzer" })
+    end,
     default_settings = {
       ["rust-analyzer"] = {
         cargo = {
@@ -136,7 +196,6 @@ require("mason-tool-installer").setup({
     "impl",
     "json-to-struct",
     "lua-language-server",
-    "luacheck",
     "markdownlint",
     "misspell",
     "prettier",
@@ -144,6 +203,7 @@ require("mason-tool-installer").setup({
     "revive",
     "ruff",
     "rust-analyzer",
+    "selene",
     "shellcheck",
     "shfmt",
     "staticcheck",
@@ -221,10 +281,90 @@ cmp.setup.cmdline(":", {
   }),
 })
 
--- Set up lspconfig.
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- Advertise nvim-cmp's extra completion capabilities to every server.
+vim.lsp.config("*", { capabilities = require("cmp_nvim_lsp").default_capabilities() })
+
+local conform_util = require("conform.util")
+
+-- `command` resolvers: repo-local binary first, mise pin second, global last.
+local exe = project.formatter_cmd
+
+-- Config-file detectors. Paired with `require_cwd = true` they make a formatter
+-- opt-in: with no config in the repo, conform skips it rather than running
+-- whatever global copy happens to be installed.
+local root_of = conform_util.root_file
+
+local eslint_config = root_of({
+  "eslint.config.js",
+  "eslint.config.mjs",
+  "eslint.config.cjs",
+  "eslint.config.ts",
+  "eslint.config.mts",
+  "eslint.config.cts",
+  ".eslintrc",
+  ".eslintrc.js",
+  ".eslintrc.cjs",
+  ".eslintrc.json",
+  ".eslintrc.yaml",
+  ".eslintrc.yml",
+})
+
+local stylelint_config = root_of({
+  ".stylelintrc",
+  ".stylelintrc.js",
+  ".stylelintrc.cjs",
+  ".stylelintrc.mjs",
+  ".stylelintrc.json",
+  ".stylelintrc.yaml",
+  ".stylelintrc.yml",
+  "stylelint.config.js",
+  "stylelint.config.cjs",
+  "stylelint.config.mjs",
+})
 
 require("conform").setup({
+  formatters = {
+    -- Node tools: conform already checks node_modules/.bin, but not mise pins.
+    prettier = { command = exe("prettier") },
+    fixjson = { command = exe("fixjson"), cwd = root_of({ "package.json" }) },
+
+    -- Only run if the repo actually configures them.
+    eslint_d = {
+      command = exe("eslint_d", { paths = { "node_modules/.bin/eslint" } }),
+      cwd = eslint_config,
+      require_cwd = true,
+    },
+    stylelint = {
+      command = exe("stylelint"),
+      cwd = stylelint_config,
+      require_cwd = true,
+    },
+
+    -- Python: a repo's virtualenv ruff is pinned to its own rule set.
+    ruff_format = { command = exe("ruff") },
+    ruff_organize_imports = { command = exe("ruff") },
+
+    stylua = { command = exe("stylua") },
+    rustfmt = { command = exe("rustfmt") },
+    shfmt = { command = exe("shfmt") },
+    shellcheck = { command = exe("shellcheck") },
+    jq = { command = exe("jq") },
+
+    -- Go tools need the module root as cwd to resolve imports correctly.
+    gofumpt = { command = exe("gofumpt"), cwd = root_of({ "go.work", "go.mod" }) },
+    goimports = { command = exe("goimports"), cwd = root_of({ "go.work", "go.mod" }) },
+
+    -- yamlfmt only finds its config relative to cwd.
+    yamlfmt = {
+      command = exe("yamlfmt"),
+      cwd = root_of({ ".yamlfmt", ".yamlfmt.yaml", ".yamlfmt.yml", "yamlfmt.yaml", "yamlfmt.yml" }),
+    },
+    tombi = { command = exe("tombi"), cwd = root_of({ "tombi.toml", "pyproject.toml" }) },
+    terraform_fmt = {
+      command = exe("terraform"),
+      cwd = root_of({ ".terraform.lock.hcl", ".terraform-version", ".terraform" }),
+    },
+  },
   formatters_by_ft = {
     lua = { "stylua" },
     python = { "ruff_organize_imports", "ruff_format" },

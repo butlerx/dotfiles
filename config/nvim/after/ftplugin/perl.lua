@@ -2,7 +2,7 @@
 
 -- Use Perl itself for checking and Perl::Tidy for tidying
 vim.cmd('compiler perl')
-vim.opt_local.equalprg = 'perltidy'
+vim.opt_local.equalprg = require('project').shell_exe('perltidy')
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or '')
   .. '|unlet b:current_compiler'
   .. '|setlocal equalprg< errorformat< makeprg<'

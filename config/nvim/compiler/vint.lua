@@ -1,13 +1,8 @@
-_G["vim"].cmd [[
-if exists('g:current_compiler')
-  finish
-endif
-let g:current_compiler = 'vimlint'
+local compiler = require("compiler_util")
 
-if exists(':CompilerSet') != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
+if not compiler.claim("vimlint") then
+  return
+end
 
-CompilerSet makeprg=vint\ --\ %:S
-CompilerSet errorformat=%f:%l:%c:\ %m
-]]
+compiler.set("makeprg", compiler.prg("vint") .. " -- %:S")
+compiler.set("errorformat", "%f:%l:%c: %m")

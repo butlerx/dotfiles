@@ -1,0 +1,11 @@
+---
+# selene standard library for Neovim. LuaJIT, so lua51 is the correct base.
+#
+# `vim` is an opaque "any" global rather than a modelled API surface: the lint
+# wanted here is undefined and shadowed locals, not vim.* API validation, and a
+# hand-written mirror of the vim.* tree would only rot.
+base: lua51
+name: vim
+globals:
+  vim:
+    any: true

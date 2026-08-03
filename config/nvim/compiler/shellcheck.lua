@@ -1,23 +1,11 @@
--- Build :CompilerSet command based on buffer shell type
-_G["vim"].cmd [[
-if exists('g:current_compiler')
-  finish
-endif
-let g:current_compiler = 'shellcheck'
+local compiler = require("compiler_util")
 
-if exists(':CompilerSet') != 2
-  command -nargs=* CompilerSet setlocal <args>
-endif
+if not compiler.claim("shellcheck") then
+  return
+end
 
-let s:set = 'CompilerSet makeprg=shellcheck\ -e\ SC1090\ -f\ gcc'
-if exists('b:is_bash')
-  let s:set = s:set . '\ -s\ bash'
-elseif exists('b:is_kornshell')
-  let s:set = s:set . '\ -s\ ksh'
-else
-  let s:set = s:set . '\ -s\ sh'
-endif
+-- Tell shellcheck which dialect to apply, from the buffer's shell subtype
+local dialect = require("autoload.sh").dialect(0)
 
-execute s:set . '\ --\ %:S'
-CompilerSet errorformat=%f:%l:%c:\ %m\ [SC%n]
-]]
+compiler.set("makeprg", compiler.prg("shellcheck") .. " -e SC1090 -f gcc -s " .. dialect .. " -- %:S")
+compiler.set("errorformat", "%f:%l:%c: %m [SC%n]")

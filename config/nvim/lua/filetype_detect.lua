@@ -35,19 +35,6 @@ local function set_posix(_, bufnr)
   return "sh"
 end
 
-local function run_scripts_fallback(_, bufnr)
-  if vim.bo[bufnr].filetype ~= "" then
-    return
-  end
-
-  package.loaded.scripts = nil
-  pcall(require, "scripts")
-
-  if vim.bo[bufnr].filetype ~= "" then
-    return vim.bo[bufnr].filetype
-  end
-end
-
 local extensions = {
   awk = "awk",
   bash = set_bash,
@@ -282,7 +269,6 @@ local patterns = {
     end,
     { priority = -2 },
   },
-  [".*"] = { run_scripts_fallback, { priority = -math.huge } },
 }
 
 if vim.env.HOME and vim.env.HOME ~= "" then
@@ -313,12 +299,5 @@ vim.api.nvim_create_autocmd("InsertLeave", {
     if vim.fn.line("'[") == 1 and vim.fn.getline(1):match("^#!") then
       vim.cmd("doautocmd filetypedetect BufRead")
     end
-  end,
-})
-
-vim.api.nvim_create_autocmd("StdinReadPost", {
-  pattern = "*",
-  callback = function(args)
-    run_scripts_fallback(nil, args.buf)
   end,
 })

@@ -65,6 +65,7 @@
 [core]
   autocrlf = input
   excludesfile = ~/.gitignore
+  pager = delta
 [fetch]
   prune = true
 [filter "lfs"]
@@ -73,7 +74,7 @@
   required = true
   process = git-lfs filter-process
 [commit]
-	gpgsign = true
+  gpgsign = true
 [gpg]
   program = gpg
 [pull]
@@ -87,3 +88,9 @@
 [http]
   lowSpeedLimit = 0
   lowSpeedTime = 999999
+[interactive]
+  diffFilter = delta --color-only
+[delta]
+  navigate = true
+[merge]
+  conflictStyle = zdiff3

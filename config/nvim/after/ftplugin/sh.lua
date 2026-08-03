@@ -5,20 +5,18 @@ vim.opt_local.comments = ':#'
 vim.cmd('setlocal formatoptions+=or')
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or '') .. '|setlocal comments< formatoptions<'
 
+-- Dialect from the shebang, not from b:is_bash & co: those are still unset at
+-- FileType time. See lua/autoload/sh.lua.
+local dialect = require('autoload.sh').dialect(0)
+
 -- If subtype is Bash, set 'keywordprg' to han(1df)
-if vim.b.is_bash then
+if dialect == 'bash' then
   vim.opt_local.keywordprg = 'han'
   vim.b.undo_ftplugin = (vim.b.undo_ftplugin or '') .. '|setlocal keywordprg<'
 end
 
 -- Choose check compiler based on file subtype
-if vim.b.is_bash then
-  vim.b.sh_check_compiler = 'bash'
-elseif vim.b.is_kornshell then
-  vim.b.sh_check_compiler = 'ksh'
-else
-  vim.b.sh_check_compiler = 'sh'
-end
+vim.b.sh_check_compiler = dialect
 
 vim.cmd('compiler ' .. vim.b.sh_check_compiler)
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or '')

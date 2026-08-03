@@ -12,6 +12,15 @@ require("plugins")
 
 set.winborder = "rounded"
 
+-- Load a project's own .nvim.lua / .nvimrc / .exrc when it ships one. Neovim
+-- prompts once per file and remembers the answer, so an untrusted repo cannot
+-- execute code silently.
+set.exrc = true
+
+-- On by default; set explicitly because an in-repo .editorconfig is expected to
+-- override the indent defaults below. It applies after ftplugin/indent scripts.
+vim.g.editorconfig = true
+
 if fn.has("autocmd") then
   -- Set leader to space
   vim.g.mapleader = " "

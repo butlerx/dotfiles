@@ -1,8 +1,8 @@
 -- Extra configuration for HTML files
 
--- Use tidy(1) for checking and program formatting
+-- Use tidy(1) for checking and program formatting, preferring the repo's copy
 vim.cmd('compiler tidy')
-vim.opt_local.equalprg = 'tidy -quiet'
+vim.opt_local.equalprg = require('project').shell_exe('tidy') .. ' -quiet'
 vim.b.undo_ftplugin = (vim.b.undo_ftplugin or '')
   .. '|unlet b:current_compiler'
   .. '|setlocal equalprg< errorformat< makeprg<'

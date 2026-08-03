@@ -1,0 +1,13 @@
+std = "lua51+vim"
+
+# selene's parser is Lua 5.1 only, with no option to widen it. LuaJIT -- and so
+# Neovim -- accepts `goto`/labels, so any file using them is nothing but parse
+# errors here. Exclude such files; don't rewrite working code to suit the linter.
+exclude = ["lua/autoload/digraph_search.lua"]
+
+[lints]
+# Plugin setup tables (neo-tree's, conform's `{ "rustfmt", lsp_format = "fallback" }`)
+# are list-plus-keys by design, so every hit is a false positive.
+mixed_table = "allow"
+# The vimscript-heredoc files deliberately go through `_G["vim"].cmd`.
+global_usage = "allow"
