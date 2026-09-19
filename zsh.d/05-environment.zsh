@@ -18,6 +18,9 @@ gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='bat'
 export EDITOR='nvim'
+# pets defaults its config dir to ~/pets, which does not exist here; the
+# configs live in this repo. 0.5.1+ reads PETS_DIR, so plain `pets` works.
+export PETS_DIR="$HOME/.dotfiles"
 
 # CTAGS Sorting in VIM/Emacs is better behaved with this in place
 export LC_COLLATE=C
