@@ -31,7 +31,7 @@ pets --conf-dir .dotfiles/ --dry-run
 
 ## Structure
 
-- **Top-level dotfiles** — shell, git, tmux, ssh, X11 configs with inline `# pets:` directives
+- **Top-level dotfiles** — shell, git, tmux, ssh, X11 configs with inline pets directives
 - **`config/`** — XDG application configs (nvim, ghostty, alacritty, i3, rofi, systemd units)
 - **`zsh.d/`** — autoloaded zsh scripts
 - **`zsh-completions/`** — custom zsh completions (including pets)
