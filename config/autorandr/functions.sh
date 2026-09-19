@@ -24,6 +24,18 @@ kill_polybar() {
 	while pgrep -x polybar >/dev/null; do sleep 1; done
 }
 
+restart_picom() {
+	# picom v10 on the glx backend dies when RandR reconfigures outputs, and
+	# autorandr does exactly that - at login (i3 runs `autorandr --change`) and
+	# on every hotplug. Restarting it here, after the new layout has settled,
+	# removes the startup race entirely rather than guarding against it, and
+	# recovers the compositor on monitor changes too. Without a compositor,
+	# ghostty's background-opacity is silently ignored.
+	pkill -x picom || true
+	while pgrep -x picom >/dev/null; do sleep 1; done
+	picom -bcf >/var/tmp/picom.log 2>&1 || echo "restart_picom: picom failed to start" >&2
+}
+
 start_bar() {
 	export MONITOR=$1
 	BAR=$2

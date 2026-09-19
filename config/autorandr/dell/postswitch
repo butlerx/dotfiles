@@ -4,6 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 
 set_wallpaper 0 scaled wallpaper.jpg
 kill_polybar
+restart_picom
 (
   flock 200
   start_bar eDP1 4k

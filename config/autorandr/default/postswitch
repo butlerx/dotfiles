@@ -4,6 +4,7 @@ source "$(dirname "${BASH_SOURCE[0]}")/../functions.sh"
 
 set_wallpaper 0 auto EFFECTS.jpg
 kill_polybar
+restart_picom
 (
 	flock 200
 	start_bar eDP-1 1080p
