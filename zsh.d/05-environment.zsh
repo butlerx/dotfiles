@@ -5,7 +5,16 @@
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS="-arch $(uname -m)"
-export GPG_TTY="$TTY"
+# Do not derive GPG_TTY from zsh's $TTY here. .zshenv already does the right thing
+# (export GPG_TTY=$(tty)); this line ran after it and clobbered the good value. $TTY
+# is empty whenever zsh has no controlling terminal, so the clobber exported an empty
+# GPG_TTY, gpg-agent received ttyname="", and pinentry died with:
+#   gpg: signing failed: Inappropriate ioctl for device
+# $(tty) is unconditionally correct. The second line matters because gpg-agent
+# outlives the login session: reconnect over SSH and you get a new /dev/pts/N while
+# the agent is still holding the previous one. updatestartuptty hands it the current.
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null 2>&1
 export LESS='--ignore-case --raw-control-chars'
 export PAGER='bat'
 export EDITOR='nvim'
