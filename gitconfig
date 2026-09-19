@@ -1,4 +1,5 @@
 # pets: package=git, package=apt:gh, package=yay:github-cli
+# pets: package=git-delta
 # pets: symlink=~/.gitconfig
 
 [user]
