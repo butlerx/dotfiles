@@ -7,5 +7,5 @@ set_wallpaper 0 zoom-fill PXL_20221228_143940280-PANO.jpg
 sleep 0.5
 (
 	flock 200
-	start_bar HDMI-1 artemis
+	start_bar DP-3 artemis
 ) 200>/var/tmp/polybar-launch.lock

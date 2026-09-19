@@ -34,5 +34,13 @@ set_wallpaper() {
 	SCREEN=$1
 	MODE=$2
 	IMAGE=$3
-	nitrogen --head="$SCREEN" --set-"$MODE" --save ~/Pictures/wallpapers/"$IMAGE"
+	# nitrogen 1.6.1 g_error()s and core dumps against newer
+	# gsettings-desktop-schemas: it reads org.gnome.desktop.background
+	# draw-background, a key removed upstream. It paints the root pixmap
+	# before dying, so the wallpaper still lands. Crucially this file runs
+	# under `set -e`, so an unguarded failure here aborts the postswitch
+	# before start_bar - which is how a wallpaper bug silently killed the
+	# status bars. Never let it propagate.
+	nitrogen --head="$SCREEN" --set-"$MODE" --save ~/Pictures/wallpapers/"$IMAGE" ||
+		echo "set_wallpaper: nitrogen exited non-zero for head $SCREEN" >&2
 }
