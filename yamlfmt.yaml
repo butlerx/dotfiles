@@ -1,4 +1,6 @@
 # pets: symlink=~/.yamlfmt.yaml
+# yamlfmt is a Go tool; Homebrew ships it, Debian does not
+# pets: package=homebrew:yamlfmt
 
 formatter:
   type: basic

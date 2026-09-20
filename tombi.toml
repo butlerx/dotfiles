@@ -1,4 +1,5 @@
 # pets: symlink=~/tombi.toml
+# pets: package=npm:tombi
 
 toml-version = "v1.0.0"
 
