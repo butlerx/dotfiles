@@ -1,9 +1,7 @@
 // pets: symlink=~/.eslint.config.mjs
-// pets: package=npm:eslint, package=npm:@eslint/js
-// typescript-eslint publishes prereleases under the latest tag, so pin the major
-// pets: package=npm:typescript-eslint@8
-// pets: package=npm:eslint-plugin-prettier, package=npm:eslint-config-prettier
-// pets: package=npm:eslint-plugin-import-x
+// pets: package=npm:eslint
+// The plugins are not installed globally: eslint resolves them relative to this
+// file, so package.json in this repo pins them and install.sh installs them.
 // @ts-check
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';

@@ -25,5 +25,13 @@ fi
 # pi's config lives next to its sessions and caches, so the JSON/Markdown files
 # are linked separately (see pi/link-config.sh).
 "$CWD/pi/link-config.sh"
+
+# eslint resolves a config's plugins relative to the config file, so the shared
+# eslint.config.mjs needs its toolchain installed here rather than globally.
+if command_exists npm; then
+  npm install --prefix "$CWD" --no-fund --no-audit
+else
+  echo "Warning: npm not found, skipping eslint toolchain install" >&2
+fi
 echo "dotfiles have been synchronized!"
 printf "\nAll done!"

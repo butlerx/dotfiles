@@ -80,9 +80,11 @@ rather than `eslint-plugin-import`, which still caps its peer range at ESLint 9.
 Type-aware rules run through `projectService`, and plain JS files fall back to
 `disableTypeChecked` so they lint without a tsconfig project.
 
-ESLint resolves a config's plugins relative to the config file, so the shared
-config only works where its plugins resolve from `~/.dotfiles` — a global
-install is not enough.
+ESLint resolves a config's plugins relative to the config file, not from the
+global install, so the toolchain is pinned in this repo's `package.json` and
+installed into `.dotfiles/node_modules` by `install.sh`. That is what makes
+`eslint --config ~/.eslint.config.mjs` work from any project. Only the `eslint`
+and `prettier` CLIs themselves are installed globally by pets.
 
 ### AI agents
 
