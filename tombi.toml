@@ -1,5 +1,7 @@
 # pets: symlink=~/tombi.toml
-# pets: package=npm:tombi
+# tombi is also on npm, but Homebrew owns /opt/homebrew/bin/tombi here and
+# npm refuses to overwrite it
+# pets: package=homebrew:tombi
 
 toml-version = "v1.0.0"
 
