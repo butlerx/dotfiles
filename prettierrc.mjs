@@ -1,7 +1,7 @@
-// pets: symlink=~/.prettierrc.js
+// pets: symlink=~/.prettierrc.mjs
 // pets: package=npm:prettier
 
-module.exports = {
+export default {
   singleQuote: true,
   trailingComma: 'all',
   proseWrap: 'always',

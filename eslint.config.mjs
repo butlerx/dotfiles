@@ -26,11 +26,16 @@ export default tseslint.config(
       },
     },
     settings: {
-      'import-x/resolver': { node: { extensions: [...allExtensions, '.json'] } },
+      'import-x/resolver': {
+        node: { extensions: [...allExtensions, '.json'] },
+      },
       'import-x/extensions': allExtensions,
       'import-x/ignore': ['node_modules', '\\.(scss|css|less|hbs|svg|json)$'],
       'import-x/parsers': { '@typescript-eslint/parser': typeScriptExtensions },
-      'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
+      'import-x/external-module-folders': [
+        'node_modules',
+        'node_modules/@types',
+      ],
     },
     rules: {
       // enforces use of function declarations or expressions
