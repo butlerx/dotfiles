@@ -1,0 +1,5 @@
+# pets: package=firefox
+# pets: symlink=~/Library/Application Support/Firefox/Profiles/mnq8doro.default-release/chrome
+# The macOS profile directory name is machine specific; check profiles.ini in
+# ~/Library/Application Support/Firefox when setting up a new Mac.
+# pets: when=os:macos

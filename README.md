@@ -72,6 +72,20 @@ theme.
 
 All `.zsh` files in `.dotfiles/zsh` are autoloaded
 
+### Firefox
+
+`chrome/` (userChrome CSS) and `firefox-conf.js` (prefs) are deployed twice
+because the profile path differs per platform:
+
+- `chrome/.petsfile` and the modelines in `firefox-conf.js` handle Linux
+  (`~/.mozilla/firefox/butlerx.default/`), guarded with `when=os:linux`
+- `chrome.petsfile` and `firefox-conf.js.petsfile` sidecars handle macOS
+  (`~/Library/Application Support/Firefox/Profiles/`), guarded with
+  `when=os:macos`
+
+The macOS profile directory name is machine specific — check `profiles.ini` in
+`~/Library/Application Support/Firefox` before setting up a new Mac.
+
 ### Linting
 
 `eslint.config.mjs` is a flat config for ESLint 10 and typescript-eslint 8. It
