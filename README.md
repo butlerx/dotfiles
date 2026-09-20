@@ -65,14 +65,13 @@ directly from `~/.dotfiles` by `zsh.d/14-prompt.zsh`, not linked into `$HOME`.
 
 ### Editors and terminal
 
-| Source                            | Destination                          | OS    |
-| --------------------------------- | ------------------------------------ | ----- |
-| `vimrc`                           | `~/.vimrc`                           | both  |
-| `config/nvim/`                    | `~/.config/nvim`                     | both  |
-| `tmux.conf`                       | `~/.tmux.conf`                       | both  |
-| `tmux/`                           | `~/.tmux`                            | both  |
-| `config/ghostty/config`           | `~/.config/ghostty/config`           | both  |
-| `config/alacritty/alacritty.toml` | `~/.config/alacritty/alacritty.toml` | linux |
+| Source                  | Destination                | OS   |
+| ----------------------- | -------------------------- | ---- |
+| `vimrc`                 | `~/.vimrc`                 | both |
+| `config/nvim/`          | `~/.config/nvim`           | both |
+| `tmux.conf`             | `~/.tmux.conf`             | both |
+| `tmux/`                 | `~/.tmux`                  | both |
+| `config/ghostty/config` | `~/.config/ghostty/config` | both |
 
 See [`config/nvim/README.md`](config/nvim/README.md).
 
