@@ -1,2 +1,4 @@
 # pets: package=firefox
 # pets: symlink=~/.mozilla/firefox/butlerx.default/chrome
+# macOS Firefox reads ~/Library/Application Support/Firefox/Profiles instead
+# pets: when=os:linux
