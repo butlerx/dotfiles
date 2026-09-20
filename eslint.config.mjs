@@ -1,5 +1,7 @@
 // pets: symlink=~/.eslint.config.mjs
-// pets: package=npm:eslint, package=npm:@eslint/js, package=npm:typescript-eslint
+// pets: package=npm:eslint, package=npm:@eslint/js
+// typescript-eslint publishes prereleases under the latest tag, so pin the major
+// pets: package=npm:typescript-eslint@8
 // pets: package=npm:eslint-plugin-prettier, package=npm:eslint-config-prettier
 // pets: package=npm:eslint-plugin-import-x
 // @ts-check
