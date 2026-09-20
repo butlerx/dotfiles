@@ -9,6 +9,3 @@ state back into this repository. The noisy parts are gitignored:
 `*.conf` files are tracked, which means weechat rewrites them on exit and they
 show up as modifications. Commit the ones you meant to change and check the rest
 out again.
-
-No `package=` directive: weechat is not installed on every machine this repo is
-checked out on, and pets would otherwise install it. Add one if that changes.
