@@ -1,0 +1,14 @@
+version = 1
+
+[repository]
+submodules = true
+
+[[generated]]
+kind = "completion"
+shell = "zsh"
+target = "zsh-completions/_pets"
+
+[[package_sets]]
+manager = "npm"
+manifest = "package.json"
+lockfile = "package-lock.json"
