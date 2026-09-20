@@ -1,0 +1,14 @@
+# pets: symlink=~/tombi.toml
+
+toml-version = "v1.0.0"
+
+[files]
+exclude = ["**/uv.lock", "**/*.lock"]
+
+[format.rules]
+group-blank-lines-limit         = 2
+key-value-equals-sign-alignment = true
+trailing-comment-alignment      = true
+
+[schema]
+enabled = true

@@ -80,6 +80,9 @@ See [`config/nvim/README.md`](config/nvim/README.md).
 | Source              | Destination            | OS    |
 | ------------------- | ---------------------- | ----- |
 | `gitconfig`         | `~/.gitconfig`         | both  |
+| `gitignore`         | `~/.gitignore`         | both  |
+| `tombi.toml`        | `~/tombi.toml`         | both  |
+| `yamlfmt.yaml`      | `~/.yamlfmt.yaml`      | both  |
 | `ssh/config`        | `~/.ssh/config`        | both  |
 | `eslint.config.mjs` | `~/.eslint.config.mjs` | both  |
 | `prettierrc.mjs`    | `~/.prettierrc.mjs`    | both  |
