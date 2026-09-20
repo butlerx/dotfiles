@@ -11,7 +11,9 @@ configuration directives are embedded as comments in the files themselves.
 
 ## Install
 
-Requires [pets](https://github.com/butlerx/pets-configurator) (`cargo install pets-configurator`).
+Requires [pets](https://github.com/butlerx/pets-configurator) 0.6 or newer
+(`cargo install pets-configurator`). 0.6 is needed for the `npm:` package
+directives used by the pi, eslint and prettier configs.
 
 ```bash
 ./install.sh
@@ -29,20 +31,32 @@ Use `--dry-run` to preview changes without applying:
 pets --conf-dir .dotfiles/ --dry-run
 ```
 
+Check for drift without changing anything, or list what is managed:
+
+```bash
+pets --conf-dir .dotfiles/ --check   # exits non-zero if out of sync
+pets --conf-dir .dotfiles/ list      # managed files and their status
+```
+
 ## Structure
 
-- **Top-level dotfiles** — shell, git, tmux, ssh, X11 configs with inline pets directives
-- **`config/`** — XDG application configs (nvim, ghostty, alacritty, i3, rofi, systemd units)
+- **Top-level dotfiles** — shell, git, tmux, ssh, X11 configs with inline
+  `# pets` modeline comments
+- **`config/`** — XDG application configs (nvim, ghostty, alacritty, i3, rofi,
+  opencode, systemd units)
 - **`zsh.d/`** — autoloaded zsh scripts
 - **`zsh-completions/`** — custom zsh completions (including pets)
 - **`fonts/`** — user fonts (`~/.local/share/fonts`)
 - **`i3/`** — i3wm config, picom, lockscreen
+- **`pi/`** — pi agent config (see below)
 
 ## Cross-platform
 
 Linux-only configs (i3, XFCE, systemd, X11) are guarded with `when=os:linux` and
 will be skipped on macOS. Packages specify multiple managers where applicable
-(e.g. `package=yay:ghostty, package=homebrew:ghostty`).
+(e.g. `package=yay:ghostty, package=homebrew:ghostty`). Cross-platform tooling
+uses the `cargo:`, `pip:` and `npm:` prefixes, which work on either OS — eslint,
+prettier, the neovim node provider and pi are all installed that way.
 
 ### NeoVIM
 
@@ -57,3 +71,25 @@ custom layout. If powerlevel10k fails to install zsh falls back to a simpler
 theme.
 
 All `.zsh` files in `.dotfiles/zsh` are autoloaded
+
+### AI agents
+
+**opencode** — `config/opencode/` is symlinked to `~/.config/opencode` as a
+whole directory. Credentials and installed plugins (`antigravity-accounts.json`,
+`node_modules`, lockfiles) live there untracked and are covered by
+`config/opencode/.gitignore`.
+
+**pi** — pi mixes config with sessions, caches and `auth.json` in `~/.pi/agent`,
+so that directory is not symlinked wholesale. Instead:
+
+- `pi/agents/`, `pi/skills/` and `pi/themes/` are directory symlinks driven by
+  their `.petsfile`
+- `pi/settings.json`, `pi/settings-extensions.json`, `pi/mcp.json` and
+  `pi/AGENTS.md` are linked by `pi/link-config.sh`, which `install.sh` runs
+  after pets. JSON and Markdown cannot carry a modeline comment, so pets cannot
+  manage those four directly.
+- `auth.json`, `sessions/`, `npm/`, `git/`, `cache/` and the theme caches stay
+  untracked in `~/.pi/agent`
+
+pi itself is installed by pets via `package=npm:@earendil-works/pi-coding-agent`
+on `pi/agents/.petsfile`, so it needs pets 0.6 or newer.

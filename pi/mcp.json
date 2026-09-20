@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "github": {
+      "url": "https://api.githubcopilot.com/mcp/",
+      "disabled": true
+    },
+    "sentry": {
+      "url": "https://mcp.sentry.dev/mcp"
+    },
+    "datadog": {
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?toolsets=core,apm,cost,dashboards,dbm,alerting,profiling"
+    },
+    "linear": {
+      "url": "https://mcp.linear.app/mcp"
+    },
+    "incident-io": {
+      "url": "https://mcp.incident.io/mcp"
+    },
+    "slack": {
+      "url": "https://mcp.slack.com/mcp",
+      "disabled": true
+    },
+    "excalidraw": {
+      "url": "https://api.excalidraw.com/api/v1/mcp",
+      "disabled": true
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
+}

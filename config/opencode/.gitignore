@@ -6,3 +6,5 @@ antigravity-signature-cache.json
 antigravity-logs/
 antigravity-accounts.json.*.tmp
 oh-my-opencode.json.bak.*
+package-lock.json
+opencode.json.backup-*

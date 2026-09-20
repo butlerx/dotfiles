@@ -1,9 +1,12 @@
 // pets: symlink=~/.eslint.config.mjs
+// pets: package=npm:eslint, package=npm:@eslint/js, package=npm:typescript-eslint
+// pets: package=npm:eslint-plugin-prettier, package=npm:eslint-config-prettier
+// pets: package=npm:eslint-plugin-import-x
 // @ts-check
 import eslint from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-plugin-prettier/recommended';
-import importPlugin from 'eslint-plugin-import';
+import importX from 'eslint-plugin-import-x';
 
 const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
 const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs'];
@@ -13,19 +16,21 @@ export default tseslint.config(
   tseslint.configs.recommendedTypeChecked,
   tseslint.configs.stylisticTypeChecked,
   prettierConfig,
-  importPlugin.flatConfigs.recommended,
+  importX.flatConfigs.recommended,
+  importX.flatConfigs.typescript,
   {
     languageOptions: {
       parserOptions: {
-        project: true,
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     settings: {
-      'import/resolver': { node: { extensions: [...allExtensions, '.json'] } },
-      'import/extensions': allExtensions,
-      'import/ignore': ['node_modules', '\\.(scss|css|less|hbs|svg|json)$'],
-      'import/parsers': { '@typescript-eslint/parser': typeScriptExtensions },
-      'import/external-module-folders': ['node_modules', 'node_modules/@types'],
+      'import-x/resolver': { node: { extensions: [...allExtensions, '.json'] } },
+      'import-x/extensions': allExtensions,
+      'import-x/ignore': ['node_modules', '\\.(scss|css|less|hbs|svg|json)$'],
+      'import-x/parsers': { '@typescript-eslint/parser': typeScriptExtensions },
+      'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
     },
     rules: {
       // enforces use of function declarations or expressions
@@ -34,7 +39,7 @@ export default tseslint.config(
 
       // Ensure consistent use of file extension within the import path
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/extensions.md
-      'import/extensions': [
+      'import-x/extensions': [
         'error',
         'ignorePackages',
         {
@@ -127,9 +132,6 @@ export default tseslint.config(
       // disallow Unnecessary Labels
       // https://eslint.org/docs/rules/no-extra-label
       'no-extra-label': 'error',
-      // deprecated in favor of no-global-assign
-      // https://eslint.org/docs/rules/no-native-reassign
-      'no-native-reassign': 'off',
       // disallow implicit type conversions
       // https://eslint.org/docs/rules/no-implicit-coercion
       'no-implicit-coercion': [
@@ -208,7 +210,7 @@ export default tseslint.config(
 
       // ensure absolute imports are above relative imports and that unassigned imports are ignored
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/order.md
-      'import/order': [
+      'import-x/order': [
         'error',
         {
           groups: [
@@ -341,8 +343,8 @@ export default tseslint.config(
       'no-return-assign': ['error', 'always'],
 
       // disallow redundant `return await`
-      // https://eslint.org/docs/rules/no-return-await
-      'no-return-await': 'error',
+      // https://typescript-eslint.io/rules/return-await
+      '@typescript-eslint/return-await': ['error', 'in-try-catch'],
 
       // disallow use of `javascript:` urls.
       // https://eslint.org/docs/rules/no-script-url
@@ -471,10 +473,6 @@ export default tseslint.config(
         { disallowArithmeticOperators: true },
       ],
 
-      // disallow negation of the left operand of an in expression
-      // deprecated in favor of no-unsafe-negation
-      'no-negated-in-lhs': 'off',
-
       // Disallow assignments that can lead to race conditions due to usage of await or yield
       // https://eslint.org/docs/rules/require-atomic-updates
       // note: not enabled because it is very buggy
@@ -495,8 +493,8 @@ export default tseslint.config(
       'no-duplicate-imports': 'off',
 
       // disallow symbol constructor
-      // https://eslint.org/docs/rules/no-new-symbol
-      'no-new-symbol': 'error',
+      // https://eslint.org/docs/rules/no-new-native-nonconstructor
+      'no-new-native-nonconstructor': 'error',
 
       // Disallow specified names in exports
       // https://eslint.org/docs/rules/no-restricted-exports
@@ -543,10 +541,6 @@ export default tseslint.config(
       // https://eslint.org/docs/rules/prefer-numeric-literals
       'prefer-numeric-literals': 'error',
 
-      // suggest using Reflect methods where applicable
-      // https://eslint.org/docs/rules/prefer-reflect
-      'prefer-reflect': 'off',
-
       // use rest parameters instead of arguments
       // https://eslint.org/docs/rules/prefer-rest-params
       'prefer-rest-params': 'error',
@@ -578,7 +572,7 @@ export default tseslint.config(
 
       // ensure imports point to files/modules that can be resolved
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
-      'import/no-unresolved': [
+      'import-x/no-unresolved': [
         'error',
         { caseSensitiveStrict: true, commonjs: true },
       ],
@@ -586,34 +580,34 @@ export default tseslint.config(
       // ensure named imports coupled with named exports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/named.md#when-not-to-use-it
       // TypeScript compilation already ensures that named imports exist in the referenced module
-      'import/named': 'off',
+      'import-x/named': 'off',
 
       // ensure default import coupled with default export
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/default.md#when-not-to-use-it
-      'import/default': 'off',
+      'import-x/default': 'off',
 
       // Helpful warnings:
 
       // disallow invalid exports, e.g. multiple defaults
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/export.md
-      'import/export': 'error',
+      'import-x/export': 'error',
 
       // do not allow a default import name to match a named export
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-named-as-default.md
-      'import/no-named-as-default': 'error',
+      'import-x/no-named-as-default': 'error',
 
       // warn on accessing default export property names that are also named exports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-named-as-default-member.md
-      'import/no-named-as-default-member': 'error',
+      'import-x/no-named-as-default-member': 'error',
 
       // disallow use of jsdoc-marked-deprecated imports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-deprecated.md
-      'import/no-deprecated': 'error',
+      'import-x/no-deprecated': 'error',
 
       // Forbid the use of extraneous packages
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-extraneous-dependencies.md
       // paths are treated both as absolute paths, and relative to process.cwd()
-      'import/no-extraneous-dependencies': [
+      'import-x/no-extraneous-dependencies': [
         'error',
         {
           devDependencies: [
@@ -649,51 +643,51 @@ export default tseslint.config(
 
       // Forbid mutable exports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-mutable-exports.md
-      'import/no-mutable-exports': 'error',
+      'import-x/no-mutable-exports': 'error',
 
       // Module systems:
 
       // disallow require()
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-commonjs.md
-      'import/no-commonjs': 'off',
+      'import-x/no-commonjs': 'off',
 
       // disallow AMD require/define
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-amd.md
-      'import/no-amd': 'error',
+      'import-x/no-amd': 'error',
 
       // Style guide:
 
       // disallow non-import statements appearing before import statements
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/first.md
-      'import/first': 'error',
+      'import-x/first': 'error',
 
       // disallow duplicate imports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-duplicates.md
-      'import/no-duplicates': 'error',
+      'import-x/no-duplicates': 'error',
 
       // Require a newline after the last import/require in a group
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/newline-after-import.md
-      'import/newline-after-import': 'error',
+      'import-x/newline-after-import': 'error',
 
       // Forbid import of modules using absolute paths
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-absolute-path.md
-      'import/no-absolute-path': 'error',
+      'import-x/no-absolute-path': 'error',
 
       // Forbid require() calls with expressions
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-dynamic-require.md
-      'import/no-dynamic-require': 'error',
+      'import-x/no-dynamic-require': 'error',
 
       // Forbid Webpack loader syntax in imports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-webpack-loader-syntax.md
-      'import/no-webpack-loader-syntax': 'error',
+      'import-x/no-webpack-loader-syntax': 'error',
 
       // Prevent importing the default as if it were named
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-named-default.md
-      'import/no-named-default': 'error',
+      'import-x/no-named-default': 'error',
 
       // Reports if a module's default export is unnamed
       // https://github.com/import-js/eslint-plugin-import/blob/d9b712ac7fd1fddc391f7b234827925c160d956f/docs/rules/no-anonymous-default-export.md
-      'import/no-anonymous-default-export': [
+      'import-x/no-anonymous-default-export': [
         'error',
         {
           allowArray: false,
@@ -707,77 +701,37 @@ export default tseslint.config(
 
       // Forbid a module from importing itself
       // https://github.com/import-js/eslint-plugin-import/blob/44a038c06487964394b1e15b64f3bd34e5d40cde/docs/rules/no-self-import.md
-      'import/no-self-import': 'error',
+      'import-x/no-self-import': 'error',
 
       // Forbid cyclical dependencies between modules
       // https://github.com/import-js/eslint-plugin-import/blob/d81f48a2506182738409805f5272eff4d77c9348/docs/rules/no-cycle.md
-      'import/no-cycle': ['error', { maxDepth: '∞' }],
+      'import-x/no-cycle': ['error', { maxDepth: '∞' }],
 
       // Ensures that there are no useless path segments
       // https://github.com/import-js/eslint-plugin-import/blob/ebafcbf59ec9f653b2ac2a0156ca3bcba0a7cf57/docs/rules/no-useless-path-segments.md
-      'import/no-useless-path-segments': ['error', { commonjs: true }],
+      'import-x/no-useless-path-segments': ['error', { commonjs: true }],
 
-      // Reports modules without any exports, or with unused exports
-      // https://github.com/import-js/eslint-plugin-import/blob/f63dd261809de6883b13b6b5b960e6d7f42a7813/docs/rules/no-unused-modules.md
-      'import/no-unused-modules': [
-        'error',
-        {
-          missingExports: true,
-          unusedExports: true,
-        },
-      ],
+      // Reports modules without any exports, or with unused exports.
+      // ESLint 10 removed the FileEnumerator API this rule depends on, so it is
+      // a no-op and warns on every run until import-x ships a replacement.
+      // https://github.com/un-ts/eslint-plugin-import-x/blob/master/docs/rules/no-unused-modules.md
+      'import-x/no-unused-modules': 'off',
 
       // Reports the use of import declarations with CommonJS exports in any module except for the main module.
       // https://github.com/import-js/eslint-plugin-import/blob/1012eb951767279ce3b540a4ec4f29236104bb5b/docs/rules/no-import-module-exports.md
-      'import/no-import-module-exports': ['error'],
+      'import-x/no-import-module-exports': ['error'],
 
       // Use this rule to prevent importing packages through relative paths.
       // https://github.com/import-js/eslint-plugin-import/blob/1012eb951767279ce3b540a4ec4f29236104bb5b/docs/rules/no-relative-packages.md
-      'import/no-relative-packages': 'error',
+      'import-x/no-relative-packages': 'error',
 
       // enforce a consistent style for type specifiers (inline or top-level)
       // https://github.com/import-js/eslint-plugin-import/blob/d5fc8b670dc8e6903dbb7b0894452f60c03089f5/docs/rules/consistent-type-specifier-style.md
-      'import/consistent-type-specifier-style': ['error', 'prefer-inline'],
+      'import-x/consistent-type-specifier-style': ['error', 'prefer-inline'],
 
       // Reports the use of empty named import blocks.
       // https://github.com/import-js/eslint-plugin-import/blob/d5fc8b670dc8e6903dbb7b0894452f60c03089f5/docs/rules/no-empty-named-blocks.md
-      'import/no-empty-named-blocks': 'error',
-      // enforce return after a callback
-      'callback-return': 'off',
-
-      // require all requires be top-level
-      // https://eslint.org/docs/rules/global-require
-      'global-require': 'error',
-
-      // enforces error handling in callbacks (node environment)
-      'handle-callback-err': 'off',
-
-      // disallow use of the Buffer() constructor
-      // https://eslint.org/docs/rules/no-buffer-constructor
-      'no-buffer-constructor': 'error',
-
-      // disallow mixing regular variable and require declarations
-      'no-mixed-requires': ['off', false],
-
-      // disallow use of new operator with the require function
-      'no-new-require': 'error',
-
-      // disallow string concatenation with __dirname and __filename
-      // https://eslint.org/docs/rules/no-path-concat
-      'no-path-concat': 'error',
-
-      // disallow use of process.env
-      'no-process-env': 'error',
-
-      // disallow process.exit()
-      'no-process-exit': 'off',
-
-      // restrict usage of specified node modules
-      'no-restricted-modules': 'off',
-
-      // disallow use of synchronous methods (off by default)
-      'no-sync': 'off',
-
+      'import-x/no-empty-named-blocks': 'error',
       strict: ['error', 'never'],
 
       // require camel case names
@@ -832,20 +786,6 @@ export default tseslint.config(
       // require identifiers to match the provided regular expression
       'id-match': 'off',
 
-      // require or disallow an empty line between class members
-      // https://eslint.org/docs/rules/lines-between-class-members
-      'lines-between-class-members': 'off',
-
-      // require or disallow newlines around directives
-      // https://eslint.org/docs/rules/lines-around-directive
-      'lines-around-directive': [
-        'error',
-        {
-          before: 'always',
-          after: 'always',
-        },
-      ],
-
       // Require or disallow logical assignment logical operator shorthand
       // https://eslint.org/docs/latest/rules/logical-assignment-operators
       'logical-assignment-operators': [
@@ -889,10 +829,6 @@ export default tseslint.config(
       // specify the maximum number of statement allowed in a function
       'max-statements': ['off', 10],
 
-      // enforce a particular style for multiline comments
-      // https://eslint.org/docs/rules/multiline-comment-style
-      'multiline-comment-style': ['off', 'starred-block'],
-
       // require a capital letter for constructors
       'new-cap': [
         'error',
@@ -907,11 +843,6 @@ export default tseslint.config(
           ],
         },
       ],
-
-      'newline-after-var': 'off',
-
-      // https://eslint.org/docs/rules/newline-before-return
-      'newline-before-return': 'off',
 
       // disallow use of the Array constructor
       'no-array-constructor': 'error',
@@ -943,7 +874,7 @@ export default tseslint.config(
       'no-nested-ternary': 'error',
 
       // disallow use of the Object constructor
-      'no-new-object': 'error',
+      'no-object-constructor': 'error',
 
       // disallow use of unary operators, ++ and --
       // https://eslint.org/docs/rules/no-plusplus
@@ -997,10 +928,6 @@ export default tseslint.config(
       // https://eslint.org/docs/rules/operator-assignment
       'operator-assignment': ['error', 'always'],
 
-      // Require or disallow padding lines between statements
-      // https://eslint.org/docs/rules/padding-line-between-statements
-      'padding-line-between-statements': 'off',
-
       // Disallow the use of Math.pow in favor of the ** operator
       // https://eslint.org/docs/rules/prefer-exponentiation-operator
       'prefer-exponentiation-operator': 'error',
@@ -1009,33 +936,11 @@ export default tseslint.config(
       // https://eslint.org/docs/rules/prefer-object-spread
       'prefer-object-spread': 'error',
 
-      // do not require jsdoc
-      // https://eslint.org/docs/rules/require-jsdoc
-      'require-jsdoc': 'off',
-
       // requires object keys to be sorted
       'sort-keys': ['off', 'asc', { caseSensitive: false, natural: true }],
 
       // sort variables within the same declaration block
       'sort-vars': 'off',
-
-      // require or disallow a space immediately following the // or /* in a comment
-      // https://eslint.org/docs/rules/spaced-comment
-      'spaced-comment': [
-        'error',
-        'always',
-        {
-          line: {
-            exceptions: ['-', '+'],
-            markers: ['=', '!', '/'], // space here to support sprockets directives, slash for TS /// comments
-          },
-          block: {
-            exceptions: ['-', '+'],
-            markers: ['=', '!', ':', '::'], // space here to support sprockets directives and flow comment types
-            balanced: true,
-          },
-        },
-      ],
 
       // require or disallow the Unicode Byte Order Mark
       // https://eslint.org/docs/rules/unicode-bom
@@ -1043,9 +948,6 @@ export default tseslint.config(
 
       // enforce or disallow variable initializations at definition
       'init-declarations': 'off',
-
-      // disallow the catch clause parameter name being the same as a variable in the outer scope
-      'no-catch-shadow': 'off',
 
       // disallow labels that share a name with a variable
       // https://eslint.org/docs/rules/no-label-var
@@ -1107,7 +1009,13 @@ export default tseslint.config(
     // Specific overrides for test files
     files: ['**/*.test.*', '**/*.spec.*', '**/testHelper.*'],
     rules: {
-      'import/no-extraneous-dependencies': 'off',
+      'import-x/no-extraneous-dependencies': 'off',
     },
+  },
+  {
+    // Type-aware rules need a tsconfig project, which plain JS files are not
+    // part of. Lint them without type information instead.
+    files: ['**/*.js', '**/*.jsx', '**/*.mjs', '**/*.cjs'],
+    extends: [tseslint.configs.disableTypeChecked],
   },
 );

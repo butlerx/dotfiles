@@ -1,5 +1,9 @@
-# pets: symlink=~/.ssh/config, owner=butlerx, group=butlerx, mode=0644
-# pets: package=apt:openssh-client, package=yay:openssh, package=homebrew:openssh
+# Added by OrbStack: 'orb' SSH host for Linux machines
+# This only works if it's at the top of ssh_config (before any Host blocks).
+# This won't be added again if you remove it.
+Include ~/.orbstack/ssh/config
+
+# pets: symlink=~/.ssh/config, mode=0644
 # pets: pre=ssh -G localhost -F
 
 Host *
@@ -8,15 +12,6 @@ Host *
   ServerAliveInterval 30
   ServerAliveCountMax 2
 
-Host pyg
-  HostName pyg.redbrick.dcu.ie
-  user butlerx
-
-Host meth
-  HostName metharme.internal
-  ProxyJump pyg
-  user root
-
 Host rb
   HostName redbrick.dcu.ie
   user butlerx
@@ -24,45 +19,6 @@ Host rb
 Host github.com
   HostName github.com
   user git
-
-Host halfpint
-  HostName halfpint.redbrick.dcu.ie
-  user alfred
-
-Host paphos
-  HostName paphos.redbrick.dcu.ie
-  user alfred
-
-Host zeus
-  HostName zeus.redbrick.dcu.ie
-  user alfred
-
-Host albus
-  HostName albus.redbrick.dcu.ie
-  user alfred
-
-Host pyg.alfred
-  HostName pyg.redbrick.dcu.ie
-  user alfred
-
-Host azazel
-  HostName 136.206.15.50
-  user butlerx
-
-Host icarus
-  Hostname icarus.internal
-  ProxyJump pyg
-  user root
-
-Host daedalus
-  Hostname daedalus.internal
-  ProxyJump pyg
-  user root
-
-Host hardcase
-  Hostname hardcase.internal
-  ProxyJump pyg
-  user root
 
 Host notthe.cloud
   HostName notthe.cloud

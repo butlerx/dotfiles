@@ -1,0 +1,92 @@
+{
+  "defaultModel": "gpt-5.6-sol",
+  "defaultProvider": "github-copilot",
+  "defaultThinkingLevel": "xhigh",
+  "enableInstallTelemetry": false,
+  "extensions": [],
+  "hideThinkingBlock": true,
+  "lastChangelogVersion": "0.84.4",
+  "markdown": {
+    "mermaid": "streaming"
+  },
+  "packages": [
+    "npm:@juanibiapina/pi-extension-settings",
+    "https://github.com/ayghri/i-have-adhd",
+    "npm:pi-powerline-footer",
+    "npm:pi-lens",
+    "npm:pi-btw",
+    "npm:@hypabolic/pi-hypa",
+    "npm:context-mode",
+    "npm:@juicesharp/rpiv-ask-user-question",
+    "npm:@ayulab/pi-rewind",
+    "npm:@tintinweb/pi-subagents",
+    "npm:@plannotator/pi-extension",
+    "npm:@juicesharp/rpiv-todo",
+    "npm:pi-updater",
+    "npm:@krfantasy/pi-monokai-pro",
+    "npm:pi-mcp-adapter",
+    "npm:@saccolabs/pi-claude-cli@0.6.1",
+    "npm:pi-prompt-template-model",
+    "npm:pi-add-dir",
+    "npm:pi-simplify",
+    "npm:@devkade/pi-plan",
+    "npm:pi-subagents",
+    "npm:pi-autoresearch",
+    "npm:pi-interactive-shell",
+    "npm:pi-slopchop",
+    "npm:pi-ask-user",
+    "npm:pi-web-access",
+    "git:github.com/VandeeFeng/pi-memory-md",
+    "/Users/cbutler/.pi/agent/local/pi-powerbar-powerline-theme",
+    "npm:@juanibiapina/pi-powerbar",
+    "npm:@tmustier/pi-usage-extension",
+    "npm:@tmustier/pi-raw-paste",
+    "git:github.com/tintinweb/pi-manage-todo-list@b75c449aa85ce328e9a8b632f62bf642aed40359",
+    "npm:@tmustier/pi-ralph-wiggum"
+  ],
+  "powerline": {
+    "disabledSegments": [
+      "cost"
+    ],
+    "git": {
+      "hostIcon": true,
+      "polling": "branch"
+    },
+    "layout": {
+      "left": [],
+      "right": [],
+      "secondary": []
+    },
+    "placement": "above",
+    "preset": "default",
+    "separator": "chevron"
+  },
+  "showLastPrompt": true,
+  "terminal": {
+    "showTerminalProgress": true
+  },
+  "theme": "Monokai Pro (CE)",
+  "tuiMode": "regular",
+  "subagents": {
+    "agentOverrides": {
+      "context-builder": {
+        "model": ""
+      },
+      "planner": {
+        "model": ""
+      },
+      "researcher": {
+        "model": ""
+      },
+      "reviewer": {
+        "model": ""
+      },
+      "scout": {
+        "model": ""
+      },
+      "worker": {
+        "model": ""
+      }
+    }
+  }
+}

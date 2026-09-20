@@ -1,2 +1,3 @@
 # pets: symlink=~/.config/nvim
 # pets: package=ripgrep, package=perl, package=apt:ruby-full, package=luarocks
+# pets: package=npm:neovim

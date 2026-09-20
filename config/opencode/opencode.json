@@ -1,27 +1,31 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "theme": "system",
   "model": "github-copilot/gpt-4.1",
   "autoshare": false,
   "autoupdate": true,
   "provider": {
-    "ollama": {
+    "tabby": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Ollama",
+      "name": "Tabby (Self-Hosted)",
       "options": {
-        "baseURL": "http://localhost:11434/v1"
+        "baseURL": "http://localhost:8080/v1",
+        "apiKey": "{env:TABBY_API_KEY}"
       },
       "models": {
-        "gpt-oss:20b": {
-          "name": "gpt-oss:20b"
+        "Qwen2-1.5B-Instruct": {
+          "name": "Qwen2 1.5B Instruct (Tabby)",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          }
         }
       }
     },
     "google": {
       "name": "Google",
       "models": {
-        "antigravity-gemini-3-pro": {
-          "name": "Gemini 3 Pro (Antigravity)",
+        "antigravity-gemini-3-1-pro": {
+          "name": "Gemini 3.1 Pro (Antigravity)",
           "limit": {
             "context": 1048576,
             "output": 65535
@@ -155,7 +159,48 @@
     }
   },
   "plugin": [
-    "oh-my-opencode@latest",
-    "opencode-antigravity-auth@1.5.1"
-  ]
+    "opencode-antigravity-auth@1.6.0",
+    "oh-my-openagent@latest"
+  ],
+  "mcp": {
+    "github": {
+      "type": "remote",
+      "url": "https://api.githubcopilot.com/mcp/",
+      "enabled": false
+    },
+    "sentry": {
+      "type": "remote",
+      "url": "https://mcp.sentry.dev/mcp",
+      "enabled": true
+    },
+    "datadog": {
+      "type": "remote",
+      "url": "https://mcp.datadoghq.com/api/unstable/mcp-server/mcp?toolsets=core,apm,cost,dashboards,dbm,alerting,profiling",
+      "enabled": true
+    },
+    "linear": {
+      "type": "remote",
+      "url": "https://mcp.linear.app/mcp",
+      "enabled": true
+    },
+    "incident-io": {
+      "type": "remote",
+      "url": "https://mcp.incident.io/mcp",
+      "enabled": true
+    },
+    "slack": {
+      "type": "remote",
+      "url": "https://mcp.slack.com/mcp",
+      "enabled": false
+    },
+    "excalidraw": {
+      "type": "remote",
+      "url": "https://api.excalidraw.com/api/v1/mcp",
+      "enabled": false
+    },
+    "notion": {
+      "type": "remote",
+      "url": "https://mcp.notion.com/mcp"
+    }
+  }
 }

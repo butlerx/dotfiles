@@ -21,5 +21,9 @@ else
   echo "Error: pets not found. Install with: cargo install pets-configurator" >&2
   exit 1
 fi
+
+# pi's config lives next to its sessions and caches, so the JSON/Markdown files
+# are linked separately (see pi/link-config.sh).
+"$CWD/pi/link-config.sh"
 echo "dotfiles have been synchronized!"
 printf "\nAll done!"

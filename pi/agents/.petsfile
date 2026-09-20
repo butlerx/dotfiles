@@ -1,0 +1,2 @@
+# pets: symlink=~/.pi/agent/agents
+# pets: package=npm:@earendil-works/pi-coding-agent

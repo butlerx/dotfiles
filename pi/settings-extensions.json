@@ -1,0 +1,10 @@
+{
+  "powerbar": {
+    "left": "model,git-branch",
+    "right": "tokens,context-usage,sub-hourly,sub-weekly",
+    "separator": " › ",
+    "placement": "belowEditor",
+    "bar-style": "continuous",
+    "bar-width": "6"
+  }
+}
