@@ -1,6 +1,7 @@
 {
   "name": "@butlerx/dotfiles",
   "private": true,
+  "type": "module",
   "description": "Toolchain for the shared eslint and prettier configs. ESLint resolves a config's plugins relative to the config file, so they have to live here rather than in a global install.",
   "devDependencies": {
     "@eslint/js": "^10.0.1",

@@ -7,7 +7,7 @@ export default {
   proseWrap: 'always',
   overrides: [
     {
-      files: ['*.js', '*.ts', '*.jsx', '*.tsx'],
+      files: ['*.js', '*.mjs', '*.cjs', '*.jsx', '*.ts', '*.mts', '*.cts', '*.tsx'],
       options: {
         printWidth: 100,
       },

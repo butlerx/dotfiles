@@ -9,7 +9,7 @@ import prettierConfig from 'eslint-plugin-prettier/recommended';
 import importX from 'eslint-plugin-import-x';
 
 const typeScriptExtensions = ['.ts', '.cts', '.mts', '.tsx'];
-const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs'];
+const allExtensions = [...typeScriptExtensions, '.js', '.jsx', '.mjs', '.cjs'];
 
 export default tseslint.config(
   eslint.configs.recommended,
@@ -32,10 +32,7 @@ export default tseslint.config(
       'import-x/extensions': allExtensions,
       'import-x/ignore': ['node_modules', '\\.(scss|css|less|hbs|svg|json)$'],
       'import-x/parsers': { '@typescript-eslint/parser': typeScriptExtensions },
-      'import-x/external-module-folders': [
-        'node_modules',
-        'node_modules/@types',
-      ],
+      'import-x/external-module-folders': ['node_modules', 'node_modules/@types'],
     },
     rules: {
       // enforces use of function declarations or expressions
@@ -49,10 +46,13 @@ export default tseslint.config(
         'ignorePackages',
         {
           ts: 'never',
+          mts: 'never',
+          cts: 'never',
+          tsx: 'never',
           js: 'never',
           mjs: 'never',
+          cjs: 'never',
           jsx: 'never',
-          tsx: 'never',
         },
       ],
 
@@ -118,10 +118,7 @@ export default tseslint.config(
       'no-else-return': ['error', { allowElseIf: false }],
       // disallow empty functions, except for standalone funcs/arrows
       // https://eslint.org/docs/rules/no-empty-function
-      'no-empty-function': [
-        'error',
-        { allow: ['arrowFunctions', 'functions', 'methods'] },
-      ],
+      'no-empty-function': ['error', { allow: ['arrowFunctions', 'functions', 'methods'] }],
       // disallow comparisons to null without a type-checking operator
       // https://eslint.org/docs/rules/no-eq-null
       'no-eq-null': 'off',
@@ -139,10 +136,7 @@ export default tseslint.config(
       'no-extra-label': 'error',
       // disallow implicit type conversions
       // https://eslint.org/docs/rules/no-implicit-coercion
-      'no-implicit-coercion': [
-        'off',
-        { boolean: false, number: true, string: true, allow: [] },
-      ],
+      'no-implicit-coercion': ['off', { boolean: false, number: true, string: true, allow: [] }],
       // disallow var and named functions in global scope
       // https://eslint.org/docs/rules/no-implicit-globals
       'no-implicit-globals': 'off',
@@ -218,15 +212,7 @@ export default tseslint.config(
       'import-x/order': [
         'error',
         {
-          groups: [
-            'builtin',
-            'external',
-            'parent',
-            'sibling',
-            'index',
-            'object',
-            'type',
-          ],
+          groups: ['builtin', 'external', 'parent', 'sibling', 'index', 'object', 'type'],
           distinctGroup: true,
           alphabetize: { order: 'asc', caseInsensitive: false },
         },
@@ -400,10 +386,7 @@ export default tseslint.config(
 
       // disallow usage of configurable warning terms in comments: e.g. todo
       // https://eslint.org/docs/rules/no-warning-comments
-      'no-warning-comments': [
-        'off',
-        { terms: ['todo', 'fixme', 'xxx'], location: 'start' },
-      ],
+      'no-warning-comments': ['off', { terms: ['todo', 'fixme', 'xxx'], location: 'start' }],
 
       // require using Error objects as Promise rejection reasons
       // https://eslint.org/docs/rules/prefer-promise-reject-errors
@@ -473,10 +456,7 @@ export default tseslint.config(
       ],
 
       // https://eslint.org/docs/rules/no-unsafe-optional-chaining
-      'no-unsafe-optional-chaining': [
-        'error',
-        { disallowArithmeticOperators: true },
-      ],
+      'no-unsafe-optional-chaining': ['error', { disallowArithmeticOperators: true }],
 
       // Disallow assignments that can lead to race conditions due to usage of await or yield
       // https://eslint.org/docs/rules/require-atomic-updates
@@ -577,10 +557,7 @@ export default tseslint.config(
 
       // ensure imports point to files/modules that can be resolved
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/no-unresolved.md
-      'import-x/no-unresolved': [
-        'error',
-        { caseSensitiveStrict: true, commonjs: true },
-      ],
+      'import-x/no-unresolved': ['error', { caseSensitiveStrict: true, commonjs: true }],
 
       // ensure named imports coupled with named exports
       // https://github.com/import-js/eslint-plugin-import/blob/master/docs/rules/named.md#when-not-to-use-it
@@ -793,11 +770,7 @@ export default tseslint.config(
 
       // Require or disallow logical assignment logical operator shorthand
       // https://eslint.org/docs/latest/rules/logical-assignment-operators
-      'logical-assignment-operators': [
-        'error',
-        'always',
-        { enforceForIfStatements: true },
-      ],
+      'logical-assignment-operators': ['error', 'always', { enforceForIfStatements: true }],
 
       // specify the maximum depth that blocks can be nested
       'max-depth': ['off', 4],
@@ -841,11 +814,7 @@ export default tseslint.config(
           newIsCap: true,
           newIsCapExceptions: [],
           capIsNew: false,
-          capIsNewExceptions: [
-            'Immutable.Map',
-            'Immutable.Set',
-            'Immutable.List',
-          ],
+          capIsNewExceptions: ['Immutable.Map', 'Immutable.Set', 'Immutable.List'],
         },
       ],
 
@@ -974,10 +943,7 @@ export default tseslint.config(
       ],
 
       // disallow declaration of variables already declared in the outer scope
-      '@typescript-eslint/no-shadow': [
-        'error',
-        { ignoreOnInitialization: true },
-      ],
+      '@typescript-eslint/no-shadow': ['error', { ignoreOnInitialization: true }],
       'no-shadow': 'off',
 
       // disallow use of undefined when initializing variables
