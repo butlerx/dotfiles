@@ -1,12 +1,10 @@
 # pets: symlink=~/tombi.toml
-# tombi is also on npm, but Homebrew owns /opt/homebrew/bin/tombi here and
-# npm refuses to overwrite it
-# pets: package=homebrew:tombi
+# pets: package=npm:tombi
 
-toml-version = "v1.0.0"
+toml-version = "v1.1.0"
 
 [files]
-exclude = ["**/uv.lock", "**/*.lock"]
+exclude = ["**/*.lock"]
 
 [format.rules]
 group-blank-lines-limit         = 2
