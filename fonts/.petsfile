@@ -1,1 +1,3 @@
 # pets: symlink=~/.local/share/fonts
+# macOS loads user fonts from ~/Library/Fonts instead
+# pets: when=os:linux

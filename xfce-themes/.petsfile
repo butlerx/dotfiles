@@ -1,1 +1,3 @@
 # pets: symlink=~/.themes
+# GTK themes, read by XFCE on Linux only
+# pets: when=os:linux
