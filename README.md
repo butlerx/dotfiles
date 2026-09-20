@@ -72,6 +72,18 @@ theme.
 
 All `.zsh` files in `.dotfiles/zsh` are autoloaded
 
+### Linting
+
+`eslint.config.mjs` is a flat config for ESLint 10 and typescript-eslint 8. It
+uses [`eslint-plugin-import-x`](https://github.com/un-ts/eslint-plugin-import-x)
+rather than `eslint-plugin-import`, which still caps its peer range at ESLint 9.
+Type-aware rules run through `projectService`, and plain JS files fall back to
+`disableTypeChecked` so they lint without a tsconfig project.
+
+ESLint resolves a config's plugins relative to the config file, so the shared
+config only works where its plugins resolve from `~/.dotfiles` — a global
+install is not enough.
+
 ### AI agents
 
 **opencode** — `config/opencode/` is symlinked to `~/.config/opencode` as a
