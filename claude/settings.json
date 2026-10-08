@@ -1,0 +1,57 @@
+{
+  "env": {
+    "ENABLE_TOOL_SEARCH": "true",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "haiku"
+  },
+  "attribution": {
+    "commit": "",
+    "pr": "",
+    "sessionUrl": false
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "mcp__incident_io__*",
+      "Skill(incident)"
+    ]
+  },
+  "model": "sonnet",
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh",
+    "hideVimModeIndicator": true
+  },
+  "enabledPlugins": {
+    "pyright-lsp@claude-plugins-official": true,
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "i-have-adhd@i-have-adhd": true,
+    "frontend-design@claude-plugins-official": true,
+    "context-mode@context-mode": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "cloudsmith-security@cloudsmith": true
+  },
+  "extraKnownMarketplaces": {
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
+    },
+    "cloudsmith": {
+      "source": {
+        "source": "github",
+        "repo": "cloudsmith-io/cloudsmith-skills"
+      }
+    }
+  },
+  "effortLevel": "high",
+  "advisorModel": "opus",
+  "tui": "fullscreen",
+  "theme": "dark-daltonized",
+  "editorMode": "vim",
+  "autoCompactEnabled": true,
+  "switchModelsOnFlag": false,
+  "remoteControlAtStartup": true,
+  "inputNeededNotifEnabled": true,
+  "agentPushNotifEnabled": false
+}
