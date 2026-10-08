@@ -3,9 +3,11 @@
   "defaultProvider": "github-copilot",
   "defaultThinkingLevel": "xhigh",
   "enableInstallTelemetry": false,
-  "extensions": [],
+  "extensions": [
+    "-builtin:mcp"
+  ],
   "hideThinkingBlock": true,
-  "lastChangelogVersion": "0.87.1",
+  "lastChangelogVersion": "0.99.2",
   "markdown": {
     "mermaid": "streaming"
   },
@@ -45,6 +47,7 @@
     "npm:@tmustier/pi-ralph-wiggum"
   ],
   "powerline": {
+    "welcome": false,
     "disabledSegments": [
       "cost"
     ],
