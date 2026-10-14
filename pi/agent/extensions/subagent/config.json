@@ -1,0 +1,4 @@
+{
+  "worktreeProvider": "native",
+  "worktreeSetupHook": "~/.pi/agent/hooks/gwt-worktree-setup.zsh"
+}

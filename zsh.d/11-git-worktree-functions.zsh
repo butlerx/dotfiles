@@ -191,7 +191,20 @@ _gwt_add() {
 		return 1
 	fi
 
-	# --- Agent-friendly environment setup ---
+	_gwt_setup_env "$toplevel" "$wt_path"
+
+	echo "Worktree created: $wt_path"
+	echo "  Branch: $branch (from $base_branch)"
+	echo "  cd $wt_path"
+}
+
+# -------------------------------------------------------------------
+# Agent-friendly environment setup for a new worktree. Shared by
+# `gwt add` and external worktree creators (e.g. pi-subagents setup hook).
+# -------------------------------------------------------------------
+_gwt_setup_env() {
+	local toplevel="$1"
+	local wt_path="$2"
 
 	if command -v direnv &>/dev/null; then
 		# Always generate .envrc.gwt with worktree defaults
@@ -220,10 +233,6 @@ _gwt_add() {
 	# Walks the main worktree for known dirs (node_modules, .venv, etc.)
 	# at any depth and mirrors the symlinks at the same relative paths.
 	_gwt_symlink_deps "$toplevel" "$wt_path"
-
-	echo "Worktree created: $wt_path"
-	echo "  Branch: $branch (from $base_branch)"
-	echo "  cd $wt_path"
 }
 
 # -------------------------------------------------------------------
@@ -724,4 +733,6 @@ _gwt() {
 }
 
 # compdef only exists in interactive shells with compinit loaded
-(( $+functions[compdef] )) && compdef _gwt gwt
+if (( $+functions[compdef] )); then
+	compdef _gwt gwt
+fi

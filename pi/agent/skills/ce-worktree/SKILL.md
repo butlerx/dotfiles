@@ -5,11 +5,11 @@ description: Create an isolated git worktree for parallel feature work or PR rev
 
 # Worktree Creation
 
-Create a worktree under `.worktrees/<branch>` with branch-specific setup that `git worktree add` alone does not handle:
+Create a worktree at `../<repo>.worktrees/<branch>` (beside the repo, slashes in the branch become dashes) using the user's `gwt` shell functions, which handle setup that `git worktree add` alone does not:
 
-- Copies `.env`, `.env.local`, `.env.test`, etc. from the main repo (skips `.env.example`)
-- Trusts `mise`/`direnv` configs, with branch-aware safety rules so review branches do not auto-grant trust to untrusted `.envrc` content
-- Adds `.worktrees` to `.gitignore` if not already ignored
+- Generates `.envrc.gwt` (loads `.env` and the Python venv from the main checkout, isolates `CARGO_TARGET_DIR`)
+- Copies the main checkout's `.envrc` (or creates one) and runs `direnv allow`
+- Symlinks `node_modules`, `.venv` and `vendor` from the main checkout
 - Does not modify the main repo checkout — `from-branch` is fetched, not checked out
 
 ## Creating a worktree
@@ -28,32 +28,23 @@ bash scripts/worktree-manager.sh create feat/login
 bash scripts/worktree-manager.sh create fix/email-validation develop
 ```
 
-After creation, switch to the worktree with `cd .worktrees/<branch-name>`.
+The script prints the worktree path. Switch with `cd` to that path.
 
 ## Other worktree operations
 
-Use `git` directly — no wrapper is needed and none is provided:
+`gwt` is a zsh function, so call it through zsh:
 
 ```bash
-git worktree list                          # list worktrees
-git worktree remove .worktrees/<branch>    # remove a worktree
-cd .worktrees/<branch>                     # switch to a worktree
-cd "$(git rev-parse --show-toplevel)"      # return to main checkout
+zsh -c 'source ~/.dotfiles/zsh.d/11-git-worktree-functions.zsh && gwt list'           # list worktrees
+zsh -c 'source ~/.dotfiles/zsh.d/11-git-worktree-functions.zsh && gwt status'         # changes per worktree
+git worktree remove "$(git worktree list --porcelain | awk 'NR==1{print $2}').worktrees/<branch-with-dashes>"  # remove a worktree
 ```
 
-To copy `.env*` files into an existing worktree created without them, run this from the main repo (not from inside the worktree, since branch names often contain slashes like `feat/login`):
-```bash
-cp .env* .worktrees/<branch>/
-```
+Avoid `gwt rm` from an agent: it prompts interactively when the worktree has uncommitted changes.
 
 ## Dev tool trust behavior
 
-When mise or direnv configs are present, the script attempts to trust them so hooks and scripts do not block on interactive prompts. Trust is baseline-checked against a reference branch:
-
-- **Trusted base branches** (`main`, `develop`, `dev`, `trunk`, `staging`, `release/*`): the new worktree's configs are compared against that branch; unchanged configs are auto-trusted. `direnv allow` is permitted.
-- **Other branches** (feature branches, PR review branches): configs are compared against the default branch; `direnv allow` is skipped regardless, because `.envrc` can source files that direnv does not validate.
-
-Modified configs are never auto-trusted. The script prints the manual trust command to run after review.
+gwt replaces the worktree's `.envrc` with the main checkout's copy and then runs `direnv allow` on every branch, including PR review branches. The `.envrc` itself comes from main, but anything it sources or evaluates (`source_env` scripts, `use flake`, `.env` in the worktree) comes from the branch. Treat a review worktree's environment as untrusted code. `mise trust` is not run; if mise prompts, review the branch's mise config before trusting it.
 
 ## When to create a worktree
 
@@ -70,8 +61,8 @@ Do not create a worktree for single-task work that can happen on a branch in the
 
 ## Troubleshooting
 
-**"Worktree already exists"**: the path is already in use. Either switch to it (`cd .worktrees/<branch>`) or remove it (`git worktree remove .worktrees/<branch>`) before recreating.
+**"Worktree already exists"**: the path is already in use. Either `cd` to it or remove it with `git worktree remove <path>` before recreating.
 
 **"Cannot remove worktree: it is the current worktree"**: `cd` out of the worktree first, then `git worktree remove`.
 
-**Dev tool trust was skipped**: the script prints the manual command. Review the config diff (`git diff <base-ref> -- .envrc`), then run the printed command from the worktree directory.
+**direnv shows the main checkout's environment**: expected. gwt copies the main `.envrc`. Review the branch's `.envrc` with `git diff <base-ref> -- .envrc` before restoring it with `git checkout -- .envrc` and running `direnv allow`.

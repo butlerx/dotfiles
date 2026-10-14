@@ -17,9 +17,14 @@ linked individually:
 | `agent/agents/`                  | `~/.pi/agent/agents`                   |
 | `agent/skills/`                  | `~/.pi/agent/skills`                   |
 | `agent/themes/`                  | `~/.pi/agent/themes`                   |
+| `agent/hooks/`                   | `~/.pi/agent/hooks`                    |
+| `agent/extensions/subagent/config.json` | `~/.pi/agent/extensions/subagent/config.json` |
 
-JSON and Markdown cannot carry a pets modeline, so those four use
-`<name>.petsfile` sidecars. The three directories use a `.petsfile` inside them.
+`pi-subagents` runs `hooks/gwt-worktree-setup.zsh` to apply `gwt`'s
+environment setup to its worktrees.
+
+JSON and Markdown cannot carry a pets modeline, so those five use
+`<name>.petsfile` sidecars. The directories use a `.petsfile` inside them.
 
 Everything else in `~/.pi/agent` stays untracked and local: `auth.json`,
 `sessions/`, `npm/`, `git/`, `cache/` and the theme caches.
