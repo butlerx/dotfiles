@@ -41,6 +41,20 @@ _gwt_dirname() {
 	echo "$1" | tr '/' '-'
 }
 
+# Print uncommitted changes in a worktree, ignoring files gwt itself creates
+# (.envrc, .envrc.gwt, and symlinked dependency dirs)
+_gwt_changes() {
+	local wt="$1" line file
+	git -C "$wt" status --porcelain 2>/dev/null | while IFS= read -r line; do
+		file="${line:3}"
+		if [[ "$line" == '?? '* ]]; then
+			[[ "$file" == .envrc || "$file" == .envrc.gwt ]] && continue
+			[[ -L "${wt}/${file}" && "${file:t}" == (node_modules|.venv|vendor) ]] && continue
+		fi
+		echo "$line"
+	done
+}
+
 # Run direnv allow if direnv is installed and .envrc exists in target dir
 _gwt_direnv_allow() {
 	local dir="$1"
@@ -237,7 +251,7 @@ _gwt_rm() {
 	fi
 
 	# Check for uncommitted changes
-	if git -C "$wt_path" status --porcelain 2>/dev/null | grep -q .; then
+	if [[ -n "$(_gwt_changes "$wt_path")" ]]; then
 		echo "Warning: worktree has uncommitted changes!" >&2
 		echo -n "Remove anyway? [y/N] "
 		read -r confirm
@@ -377,8 +391,8 @@ _gwt_agent() {
 		return 0
 	fi
 
-	# Create quietly — agent doesn't need the verbose output
-	_gwt_add "$branch" "$base_branch" >/dev/null 2>&1
+	# Send progress to stderr so stdout stays just the path, but errors stay visible
+	_gwt_add "$branch" "$base_branch" >&2
 	if [[ $? -ne 0 ]]; then
 		echo "Failed to create agent worktree" >&2
 		return 1
@@ -459,7 +473,7 @@ _gwt_clean() {
 		fi
 
 		# Safety: skip worktrees with uncommitted changes
-		if git -C "$wt_dir" status --porcelain 2>/dev/null | grep -q .; then
+		if [[ -n "$(_gwt_changes "$wt_dir")" ]]; then
 			echo "Skipping ${wt_dir:t} ($reason) — has uncommitted changes"
 			continue
 		fi
@@ -562,7 +576,7 @@ _gwt_status() {
 		local branch
 		branch=$(git -C "$wt_dir" rev-parse --abbrev-ref HEAD 2>/dev/null)
 		local changes
-		changes=$(git -C "$wt_dir" status --porcelain 2>/dev/null | wc -l | tr -d ' ')
+		changes=$(_gwt_changes "$wt_dir" | grep -c .)
 		local ahead_behind
 		ahead_behind=$(git -C "$wt_dir" rev-list --left-right --count HEAD...@{upstream} 2>/dev/null)
 
@@ -709,4 +723,5 @@ _gwt() {
 	esac
 }
 
-compdef _gwt gwt
+# compdef only exists in interactive shells with compinit loaded
+(( $+functions[compdef] )) && compdef _gwt gwt
