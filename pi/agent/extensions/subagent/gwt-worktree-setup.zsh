@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+# pets: symlink=~/.pi/agent/extensions/subagent/gwt-worktree-setup.zsh
 # pi-subagents worktreeSetupHook: apply gwt's environment setup
 # (.envrc.gwt, direnv allow, symlinked deps) to a pi-created worktree.
 # stdin: {repoRoot, worktreePath, ...}. stdout must be one JSON object listing

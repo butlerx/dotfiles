@@ -17,10 +17,10 @@ linked individually:
 | `agent/agents/`                  | `~/.pi/agent/agents`                   |
 | `agent/skills/`                  | `~/.pi/agent/skills`                   |
 | `agent/themes/`                  | `~/.pi/agent/themes`                   |
-| `agent/hooks/`                   | `~/.pi/agent/hooks`                    |
 | `agent/extensions/subagent/config.json` | `~/.pi/agent/extensions/subagent/config.json` |
+| `agent/extensions/subagent/gwt-worktree-setup.zsh` | `~/.pi/agent/extensions/subagent/gwt-worktree-setup.zsh` |
 
-`pi-subagents` runs `hooks/gwt-worktree-setup.zsh` to apply `gwt`'s
+`pi-subagents` runs `extensions/subagent/gwt-worktree-setup.zsh` to apply `gwt`'s
 environment setup to its worktrees.
 
 JSON and Markdown cannot carry a pets modeline, so those five use
