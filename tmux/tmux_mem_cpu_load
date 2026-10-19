@@ -1,36 +1,116 @@
 #!/usr/bin/env python3
+"""Render memory and CPU usage for the tmux status bar.
+
+Uses only Python's standard library and operating-system tools so Python
+upgrades do not require reinstalling psutil.
 """
-Dash-meter inspired by tmux-mem-cpu
-and code from psutil top.py.
-"""
+
 import os
+import re
+import subprocess
 import sys
+import time
 
-import psutil
-
-if os.name != 'posix':
-    sys.exit('platform not supported')
+MIB = 1024 * 1024
 
 
-def get_dashes(perc):
-    """ Generate dashes """
-    dashes = "|" * int((float(perc) / 10))
+def command_output(*args):
+    """Run a command with stable, parseable output."""
+    env = os.environ.copy()
+    env["LC_ALL"] = "C"
+    return subprocess.run(
+        args,
+        check=True,
+        capture_output=True,
+        text=True,
+        env=env,
+    ).stdout
 
-    return dashes, (" " * (10 - len(dashes)))
+
+def macos_memory():
+    """Return used and total memory in MiB on macOS."""
+    total = int(command_output("sysctl", "-n", "hw.memsize").strip())
+    output = command_output("vm_stat")
+    page_size = int(re.search(r"page size of (\d+) bytes", output).group(1))
+    pages = {
+        match.group(1): int(match.group(2))
+        for line in output.splitlines()
+        if (match := re.match(r"([^:]+):\s+(\d+)\.", line))
+    }
+    used = (
+        pages.get("Pages active", 0)
+        + pages.get("Pages wired down", 0)
+    ) * page_size
+    return used // MIB, total // MIB
+
+
+def linux_memory():
+    """Return used and total memory in MiB on Linux."""
+    values = {}
+    with open("/proc/meminfo", encoding="ascii") as meminfo:
+        for line in meminfo:
+            key, value = line.split(":", 1)
+            values[key] = int(value.split()[0])
+    total = values["MemTotal"]
+    available = values.get(
+        "MemAvailable",
+        values["MemFree"] + values.get("Buffers", 0) + values.get("Cached", 0),
+    )
+    return (total - available) // 1024, total // 1024
+
+
+def memory_usage():
+    if sys.platform == "darwin":
+        return macos_memory()
+    if sys.platform.startswith("linux"):
+        return linux_memory()
+    raise OSError(f"unsupported platform: {sys.platform}")
+
+
+def linux_cpu_percent():
+    """Sample aggregate Linux CPU counters over 100 milliseconds."""
+    def counters():
+        fields = [int(value) for value in open("/proc/stat", encoding="ascii").readline().split()[1:]]
+        return sum(fields), fields[3] + fields[4]
+
+    total_before, idle_before = counters()
+    time.sleep(0.1)
+    total_after, idle_after = counters()
+    total_delta = total_after - total_before
+    idle_delta = idle_after - idle_before
+    return 0.0 if total_delta == 0 else 100 * (total_delta - idle_delta) / total_delta
+
+
+def macos_cpu_percent():
+    """Estimate whole-system load from per-process macOS CPU usage."""
+    process_total = sum(
+        float(value)
+        for value in command_output("ps", "-A", "-o", "%cpu=").split()
+    )
+    return min(100.0, process_total / (os.cpu_count() or 1))
+
+
+def cpu_percent():
+    if sys.platform == "darwin":
+        return macos_cpu_percent()
+    if sys.platform.startswith("linux"):
+        return linux_cpu_percent()
+    return min(100.0, os.getloadavg()[0] * 100 / (os.cpu_count() or 1))
+
+
+def meter(percent):
+    filled = max(0, min(10, int(percent / 10)))
+    return "|" * filled + " " * (10 - filled)
 
 
 def info():
-    """ Get Free Memory and cpu """
-    mem = psutil.virtual_memory()
-    cpu = psutil.cpu_percent(interval=0.1)
-    cpu_dashes, cpu_empty_dashes = get_dashes(cpu)
-    return "%s/%s MB [%s%s]%5s%%" % (str(int(mem.used / 1024 / 1024)),
-                                     str(int(mem.total / 1024 / 1024)),
-                                     cpu_dashes, cpu_empty_dashes, cpu)
+    used, total = memory_usage()
+    cpu = cpu_percent()
+    return f"{used}/{total} MB [{meter(cpu)}]{cpu:5.1f}%"
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
         print(info())
-    except (KeyboardInterrupt, SystemExit):
+    except (KeyboardInterrupt, OSError, ValueError, subprocess.SubprocessError):
         pass
