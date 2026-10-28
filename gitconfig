@@ -21,9 +21,10 @@
   changelog =  log --pretty=tformat:'* %ad %an <%ae> %d\n - %s' --date=format:'%a %b %d %Y'
   amend = commit --amend --no-edit
   undo = reset HEAD~1 --mixed
-  # branches checked out in a worktree (+ prefix) are skipped; `gwt clean` handles those
-  clean-branch = "!git branch --merged | grep -E -v \"(^[*+]|master|dev|develop|main)\" | xargs git branch -d"
-  clean-merged = "!git fetch -p && git worktree prune && git for-each-ref refs/heads --format='%(if)%(worktreepath)%(then)%(else)%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)%(end)%(end)' | grep . | xargs git branch -D"
+  # merged branches: remove their worktree first (refuses dirty ones; skips the one you're in), then delete
+  clean-branch = "!f() { here=$(git rev-parse --show-toplevel) && git for-each-ref --merged HEAD refs/heads --format='%(refname:short)\t%(worktreepath)' | while IFS=\"\t\" read -r b wt; do case \"$b\" in *master*|*dev*|*main*) continue;; esac; if [ -n \"$wt\" ]; then [ \"$wt\" = \"$here\" ] && continue; git worktree remove \"$wt\" || { echo \"skip $b: $wt not removed\"; continue; }; fi; git branch -d \"$b\"; done; }; f"
+  # gone branches: remove their worktree first (refuses dirty ones; skips the one you're in), then delete
+  clean-merged = "!f() { git fetch -p && git worktree prune && here=$(git rev-parse --show-toplevel) && git for-each-ref refs/heads --format='%(if:equals=[gone])%(upstream:track)%(then)%(refname:short)\t%(worktreepath)%(end)' | while IFS=\"\t\" read -r b wt; do [ -n \"$b\" ] || continue; if [ -n \"$wt\" ]; then [ \"$wt\" = \"$here\" ] && { echo \"skip $b: current worktree\"; continue; }; git worktree remove \"$wt\" || { echo \"skip $b: $wt not removed\"; continue; }; fi; git branch -D \"$b\"; done; }; f"
   clean-wd = "!c() { git checkout \"$(git symbolic-ref refs/remotes/origin/HEAD --short | sed 's|^origin/||')\" && git pull && git clean-merged; }; c"
   wt = worktree
   wtl = worktree list

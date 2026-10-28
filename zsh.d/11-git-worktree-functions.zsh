@@ -48,7 +48,8 @@ _gwt_changes() {
 	git -C "$wt" status --porcelain 2>/dev/null | while IFS= read -r line; do
 		file="${line:3}"
 		if [[ "$line" == '?? '* ]]; then
-			[[ "$file" == .envrc || "$file" == .envrc.gwt ]] && continue
+			[[ "$file" == (.envrc|.envrc.gwt) ]] && continue
+			[[ -L "${wt}/${file%/}" && "${file%/}" == (.env|.cloudsmith) ]] && continue
 			[[ -L "${wt}/${file}" && "${file:t}" == (node_modules|.venv|vendor) ]] && continue
 		fi
 		echo "$line"
@@ -116,13 +117,22 @@ _gwt_symlink_deps() {
 	# Patterns for dependency/build dirs worth sharing
 	local -a patterns=(node_modules .venv vendor)
 
-	for pattern in "${patterns[@]}"; do
-		# Find all gitignored instances of this dir in the main worktree
-		# -oi = other (untracked) + ignored, --directory = don't recurse into them
-		git -C "$main_wt" ls-files -oi --directory --exclude-standard \
-			"**/${pattern}/" "${pattern}/" 2>/dev/null | while IFS= read -r relpath; do
+	# uv projects install workspace members as editables pointing at the
+	# main checkout, so a shared .venv would run main's code. Those get
+	# their own venv from _gwt_uv_sync instead.
+	[[ -f "${main_wt}/uv.lock" ]] && patterns=(${patterns:#.venv})
+
+	# List all gitignored dirs in the main worktree and keep those whose
+	# name matches a pattern. Filter by name here: pathspecs like
+	# "**/vendor/" don't narrow ls-files -oi output, so every ignored path
+	# (target, caches, dist) would otherwise be linked.
+	# -oi = other (untracked) + ignored, --directory = don't recurse into them
+	git -C "$main_wt" ls-files -oi --directory --exclude-standard 2>/dev/null |
+		while IFS= read -r relpath; do
 			# Strip trailing slash
 			relpath="${relpath%/}"
+			(( ${patterns[(Ie)${relpath:t}]} )) || continue
+
 			local src="${main_wt}/${relpath}"
 			local dst="${wt_path}/${relpath}"
 
@@ -130,13 +140,13 @@ _gwt_symlink_deps() {
 			[[ -d "$src" ]] || continue
 			[[ -e "$dst" ]] && continue
 
-			# Ensure parent dir exists in worktree
-			mkdir -p "${dst:h}"
+			# Parent must already be in the checkout (e.g. next to a tracked
+			# package.json); creating it would leave a stray untracked dir
+			[[ -d "${dst:h}" ]] || continue
 			ln -s "$src" "$dst"
 			echo "Symlinked ${relpath} from main worktree"
 			((linked++))
 		done
-	done
 }
 
 # -------------------------------------------------------------------
@@ -229,10 +239,55 @@ _gwt_setup_env() {
 		echo "Copied .env files (install direnv for dynamic env loading)"
 	fi
 
+	# Link .env so tools that read it from the checkout root (mise `_.file`,
+	# git hooks, non-direnv shells) find it without the repo opting in.
+	_gwt_link_env "$toplevel" "$wt_path"
+
 	# Symlink dependency/build dirs from main worktree into the new worktree.
 	# Walks the main worktree for known dirs (node_modules, .venv, etc.)
 	# at any depth and mirrors the symlinks at the same relative paths.
 	_gwt_symlink_deps "$toplevel" "$wt_path"
+
+	_gwt_uv_sync "$wt_path"
+}
+
+# Symlink per-checkout credential config from the main worktree. Only
+# config, never caches: shared caches leak state between branches.
+#   .env         secrets loaded by mise `_.file` and .envrc.gwt
+#   .cloudsmith  CLI config + credential helpers (CLOUDSMITH_CONFIG_FILE)
+_gwt_link_env() {
+	local main_wt="$1"
+	local wt_path="$2"
+	local name
+
+	for name in .env .cloudsmith; do
+		[[ -e "${main_wt}/${name}" && ! -e "${wt_path}/${name}" ]] || continue
+		ln -s "${main_wt}/${name}" "${wt_path}/${name}"
+		echo "Symlinked ${name} from main worktree"
+	done
+}
+
+# Create a worktree-local venv for uv projects. Runs through mise when the
+# repo uses it, so registry auth and index settings from mise's [env] apply.
+_gwt_uv_sync() {
+	local wt_path="$1"
+
+	[[ -f "${wt_path}/uv.lock" ]] && command -v uv &>/dev/null || return 0
+
+	# A symlinked .venv (worktrees made before this change) is main's venv;
+	# syncing through it would repoint main's editables at this worktree.
+	if [[ -L "${wt_path}/.venv" ]]; then
+		echo "Skipping uv sync: ${wt_path}/.venv is a symlink; remove it first" >&2
+		return 0
+	fi
+
+	echo "Syncing uv venv (uv sync --all-packages --frozen)..."
+	local -a sync=(uv sync --all-packages --frozen --quiet)
+	if command -v mise &>/dev/null && [[ -f "${wt_path}/mise.toml" || -f "${wt_path}/.mise.toml" ]]; then
+		mise trust --quiet "$wt_path" 2>/dev/null
+		sync=(mise exec -C "$wt_path" -- "${sync[@]}")
+	fi
+	(cd "$wt_path" && "${sync[@]}") || echo "Warning: uv sync failed; run it in $wt_path" >&2
 }
 
 # -------------------------------------------------------------------

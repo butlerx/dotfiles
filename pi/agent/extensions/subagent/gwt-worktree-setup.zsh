@@ -13,5 +13,5 @@ _gwt_setup_env "$repo" "$wt" >&2
 
 git -C "$wt" ls-files -o --exclude-standard |
 	sed 's:/$::' |
-	grep -E '(^|/)(\.envrc|\.envrc\.gwt|node_modules|\.venv|vendor)$' |
+	grep -E '(^|/)(\.env|\.cloudsmith|\.envrc|\.envrc\.gwt|node_modules|\.venv|vendor)$' |
 	jq -R . | jq -sc '{syntheticPaths: .}'
