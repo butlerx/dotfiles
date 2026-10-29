@@ -49,11 +49,21 @@ _gwt_changes() {
 		file="${line:3}"
 		if [[ "$line" == '?? '* ]]; then
 			[[ "$file" == (.envrc|.envrc.gwt) ]] && continue
-			[[ -L "${wt}/${file%/}" && "${file%/}" == (.env|.cloudsmith) ]] && continue
+			[[ -L "${wt}/${file%/}" && "${file%/}" == (.env|.cloudsmith|local.hcl) ]] && continue
 			[[ -L "${wt}/${file}" && "${file:t}" == (node_modules|.venv|vendor) ]] && continue
 		fi
 		echo "$line"
 	done
+}
+
+# Hide a file gwt created from `git status` and `git add -A`. Writes to the
+# shared info/exclude, since a repo's `node_modules/` rule only matches real
+# directories, not the symlinks gwt puts in their place.
+_gwt_exclude() {
+	local wt="$1" pattern="$2" exclude
+	exclude="$(git -C "$wt" rev-parse --path-format=absolute --git-common-dir 2>/dev/null)/info/exclude" || return 0
+	mkdir -p "${exclude:h}"
+	grep -qxF -- "$pattern" "$exclude" 2>/dev/null || echo "$pattern" >>"$exclude"
 }
 
 # Run direnv allow if direnv is installed and .envrc exists in target dir
@@ -144,6 +154,7 @@ _gwt_symlink_deps() {
 			# package.json); creating it would leave a stray untracked dir
 			[[ -d "${dst:h}" ]] || continue
 			ln -s "$src" "$dst"
+			_gwt_exclude "$wt_path" "/${relpath}"
 			echo "Symlinked ${relpath} from main worktree"
 			((linked++))
 		done
@@ -219,10 +230,13 @@ _gwt_setup_env() {
 	if command -v direnv &>/dev/null; then
 		# Always generate .envrc.gwt with worktree defaults
 		_gwt_generate_envrc_gwt "$wt_path"
+		_gwt_exclude "$wt_path" "/.envrc.gwt"
 
 		if [[ -f "${toplevel}/.envrc" ]]; then
-			# Project has an .envrc — copy it and check if it sources .envrc.gwt
-			cp "${toplevel}/.envrc" "${wt_path}/.envrc"
+			# Project has an .envrc — copy it unless the checkout already has
+			# it tracked, and check if it sources .envrc.gwt
+			git -C "$toplevel" ls-files --error-unmatch .envrc &>/dev/null ||
+				cp "${toplevel}/.envrc" "${wt_path}/.envrc"
 			if ! grep -q 'source_env.*\.envrc\.gwt\|source_env_if_exists.*\.envrc\.gwt' "${wt_path}/.envrc" 2>/dev/null; then
 				echo "Hint: add 'source_env_if_exists .envrc.gwt' to your .envrc for worktree defaults"
 			fi
@@ -255,14 +269,16 @@ _gwt_setup_env() {
 # config, never caches: shared caches leak state between branches.
 #   .env         secrets loaded by mise `_.file` and .envrc.gwt
 #   .cloudsmith  CLI config + credential helpers (CLOUDSMITH_CONFIG_FILE)
+#   local.hcl    Terragrunt local input overrides (find_in_parent_folders)
 _gwt_link_env() {
 	local main_wt="$1"
 	local wt_path="$2"
 	local name
 
-	for name in .env .cloudsmith; do
+	for name in .env .cloudsmith local.hcl; do
 		[[ -e "${main_wt}/${name}" && ! -e "${wt_path}/${name}" ]] || continue
 		ln -s "${main_wt}/${name}" "${wt_path}/${name}"
+		_gwt_exclude "$wt_path" "/${name}"
 		echo "Symlinked ${name} from main worktree"
 	done
 }
