@@ -94,8 +94,9 @@ _main_worktree="$(git worktree list --porcelain | awk 'NR==1{print $2}')"
 dotenv_if_exists "$_main_worktree/.env"
 dotenv_if_exists ".env"
 
-# Share Python venv from main worktree if it exists
-if [[ -d "$_main_worktree/.venv" ]]; then
+# Share Python venv from main worktree if it exists. Not for uv projects:
+# gwt gives those a worktree-local venv, which main's editables would bypass.
+if [[ -d "$_main_worktree/.venv" && ! -f "uv.lock" ]]; then
   export VIRTUAL_ENV="$_main_worktree/.venv"
   PATH_add "$_main_worktree/.venv/bin"
 fi
@@ -131,6 +132,11 @@ _gwt_symlink_deps() {
 	# main checkout, so a shared .venv would run main's code. Those get
 	# their own venv from _gwt_uv_sync instead.
 	[[ -f "${main_wt}/uv.lock" ]] && patterns=(${patterns:#.venv})
+
+	# pnpm refuses a node_modules that resolves outside the project
+	# (ERR_PNPM_UNSAFE_MODULES_DIR), and workspace links would point at main's
+	# packages. Those get their own install from _gwt_node_install.
+	[[ -n "$(_gwt_node_installer "$main_wt")" ]] && patterns=(${patterns:#node_modules})
 
 	# List all gitignored dirs in the main worktree and keep those whose
 	# name matches a pattern. Filter by name here: pathspecs like
@@ -243,6 +249,7 @@ _gwt_setup_env() {
 		else
 			# No .envrc — generate one that sources .envrc.gwt
 			echo 'source_env_if_exists .envrc.gwt' > "${wt_path}/.envrc"
+			_gwt_exclude "$wt_path" "/.envrc"
 		fi
 		_gwt_direnv_allow "$wt_path"
 	else
@@ -263,6 +270,7 @@ _gwt_setup_env() {
 	_gwt_symlink_deps "$toplevel" "$wt_path"
 
 	_gwt_uv_sync "$wt_path"
+	_gwt_node_install "$wt_path"
 }
 
 # Symlink per-checkout credential config from the main worktree. Only
@@ -304,6 +312,51 @@ _gwt_uv_sync() {
 		sync=(mise exec -C "$wt_path" -- "${sync[@]}")
 	fi
 	(cd "$wt_path" && "${sync[@]}") || echo "Warning: uv sync failed; run it in $wt_path" >&2
+}
+
+# Print the package manager that needs a worktree-local node_modules, if
+# any: pnpm, or npm with workspaces (its workspace links resolve to main's
+# packages through a shared node_modules). Plain npm is safe to share.
+_gwt_node_installer() {
+	local dir="$1"
+	if [[ -f "${dir}/pnpm-lock.yaml" ]]; then
+		echo pnpm
+	elif [[ -f "${dir}/package-lock.json" ]] && grep -q '"workspaces"' "${dir}/package.json" 2>/dev/null; then
+		echo npm
+	fi
+}
+
+# Install worktree-local node_modules for pnpm and npm-workspace projects.
+# pnpm is cheap (hard-links from its global store); npm ci is a full
+# install. Runs through mise like _gwt_uv_sync so the registry npmrc from
+# mise's [env] applies.
+_gwt_node_install() {
+	local wt_path="$1" pm
+	pm=$(_gwt_node_installer "$wt_path")
+
+	[[ -n "$pm" ]] && command -v "$pm" &>/dev/null || return 0
+
+	# A symlinked node_modules (worktrees made before this change) is main's;
+	# pnpm refuses to touch it, and npm ci would wipe main's copy.
+	if [[ -L "${wt_path}/node_modules" ]]; then
+		echo "Skipping $pm install: ${wt_path}/node_modules is a symlink; remove it first" >&2
+		return 0
+	fi
+
+	local -a install
+	case "$pm" in
+	pnpm) install=(pnpm install --frozen-lockfile --prefer-offline --reporter=silent) ;;
+	npm) install=(npm ci --prefer-offline --no-audit --no-fund --loglevel=error) ;;
+	esac
+	echo "Installing $pm deps (${install[*]})..."
+	if command -v mise &>/dev/null && [[ -f "${wt_path}/mise.toml" || -f "${wt_path}/.mise.toml" ]]; then
+		mise trust --quiet "$wt_path" 2>/dev/null
+		install=(mise exec -C "$wt_path" -- "${install[@]}")
+	else
+		# Skip shell wrappers such as the nvm lazy-loaders in 05-environment.zsh
+		install=(command "${install[@]}")
+	fi
+	(cd "$wt_path" && "${install[@]}") || echo "Warning: $pm install failed; run it in $wt_path" >&2
 }
 
 # -------------------------------------------------------------------
